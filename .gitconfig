@@ -1,0 +1,27 @@
+[user]
+	name = Andy Freeland
+	email = andy@andyfreeland.net
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+[core]
+	excludesfile = ~/.gitglobalignore
+	autocrlf = input
+    editor = vim
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+    interactive = auto
+[merge]
+	tool = threesome
+
+[mergetool "threesome"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+    trustExitCode = true
+
+;[branch "master"]
+	;rebase = true
