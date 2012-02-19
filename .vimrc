@@ -5,6 +5,7 @@ call pathogen#helptags()
 filetype plugin indent on
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.wiki set filetype=creole
 syntax on
 
 set nocompatible
