@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/andy/archive/school-archive/10-11 junior/cs324-data-mining/01-k-nearest-neighbor/k-nearest-neighbor'
-let g:netrw_dirhist_2='/home/andy/.virtualenvs/dateknight/lib/python2.7/site-packages/django/core'
-let g:netrw_dirhist_3='/home/andy/projects/dateknight/dateknight/static/css'
-let g:netrw_dirhist_4='/home/andy/school/cs334-database-systems'
-let g:netrw_dirhist_5='/home/andy/projects/andyfreeland.net'
-let g:netrw_dirhist_6='/home/andy/.vim'
-let g:netrw_dirhist_7='/home/andy/projects/dateknight'
