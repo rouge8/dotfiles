@@ -48,13 +48,8 @@ n() {
 }
 nls() { tree -CR --noreport ~/.notes | awk '{ if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) print " "$3 }' ; }
 
-# If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+    xterm*) TERM=xterm-256color
 esac
 
 # bash vi editing mode
@@ -73,6 +68,7 @@ export HISTSIZE=100000
 export HISTIGNORE="&:[ ]*:exit"
 shopt -s histappend
 shopt -s cmdhist
+export HISTTIMEFORMAT='%F %T '
 # use ** to search any depth
 shopt -s globstar
 shopt -s histverify
