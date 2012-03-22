@@ -10,6 +10,7 @@ syntax on
 
 set nocompatible
 
+set modeline
 set modelines=0
 
 set tabstop=4
@@ -214,8 +215,8 @@ if has("autocmd")
         " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
         " earlier, as it is important)
         autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-        autocmd filetype python setlocal textwidth=80
-        autocmd filetype python match ErrorMsg '\%>80v.\+'
+        "autocmd filetype python setlocal textwidth=80
+        "autocmd filetype python match ErrorMsg '\%>80v.\+'
 
         " But disable autowrapping as it is super annoying
         autocmd filetype python setlocal formatoptions-=t
@@ -232,3 +233,5 @@ au BufNewFile,BufRead forms.py     setlocal filetype=python.django
 nnoremap _dt :set ft=htmldjango<CR>
 nnoremap _pd :set ft=python.django<CR>
 
+"force saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
