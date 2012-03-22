@@ -40,3 +40,4 @@ fi
 
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
+export FIGNORE=.un~:.swp~
