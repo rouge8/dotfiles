@@ -54,9 +54,9 @@ esac
 
 # bash vi editing mode
 # from http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/
-set -o vi
-set editing-mode vi
-set keymap vi
+#set -o vi
+#set editing-mode vi
+#set keymap vi
 # ^p check for partial match in history
 bind -m vi-insert "\C-p":dynamic-complete-history
 
