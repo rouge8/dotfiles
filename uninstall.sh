@@ -26,6 +26,8 @@ if [ -d ~/.olddotfiles ]
         replaceLink .git-completion.bash
         replaceLink .gitglobalignore
         replaceLink .vimrc
+        replaceLink .screenrc
+        replaceLink .tmux.conf
 
         echo "Finished transfering backed up dot files."
         echo "Check to make sure that the contents of"

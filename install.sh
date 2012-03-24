@@ -20,4 +20,6 @@ if [ -d ~/.olddotfiles ]
         installFile .git-completion.bash
         installFile .gitglobalignore
         installFile .vimrc
+        installFile .screenrc
+        installFile .tmux.conf
 fi
