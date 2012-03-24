@@ -22,3 +22,6 @@ Icon?
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# <https://github.com/kennethreitz/autoenv>
+.env
