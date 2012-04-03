@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/change-inside-surroundings.vim"]
 	path = .vim/bundle/change-inside-surroundings.vim
 	url = git://github.com/briandoll/change-inside-surroundings.vim.git
+[submodule ".vim/bundle/clam.vim"]
+	path = .vim/bundle/clam.vim
+	url = https://github.com/sjl/clam.vim.git
