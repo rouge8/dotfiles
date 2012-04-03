@@ -8,13 +8,13 @@ fi
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/bin:$HOME/local/node/bin
+export GOROOT=$HOME/local/go
+export PATH=$PATH:$GOROOT/bin
 
 export PATH
 unset USERNAME
 export TERM=xterm
 export EDITOR=vim
-
-#umask 0007 # -rw-rw-----
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
