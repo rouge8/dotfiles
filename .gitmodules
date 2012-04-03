@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/TagHighlight"]
 	path = .vim/bundle/TagHighlight
 	url = https://github.com/abudden/TagHighlight.git
+[submodule ".vim/bundle/change-inside-surroundings.vim"]
+	path = .vim/bundle/change-inside-surroundings.vim
+	url = git://github.com/briandoll/change-inside-surroundings.vim.git
