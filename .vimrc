@@ -274,3 +274,6 @@ if exists("+undofile")
   set undodir+=~/.vim-undo//
   set undofile
 endif
+
+" clam.vim
+nnoremap ! :Clam<space>
