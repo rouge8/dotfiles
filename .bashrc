@@ -159,3 +159,11 @@ alias pbpaste='xsel --clipboard --output'
 #}
 
 source ~/.autoenv/activate.sh
+
+# convert cprofile output to something useful
+function cprof2png {
+    gprof2dot -f pstats $1 | dot -Tpng -o $1.png
+}
+function cprof2dot {
+    gprof2dot -f pstats $1 > $1.dot
+}
