@@ -278,3 +278,6 @@ endif
 
 " clam.vim
 nnoremap ! :Clam<space>
+
+" Unfuck my screen
+noremap U :syntax sync fromstart<cr>:redraw!<cr>
