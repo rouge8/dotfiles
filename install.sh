@@ -1,10 +1,13 @@
 #!/bin/bash
+
+DOTFILES=`dirname "$0"`
+
 installFile(){
     if [ -L ~/$1 -o -f ~/.olddotfiles/$1 -o -d ~/.olddotfiles/$1 ]; then
         echo A link to $1 already exists.  Something is wrong.
     else
         mv ~/$1 ~/.olddotfiles/$1
-        ln -s ~/.dotfiles/$1 ~/$1
+        ln -s $DOTFILES/$1 ~/$1
     fi
 }
 
