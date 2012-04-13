@@ -124,12 +124,13 @@ au VimResized * exe "normal! \<c-w>="
 vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
 
 " vim-powerline
-let g:Powerline_symbols = 'fancy'
+if $TERM != 'xterm' || has("macunix")
+    let g:Powerline_symbols = 'fancy'
+endif
 set laststatus=2 " Always show the statusline
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 set background=dark
-"colorscheme molokai
 colorscheme badwolf
 
 " Save when losing focus

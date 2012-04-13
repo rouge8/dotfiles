@@ -7,9 +7,15 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:$HOME/local/node/bin
-export GOROOT=$HOME/local/go
-export PATH=$PATH:$GOROOT/bin
+if [[ `hostname -f` != "*.mathcs.carleton.edu" ]]
+then
+    PATH=$PATH:$HOME/bin:$HOME/local/node/bin
+    export GOROOT=$HOME/local/go
+    export PATH=$PATH:$GOROOT/bin
+else
+    PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
+fi
+
 
 export PATH
 unset USERNAME
