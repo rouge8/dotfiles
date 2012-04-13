@@ -7,20 +7,22 @@ fi
 
 # User specific environment and startup programs
 
-if [[ `hostname -f` != "*.mathcs.carleton.edu" ]]
+if [[ `hostname -f` != *.mathcs.carleton.edu ]]
 then
     PATH=$PATH:$HOME/bin:$HOME/local/node/bin
     export GOROOT=$HOME/local/go
     export PATH=$PATH:$GOROOT/bin
+    export EDITOR=vim
+    echo "BALLS"
 else
     PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
+    export EDITOR=$HOME/local-mac/bin/vim
 fi
 
 
 export PATH
 unset USERNAME
-export TERM=xterm
-export EDITOR=vim
+#export TERM=xterm
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -37,7 +39,9 @@ _pip_completion()
 complete -o default -F _pip_completion pip
 # pip bash completion end
 
-source $HOME/.leiningen_completion.bash
+if [ -f $HOME/.leiningen_completion.bash ]; then
+    source $HOME/.leiningen_completion.bash
+fi
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then

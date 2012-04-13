@@ -18,7 +18,9 @@ fi
 # git completion
 source ~/.git-completion.bash
 
-alias ls='ls -F --color=auto'
+if [[ `hostname -f` != *.mathcs.carleton.edu ]]; then
+    alias ls='ls -F --color=auto'
+fi
 
 ## speeed!
 #if [ "$PS1" ] ; then
@@ -70,7 +72,9 @@ shopt -s histappend
 shopt -s cmdhist
 export HISTTIMEFORMAT='%F %T '
 # use ** to search any depth
-shopt -s globstar
+if [[ `hostname -f` != *.mathcs.carleton.edu ]]; then
+    shopt -s globstar
+fi
 shopt -s histverify
 
 alias top=htop
@@ -158,7 +162,9 @@ alias pbpaste='xsel --clipboard --output'
     #fi
 #}
 
-source ~/.autoenv/activate.sh
+if [ -f ~/.autoenv/activate.sh ]; then
+    source ~/.autoenv/activate.sh
+fi
 
 # convert cprofile output to something useful
 function cprof2png {
