@@ -13,7 +13,6 @@ then
     export GOROOT=$HOME/local/go
     export PATH=$PATH:$GOROOT/bin
     export EDITOR=vim
-    echo "BALLS"
 else
     PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
     export EDITOR=$HOME/local-mac/bin/vim
