@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=`dirname "$0"`
+DOTFILES=$(cd "$(dirname "$0")"; pwd)
 
 installFile(){
     if [ -L ~/$1 -o -f ~/.olddotfiles/$1 -o -d ~/.olddotfiles/$1 ]; then
