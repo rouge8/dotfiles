@@ -301,5 +301,8 @@ noremap U :syntax sync fromstart<cr>:redraw!<cr>
 set scrollopt+=hor
 nmap <LocalLeader>s :set scrollbind<cr>
 
+" Change-inside-surroundings.vim
+nmap <leader>cis :ChangeInsideSurrounding<cr>
+
 " scratch.vim
 nmap <leader><tab> :Scratch<cr>
