@@ -39,14 +39,10 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
-if has("relativenumber")
+if exists("&relativenumber")
     set relativenumber
 else
     set number
-endif
-
-if has("undofile")
-    set undofile
 endif
 
 nnoremap / /\v
