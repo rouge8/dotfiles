@@ -32,8 +32,16 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
-set undofile
+
+if has("relativenumber")
+    set relativenumber
+else
+    set number
+endif
+
+if has("undofile")
+    set undofile
+endif
 
 nnoremap / /\v
 vnoremap / /\v
