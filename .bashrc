@@ -22,13 +22,6 @@ if [[ `hostname -f` != *.mathcs.carleton.edu ]]; then
     alias ls='ls -F --color=auto'
 fi
 
-## speeed!
-#if [ "$PS1" ] ; then
-   #mkdir -m 0700 -p /cgroup/cpu/user/$$
-   #echo $$ > /cgroup/cpu/user/$$/tasks
-   #echo "1" > /cgroup/cpu/user/$$/notify_on_release
-#fi
-
 
 ## functions from http://code.toofishes.net/cgit/dan/configfiles.git/tree/bashrc
 # sanitize - set file/directory owner and permissions to normal values (644/755)
