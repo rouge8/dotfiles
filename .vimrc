@@ -2,6 +2,12 @@ filetype off
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+" Enable Go support in an inteligent way
+if !empty($GOROOT)
+    set rtp+=$GOROOT/misc/vim
+endif
+
 filetype plugin indent on
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.md set filetype=markdown
@@ -290,3 +296,4 @@ nnoremap ! :Clam<space>
 
 " Unfuck my screen
 noremap U :syntax sync fromstart<cr>:redraw!<cr>
+
