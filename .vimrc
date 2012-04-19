@@ -302,3 +302,7 @@ nmap <leader>cis :ChangeInsideSurrounding<cr>
 
 " scratch.vim
 nmap <leader><tab> :Scratch<cr>
+
+" vim-commentary
+nmap <leader>cc \\\
+xmap <leader>cc \\
