@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DOTFILES=$(cd "$(dirname "$0")"; pwd)
+source "$DOTFILES"/dotfiles_config
+
 replaceLink(){
 # Assumption is that existence of .olddotfiles means deleting the link
 # won't delete anything important.
@@ -19,15 +22,9 @@ replaceLink(){
 
 if [ -d ~/.olddotfiles ]
     then
-        replaceLink .vim
-        replaceLink .bashrc
-        replaceLink .bash_profile
-        replaceLink .gitconfig
-        replaceLink .git-completion.bash
-        replaceLink .gitglobalignore
-        replaceLink .vimrc
-        replaceLink .screenrc
-        replaceLink .tmux.conf
+        for file in $FILES; do
+            replaceLink $file
+        done
 
         echo "Finished transfering backed up dot files."
         echo "Check to make sure that the contents of"
