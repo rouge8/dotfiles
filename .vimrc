@@ -307,3 +307,10 @@ nmap <leader><tab> :Scratch<cr>
 " vim-commentary
 nmap <leader>cc \\\
 xmap <leader>cc \\
+
+" color column at 80 characters
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
