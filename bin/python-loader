@@ -1,0 +1,9 @@
+#!/bin/bash
+## if a virtualenv exists with name scripts, use that.
+## otherwise, use the system python
+
+if [ -e $HOME/.virtualenvs/scripts/bin/python ]; then
+    $HOME/.virtualenvs/scripts/bin/python $@
+else
+    python $@
+fi
