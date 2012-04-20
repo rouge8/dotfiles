@@ -20,4 +20,12 @@ if [ -d ~/.olddotfiles ]
         for file in $FILES; do
             installFile $file
         done
+
+        if [ ! -d $HOME/bin ]; then
+            mkdir -p $HOME/bin
+        fi
+
+        for file in $DOTFILES/bin/*; do
+            ln -s $file $HOME/bin/
+        done
 fi
