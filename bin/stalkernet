@@ -76,7 +76,7 @@ def print_results(results):
             puts(person['address'])
 
 if __name__ == '__main__':
-    query = clint.args.get(0)
+    query = ' '.join(clint.args.all)
 
     if query:
         print_results(stalkernet(query))
