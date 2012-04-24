@@ -75,8 +75,9 @@ alias webserver='python -m SimpleHTTPServer'
 
 alias git-today='git diff @{yesterday}..HEAD'
 
-alias open='xdg-open'
-#alias open='gnome-open'
+if [ `type -P xdg-open` ]; then
+    alias open='xdg-open'
+fi
 
 # uploads gifs to f.rouge8.com
 function upgif {
