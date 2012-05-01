@@ -314,3 +314,7 @@ if exists('+colorcolumn')
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+" formd Markdown shortcuts
+nmap <leader>fr :%! formd -r<CR>
+nmap <leader>fi :%! formd -i<CR>
