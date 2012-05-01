@@ -25,3 +25,6 @@ Icon?
 
 # <https://github.com/kennethreitz/autoenv>
 .env
+
+# show .gitignore
+!.gitignore
