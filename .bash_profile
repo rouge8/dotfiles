@@ -9,7 +9,7 @@ fi
 
 if [[ `hostname -f` != *.mathcs.carleton.edu ]]
 then
-    PATH=$PATH:$HOME/bin
+    PATH=$PATH:$HOME/bin:$HOME/.local/bin
     export GOROOT=$HOME/local/go
     export PATH=$PATH:$GOROOT/bin
     export EDITOR=vim
