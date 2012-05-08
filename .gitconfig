@@ -33,3 +33,5 @@
 	cmd = /bin/sh -c 'firefox http://git-scm.com/docs/$(basename $1 .html)' --
 [help]
 	browser = gitscm
+[github]
+	user = rouge8
