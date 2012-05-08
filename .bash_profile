@@ -131,3 +131,10 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_md=$'\e[1;31m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS=-R
+
+## hub
+## <https://github.com/defunkt/hub>
+eval "$(hub alias -s)"
+if [ -f $HOME/.hub.bash_completion.sh ]; then
+    source $HOME/.hub.bash_completion.sh
+fi
