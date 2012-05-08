@@ -16,6 +16,7 @@ then
 else
     PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
     export EDITOR=$HOME/local-mac/bin/vim
+    alias python=/usr/local/bin/python2.7
 fi
 
 
