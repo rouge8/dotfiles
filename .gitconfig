@@ -5,6 +5,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	submodule-rm= !bash ~/bin/git-submodule-rm.sh
 
 [core]
 	excludesfile = ~/.gitglobalignore
