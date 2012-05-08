@@ -9,7 +9,7 @@ fi
 
 if [[ `hostname -f` != *.mathcs.carleton.edu ]]
 then
-    PATH=$PATH:$HOME/bin
+    PATH=$PATH:$HOME/bin:$HOME/.local/bin
     export GOROOT=$HOME/local/go
     export PATH=$PATH:$GOROOT/bin
     export EDITOR=vim
@@ -125,3 +125,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export FIGNORE=.un~:.swp~
 
 export PYTHONSTARTUP=~/.pythonrc.py
+
+export LESS_TERMCAP_us=$'\e[32m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_md=$'\e[1;31m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS=-R

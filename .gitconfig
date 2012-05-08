@@ -27,3 +27,8 @@
     default = upstream
 ;[branch "master"]
 	;rebase = true
+
+[browser "gitscm"]
+	cmd = /bin/sh -c 'firefox http://git-scm.com/docs/$(basename $1 .html)' --
+[help]
+	browser = gitscm
