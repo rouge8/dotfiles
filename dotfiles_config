@@ -1,3 +1,3 @@
 #!/bin/bash
 
-FILES=".vim .bashrc .bash_profile .gitconfig .git-completion.bash .gitglobalignore .vimrc .screenrc .tmux.conf .pythonrc.py .hub.bash_completion.sh"
+FILES=".vim .bashrc .bash_profile .gitconfig .git-completion.bash .gitglobalignore .vimrc .screenrc .tmux.conf .pythonrc.py .hub.bash_completion.sh .css"
