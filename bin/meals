@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+from datetime import date
+import requests
+import clint
+from clint.textui import puts, indent
+from bs4 import BeautifulSoup
+
+BURTON = 'http://www.cafebonappetit.com/menu/your-cafe/carleton/cafes/details/35/burton'
+LDC = 'http://www.cafebonappetit.com/menu/your-cafe/carleton/cafes/details/36/east-hall'
+
+def parse_menu(table):
+    menu = {}
+
+    for row in table.find_all('tr'):
+        for col in row.find_all('td'):
+            if 'colspan' in col.attrs and col.attrs['colspan'] == '3':
+                meal = col.text.strip()
+                menu[meal] = []
+            elif 'description' in col.attrs['class']:
+                if col.p:
+                    menu[meal].append(' '.join([line.strip() for line in col.p.text.split()]))
+                else:
+                    menu[meal].append(' '.join([line.strip() for line in col.text.split()]))
+
+    return menu
+
+def get_meal(day, meal):
+    b = BeautifulSoup(requests.get(BURTON).content)
+    l = BeautifulSoup(requests.get(LDC).content)
+    halls = ((b, 'Burton'), (l, 'LDC'))
+
+    menus = {}
+
+    for h, name in halls:
+        _ = 'time_' + str(day.day) + '_' + str(day.month).zfill(2)
+
+        label = h.find(attrs={'name': _})
+
+        menu = parse_menu(label.parent.next_sibling.next_sibling)
+        menus[name] = menu[meal]
+
+    return menus
+
+def print_menus(menus):
+    for hall, meal in menus.iteritems():
+        puts(hall)
+
+        with indent(4):
+            for food in meal:
+                puts(food)
+
+        print
+
+if __name__ == '__main__':
+    import sys
+    meal = clint.args.get(0)
+
+    try:
+        if not meal.title() in ['Breakfast', 'Lunch', 'Dinner', 'Brunch']:
+            raise AttributeError
+
+        print_menus(get_meal(date.today(), meal.title()))
+    except AttributeError:
+        print >> sys.stderr, 'USAGE: meals <meal>'
