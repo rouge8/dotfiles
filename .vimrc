@@ -318,3 +318,10 @@ endif
 " formd Markdown shortcuts
 nmap <leader>fr :%! formd -r<CR>
 nmap <leader>fi :%! formd -i<CR>
+
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
