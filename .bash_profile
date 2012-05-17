@@ -14,7 +14,6 @@ then
     export PATH=$PATH:$GOROOT/bin
     export EDITOR=vim
 elif [[ `uname -s` == Darwin ]]; then
-    echo "HERE"
     PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
     export EDITOR=$HOME/local-mac/bin/vim
     alias python=python2.7
