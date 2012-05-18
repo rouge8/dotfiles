@@ -41,6 +41,19 @@ def get_meal(day, meal):
 
     return menus
 
+def print_eggs(menus):
+    for hall, meal in menus.iteritems():
+        puts(hall)
+
+        with indent(4):
+            if 'eggs' in '\n'.join(meal).lower():
+                for food in meal:
+                    if 'eggs' in food.lower():
+                        puts(food)
+            else:
+                puts('NO EGGS. :(')
+
+
 def print_menus(menus):
     for hall, meal in menus.iteritems():
         puts(hall)
@@ -55,10 +68,19 @@ if __name__ == '__main__':
     import sys
     meal = clint.args.get(0)
 
+    if clint.args.flags.contains('--eggs'):
+        EGGS = True
+    else:
+        EGGS = False
+
     try:
         if not meal.title() in ['Breakfast', 'Lunch', 'Dinner', 'Brunch']:
             raise AttributeError
 
-        print_menus(get_meal(date.today(), meal.title()))
+        meal = get_meal(date.today(), meal.title())
+        if EGGS:
+            print_eggs(meal)
+        else:
+            print_menus(meal)
     except AttributeError:
         print >> sys.stderr, 'USAGE: meals <meal>'
