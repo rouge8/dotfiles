@@ -28,3 +28,6 @@ Icon?
 
 # show .gitignore
 !.gitignore
+
+# no more sqlite dbs
+*.db
