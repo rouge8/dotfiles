@@ -9,6 +9,7 @@ alias ll='ls -l'
 alias py2html='pygmentize -f html -O full,style=native'
 alias clipboard='xsel -i -b'
 #alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+alias ddprogress='killall -USR1 dd'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
