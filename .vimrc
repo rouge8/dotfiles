@@ -326,3 +326,5 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Treat underscore as word delimiter
+set iskeyword-=_
