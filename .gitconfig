@@ -33,3 +33,6 @@
 	browser = gitscm
 [github]
 	user = rouge8
+
+[rerere]
+	enabled = 1
