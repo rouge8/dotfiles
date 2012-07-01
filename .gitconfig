@@ -20,6 +20,7 @@
 	branch = auto
 	diff = auto
     interactive = auto
+	ui = 1
 
 [push]
     default = upstream
