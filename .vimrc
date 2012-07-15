@@ -328,3 +328,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Treat underscore as word delimiter
 set iskeyword-=_
+
+" esckeys
+" http://ksjoberg.com/vim-esckeys.html
+set timeout timeoutlen=1000 ttimeoutlen=100
