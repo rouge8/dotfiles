@@ -49,9 +49,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/TagHighlight"]
-	path = .vim/bundle/TagHighlight
-	url = https://github.com/abudden/TagHighlight.git
 [submodule ".vim/bundle/change-inside-surroundings.vim"]
 	path = .vim/bundle/change-inside-surroundings.vim
 	url = git://github.com/briandoll/change-inside-surroundings.vim.git
