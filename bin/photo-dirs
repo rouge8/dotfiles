@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import os
+import re
+from datetime import datetime
+
+cwd = os.getcwd()
+
+dirs = os.listdir(cwd)
+
+dirs = [d for d in dirs if re.match(r'\d+_\d{4}', d)]
+
+for d in dirs:
+    _ = d.split('_')[1]
+    month, day = _[:2], _[2:]
+
+    target = '.'.join([str(datetime.now().year), month, day])
+    title = raw_input('event: ')
+
+    if title: target += ' - ' + title
+
+    print 'Moving `' + d + '` to `' + target + '`...'
+
+    os.rename(d, target)
