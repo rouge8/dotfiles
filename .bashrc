@@ -138,8 +138,10 @@ function gimmedatjson {
 alias Terminal="/usr/bin/ssh-agent /usr/bin/Terminal"
 alias httpcode="/usr/bin/hc"
 
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+if [[ `uname` != 'Darwin' ]]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
 
 # SSH completion
 #function _ssh_completion() {
