@@ -19,8 +19,10 @@ fi
 # git completion
 source ~/.git-completion.bash
 
-if [[ `hostname -f` != *.mathcs.carleton.edu ]]; then
-    alias ls='ls -F --color=auto'
+if [[ `uname` == 'Linux' ]]; then
+    alias ls='ls --color=auto -F'
+elif [[ `uname` == 'Darwin' ]]; then
+    alias ls='ls -G -F'
 fi
 
 
@@ -66,7 +68,7 @@ shopt -s histappend
 shopt -s cmdhist
 export HISTTIMEFORMAT='%F %T '
 # use ** to search any depth
-if [[ `hostname -f` != *.mathcs.carleton.edu ]]; then
+if [[ `uname` != Darwin ]]; then
     shopt -s globstar
 fi
 shopt -s histverify
