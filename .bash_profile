@@ -7,20 +7,10 @@ fi
 
 # User specific environment and startup programs
 
-if [[ `hostname -f` != *.mathcs.carleton.edu ]]
-then
-    PATH=$PATH:$HOME/bin:$HOME/.local/bin
-    export GOROOT=$HOME/local/go
-    export PATH=$PATH:$GOROOT/bin
-    export EDITOR=vim
-elif [[ `uname -s` == Darwin ]]; then
-    PATH=$HOME/local-mac/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/1.8/bin
-    export EDITOR=$HOME/local-mac/bin/vim
-    alias python=python2.7
-else
-    # mathcs linux machines
-    PATH=$PATH:$HOME/bin
-fi
+PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin
+export GOROOT=$HOME/local/go
+export PATH=$PATH:$GOROOT/bin
+export EDITOR=vim
 
 
 export PATH
