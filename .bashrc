@@ -141,8 +141,6 @@ alias httpcode="/usr/bin/hc"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
-#alias pip='pip-python'
-
 # SSH completion
 #function _ssh_completion() {
     #perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
