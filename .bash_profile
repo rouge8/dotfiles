@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin
+PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin
 export GOROOT=$HOME/local/go
 export PATH=$PATH:$GOROOT/bin
 export EDITOR=vim

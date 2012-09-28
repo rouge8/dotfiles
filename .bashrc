@@ -177,11 +177,11 @@ du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; d
 
 }
 
-GREP_OPTIONS=
-if grep --help | grep -- --exclude-dir &>/dev/null; then
-    for PATTERN in .cvs .git .hg .svn; do
-        GREP_OPTIONS="$GREP_OPTIONS --exclude-dir=$PATTERN"
-    done
-fi
+# GREP_OPTIONS=
+# if grep --help | grep -- --exclude-dir &>/dev/null; then
+for PATTERN in .cvs .git .hg .svn; do
+    GREP_OPTIONS="$GREP_OPTIONS --exclude-dir=$PATTERN"
+done
+# fi
 export GREP_OPTIONS
 
