@@ -1,0 +1,2 @@
+#!/bin/sh
+perl -MFile::Find -e"finddepth(sub{rmdir},'.')"
