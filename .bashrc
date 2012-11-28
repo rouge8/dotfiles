@@ -17,9 +17,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# git completion
-source ~/.git-completion.bash
-
 if [[ `uname` == 'Linux' ]]; then
     alias ls='ls --color=auto -F'
 elif [[ `uname` == 'Darwin' ]]; then
@@ -144,22 +141,6 @@ if [[ `uname` != 'Darwin' ]]; then
     alias pbpaste='xsel --clipboard --output'
 fi
 
-# SSH completion
-#function _ssh_completion() {
-    #perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
-#}
-#complete -W "$(_ssh_completion)" ssh
-
-#complete -F get_showoff_commands
-#function get_showoff_commands()
-#{
-    #if [ -z $2 ] ; then
-        #COMPREPLY=(`showoff help -c`)
-    #else
-        #COMPREPLY=(`showoff help -c $2`)
-    #fi
-#}
-
 if [ -f ~/.autoenv/activate.sh ]; then
     source ~/.autoenv/activate.sh
 fi
@@ -186,3 +167,9 @@ done
 # fi
 export GREP_OPTIONS
 
+# Bash completions
+if [[ -d $HOME/.bash_completion.d ]]; then
+    for f in $HOME/.bash_completion.d/*; do
+        source $f
+    done
+fi
