@@ -1,6 +1,7 @@
 [user]
 	name = Andy Freeland
 	email = andy@andyfreeland.net
+
 [alias]
 	unstage = reset HEAD --
 	last = log -1 HEAD
@@ -30,10 +31,6 @@
 [branch "master"]
 	rebase = true
 
-[browser "gitscm"]
-	cmd = /bin/sh -c 'firefox http://git-scm.com/docs/$(basename $1 .html)' --
-[help]
-	browser = gitscm
 [github]
 	user = rouge8
 
