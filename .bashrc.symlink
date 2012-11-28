@@ -9,7 +9,7 @@ alias ll='ls -l'
 alias py2html='pygmentize -f html -O full,style=native'
 alias clipboard='xsel -i -b'
 alias ddprogress='killall -USR1 dd'
-alias vundle-update='vim -u ~/.bundles.vim +BundleInstall +q'
+alias vundle-update='vim -u ~/.bundles.vim +BundleInstall +q +q'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
