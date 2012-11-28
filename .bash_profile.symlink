@@ -113,3 +113,8 @@ export LESS=-R
 ## hub
 ## <https://github.com/defunkt/hub>
 eval "$(hub alias -s)"
+
+# Host Specific Settings
+if [ -f ~/.host-specific.sh ]; then
+	. ~/.host-specific.sh
+fi
