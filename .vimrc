@@ -1,18 +1,23 @@
 " Vundle and bundles configuration
-source .bundles.vim
+source $HOME/.bundles.vim
 
 " Enable Go support in an inteligent way
 if !empty($GOROOT)
     set rtp+=$GOROOT/misc/vim
 endif
 
-filetype plugin indent on
+" File/Syntax settings
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.wiki set filetype=creole
-syntax on
+au BufNewFile,BufRead *.json      set ft=javascript
+au FileType css     setlocal sw=4 sts=4
+au FileType html    setlocal sw=2 sts=2
+au FileType htmldjango  setlocal sw=2 sts=2
+au FileType python  setlocal formatoptions-=t
+au FileType yaml    setlocal sw=2 sts=2
 
-set nocompatible
+syntax on
 
 set modeline
 set modelines=0
@@ -31,18 +36,12 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-"set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
-if exists("&relativenumber")
-    set relativenumber
-else
-    set number
-endif
-
+" make searching not suck
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase
@@ -104,13 +103,8 @@ nmap <LocalLeader>pp :set paste!<cr>
 " Add dashes to the list of 'word characters' for CSS files:
 au Filetype css setlocal iskeyword+=-
 
-" Gundo!
-" http://sjl.bitbucket.org/gundo.vim/
-nnoremap <F5> :GundoToggle<CR>
-
 " YES YES YES YES set autoread
 set autoread
-
 
 " Make [d work for local definitions in Python files.
 au FileType python setlocal define=^\s*\\(def\\\\|class\\)
@@ -121,29 +115,14 @@ autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-" python-guide.org
-"set textwidth=79
-"set shiftwidth=4
-"set tabstop=4
-"set expandtab
-"set softtabstop=4
-"set shiftround
-"autocmd BufWritePost *.py call Pep8()
-
-" Send visual selection to gist.github.com " Requires gist (brew install gist)
-vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
-
 " vim-powerline
-    let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 set laststatus=2 " Always show the statusline
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 " color
+set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 set background=dark
 colorscheme badwolf
-
-" Save when losing focus
-au FocusLost * :wa
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -170,69 +149,7 @@ set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*
 " make fugitive work
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
-" Filetype specific handling {{{
-" only do this part when compiled with support for autocommands
-if has("autocmd")
-
-    augroup html_files "{{{
-        au!
-
-        " This function detects, based on HTML content, whether this is a
-        " Django template, or a plain HTML file, and sets filetype accordingly
-        fun! s:DetectHTMLVariant()
-            let n = 1
-            while n < 50 && n < line("$")
-                " check for django
-                if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
-                    set ft=htmldjango.html
-                    return
-                endif
-                let n = n + 1
-            endwhile
-            " go with html
-            set ft=html
-        endfun
-
-        autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
-
-        " Auto-closing of HTML/XML tags
-        let g:closetag_default_xml=1
-        autocmd filetype html,htmldjango let b:closetag_html_style=1
-        autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
-    augroup end " }}}
-
-    augroup python_files "{{{
-        au!
-
-        " This function detects, based on Python content, whether this is a
-        " Django file, which may enabling snippet completion for it
-        fun! s:DetectPythonVariant()
-            let n = 1
-            while n < 50 && n < line("$")
-                " check for django
-                if getline(n) =~ 'import\s\+\<django\>' || getline(n) =~ 'from\s\+\<django\>\s\+import'
-                    set ft=python.django
-                    "set syntax=python
-                    return
-                endif
-                let n = n + 1
-            endwhile
-            " go with html
-            set ft=python
-        endfun
-        autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
-
-        " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
-        " earlier, as it is important)
-        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-        "autocmd filetype python setlocal textwidth=80
-        "autocmd filetype python match ErrorMsg '\%>80v.\+'
-
-        " But disable autowrapping as it is super annoying
-        autocmd filetype python setlocal formatoptions-=t
-    augroup end " }}}
-endif
-
+" Django
 au BufNewFile,BufRead admin.py     setlocal filetype=python.django
 au BufNewFile,BufRead urls.py      setlocal filetype=python.django
 au BufNewFile,BufRead models.py    setlocal filetype=python.django
@@ -328,3 +245,6 @@ set iskeyword-=_
 " esckeys
 " http://ksjoberg.com/vim-esckeys.html
 set timeout timeoutlen=1000 ttimeoutlen=100
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
