@@ -4,4 +4,4 @@
 *~
 .netrwhist
 .env
-.vim/bundle
+.vim.symlink/bundle
