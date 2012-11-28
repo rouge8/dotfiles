@@ -1,0 +1,39 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'rouge8/syntastic'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'briandoll/change-inside-surroundings.vim'
+Bundle 'sjl/clam.vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'myusuf3/numbers.vim'
+
+" Appearance
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Lokaltog/vim-powerline'
+
+" Language/Syntax
+Bundle 'tpope/vim-markdown'
+Bundle 'pydoc.vim'
+Bundle 'tpope/vim-git'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'pangloss/vim-javascript'
+Bundle 'django.vim'
+Bundle 'Jinja'
+Bundle 'nginx.vim'
+Bundle 'python.vim--Vasiliev'
+Bundle 'groenewege/vim-less'
+
+" Color Schemes
+Bundle 'sjl/badwolf'
+
+filetype plugin indent on     " required!

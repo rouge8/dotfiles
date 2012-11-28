@@ -1,7 +1,5 @@
-filetype off
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" Vundle and bundles configuration
+source .bundles.vim
 
 " Enable Go support in an inteligent way
 if !empty($GOROOT)
