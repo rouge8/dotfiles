@@ -8,7 +8,6 @@ alias mv='mv -i'
 alias ll='ls -l'
 alias py2html='pygmentize -f html -O full,style=native'
 alias clipboard='xsel -i -b'
-#alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 alias ddprogress='killall -USR1 dd'
 alias vundle-update='vim -u ~/.bundles.vim +BundleInstall +q'
 
@@ -80,49 +79,6 @@ if [ `type -P xdg-open` ]; then
     alias open='xdg-open'
 fi
 
-# uploads gifs to f.rouge8.com
-function upgif {
-    if [ $# == 2 ]
-    then
-        GIF=$2
-    else
-        GIF=$1
-    fi
-    scp $GIF rouge8-files:/home/public/gifs/
-    echo "http://f.rouge8.com/gifs/$GIF"
-    boom gifs ${GIF%.gif} "http://f.rouge8.com/gifs/$GIF"
-}
-
-# list my damn gifs
-function lsgifs {
-for i in $(ssh rouge8-files ls -1 /home/public/gifs/ | xargs -L1);
-    do echo "http://f.rouge8.com/gifs/$i";
-done;
-}
-
-# get a gif!
-function getgif {
-    scp "rouge8-files:/home/public/gifs/$1" .
-}
-
-# mustachio
-function mustachio {
-    if [ $# -ne 2 ]; then
-        echo "USAGE: mustachio imgurl name"
-    else
-        if [[ $1 == http* ]]
-        then
-            curl -o "/tmp/$2.jpg" "http://mustachio.heroku.com/?src=$1"
-            scp "/tmp/$2.jpg" rouge8-files:/home/public/mustaches/
-            boom mustaches $2 "http://f.rouge8.com/mustaches/$2.jpg"
-        else
-            scp $1 "rouge8-files:/home/public/mustaches/$2.jpg"
-            curl -o "/tmp/$2.jpg" "http://mustachio.heroku.com/?src=http://f.rouge8.com/mustaches/$2.jpg"
-            boom mustaches $2 "http://f.rouge8.com/mustaches/$2.jpg"
-        fi
-    fi
-}
-
 function pdp8run {
     pal -r $1.pal
     coremake $1.core < $1.rim
@@ -132,9 +88,6 @@ function pdp8run {
 function gimmedatjson {
     curl "$*" | python -m json.tool | pygmentize -l javascript
 }
-
-alias Terminal="/usr/bin/ssh-agent /usr/bin/Terminal"
-alias httpcode="/usr/bin/hc"
 
 if [[ `uname` != 'Darwin' ]]; then
     alias pbcopy='xsel --clipboard --input'

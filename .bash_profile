@@ -113,6 +113,3 @@ export LESS=-R
 ## hub
 ## <https://github.com/defunkt/hub>
 eval "$(hub alias -s)"
-if [ -f $HOME/.hub.bash_completion.sh ]; then
-    source $HOME/.hub.bash_completion.sh
-fi
