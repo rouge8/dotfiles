@@ -5,7 +5,7 @@ echo "prerequisites: sudo access"
 read -p "continue? (y/n) "
 if [[ $REPLY  != [yY] ]]; then
     echo "exiting linux setup"
-    exit 0
+    $(exit 0)
 fi
 
 # install sooo many things

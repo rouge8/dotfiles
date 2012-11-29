@@ -5,7 +5,7 @@ echo "prerequisites: sudo access, xcode/command-line tools"
 read -p "continue? (y/n) "
 if [[ $REPLY  != [yY] ]]; then
     echo "exiting mac setup"
-    exit 0
+    $(exit 0)
 fi
 
 # appropriate path for homebrew
