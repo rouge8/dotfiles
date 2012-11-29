@@ -1,0 +1,36 @@
+# overriding default utils
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# ls
+if [[ `uname -s` == 'Linux' ]]; then
+    alias ls='ls --color=auto -F'
+elif [[ `uname -s` == 'Darwin' ]]; then
+    alias ls='ls -G -F'
+fi
+alias ll='ls -l'
+
+# hub
+# <https://github.com/defunkt/hub>
+eval "$(hub alias -s)"
+
+# tools
+alias py2html='pygmentize -f html -O full,style=native'
+alias ddprogress='killall -USR1 dd'
+alias top=htop
+alias webserver='python -m SimpleHTTPServer'
+alias git-today='git diff @{yesterday}..HEAD'
+
+# vim
+alias vundle-update='vim -u ~/.bundles.vim +BundleInstall +q +q'
+
+# Linux specific aliases
+if [[ `uname` != 'Darwin' ]]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+
+    if [ `type -P xdg-open` ]; then
+        alias open='xdg-open'
+    fi
+fi

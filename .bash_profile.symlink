@@ -118,9 +118,9 @@ export LESS_TERMCAP_md=$'\e[1;31m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS=-R
 
-## hub
-## <https://github.com/defunkt/hub>
-eval "$(hub alias -s)"
+case "$TERM" in
+    xterm*) TERM=xterm-256color
+esac
 
 # Host Specific Settings
 if [ -f ~/.host-specific.sh ]; then
