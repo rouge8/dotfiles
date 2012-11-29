@@ -30,10 +30,11 @@ if [[ ! `grep /usr/local/bin/fish /etc/shells` ]]; then
     echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 fi
 
-permissions=(`ls -l /usr/local/Cellar/htop-osx/0.8.2/bin/htop`)
+htop_binary=$(python -c "import os; print os.path.realpath('`which htop`')")
+permissions=(`ls -l $htop_binary`)
 if [[ $permissions != "-r-sr-xr-x" ]]; then
     echo "setting suid bit on htop (will prompt for sudo):"
-    sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
+    sudo chmod u+s $htop_binary
 fi
 
 echo "mac setup done."
