@@ -25,7 +25,7 @@ if [[ ! -d "$HOME/.dotfiles.base" ]]; then
 fi
 
 if [[ ! -d "$HOME/.dotfiles.public" ]]; then
-    git clone git@github.com:rouge8/dotfiles.git ~/.dotfiles.public
+    git clone https://github.com/rouge8/dotfiles.git ~/.dotfiles.public
 fi
 
 ~/bin/dotfiles install
