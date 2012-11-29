@@ -10,12 +10,12 @@ if [[ `uname -s` == "Darwin" ]]; then
     if [[ ! -f mac.sh ]]; then
         curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/mac.sh
     fi
-    . mac.sh
+    bash mac.sh
 elif [[ `uname -s` == "Linux" ]]; then
     if [[ ! -f linux.sh ]]; then
         curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/linux.sh
     fi
-    . linux.sh
+    bash linux.sh
 fi
 
 # dotfiles
@@ -37,7 +37,7 @@ vim -u ~/.bundles.vim +BundleInstall +q +q
 if [[ ! -f all.sh ]]; then
     curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/all.sh
 fi
-. all.sh
+bash all.sh
 
 # any additional OS specific tasks
 if [[ `uname -s` == "Darwin" ]]; then

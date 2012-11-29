@@ -5,7 +5,7 @@ echo "prerequisites: sudo access, xcode/command-line tools"
 read -p "continue? (y/n) "
 if [[ $REPLY  != [yY] ]]; then
     echo "exiting mac setup"
-    $(exit 0)
+    exit 0
 fi
 
 # appropriate path for homebrew
@@ -30,7 +30,10 @@ if [[ ! `grep /usr/local/bin/fish /etc/shells` ]]; then
     sudo echo "/usr/local/bin/fish" >> /etc/shells
 fi
 
-echo "setting suid bit on htop (will prompt for sudo):"
-sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
+permissions=(`ls -l /usr/local/Cellar/htop-osx/0.8.2/bin/htop`)
+if [[ $permissions != "-r-sr-xr-x" ]]; then
+    echo "setting suid bit on htop (will prompt for sudo):"
+    sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
+fi
 
 echo "mac setup done."
