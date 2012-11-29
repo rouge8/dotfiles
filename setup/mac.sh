@@ -27,7 +27,7 @@ if ! brew ls fishfish &> /dev/null; then brew install fishfish; fi
 
 if [[ ! `grep /usr/local/bin/fish /etc/shells` ]]; then
     echo "adding fish to /etc/shells (will prompt for sudo):"
-    sudo echo "/usr/local/bin/fish" >> /etc/shells
+    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 fi
 
 permissions=(`ls -l /usr/local/Cellar/htop-osx/0.8.2/bin/htop`)
