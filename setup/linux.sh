@@ -16,7 +16,8 @@ sudo apt-get install -y \
     python-pip \
     mercurial \
     tmux \
-    vim
+    vim \
+    htop
 
 # nodejs
 sudo apt-get install -y python-software-properties

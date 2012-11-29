@@ -19,6 +19,7 @@ which git || brew install git
 which hg || brew install mercurial
 which ack || brew install ack
 which tmux || brew install tmux
+which htop || brew install htop
 
 if ! brew ls node &> /dev/null; then brew install node; fi
 if ! brew ls python &> /dev/null; then brew install python --framework; fi
@@ -28,5 +29,8 @@ if [[ ! `grep /usr/local/bin/fish /etc/shells` ]]; then
     echo "adding fish to /etc/shells (will prompt for sudo):"
     sudo echo "/usr/local/bin/fish" >> /etc/shells
 fi
+
+echo "setting suid bit on htop (will prompt for sudo):"
+sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
 
 echo "mac setup done."
