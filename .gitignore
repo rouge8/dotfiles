@@ -4,4 +4,5 @@
 *~
 .netrwhist
 .env
+.DS_Store
 .vim.symlink/bundle

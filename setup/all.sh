@@ -14,6 +14,9 @@ fi
 # python packages
 pip install --user see requests beautifulsoup4
 
+# node packages
+npm install -g less jshint coffee-script
+
 # ubuntu mono (patched for powerline)
 mkdir -p ~/.fonts
 if [[ ! -d ~/.fonts/ubuntu-mono-powerline ]]; then

@@ -1,0 +1,31 @@
+{
+    // Settings
+    "maxerr": 100, // Maximum errors before stopping
+
+    // Predefined globals JSHint will ignore
+    "browser": true, // Standard browser globals.
+    "node": false,
+    "jquery": true,
+    "predef": [ // Extra globals.
+        //"d3"
+    ],
+
+    // Development
+    "devel": true,
+
+    // The Good Parts
+    "asi": false, // Tolerate automatic semicolon insertion
+    "curly": true, // Require {} for every new block or scope.
+    "eqeqeq": true, // Require triple equals i.e. `===`.
+    "eqnull": false, // Tolerate use of `== null`.
+    "forin": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
+    "latedef": true, // Prohibit variable use before definition.
+    "undef": true, // Require all non-global variables be declared before use.
+
+    // Style
+    "newcap": true, // Require capitalization of all constructor functions e.g. `new F()`.
+    "noempty": true, // Prohibit use of empty blocks
+    "nonew": true, // Prohibit use of constructors for side-effects
+    "trailing": true,  // Prohibit trailing whitespaces.
+    "white": true // Check against strict whitespace and indentation rules
+}
