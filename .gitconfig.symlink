@@ -28,9 +28,6 @@
 [push]
     default = upstream
 
-[branch "master"]
-	rebase = true
-
 [github]
 	user = rouge8
 
