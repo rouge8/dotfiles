@@ -1,13 +1,20 @@
 #!/bin/bash
 # WORK IN PROGRESS
 # MAJOR POTENTIAL FOR EXPLOSIONS
+# <http://andyfreeland.net/setup.sh>
 
 set -e
 cd "`dirname "$0"`"
 
 if [[ `uname -s` == "Darwin" ]]; then
+    if [[ ! -f mac.sh ]]; then
+        curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/mac.sh
+    fi
     ./mac.sh
 elif [[ `uname -s` == "Linux" ]]; then
+    if [[ ! -f linux.sh ]]; then
+        curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/linux.sh
+    fi
     ./linux.sh
 fi
 
@@ -27,6 +34,9 @@ fi
 vim -u ~/.bundles.vim +BundleInstall +q +q
 
 # install cross-platform tools
+if [[ ! -f all.sh ]]; then
+    curl -Os https://raw.github.com/rouge8/dotfiles/master/setup/all.sh
+fi
 ./all.sh
 
 # any additional OS specific tasks
