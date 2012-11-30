@@ -1,11 +1,6 @@
 # .bash_profile
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
-
-# User specific environment and startup programs
+# Path
 
 PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin:$HOME/local/npm/bin
 export EDITOR=vim
@@ -28,6 +23,11 @@ export PATH
 unset USERNAME
 if [ "$SSH_CONNECTION" != "" ]; then
     export TERM=xterm
+fi
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
 fi
 
 # My prompt!
