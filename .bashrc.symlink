@@ -5,6 +5,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# realpath - get absolute path of file
+# Usage: realpath <file>
+realpath() {
+    python -c "import os; print os.path.realpath('$1')"
+}
+
 ## functions from http://code.toofishes.net/cgit/dan/configfiles.git/tree/bashrc
 # sanitize - set file/directory owner and permissions to normal values (644/755)
 # Usage: sanitize <file>
