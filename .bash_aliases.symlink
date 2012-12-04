@@ -23,7 +23,10 @@ alias webserver='python -m SimpleHTTPServer'
 alias git-today='git diff @{yesterday}..HEAD'
 
 # vim
-alias vundle-update='vim -u ~/.bundles.vim +BundleInstall +q +q'
+alias vundle-install='vim -u ~/.bundles.vim +BundleInstall +qall'
+alias vundle-update='vim -u ~/.bundles.vim +BundleInstall! +qall'
+alias vundle-clean='vim -u ~/.bundles.vim +BundleClean +qall'
+alias vundle-list='vim -u ~/.bundles.vim +BundleList'
 
 # Linux specific aliases
 if [[ `uname` != 'Darwin' ]]; then
