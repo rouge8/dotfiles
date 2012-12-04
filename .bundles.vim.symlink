@@ -22,7 +22,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-powerline'
 
 " Language/Syntax
-Bundle 'tpope/vim-markdown'
 Bundle 'pydoc.vim'
 Bundle 'tpope/vim-git'
 Bundle 'wlangstroth/vim-racket'
@@ -32,6 +31,8 @@ Bundle 'Jinja'
 Bundle 'nginx.vim'
 Bundle 'python.vim--Vasiliev'
 Bundle 'groenewege/vim-less'
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'tpope/vim-liquid'
 
 " Color Schemes
 Bundle 'sjl/badwolf'
