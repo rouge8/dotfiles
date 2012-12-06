@@ -4,7 +4,7 @@
 
     // Predefined globals JSHint will ignore
     "browser": true, // Standard browser globals.
-    "node": false,
+    "node": true,
     "jquery": true,
     "predef": [ // Extra globals.
         //"d3"
