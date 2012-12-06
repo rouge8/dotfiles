@@ -248,3 +248,6 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" pandoc
+let g:pandoc_no_folding = 1
