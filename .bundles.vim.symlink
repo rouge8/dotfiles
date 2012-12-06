@@ -16,6 +16,7 @@ Bundle 'briandoll/change-inside-surroundings.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'Lokaltog/vim-easymotion'
 
 " Appearance
 Bundle 'kien/rainbow_parentheses.vim'
