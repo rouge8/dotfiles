@@ -37,4 +37,8 @@ if [[ $permissions != "-r-sr-xr-x" ]]; then
     sudo chmod u+s $htop_binary
 fi
 
+# application preferences
+# no more accidental quitting chrome
+defaults write com.google.Chrome.plist 'NSUserKeyEquivalents = { "Quit Google Chrome" = "@~q"; };'
+
 echo "mac setup done."
