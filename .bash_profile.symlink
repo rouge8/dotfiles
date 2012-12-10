@@ -2,7 +2,7 @@
 
 # Path
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin:$HOME/local/npm/bin
+PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
 export EDITOR=vim
 
 # Macs luv homebrew
