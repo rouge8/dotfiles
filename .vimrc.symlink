@@ -148,6 +148,11 @@ imap <F1> <Esc>
 set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*
 " make fugitive work
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+" scan for dotfiles in dotfiles directories managed by
+" <https://github.com/rouge8/dotfiles-base>
+if getcwd() =~ $HOME . '/\.dotfiles\.*'
+    let g:ctrlp_show_hidden = 1
+endif
 
 " Django
 au BufNewFile,BufRead admin.py     setlocal filetype=python.django
