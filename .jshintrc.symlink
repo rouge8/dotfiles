@@ -7,7 +7,7 @@
     "node": true,
     "jquery": true,
     "predef": [ // Extra globals.
-        //"d3"
+        "d3"
     ],
 
     // Development
@@ -27,5 +27,5 @@
     "noempty": true, // Prohibit use of empty blocks
     "nonew": true, // Prohibit use of constructors for side-effects
     "trailing": true,  // Prohibit trailing whitespaces.
-    "white": true // Check against strict whitespace and indentation rules
+    "strict": false // no "use strict" messages
 }
