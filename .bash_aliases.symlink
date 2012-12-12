@@ -1,3 +1,4 @@
+#!/bin/bash
 # overriding default utils
 alias rm='rm -i'
 alias cp='cp -i'
@@ -13,7 +14,9 @@ alias ll='ls -l'
 
 # hub
 # <https://github.com/defunkt/hub>
-eval "$(hub alias -s)"
+if [ `type -P ruby` ]; then
+    eval "$(hub alias -s)"
+fi
 
 # tools
 alias py2html='pygmentize -f html -O full,style=native'
