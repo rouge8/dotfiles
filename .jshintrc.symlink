@@ -15,7 +15,7 @@
 
     // The Good Parts
     "asi": false, // Tolerate automatic semicolon insertion
-    "curly": true, // Require {} for every new block or scope.
+    "curly": false, // Require {} for every new block or scope.
     "eqeqeq": true, // Require triple equals i.e. `===`.
     "eqnull": false, // Tolerate use of `== null`.
     "forin": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
