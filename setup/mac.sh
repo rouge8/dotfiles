@@ -20,6 +20,7 @@ which hg || brew install mercurial
 which ack || brew install ack
 which tmux || brew install tmux
 which htop || brew install htop
+brew install bash-completion
 
 if ! brew ls node &> /dev/null; then brew install node; fi
 if ! brew ls python &> /dev/null; then brew install python --framework; fi
