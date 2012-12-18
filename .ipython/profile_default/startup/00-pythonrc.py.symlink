@@ -1,0 +1,4 @@
+import os
+
+if os.environ['PYTHONSTARTUP']:
+    execfile(os.environ['PYTHONSTARTUP'])
