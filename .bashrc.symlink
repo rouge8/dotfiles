@@ -12,14 +12,6 @@ realpath() {
     python -c "import os; print os.path.realpath('$1')"
 }
 
-# md2pdf - convert markdown to pdf
-md2pdf() {
-    file_name=${1%.*}
-
-    pandoc -f markdown -s "$1" -o "$file_name".pdf
-}
-
-
 ## functions from http://code.toofishes.net/cgit/dan/configfiles.git/tree/bashrc
 # sanitize - set file/directory owner and permissions to normal values (644/755)
 # Usage: sanitize <file>
