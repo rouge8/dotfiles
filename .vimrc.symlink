@@ -256,3 +256,6 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " pandoc
 let g:pandoc_no_folding = 1
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
