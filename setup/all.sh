@@ -12,7 +12,7 @@ if [[ ! -d ~/.venvburrito ]]; then
 fi
 
 # python packages
-pip install --user see requests beautifulsoup4
+pip install --user see requests beautifulsoup4 docopt ipython pip-tools
 
 # node packages
 npm install -g less jshint coffee-script
