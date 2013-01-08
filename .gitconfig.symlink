@@ -12,6 +12,7 @@
     d = diff --word-diff
     count = shortlog -sn
     undo = reset --soft HEAD^
+    log-all = log --graph --oneline --decorate --all
 
 [core]
 	excludesfile = ~/.gitglobalignore
