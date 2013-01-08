@@ -35,6 +35,7 @@ Bundle 'python.vim--Vasiliev'
 Bundle 'groenewege/vim-less'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-liquid'
+Bundle 'rodjek/vim-puppet'
 
 " Color Schemes
 Bundle 'sjl/badwolf'
