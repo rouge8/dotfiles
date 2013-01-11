@@ -18,6 +18,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/matchit.zip'
 
 " Appearance
 Bundle 'kien/rainbow_parentheses.vim'
