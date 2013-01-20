@@ -1,19 +1,5 @@
 .native-clones { display: none; }
 
-#dashboard .news {
-    display: none;
-}
-
-#dashboard .octofication {
-    width: 100%;
-    margin: 0;
-}
-
-#dashboard #watched_repos {
-    float: left;
-    clear: left;
-}
-
 #dashboard .github-jobs-promotion {
     display: none;
 }
