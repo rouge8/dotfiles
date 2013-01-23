@@ -31,6 +31,9 @@ alias vundle-update='vim -u ~/.bundles.vim +BundleInstall! +qall'
 alias vundle-clean='vim -u ~/.bundles.vim +BundleClean +qall'
 alias vundle-list='vim -u ~/.bundles.vim +BundleList'
 
+# virtualbox
+alias ls-vms='VBoxManage list vms'
+
 # phantomjs
 alias domshot='phantomjs ~/local/phantomjs/domshot.js'
 
