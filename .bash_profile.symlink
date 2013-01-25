@@ -2,12 +2,13 @@
 
 # Path
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
+PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
 export EDITOR=vim
 
 # Macs luv homebrew
 if [[ `uname -s` == "Darwin" ]]; then
-    export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+    PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+    PATH=$PATH:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin
 fi
 
 # golang
