@@ -1,37 +1,16 @@
 # .bash_profile
 
-# Path
-
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
-export EDITOR=vim
-
-# Macs luv homebrew
-if [[ `uname -s` == "Darwin" ]]; then
-    PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
-    PATH=$PATH:$HOME/.gem/ruby/1.8/bin:$HOME/Library/Python/2.7/bin
-fi
-
-# golang
-if [[ -d $HOME/local/go ]]; then
-    export GOROOT=$HOME/local/go
-    export PATH=$PATH:$GOROOT/bin
-elif [[ -d /usr/local/opt/go ]]; then
-    # installed via homebrew
-    export GOROOT=/usr/local/opt/go
-fi
-
-export PATH
 unset USERNAME
 if [ "$SSH_CONNECTION" != "" ]; then
     export TERM=xterm
 fi
 
 # Get the aliases and functions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
+fi
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # My prompt!
