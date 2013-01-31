@@ -13,6 +13,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# vi-mode
+set -o vi
+bind -m vi-command ".":insert-last-argument
+bind -m vi-insert "\C-l.":clear-screen
+bind -m vi-insert "\C-a.":beginning-of-line
+bind -m vi-insert "\C-e.":end-of-line
+bind -m vi-insert "\C-w.":backward-kill-word
+
 # My prompt!
 # stolen from <https://github.com/mitsuhiko/dotfiles/blob/master/bash/bashrc>
 MITSUHIKOS_DEFAULT_COLOR="[00m"
