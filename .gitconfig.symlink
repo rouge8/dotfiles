@@ -29,6 +29,9 @@
 [push]
     default = upstream
 
+[grep]
+    lineNumber = true
+
 [github]
 	user = rouge8
 
