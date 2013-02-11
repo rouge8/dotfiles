@@ -19,6 +19,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'sjl/splice.vim'
 
 " Appearance
 Bundle 'kien/rainbow_parentheses.vim'
