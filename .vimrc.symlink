@@ -251,6 +251,9 @@ set iskeyword-=_
 " http://ksjoberg.com/vim-esckeys.html
 set timeout timeoutlen=1000 ttimeoutlen=100
 
+" don't syntax highlight long lines. sooooo slow.
+set synmaxcol=120
+
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
