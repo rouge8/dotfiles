@@ -132,3 +132,6 @@ import() { expect -c "spawn -noecho python
 expect \">>> \"
 send \"import $*\r\"
 interact +++ return"; }
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
