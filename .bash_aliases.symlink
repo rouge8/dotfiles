@@ -34,6 +34,9 @@ alias vundle-list='vim -u ~/.bundles.vim +BundleList'
 # virtualbox
 alias ls-vms='VBoxManage list vms'
 
+# python
+alias pip-requirements='pip freeze -l | grep -v pip-tools | grep -v see > requirements.txt'
+
 # phantomjs
 alias domshot='phantomjs ~/local/phantomjs/domshot.js'
 
