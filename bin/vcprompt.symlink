@@ -468,7 +468,7 @@ def git(options):
                     branch = (line.split('/', 2)[-1] or options.unknown)
                     break
             if branch == options.unknown:
-                command = 'git describe --always'
+                command = 'command git describe --always'
                 process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
                 output = process.communicate()[0]
                 returncode = process.returncode
@@ -486,7 +486,7 @@ def git(options):
 
     # modified
     if '%m' in options.format:
-        command = 'git diff --name-status --exit-code'
+        command = 'command git diff --name-status --exit-code'
         returncode = call(command, stdout=PIPE, stderr=PIPE, shell=True)
 
         if returncode == 1:
@@ -496,7 +496,7 @@ def git(options):
 
     # untracked files
     if '%u' in options.format:
-        command = 'git ls-files --other --exclude-standard'
+        command = 'command git ls-files --other --exclude-standard'
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
         output = process.communicate()[0]
         returncode = process.returncode
@@ -509,7 +509,7 @@ def git(options):
 
     # staged files
     if '%a' in options.format:
-        command = 'git diff --name-only --cached'
+        command = 'command git diff --name-only --cached'
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
         output = process.communicate()[0]
         returncode = process.returncode
