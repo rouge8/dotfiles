@@ -469,7 +469,7 @@ def git(options):
                     break
             if branch == options.unknown:
                 command = 'command git describe --always'
-                process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+                process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
                 output = process.communicate()[0]
                 returncode = process.returncode
                 if returncode == 0:
@@ -497,7 +497,7 @@ def git(options):
     # untracked files
     if '%u' in options.format:
         command = 'command git ls-files --other --exclude-standard'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
         output = process.communicate()[0]
         returncode = process.returncode
 
@@ -510,7 +510,7 @@ def git(options):
     # staged files
     if '%a' in options.format:
         command = 'command git diff --name-only --cached'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
         output = process.communicate()[0]
         returncode = process.returncode
 
