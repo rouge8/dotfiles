@@ -242,7 +242,7 @@ nmap <leader>fi :%! formd -i<CR>
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au Syntax * RainbowParenthesesLoadBraces
 
 " Treat underscore as word delimiter
 set iskeyword-=_
