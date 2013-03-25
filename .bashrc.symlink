@@ -28,6 +28,11 @@ case $- in
       *) return;;
 esac
 
+# pullify - add remote for pull reuqests
+function pullify() {
+    git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
+}
+
 # realpath - get absolute path of file
 # Usage: realpath <file>
 realpath() {
