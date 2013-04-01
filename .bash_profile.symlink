@@ -100,6 +100,11 @@ if [ -f $HOME/.venvburrito/startup.sh ]; then
     . $HOME/.venvburrito/startup.sh
 fi
 
+# virtualenv on a mac
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+fi
+
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 export FIGNORE=.un~:.swp~
