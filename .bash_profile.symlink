@@ -63,7 +63,7 @@ mitsuhikos_backgroundjobs() {
         string = "%s, and %s" % (", ".join(items[:-1]), items[-1])
       else:
         string = ", ".join(items)
-      print "\033[37m running %s" % string
+      print("\033[37m running %s" % string)
   '
 }
 
