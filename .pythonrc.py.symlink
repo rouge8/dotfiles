@@ -1,9 +1,2 @@
 #!/usr/bin/env python
 # set PYTHONSTARTUP=~/.pythonrc.py to get this to work
-
-import sys
-
-try:
-    from see import see
-except ImportError:
-    sys.stderr.write('ImportError: see not found. :(\n')
