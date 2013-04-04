@@ -3,3 +3,7 @@
 #dashboard .github-jobs-promotion {
     display: none;
 }
+
+pre, code, tt {
+    font-family: 'Ubuntu Mono', 'Menlo';
+}
