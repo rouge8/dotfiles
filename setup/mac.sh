@@ -24,12 +24,6 @@ brew install bash-completion
 
 if ! brew ls node &> /dev/null; then brew install node; fi
 if ! brew ls python &> /dev/null; then brew install python --framework; fi
-if ! brew ls fishfish &> /dev/null; then brew install fishfish; fi
-
-if [[ ! `grep /usr/local/bin/fish /etc/shells` ]]; then
-    echo "adding fish to /etc/shells (will prompt for sudo):"
-    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-fi
 
 htop_binary=$(python -c "import os; print os.path.realpath('`which htop`')")
 permissions=(`ls -l $htop_binary`)
