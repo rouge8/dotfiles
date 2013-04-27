@@ -2,5 +2,3 @@
 # This hook is run after a new virtualenv is activated.
 
 PYVERSION=$((python --version) 2>&1)
-
-pip install pip-tools
