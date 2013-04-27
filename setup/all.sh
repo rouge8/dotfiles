@@ -12,7 +12,7 @@ if [[ ! -d ~/.venvburrito ]]; then
 fi
 
 # python packages
-sudo pip install ipython
+sudo pip install ipython pyflakes
 
 # node packages
 npm install -g less jshint coffee-script
