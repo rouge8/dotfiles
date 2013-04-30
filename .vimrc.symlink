@@ -16,6 +16,7 @@ au FileType html    setlocal sw=2 sts=2
 au FileType htmldjango  setlocal sw=2 sts=2
 au FileType python  setlocal formatoptions-=t
 au FileType yaml    setlocal sw=2 sts=2
+au FileType javascript    setlocal sw=2 sts=2
 
 syntax on
 
