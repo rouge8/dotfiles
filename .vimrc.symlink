@@ -148,7 +148,8 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 " make ctrlp ignore shit
-set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*,*/__static/*,*/__media/*,*/node_modules/*
+set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*,*/__static/*,*/__media/*
+set wildignore+=*/node_modules/*,*/dist/*,*/build/*
 " make fugitive work
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " scan for dotfiles in dotfiles directories managed by
@@ -255,7 +256,7 @@ set iskeyword-=_
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 " don't syntax highlight long lines. sooooo slow.
-set synmaxcol=120
+" set synmaxcol=120
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
