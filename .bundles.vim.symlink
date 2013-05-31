@@ -38,6 +38,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-liquid'
 Bundle 'rodjek/vim-puppet'
+Bundle 'elzr/vim-json'
 
 " Color Schemes
 Bundle 'sjl/badwolf'

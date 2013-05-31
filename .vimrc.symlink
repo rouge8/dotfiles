@@ -10,7 +10,6 @@ endif
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.wiki set filetype=creole
-au BufNewFile,BufRead *.json      set ft=javascript
 au FileType css     setlocal sw=4 sts=4
 au FileType html    setlocal sw=2 sts=2
 au FileType htmldjango  setlocal sw=2 sts=2
