@@ -39,6 +39,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-liquid'
 Bundle 'rodjek/vim-puppet'
 Bundle 'elzr/vim-json'
+Bundle 'jtratner/vim-flavored-markdown'
 
 " Color Schemes
 Bundle 'sjl/badwolf'

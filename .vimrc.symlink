@@ -8,7 +8,6 @@ endif
 
 " File/Syntax settings
 au BufNewFile,BufRead *.less set filetype=less
-au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.wiki set filetype=creole
 au FileType css     setlocal sw=4 sts=4
 au FileType html    setlocal sw=2 sts=2
@@ -16,6 +15,11 @@ au FileType htmldjango  setlocal sw=2 sts=2
 au FileType python  setlocal formatoptions-=t
 au FileType yaml    setlocal sw=2 sts=2
 au FileType javascript    setlocal sw=2 sts=2
+
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 syntax on
 
