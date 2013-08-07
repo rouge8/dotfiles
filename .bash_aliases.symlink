@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # overriding default utils
 alias rm='rm -i'
 alias cp='cp -i'
@@ -17,6 +18,9 @@ alias ll='ls -l'
 if [ `type -P ruby` ]; then
     eval "$(hub alias -s)"
 fi
+
+# learn2type
+alias gti='git'
 
 # tools
 alias py2html='pygmentize -f html -O full,style=native'
