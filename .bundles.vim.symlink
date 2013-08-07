@@ -41,6 +41,7 @@ Bundle 'tpope/vim-liquid'
 Bundle 'rodjek/vim-puppet'
 Bundle 'elzr/vim-json'
 Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'hynek/vim-python-pep8-indent'
 
 " Color Schemes
 Bundle 'sjl/badwolf'
