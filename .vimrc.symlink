@@ -172,6 +172,9 @@ au BufNewFile,BufRead forms.py     setlocal filetype=python.django
 nnoremap _dt :set ft=htmldjango<CR>
 nnoremap _pd :set ft=python.django<CR>
 
+" JavaScript
+let javascript_enable_domhtmlcss=1
+
 "force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
 
