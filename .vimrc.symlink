@@ -56,28 +56,11 @@ vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 
-"enable omnicomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascript#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 " change the mapleader from \ to ,
 let mapleader=","
-"let maplocalleader="\"
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Mouse settings
 set mouse=nv
-
-" Map CTRL-N to create a new tab
-:map <C-n> <ESC>:tabnew<RETURN>
-" Map Tab and CTRL-Tab to move between tabs
-:map <Tab> <ESC>:tabn<RETURN>
-:map <C-Tab> <ESC>:tabp<RETURN>
 
 " http://lucumr.pocoo.org/2010/7/29/sharing-vim-tricks/
 set autochdir
@@ -159,14 +142,8 @@ au BufNewFile,BufRead views.py     setlocal filetype=python.django
 au BufNewFile,BufRead settings.py  setlocal filetype=python.django
 au BufNewFile,BufRead forms.py     setlocal filetype=python.django
 
-nnoremap _dt :set ft=htmldjango<CR>
-nnoremap _pd :set ft=python.django<CR>
-
 " JavaScript
 let javascript_enable_domhtmlcss=1
-
-"force saving files that require root permission
-cmap w!! %!sudo tee > /dev/null %
 
 "" MAKE .swp~ AND .un~ FILES LESS ANNOYING
 "" FROM <http://stackoverflow.com/a/9528322/609144>
@@ -219,9 +196,6 @@ nmap <LocalLeader>s :set scrollbind<cr>
 
 " Change-inside-surroundings.vim
 nmap <leader>cis :ChangeInsideSurrounding<cr>
-
-" scratch.vim
-nmap <leader><tab> :Scratch<cr>
 
 " vim-commentary
 nmap <leader>cc \\\
