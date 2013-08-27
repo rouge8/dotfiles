@@ -26,14 +26,8 @@ syntax on
 set modeline
 set modelines=0
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
 set encoding=utf-8
 set scrolloff=3
-set autoindent
 set showmode
 set showcmd
 set hidden
@@ -84,10 +78,6 @@ set mouse=nv
 " Map Tab and CTRL-Tab to move between tabs
 :map <Tab> <ESC>:tabn<RETURN>
 :map <C-Tab> <ESC>:tabp<RETURN>
-
-" http://spin.atomicobject.com/2011/08/07/atomic-vim-config/
-"set smartindent
-set smarttab
 
 " http://lucumr.pocoo.org/2010/7/29/sharing-vim-tricks/
 set autochdir

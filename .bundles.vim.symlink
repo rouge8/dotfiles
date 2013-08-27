@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-sleuth'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rouge8/syntastic'
 Bundle 'tpope/vim-repeat'
