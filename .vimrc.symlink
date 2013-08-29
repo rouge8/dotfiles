@@ -61,6 +61,9 @@ let mapleader=","
 
 " Mouse settings
 set mouse=nv
+if &term=~'rxvt'
+  set ttymouse=urxvt
+endif
 
 " http://lucumr.pocoo.org/2010/7/29/sharing-vim-tricks/
 set autochdir
