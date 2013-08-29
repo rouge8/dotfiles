@@ -94,6 +94,10 @@ autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+" Splits open in reasonable places
+set splitright
+set splitbelow
+
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 set laststatus=2 " Always show the statusline
