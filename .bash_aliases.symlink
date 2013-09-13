@@ -54,3 +54,8 @@ if [[ `uname` != 'Darwin' ]]; then
         alias open='xdg-open'
     fi
 fi
+
+# fucking DNS cache
+if [[ `uname -s` == 'Darwin' ]]; then
+    alias kill-dns-cache='sudo killall -HUP mDNSResponder'
+fi
