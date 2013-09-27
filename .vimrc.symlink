@@ -242,3 +242,10 @@ let g:pandoc_no_folding = 1
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
+
+" Pytest
+nmap <leader>pt :Pytest
+nmap <leader>ptc :Pytest class<CR>
+nmap <leader>ptm :Pytest method<CR>
+nmap <leader>ptf :Pytest function<CR>
+nmap <leader>pta :Pytest file<CR>
