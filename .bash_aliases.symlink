@@ -42,6 +42,9 @@ alias ls-vms='VBoxManage list vms'
 alias pip-requirements='pip freeze -l | grep -v pip-tools | grep -v see > requirements.txt'
 alias py.test-full='py.test -rfExXs'
 
+# nodejs
+alias npm-exec='PATH=$(npm bin):$PATH'
+
 # phantomjs
 alias domshot='phantomjs ~/local/phantomjs/domshot.js'
 
