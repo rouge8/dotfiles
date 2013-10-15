@@ -1,8 +1,0 @@
-import os
-import sys
-
-if os.environ['PYTHONSTARTUP']:
-    if sys.version_info[0] != 3:
-        execfile(os.environ['PYTHONSTARTUP'])
-    else:
-        pass
