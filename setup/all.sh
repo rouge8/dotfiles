@@ -16,9 +16,3 @@ sudo pip install ipython pyflakes
 
 # node packages
 npm install -g less jshint coffee-script
-
-# ubuntu mono (patched for powerline)
-mkdir -p ~/.fonts
-if [[ ! -d ~/.fonts/ubuntu-mono-powerline ]]; then
-    git clone git://github.com/scotu/ubuntu-mono-powerline.git ~/.fonts/ubuntu-mono-powerline
-fi
