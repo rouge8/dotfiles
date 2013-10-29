@@ -1,4 +1,4 @@
-" Vundle and bundles configuration
+" NeoBundle and bundles configuration
 source $HOME/.bundles.vim
 
 " Enable Go support in an inteligent way

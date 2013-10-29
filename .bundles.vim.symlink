@@ -1,51 +1,57 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+if has('vim_starting')
+   set nocompatible               " be iMproved
+   filetype off                   " required!
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'gmarik/vundle'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-sleuth'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'briandoll/change-inside-surroundings.vim'
-Bundle 'sjl/clam.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'sjl/gundo.vim'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'sjl/splice.vim'
-Bundle 'tpope/vim-eunuch'
-Bundle 'alfredodeza/pytest.vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'briandoll/change-inside-surroundings.vim'
+NeoBundle 'sjl/clam.vim'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'myusuf3/numbers.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'vim-scripts/matchit.zip'
+NeoBundle 'sjl/splice.vim'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'alfredodeza/pytest.vim'
 
 " Appearance
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'bling/vim-airline'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'bling/vim-airline'
 
 " Language/Syntax
-Bundle 'pydoc.vim'
-Bundle 'tpope/vim-git'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'pangloss/vim-javascript'
-Bundle 'django.vim'
-Bundle 'Jinja'
-Bundle 'nginx.vim'
-Bundle 'python.vim--Vasiliev'
-Bundle 'groenewege/vim-less'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'tpope/vim-liquid'
-Bundle 'rodjek/vim-puppet'
-Bundle 'elzr/vim-json'
-Bundle 'jtratner/vim-flavored-markdown'
-Bundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'pydoc.vim'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'wlangstroth/vim-racket'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'django.vim'
+NeoBundle 'Jinja'
+NeoBundle 'nginx.vim'
+NeoBundle 'python.vim--Vasiliev'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'vim-pandoc/vim-pandoc'
+NeoBundle 'tpope/vim-liquid'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'jtratner/vim-flavored-markdown'
+NeoBundle 'hynek/vim-python-pep8-indent'
 
 " Color Schemes
-Bundle 'sjl/badwolf'
+NeoBundle 'sjl/badwolf'
 
 filetype plugin indent on     " required!
+
+" Installation check.
+NeoBundleCheck

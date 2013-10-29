@@ -30,10 +30,10 @@ alias webserver='python -m SimpleHTTPServer'
 alias git-today='git diff @{yesterday}..HEAD'
 
 # vim
-alias vundle-install='vim -u ~/.bundles.vim +BundleInstall +qall'
-alias vundle-update='vim -u ~/.bundles.vim +BundleInstall! +qall'
-alias vundle-clean='vim -u ~/.bundles.vim +BundleClean +qall'
-alias vundle-list='vim -u ~/.bundles.vim +BundleList'
+alias vundle-install='vim -u ~/.bundles.vim +NeoBundleInstall +qall'
+alias vundle-update='vim -u ~/.bundles.vim +NeoBundleInstall! +qall'
+alias vundle-clean='vim -u ~/.bundles.vim +NeoBundleClean +qall'
+alias vundle-list='vim -u ~/.bundles.vim +NeoBundleList'
 
 # virtualbox
 alias ls-vms='VBoxManage list vms'
