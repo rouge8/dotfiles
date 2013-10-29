@@ -247,3 +247,8 @@ nmap <leader>ptc :Pytest class<CR>
 nmap <leader>ptm :Pytest method<CR>
 nmap <leader>ptf :Pytest function<CR>
 nmap <leader>pta :Pytest file<CR>
+
+" numbers.vim in vim 7.4+
+if v:version >= 704
+  set number
+endif
