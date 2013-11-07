@@ -8,7 +8,7 @@ export EDITOR=vim
 # Macs luv homebrew
 if [[ `uname -s` == "Darwin" ]]; then
     PATH=/usr/local/bin:/usr/local/sbin:$PATH
-    PATH=$PATH:$HOME/.gem/ruby/1.8/bin
+    PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
 # golang

@@ -23,7 +23,8 @@ which htop || brew install htop
 brew install bash-completion
 
 if ! brew ls node &> /dev/null; then brew install node; fi
-if ! brew ls python &> /dev/null; then brew install python --framework; fi
+if ! brew ls python &> /dev/null; then brew install python; fi
+if ! brew ls ruby &> /dev/null; then brew install ruby; fi
 
 htop_binary=$(python -c "import os; print os.path.realpath('`which htop`')")
 permissions=(`ls -l $htop_binary`)
