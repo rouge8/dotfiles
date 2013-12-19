@@ -38,9 +38,6 @@ alias vundle-list='vim -u ~/.bundles.vim +NeoBundleList'
 # virtualbox
 alias ls-vms='VBoxManage list vms'
 
-# python
-alias pip-requirements='pip freeze -l | grep -v pip-tools | grep -v see > requirements.txt'
-
 # nodejs
 alias npm-exec='PATH=$(npm bin):$PATH'
 
