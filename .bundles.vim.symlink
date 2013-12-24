@@ -47,6 +47,7 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'jtratner/vim-flavored-markdown'
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'fisadev/vim-isort'
 
 " Color Schemes
 NeoBundle 'sjl/badwolf'
