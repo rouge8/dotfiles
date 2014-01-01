@@ -48,6 +48,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'jtratner/vim-flavored-markdown'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'fisadev/vim-isort'
+NeoBundle 'chase/vim-ansible-yaml'
 
 " Color Schemes
 NeoBundle 'sjl/badwolf'
