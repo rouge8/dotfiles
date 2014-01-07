@@ -137,6 +137,8 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 if getcwd() =~ $HOME . '/\.dotfiles\.*'
     let g:ctrlp_show_hidden = 1
 endif
+" death2caching
+let g:ctrlp_use_caching = 0
 
 " Django
 au BufNewFile,BufRead admin.py     setlocal filetype=python.django
