@@ -46,7 +46,7 @@ NeoBundle 'tpope/vim-liquid'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'jtratner/vim-flavored-markdown'
-NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'mitsuhiko/vim-python-combined'
 NeoBundle 'fisadev/vim-isort'
 NeoBundle 'chase/vim-ansible-yaml'
 
