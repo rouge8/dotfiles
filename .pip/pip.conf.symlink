@@ -2,6 +2,3 @@
 respect-virtualenv = true
 download-cache = ~/.pip/cache
 log-file = ~/.pip/pip.log
-
-[install]
-use-mirrors = true
