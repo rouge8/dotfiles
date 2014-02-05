@@ -11,6 +11,11 @@ if [[ `uname -s` == "Darwin" ]]; then
     PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
+# DOCKER ON A MAC
+if [[ `uname -s` == "Darwin" ]]; then
+    export DOCKER_HOST=tcp://
+fi
+
 # golang
 if [[ -d $HOME/local/go ]]; then
     export GOROOT=$HOME/local/go
