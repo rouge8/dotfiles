@@ -49,6 +49,7 @@ NeoBundle 'jtratner/vim-flavored-markdown'
 NeoBundle 'mitsuhiko/vim-python-combined'
 NeoBundle 'fisadev/vim-isort'
 NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 " Color Schemes
 NeoBundle 'sjl/badwolf'
