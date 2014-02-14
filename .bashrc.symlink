@@ -13,7 +13,7 @@ fi
 
 # DOCKER ON A MAC
 if [[ `uname -s` == "Darwin" ]]; then
-    export DOCKER_HOST=tcp://
+    eval "$(dvm env)"
 fi
 
 # golang
