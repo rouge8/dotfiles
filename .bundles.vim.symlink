@@ -52,7 +52,7 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'ekalinin/Dockerfile.vim'
 
 " Color Schemes
-NeoBundle 'sjl/badwolf'
+NeoBundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on     " required!
 

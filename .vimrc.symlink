@@ -97,15 +97,14 @@ au VimResized * exe "normal! \<c-w>="
 set splitright
 set splitbelow
 
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
-set laststatus=2 " Always show the statusline
-
 " color
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 set background=dark
-colorscheme badwolf
+colorscheme solarized
+
+" vim-airline
+let g:airline_powerline_fonts=1
+set laststatus=2 " Always show the statusline
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
