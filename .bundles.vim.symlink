@@ -35,6 +35,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'pydoc.vim'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'wlangstroth/vim-racket'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'django.vim'
 NeoBundle 'Jinja'
