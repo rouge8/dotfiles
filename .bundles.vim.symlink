@@ -51,6 +51,7 @@ NeoBundle 'mitsuhiko/vim-python-combined'
 NeoBundle 'fisadev/vim-isort'
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'othree/html5.vim'
 
 " Color Schemes
 NeoBundle 'altercation/vim-colors-solarized'
