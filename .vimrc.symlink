@@ -21,6 +21,11 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
+augroup json
+  au!
+  au BufNewFile,BufRead *.json setlocal filetype=json
+augroup END
+
 syntax on
 
 set modeline
