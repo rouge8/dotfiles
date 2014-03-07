@@ -17,13 +17,18 @@ au FileType yaml    setlocal sw=2 sts=2
 au FileType javascript    setlocal sw=2 sts=2
 
 augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  au!
+  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
 augroup json
   au!
   au BufNewFile,BufRead *.json setlocal filetype=json
+augroup END
+
+augroup Dockerfile
+  au!
+  au BufNewFile,BufRead Dockerfile.* setlocal filetype=Dockerfile
 augroup END
 
 syntax on
