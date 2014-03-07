@@ -132,6 +132,10 @@ if [[ -d $HOME/.bash_completion.d ]]; then
     done
 fi
 
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+
 # so much laziness.
 # from <https://github.com/mitsuhiko/dotfiles/blob/2ca53b0a27be7b5067db1444de50f0fa85901e94/bash/bashrc>
 from() { expect -c "spawn -noecho python
