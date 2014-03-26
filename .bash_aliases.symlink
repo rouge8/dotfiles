@@ -40,6 +40,7 @@ alias ls-vms='VBoxManage list vms'
 
 # nodejs
 alias npm-exec='PATH=$(npm bin):$PATH'
+alias how-many-npm='find . -name "node_modules" | awk -F "node_modules" '\''NF>=2 {print $(NF-1)}'\'' | sort -u | wc -l'
 
 # phantomjs
 alias domshot='phantomjs ~/local/phantomjs/domshot.js'
