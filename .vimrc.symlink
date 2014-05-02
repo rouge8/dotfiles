@@ -265,3 +265,7 @@ nmap <leader>pta :Pytest file<CR>
 if v:version >= 704
   set number
 endif
+
+if has("gui_macvim")
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
+endif
