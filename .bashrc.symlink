@@ -2,7 +2,7 @@
 
 # Path
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
+PATH=$PATH:$HOME/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
 export EDITOR=vim
 
 # Macs luv homebrew
@@ -10,6 +10,9 @@ if [[ `uname -s` == "Darwin" ]]; then
     PATH=/usr/local/bin:/usr/local/sbin:$PATH
     PATH=/usr/local/opt/ruby/bin:$PATH
 fi
+
+# pip! virtualenv! virtualenvwrapper!
+source "${HOME}/.pip_bootstrap_profile.sh";
 
 # DOCKER ON A MAC
 if [[ `uname -s` == "Darwin" ]]; then
