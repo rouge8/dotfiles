@@ -44,6 +44,14 @@ pip_bootstrap_runtime () {
             command pip "$@";
         fi;
     }
+
+    function pip3() {
+        if [[ -z "${VIRTUAL_ENV:-}" ]]; then
+            env PIP_USER=yes pip3 "$@";
+        else
+            command pip3 "$@";
+        fi;
+    }
 }
 
 pip_bootstrap_runtime;
