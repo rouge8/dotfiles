@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """
 Usage: vcprompt [options]
 
@@ -7,11 +7,17 @@ Version control information in your prompt.
 Options:
   -f, --format FORMAT        The format string to use.
   -p, --path PATH            The path to run vcprompt on.
-  -d, --max-depth DEPTH      The maximum number of directories to traverse.
-  -u, --unknown UNKNOWN      The "unknown" value.
   -s, --systems              Print all known VCSs and exit
+  -t, --timeout              The max execution time in milliseconds
+  -n, --no-newline           Do not print a trailing newline character
   -v, --version              Show program's version number and exit
   -h, --help                 Show this help message and exit
+
+Formatting options:
+  -u, --unknown UNKNOWN      The "unknown" value. Default is "(unknown)"
+  -A, --staged UNKNOWN       The "staged" symbol. Default is '*'
+  -M, --modified UNKNOWN     The "modified" symbol. Default is '+'
+  -U, --untracked UNKNOWN    The "untracked" symbol. Default is '?'
 
 VCS-specific formatting:
   These options can be used for VCS-specific prompt formatting.
@@ -23,14 +29,30 @@ VCS-specific formatting:
   --format-git FORMAT        Git
   --format-hg FORMAT         Mercurial
   --format-svn FORMAT        Subversion
+
+Format tokens:
+  %s, %n                     The VCS "short name" (e.g. git, hg)
+  %h                         The hash (or revision number)
+  %r                         The revision number (or hash)
+  %b                         The currently checked out branch
+  %a                         Prints an asterisk if the repo has staged changes
+  %m                         Prints plus symbol if the repo is modified
+  %u                         Prints question mark if repo has new files
+  %P                         The name of the repository root directory
+  %p                         The relative path to the repository from cwd
 """
 
-from subprocess import call, Popen, PIPE
+__version__ = '1.0.1'
+
+from subprocess import Popen, PIPE
 from xml.dom.minidom import parseString
+import errno
 import optparse
 import os
 import re
+import shlex
 import sys
+import threading
 
 try:
     import sqlite3
@@ -41,65 +63,73 @@ except ImportError:
     except ImportError:
         has_sqlite3 = False
 
-__version__ = (0, 1, 5)
-
-
-# check to make sure the '--without-environment' flag is called first
-# this could be done in a callback, but we'd have to keep a note of every
-# option which is affected by this flag
-if '--without-environment' in sys.argv and \
-   sys.argv[1] != '--without-environment':
-    output = "The '--without-environment' option must come before any "
-    print >> sys.stderr, '%s other options.' % output
-    sys.exit(1)
-
-# we need to get this in early because callbacks are always called after
-# every other option is already set, regardless of when the callback option
-# is actually used in the script
-if len(sys.argv) > 1 and sys.argv[1] == '--without-environment':
-    for k in os.environ.keys():
-        if k.startswith('VCPROMPT'):
-            del os.environ[k]
-    del sys.argv[1]
-
 
 # user editable options
-DEPTH = os.environ.get('VCPROMPT_DEPTH', 0)
 FORMAT = os.environ.get('VCPROMPT_FORMAT', '%s:%b')
 UNKNOWN = os.environ.get('VCPROMPT_UNKNOWN', '(unknown)')
+TIMEOUT = os.environ.get('VCPROMPT_TIMEOUT', 0)
 SYSTEMS = []
 
 # status indicators
-STAGED = '*'
-MODIFIED = '+'
-UNTRACKED = '?'
+STAGED = os.environ.get('VCPROMPT_STAGED', '*')
+MODIFIED = os.environ.get('VCPROMPT_MODIFIED', '+')
+UNTRACKED = os.environ.get('VCPROMPT_UNTRACKED', '?')
+
+
+def popen(command, stdout=PIPE, stderr=PIPE):
+    try:
+        commands = shlex.split(command)
+        process = Popen(commands, stdout=stdout, stderr=stderr)
+        output = process.communicate()[0]
+        returncode = process.returncode
+    except OSError:
+        output = ''
+        returncode = 1
+    return (output, returncode)
+
+
+# Taken almost wholesale from Python 2.7's posixpath module
+def relpath(path, start=os.path.curdir):
+    """Return a relative version of a path"""
+
+    if not path:
+        raise ValueError("no path specified")
+
+    start_list = [x for x in os.path.abspath(start).split(os.path.sep) if x]
+    path_list = [x for x in os.path.abspath(path).split(os.path.sep) if x]
+
+    # Work out how much of the filepath is shared by start and path.
+    i = len(os.path.commonprefix([start_list, path_list]))
+
+    rel_list = [os.path.pardir] * (len(start_list) - i) + path_list[i:]
+    if not rel_list:
+        return os.path.curdir
+    return os.path.join(*rel_list)
 
 
 def helper(*args, **kwargs):
     """
     Prints the help message to stderr.
     """
-    print >> sys.stderr, __doc__.strip()
+    sys.stderr.write(__doc__.lstrip())
     sys.exit(0)
 
 
 def systems(*args, **kwargs):
     """Prints all available systems to stdout."""
     for system in SYSTEMS:
-        print system.func_name
+        sys.stdout.write(system.__name__ + '\n')
     sys.exit(0)
 
 
-def vcs(file):
+def vcs(files):
     """
-    A convenience decorator.
-
-    Wraps a VCS function, appending it to ``SYSTEMS`` and sets the ``file``
-    attribute.
+    Wraps a VCS function, appending it to ``SYSTEMS`` and sets the
+    ``file`` attribute.
     """
     def wrapper(function):
         SYSTEMS.append(function)
-        function.file = file
+        function.files = files
         return function
     return wrapper
 
@@ -108,24 +138,19 @@ def version(*args):
     """
     Convenience function for printing a version number.
     """
-    print 'vcprompt %s' % '.'.join(map(str, __version__))
+    sys.stdout.write('vcprompt %s\n' % __version__)
     sys.exit(0)
 
 
 def vcprompt(options):
     """
-    Returns a formatted version control string for use in a shell prompt
-    or elsewhere.
-
-    Arguments:
-
-        ``options``
-            An optparse.Values instance.
-
+    Returns a formatted version control string for use in a shell
+    prompt or elsewhere.
     """
     options.path = os.path.abspath(os.path.expanduser(options.path))
+    original_path = options.path
+    unknown = options.unknown
     prompt = None
-    count = 0
 
     while options.path:
         # bail out on non-existant paths
@@ -139,56 +164,56 @@ def vcprompt(options):
             os.chdir(options.path)
 
         for vcs in SYSTEMS:
-            if not os.path.exists(vcs.file):
-                continue
+            for vfile in vcs.files:
+                if not os.path.exists(vfile):
+                    continue
 
-            # set up custom formatting
-            vcs_format = getattr(options, 'format-' + vcs.__name__, None)
-            if vcs_format:
-                options.format = vcs_format
+                # set up custom formatting
+                vcs_format = getattr(options, 'format-' + vcs.__name__, None)
+                if vcs_format:
+                    options.format = vcs_format
 
-            # the "vcs" file
-            options.file = vcs.file
+                # the "vcs" file
+                options.file = vfile
 
-            prompt = vcs(options)
-            if prompt is not None:
+                conf = vcs(options)
+                prompt = options.format
+
+                # Get hash and revision, with fallback to each other
+                hash = conf.get('hash', conf.get('revision', unknown))
+                revision = conf.get('revision', conf.get('hash', unknown))
+
+                # Substitute stuff
+                prompt = prompt.replace("%b", conf.get('branch', unknown))
+                prompt = prompt.replace("%r", revision)
+                prompt = prompt.replace("%h", hash)
+                prompt = prompt.replace("%m", conf.get('modified', ''))
+                prompt = prompt.replace("%u", conf.get('untracked', ''))
+                prompt = prompt.replace("%a", conf.get('staged', ''))
+                prompt = prompt.replace("%s", vcs.__name__)
+                prompt = prompt.replace("%n", vcs.__name__)
+                prompt = prompt.replace("%P", os.path.basename(options.path))
+                prompt = prompt.replace("%p", relpath(original_path,
+                                                      options.path))
                 return prompt
-
-        if options.depth:
-            if count == options.depth:
-                break
-            count += 1
 
         options.path = options.path.rsplit('/', 1)[0]
     return ''
 
 
 def main():
-    # parser
     parser = optparse.OptionParser()
-
-    # dump the provided --help option
     parser.remove_option('--help')
-
-    # our own --help flag
     parser.add_option('-h', '--help', action='callback', callback=helper)
-
-    # format
     parser.add_option('-f', '--format', dest='format', default=FORMAT)
-
-    # path
     parser.add_option('-p', '--path', dest='path', default='.')
-
-    # max depth
-    parser.add_option('-d', '--max-depth', dest='depth', type='int',
-                      default=DEPTH)
-    # systems
+    parser.add_option('-n', '--no-newline', action='store_false', dest='newline', default=True)
     parser.add_option('-s', '--systems', action='callback', callback=systems)
-
-    # unknown
+    parser.add_option('-t', '--timeout', dest='timeout', default=TIMEOUT, type='int')
+    parser.add_option('-A', '--staged', dest='staged', default=STAGED)
+    parser.add_option('-M', '--modified', dest='modified', default=MODIFIED)
+    parser.add_option('-U', '--untracked', dest='untracked', default=UNTRACKED)
     parser.add_option('-u', '--unknown', dest='unknown', default=UNKNOWN)
-
-    # version
     parser.add_option('-v', '--version', action='callback', callback=version)
 
     # vcs-specific formatting
@@ -200,85 +225,72 @@ def main():
         parser.add_option(flag, dest=dest, default=default)
 
     options, args = parser.parse_args()
-    output = vcprompt(options)
 
+    # set max execution time
+    # exit with status errno.ETIME if timeout is reached
+    timeout = float(options.timeout) / 1000
+    timer = threading.Timer(timeout, lambda: sys.exit(errno.ETIME))
+    timer.start()
+
+    output = vcprompt(options)
+    if options.newline:
+        output += '\n'
+    timer.cancel()
     return output
 
 
-@vcs(file=".bzr/branch/last-revision")
+@vcs([".bzr/branch/last-revision"])
 def bzr(options):
     """
     Bazaar
 
     The Bazaar version control system
     """
-    branch = revision = sha = modified = untracked = options.unknown
+    branch = revision = modified = untracked = options.unknown
 
     # local revision or global sha
     if re.search('%(r|h)', options.format):
         try:
-            fh = open(options.file, 'r')
-            for line in fh:
-                line = line.strip()
-                revision, sha = line.split(' ', 1)
-                # compensate for empty Bazaar repositories
-                if sha == 'null:':
-                    sha = unknown
-                else:
-                    sha = sha.rsplit('-', 1)[-1][:7]
-                    break
+            revision = open(options.file, 'r').readline().split()[0]
         except IOError:
             pass
 
     # status (modified/untracked)
     if re.search('%[mu]', options.format):
-        command = 'bzr status --short'
-        process = Popen(command.split(), stdout=PIPE)
-        output = process.communicate()[0].strip()
-        returncode = process.returncode
+        output, returncode = popen('bzr status --short')
+
+        modified = ''
+        untracked = ''
 
         if returncode == 0:
-            if output == '':
-                modified = ''
-                untracked = ''
-            else:
-                for line in output.split('\n'):
+            if output:
+                for line in output.splitlines():
+                    line = line.strip()
                     if line.startswith('M'):
-                        modified = MODIFIED
+                        modified = options.modified
                     elif line.startswith('?'):
-                        untracked = UNTRACKED
+                        untracked = options.untracked
 
     # formatting
-    output = options.format
-    output = output.replace('%b', os.path.basename(options.path))
-    output = output.replace('%h', sha)
-    output = output.replace('%r', revision)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%s', 'bzr')
-    output = output.replace('%n', 'bzr')
-    return output
+    return {
+        'branch': os.path.basename(options.path),
+        'revision': revision,
+        'modified': modified,
+        'untracked': untracked,
+    }
 
 
-@vcs(file="CVS")
+@vcs(["CVS"])
 def cvs(options):
     """
     CVS
 
     Concurrent Versions System.
     """
-    output = options.format
-    output = output.replace('%b', options.unknown)
-    output = output.replace('%h', options.unknown)
-    output = output.replace('%r', options.unknown)
-    output = output.replace('%m', options.unknown)
-    output = output.replace('%u', options.unknown)
-    output = output.replace('%s', 'cvs')
-    output = output.replace('%n', 'cvs')
-    return output
+    return {}
 
 
-@vcs(file="_darcs/hashed_inventory")
+@vcs(["_darcs/hashed_inventory"])
 def darcs(options):
     """
     Darcs
@@ -289,28 +301,16 @@ def darcs(options):
 
     # sha
     if re.search('%(h|r)', options.format):
-        command = 'darcs changes --last 1 --xml'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('darcs changes --last 1 --xml')
 
         if returncode == 0:
             dom = parseString(output)
             patch = dom.getElementsByTagName("patch")[0].getAttribute("hash")
             sha = patch.rsplit('-', 1)[-1].split('.')[0][:7]
 
-    # branch
-    # darcs doesn't have in-repo local branching (yet), so just use
-    # the directory name for now
-    # see also: http://bugs.darcs.net/issue555
-    branch = os.path.basename(options.path)
-
     # modified
     if re.search('%[mu]', options.format):
-        command = 'darcs whatsnew -l -s'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('darcs whatsnew -l -s')
 
         if returncode == 1:
             modified = ''
@@ -319,23 +319,20 @@ def darcs(options):
             for line in output:
                 line = line.strip()
                 if line.startswith('M'):
-                    modified = MODIFIED
+                    modified = options.modified
                 elif line.startswith('a'):
-                    untracked = UNTRACKED
+                    untracked = options.untracked
 
     # formatting
-    output = options.format
-    output = output.replace('%b', branch)
-    output = output.replace('%h', sha)
-    output = output.replace('%r', sha)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%s', 'darcs')
-    output = output.replace('%n', 'darcs')
-    return output
+    return {
+        'branch': os.path.basename(options.path),
+        'hash': sha,
+        'modified': modified,
+        'untracked': untracked,
+    }
 
 
-@vcs(file="_FOSSIL_")
+@vcs([".fslckout", "_FOSSIL_"])
 def fossil(options):
     """
     Fossil
@@ -397,43 +394,34 @@ def fossil(options):
 
     # modified
     if '%m' in options.format:
-        command = 'fossil changes'
-        process = Popen(command.split(), stdout=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('fossil changes')
 
         if returncode == 0:
             if output:
-                modified = MODIFIED
+                modified = options.modified
             else:
                 modified = ''
 
     # untracked files
     if '%u' in options.format:
-        command = 'fossil extras'
-        process = Popen(command.split(), stdout=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('fossil extras')
 
         if returncode == 0:
             if output:
-                untracked = UNTRACKED
+                untracked = options.untracked
             else:
                 untracked = ''
 
     # parse out formatting string
-    output = options.format
-    output = output.replace('%b', branch)
-    output = output.replace('%h', sha)
-    output = output.replace('%r', sha)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%s', 'fossil')
-    output = output.replace('%n', 'fossil')
-    return output
+    return {
+        'branch': branch,
+        'hash': sha,
+        'modified': modified,
+        'untracked': untracked,
+    }
 
 
-@vcs(file=".git")
+@vcs([".git"])
 def git(options):
     """
     Git
@@ -443,16 +431,25 @@ def git(options):
     staged = branch = sha = modified = untracked = options.unknown
 
     if os.path.isfile(options.file):
-        options.file = open(options.file, "r").read().rstrip('\n').split(" ", 1)[1]
+        fn = open(options.file, 'r').read().rstrip('\n').split(' ', 1)[1]
+        options.file = fn
 
     def revstring(ref, chars=7):
         if not os.path.exists(ref):
-            return ''
-
+            # look for packed-refs file in case garbage collection just run
+            try:
+                pr = os.path.join(options.file, 'packed-refs')
+                ref = ref.split('/', 1)[1]
+                fh = open(pr, 'r')
+                for line in fh:
+                    line = line.strip()
+                    if line.endswith(ref):
+                        return line.split(" ")[0][0:chars]
+                return ''
+            except IOError:
+                return ''
         try:
-            fh = open(ref, 'r')
-            for line in fh:
-                return line.strip()[0:chars]
+            return open(ref, 'r').readline()[0:chars]
         except IOError:
             pass
         return ''
@@ -468,10 +465,7 @@ def git(options):
                     branch = (line.split('/', 2)[-1] or options.unknown)
                     break
             if branch == options.unknown:
-                command = 'command git describe --always'
-                process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
-                output = process.communicate()[0]
-                returncode = process.returncode
+                output, returncode = popen('git describe --always')
                 if returncode == 0:
                     branch = "(%s)" % (output.strip())
                 else:
@@ -486,54 +480,43 @@ def git(options):
 
     # modified
     if '%m' in options.format:
-        command = 'command git diff --name-status --exit-code'
-        returncode = call(command, stdout=PIPE, stderr=PIPE, shell=True)
+        output, returncode = popen('git diff --quiet --exit-code')
 
         if returncode == 1:
-            modified = MODIFIED
+            modified = options.modified
         else:
             modified = ''
 
     # untracked files
     if '%u' in options.format:
-        command = 'command git ls-files --other --exclude-standard'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('git ls-files --other --exclude-standard')
 
         if returncode == 0:
-            if output == '':
-                untracked = ''
+            if output:
+                untracked = options.untracked
             else:
-                untracked = UNTRACKED
+                untracked = ''
 
     # staged files
     if '%a' in options.format:
-        command = 'command git diff --name-only --cached'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE, shell=True)
-        output = process.communicate()[0]
-        returncode = process.returncode
+        output, returncode = popen('git diff --quiet --cached --exit-code')
 
-        if returncode == 0:
-            if output == '':
-                staged = ''
-            else:
-                staged = STAGED
+        if returncode == 1:
+            staged = options.staged
+        else:
+            staged = ''
 
     # formatting
-    output = options.format
-    output = output.replace('%b', branch)
-    output = output.replace('%h', sha)
-    output = output.replace('%r', sha)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%a', staged)
-    output = output.replace('%s', 'git')
-    output = output.replace('%n', 'git')
-    return output
+    return {
+        'branch': branch,
+        'hash': sha,
+        'modified': modified,
+        'untracked': untracked,
+        'staged': staged,
+    }
 
 
-@vcs(file=".hg")
+@vcs([".hg"])
 def hg(options):
     """
     Mercurial
@@ -544,128 +527,109 @@ def hg(options):
 
     # changeset ID or global sha
     if re.search('%(r|h)', options.format):
-        try:
-            fh = open(os.path.join(options.file, 'cache/branchheads'), 'r')
-            line = fh.readline()
-            sha, revision = line.strip().split()
-            sha = sha[:7]
-        except IOError:
-            pass
+        fns = ['cache/branchheads', 'cache/branchheads-served']
+        for fn in fns:
+            try:
+                fh = open(os.path.join(options.file, fn), 'r')
+                line = fh.readline()
+                sha, revision = line.strip().split()
+                sha = sha[:7]
+            except IOError:
+                continue
 
     # branch
     if '%b' in options.format:
-        file = os.path.join(options.file, 'undo.branch')
         try:
-            fh = open(file, 'r')
-            line = fh.readline()
-            branch = line.strip()
+            fn = os.path.join(options.file, 'branch')
+            branch = open(fn, 'r').readline().strip()
         except IOError:
-            pass
+            branch = "default"
 
     # modified
     if '%m' in options.format:
-        command = 'hg status --modified'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
-        output = process.communicate()[0].strip()
-        returncode = process.returncode
+        output, returncode = popen('hg status --modified')
 
         if returncode == 0:
-            if output == '':
-                modified = ''
+            if output:
+                modified = options.modified
             else:
-                modified = MODIFIED
+                modified = ''
 
     # untracked
     if '%u' in options.format:
-        command = 'hg status --unknown'
-        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
-
-        if output == '':
-            untracked = ''
+        output, returncode = popen('hg status --unknown')
+        if output:
+            untracked = options.untracked
         else:
-            untracked = UNTRACKED
+            untracked = ''
 
-    output = options.format
-    output = output.replace('%b', branch)
-    output = output.replace('%h', sha)
-    output = output.replace('%r', revision)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%s', 'hg')
-    output = output.replace('%n', 'hg')
-    return output
+    return {
+        'branch': branch,
+        'hash': sha,
+        'revision': revision,
+        'modified': modified,
+        'untracked': untracked,
+    }
 
 
-@vcs(file=".svn/entries")
+@vcs([".svn/entries"])
 def svn(options):
     """
     Subversion
 
     The Subversion version control system.
     """
-    branch = revision = modified = untracked = options.unknown
+    branch = revision = modified = untracked = staged = options.unknown
 
     # branch
-    command = 'svn info %s' % options.path
-    process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
-    output = process.communicate()[0]
-    returncode = process.returncode
+    output, returncode = popen('svn info --xml %s' % options.path)
 
     if returncode == 0:
-        # compile some regexes
-        branch_regex = re.compile('((tags|branches)/([^/]*)|trunk)')
-        revision_regex = re.compile('^Revision: (?P<revision>\d+)')
+        dom = parseString(output)
 
-        for line in output.split('\n'):
-            # branch
-            if '%b' in options.format:
-                if re.match('URL:', line):
-                    matches = re.search(branch_regex, line)
-                    if matches:
-                        branch = matches.groups(0)[0]
+        # branch
+        if '%b' in options.format:
+            regex = re.compile('((tags|branches)/([^/]*)|trunk)')
+            tag = dom.getElementsByTagName('url')[0]
+            matches = re.search(regex, tag.childNodes[0].data)
+            if matches:
+                branch = matches.groups(0)[0]
 
-            # revision/sha
-            if re.search('%(r|h)', options.format):
-                if re.match('Revision:', line):
-                    matches = re.search(revision_regex, line)
-                    if 'revision' in matches.groupdict():
-                        revision = matches.group('revision')
+        # revision/sha
+        if re.search('%(r|h)', options.format):
+            tag = dom.getElementsByTagName('commit')[0]
+            revision = tag.getAttribute('revision')
 
-    # modified
-    if re.search('%[mu]', options.format):
-        command = 'svn status'
-        process = Popen(command, shell=True, stdout=PIPE)
-        output = process.communicate()[0]
-        returncode = process.returncode
+    # modified/staged/untracked
+    if re.search('%[amu]', options.format):
+        output, returncode = popen('svn status %s' % options.path)
 
         if returncode == 0:
-            if not output:
-                modified = ''
-                untracked = ''
-            else:
-                codes = [line[0] for line in output.split('\n') if line]
-                if 'M' in codes:
-                    modified = MODIFIED
+            modified = ''
+            untracked = ''
+            staged = ''
+            if output:
+                codes = [line.strip()[0:1] for line in output.split('\n')]
+                if re.search('[CDMR!]', ''.join(codes)):
+                    modified = options.modified
                 if '?' in codes:
-                    untracked = UNTRACKED
+                    untracked = options.untracked
+                if 'A' in codes:
+                    staged = options.staged
 
     # formatting
-    output = options.format
-    output = output.replace('%r', revision)
-    output = output.replace('%h', revision)
-    output = output.replace('%b', branch)
-    output = output.replace('%m', modified)
-    output = output.replace('%u', untracked)
-    output = output.replace('%s', 'svn')
-    output = output.replace('%n', 'svn')
-    return output
+    return {
+        'revision': revision,
+        'branch': branch,
+        'modified': modified,
+        'untracked': untracked,
+        'staged': staged,
+    }
 
 
 if __name__ == '__main__':
     prompt = main()
     if prompt:
-        print prompt
+        sys.stdout.write(prompt)
     else:
         sys.exit(1)
