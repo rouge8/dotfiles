@@ -12,7 +12,10 @@ if [[ `uname -s` == "Darwin" ]]; then
 fi
 
 # pip! virtualenv! virtualenvwrapper!
-source "${HOME}/.pip_bootstrap_profile.sh";
+if [[ `uname -s` == "Darwin" ]]; then
+    # Don't do this on Macs yet, my homebrew Python is probably all sorts of fucked.
+    source "${HOME}/.pip_bootstrap_profile.sh";
+fi
 
 # DOCKER ON A MAC
 if [[ `uname -s` == "Darwin" ]]; then
