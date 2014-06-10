@@ -140,7 +140,7 @@ imap <F1> <Esc>
 
 " make ctrlp ignore shit
 set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*,*/__static/*,*/__media/*,*.egg-info/*
-set wildignore+=*/node_modules/*,*/dist/*,*/build/*,*/components/*
+set wildignore+=*/node_modules/*,*/dist/*,*/build/*,*/components/*,*/htmlcov/*
 " make fugitive work
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " scan for dotfiles in dotfiles directories managed by
