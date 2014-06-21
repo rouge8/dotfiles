@@ -5,14 +5,14 @@
 [alias]
 	unstage = reset HEAD --
 	last = log -1 HEAD
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    wut = diff --staged --word-diff
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	wut = diff --staged --word-diff
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    s = status -sb
-    d = diff --word-diff
-    count = shortlog -sn
-    undo = reset --soft HEAD^
-    log-all = log --graph --oneline --decorate --all
+	s = status -sb
+	d = diff --word-diff
+	count = shortlog -sn
+	undo = reset --soft HEAD^
+	log-all = log --graph --oneline --decorate --all
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	slog = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
@@ -27,27 +27,27 @@
 [core]
 	excludesfile = ~/.gitglobalignore
 	autocrlf = input
-    editor = vim
+	editor = vim
 
 [color]
 	status = auto
 	branch = auto
 	diff = auto
-    interactive = auto
+	interactive = auto
 	ui = 1
 
 [push]
-    default = upstream
+	default = upstream
 
 [grep]
-    lineNumber = true
+	lineNumber = true
 
 [merge]
-    tool = splice
+	tool = splice
 
 [mergetool "splice"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode = true
+	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	trustExitCode = true
 
 [github]
 	user = rouge8
@@ -56,7 +56,7 @@
 	enabled = 1
 
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [help]
 	autocorrect = 1
 [rebase]
