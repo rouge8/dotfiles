@@ -42,9 +42,6 @@ alias ls-vms='VBoxManage list vms'
 alias npm-exec='PATH=$(npm bin):$PATH'
 alias how-many-npm='find . -name "node_modules" | awk -F "node_modules" '\''NF>=2 {print $(NF-1)}'\'' | sort -u | wc -l'
 
-# phantomjs
-alias domshot='phantomjs ~/local/phantomjs/domshot.js'
-
 # docker
 alias dockercleancontainers="docker ps -a --no-trunc | grep 'Exit' | awk '{print \$1}' | xargs -L 1 -r docker rm"
 alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \$3}' | xargs -L 1 -r docker rmi"

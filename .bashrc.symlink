@@ -2,7 +2,7 @@
 
 # Path
 
-PATH=$PATH:$HOME/bin:$HOME/local/npm/bin:$HOME/.cabal/bin
+PATH=$PATH:$HOME/bin:$HOME/.cabal/bin
 export EDITOR=vim
 
 # Macs luv homebrew
