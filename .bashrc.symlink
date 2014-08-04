@@ -153,5 +153,10 @@ expect \">>> \"
 send \"import $*\r\"
 interact +++ return"; }
 
+# List exposed ports on a Docker image/container
+docker-ports() {
+    docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
