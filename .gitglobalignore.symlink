@@ -26,8 +26,9 @@ Icon?
 # <https://github.com/kennethreitz/autoenv>
 .env
 
-# show .gitignore
+# show .gitignore and .gitattributes
 !.gitignore
+!.gitattributes
 
 # no more sqlite dbs
 *.db
