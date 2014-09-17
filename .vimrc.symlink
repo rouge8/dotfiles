@@ -32,6 +32,11 @@ augroup Dockerfile
   au BufNewFile,BufRead Dockerfile.* setlocal filetype=Dockerfile
 augroup END
 
+augroup vagrant
+  au!
+  au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
+augroup END
+
 syntax on
 
 set modeline
