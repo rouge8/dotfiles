@@ -32,3 +32,6 @@ Icon?
 
 # no more sqlite dbs
 *.db
+
+# show .dockerignore
+!.dockerignore
