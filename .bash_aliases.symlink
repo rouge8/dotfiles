@@ -62,3 +62,6 @@ fi
 if [[ `uname -s` == 'Darwin' ]]; then
     alias kill-dns-cache='sudo killall -HUP mDNSResponder'
 fi
+
+# emoji
+alias shrug='echo "¯\_(ツ)_/¯" | pbcopy'
