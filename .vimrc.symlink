@@ -37,6 +37,12 @@ augroup vagrant
   au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
 augroup END
 
+" JavaScript
+let javascript_enable_domhtmlcss=1
+
+" pandoc
+let g:pandoc_no_folding = 1
+
 syntax on
 
 set modeline
@@ -99,9 +105,6 @@ au Filetype css setlocal iskeyword+=-
 " YES YES YES YES set autoread
 set autoread
 
-" Make [d work for local definitions in Python files.
-au FileType python setlocal define=^\s*\\(def\\\\|class\\)
-
 " Enable soft-wrapping for text files
 autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
@@ -124,15 +127,8 @@ set laststatus=2 " Always show the statusline
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" Easy buffer navigation
-noremap <C-h>  <C-w>h
-noremap <C-j>  <C-w>j
-noremap <C-k>  <C-w>k
-noremap <C-l>  <C-w>l
-noremap <leader>v <C-w>v
-
-" open browser!
-noremap <leader>b :!~/bin/open-browser<cr><cr>
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -153,17 +149,6 @@ if getcwd() =~ $HOME . '/\.dotfiles\.*'
 endif
 " death2caching
 let g:ctrlp_use_caching = 0
-
-" Django
-au BufNewFile,BufRead admin.py     setlocal filetype=python.django
-au BufNewFile,BufRead urls.py      setlocal filetype=python.django
-au BufNewFile,BufRead models.py    setlocal filetype=python.django
-au BufNewFile,BufRead views.py     setlocal filetype=python.django
-au BufNewFile,BufRead settings.py  setlocal filetype=python.django
-au BufNewFile,BufRead forms.py     setlocal filetype=python.django
-
-" JavaScript
-let javascript_enable_domhtmlcss=1
 
 "" MAKE .swp~ AND .un~ FILES LESS ANNOYING
 "" FROM <http://stackoverflow.com/a/9528322/609144>
@@ -236,7 +221,6 @@ nmap <leader>fi :%! formd -i<CR>
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
 
 " Treat underscore as word delimiter
 set iskeyword-=_
@@ -244,15 +228,6 @@ set iskeyword-=_
 " esckeys
 " http://ksjoberg.com/vim-esckeys.html
 set timeout timeoutlen=1000 ttimeoutlen=100
-
-" don't syntax highlight long lines. sooooo slow.
-" set synmaxcol=120
-
-" find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
-" pandoc
-let g:pandoc_no_folding = 1
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
