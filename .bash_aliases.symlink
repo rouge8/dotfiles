@@ -28,6 +28,7 @@ alias ddprogress='killall -USR1 dd'
 alias top=htop
 alias webserver='python -m SimpleHTTPServer'
 alias git-today='git diff @{yesterday}..HEAD'
+alias find-broken-links='find . -type l -exec test ! -e {} \; -print'
 
 # vim
 alias vundle-install='vim -u ~/.bundles.vim +NeoBundleInstall +qall'
