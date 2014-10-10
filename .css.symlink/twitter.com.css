@@ -227,6 +227,7 @@ s, .pretty-link:hover s, .pretty-link:focus s, .stream-item-activity-me .latest-
 /* Restyle the new tweet icon to blend into the topbar */
 #global-new-tweet-button {
   margin-top: 0 !important;
+  margin-right: 15px !important;
   padding: 0 !important;
   color: #c4e2f9 !important;
   background-color: transparent !important;
