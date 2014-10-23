@@ -17,9 +17,6 @@ if [[ `uname -s` != "Darwin" ]]; then
     source "${HOME}/.pip_bootstrap_profile.sh";
 fi
 
-# DOCKER ON A MAC
-if which boot2docker > /dev/null; then eval "$(boot2docker shellinit)"; fi
-
 # golang
 if [[ -d $HOME/local/go ]]; then
     export GOROOT=$HOME/local/go
