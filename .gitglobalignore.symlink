@@ -1,6 +1,7 @@
 # python
 *.py[co]
 *~
+!.coveragerc
 
 # https://github.com/github/gitignore/
 
