@@ -27,6 +27,11 @@ augroup json
   au BufNewFile,BufRead *.json setlocal filetype=json
 augroup END
 
+augroup nginx
+  au!
+  au BufNewFile,BufRead *.site setlocal filetype=nginx
+augroup END
+
 augroup Dockerfile
   au!
   au BufNewFile,BufRead Dockerfile.* setlocal filetype=Dockerfile
