@@ -23,7 +23,7 @@
 		git checkout $b && echo && \
 		git diff --stat $b..pr/$1 && echo && \
 		git slog $b..pr/$1; }; f"
-	changelog = log --no-merges --pretty=format:"\\ -\\ %s"
+	changelog = log --no-merges --pretty=format:"-\\ %s"
 
 [core]
 	excludesfile = ~/.gitglobalignore
