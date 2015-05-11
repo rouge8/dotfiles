@@ -61,7 +61,7 @@ fi
 
 # fucking DNS cache
 if [[ `uname -s` == 'Darwin' ]]; then
-    alias kill-dns-cache='sudo killall -HUP mDNSResponder'
+    alias kill-dns-cache='sudo discoveryutil udnsflushcaches'
 fi
 
 # emoji
