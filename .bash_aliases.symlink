@@ -16,7 +16,7 @@ alias ll='ls -l'
 # hub
 # <https://github.com/defunkt/hub>
 if [ `type -P ruby` ]; then
-    eval "$(hub alias -s)"
+    alias git=hub
 fi
 
 # learn2type
