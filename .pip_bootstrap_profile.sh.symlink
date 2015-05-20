@@ -1,59 +1,39 @@
 
-pip_bootstrap_runtime () {
-
-    if [[ -n "${PYTHON_USER_BIN}" ]]; then
-        # Already sourced.
-        return 0;
+export BOOTSTRAP_PYTHON='/usr/local/bin/python';
+pip_bootstrap_runtime () 
+{ 
+    export BOOTSTRAP_PYTHON="${BOOTSTRAP_PYTHON:-$(which python)}";
+    function _pip_bootstrap_wheelhouse_config () 
+    { 
+        export WHEELHOUSE="${HOME}/.wheelhouses/$("${BOOTSTRAP_PYTHON}" -c '
+import sys
+try:
+    impl = sys.implementation.name
+except AttributeError:
+    impl = sys.subversion[0]
+sys.stdout.write(impl + "-" + ".".join(map(str,sys.version_info[:3])))
+')";
+        export PIP_FIND_LINKS="file://${WHEELHOUSE}";
+        export PIP_WHEEL_DIR="${WHEELHOUSE}"
+    };
+    if [[ -z "${PYTHON_USER_BIN}" ]]; then
+        export PYTHON_USER_BIN="$(${BOOTSTRAP_PYTHON} -c 'import site; site._script()' --user-base)/bin";
+        export PYTHON_USER_LIB="$(${BOOTSTRAP_PYTHON} -c 'import site; site._script()' --user-site)";
+        _pip_bootstrap_wheelhouse_config;
+        export PATH="${PYTHON_USER_BIN}:${PATH}";
     fi;
-
-    export PYTHON_USER_BIN="$(python -m site --user-base)/bin";
-    export PYTHON_USER_LIB="$(python -m site --user-site)";
-
-    export PATH="${PYTHON_USER_BIN}:${PATH}";
-
-    if [[ "$(uname)" == "Darwin" ]]; then
-        export STANDARD_CACHE_DIR="${HOME}/Library/Caches/org.pip-installer.pip";
-    else
-        export STANDARD_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/pip";
-    fi;
-
-    export WHEELHOUSE="${STANDARD_CACHE_DIR}/Wheelhouse";
-
-    # Configure pip to always do the thing it should do out of the box, and not
-    # re-download packages every time I sneeze.
-    export PIP_USE_WHEEL="yes";
-    export PIP_DOWNLOAD_CACHE="${STANDARD_CACHE_DIR}/Downloads";
-    export PIP_FIND_LINKS="file://${WHEELHOUSE}";
-    export PIP_WHEEL_DIR="${WHEELHOUSE}";
-
     if [[ -e "${PYTHON_USER_BIN}/virtualenvwrapper.sh" ]]; then
         source "${PYTHON_USER_BIN}/virtualenvwrapper.sh";
     fi;
-
-    function pip () {
-
-        # When you run "pip install" in your regular shell outside a
-        # virtualenv, it should just work, meaning, install stuff into your
-        # home directory.  But, let’s not affect the operation of pip within
-        # virtualenvs or as executed by any tools (such as tox or virtualenv
-        # itself) which need to run it via automation and not via a shell.
-
+    function pip () 
+    { 
+        ( export BOOTSTRAP_PYTHON="$(type -p python)";
+        _pip_bootstrap_wheelhouse_config;
         if [[ -z "${VIRTUAL_ENV:-}" ]]; then
-            env PIP_USER=yes pip "$@";
-        else
-            command pip "$@";
+            export PIP_USER=yes;
         fi;
-    }
-
-    function pip3() {
-        if [[ -z "${VIRTUAL_ENV:-}" ]]; then
-            env PIP_USER=yes pip3 "$@";
-        else
-            command pip3 "$@";
-        fi;
+        exec "${BOOTSTRAP_PYTHON}" -m pip.__main__ "$@" )
     }
 }
-
 pip_bootstrap_runtime;
-
 
