@@ -1,10 +1,10 @@
 
 export BOOTSTRAP_PYTHON='/usr/local/bin/python';
-pip_bootstrap_runtime () 
-{ 
+pip_bootstrap_runtime ()
+{
     export BOOTSTRAP_PYTHON="${BOOTSTRAP_PYTHON:-$(which python)}";
-    function _pip_bootstrap_wheelhouse_config () 
-    { 
+    function _pip_bootstrap_wheelhouse_config ()
+    {
         export WHEELHOUSE="${HOME}/.wheelhouses/$("${BOOTSTRAP_PYTHON}" -c '
 import sys
 try:
@@ -25,13 +25,10 @@ sys.stdout.write(impl + "-" + ".".join(map(str,sys.version_info[:3])))
     if [[ -e "${PYTHON_USER_BIN}/virtualenvwrapper.sh" ]]; then
         source "${PYTHON_USER_BIN}/virtualenvwrapper.sh";
     fi;
-    function pip () 
-    { 
+    function pip ()
+    {
         ( export BOOTSTRAP_PYTHON="$(type -p python)";
         _pip_bootstrap_wheelhouse_config;
-        if [[ -z "${VIRTUAL_ENV:-}" ]]; then
-            export PIP_USER=yes;
-        fi;
         exec "${BOOTSTRAP_PYTHON}" -m pip.__main__ "$@" )
     }
 }
