@@ -1,5 +1,10 @@
 
-export BOOTSTRAP_PYTHON='/usr/local/bin/python';
+if [[ -e /usr/local/bin/python ]]; then
+    export BOOTSTRAP_PYTHON='/usr/local/bin/python';
+else
+    export BOOTSTRAP_PYTHON='/usr/bin/python';
+fi
+
 pip_bootstrap_runtime ()
 {
     export BOOTSTRAP_PYTHON="${BOOTSTRAP_PYTHON:-$(which python)}";
