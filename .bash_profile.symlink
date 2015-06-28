@@ -95,17 +95,12 @@ $ "
 # don't let virtualenv show prompts by itself
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# startup virtualenv-burrito
-if [ -f $HOME/.venvburrito/startup.sh ]; then
-    . $HOME/.venvburrito/startup.sh
-fi
-
 # virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
+    source $HOME/.local/bin/virtualenvwrapper.sh
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages --distribute'
 
 export FIGNORE=.un~:.swp~
 
@@ -129,4 +124,3 @@ fi
 # vvvv ---- Added by Pip Bootstrap ---- vvvv #
 source "${HOME}/.pip_bootstrap_profile.sh";
 # ^^^^ ---- Added by Pip Bootstrap ---- ^^^^ #
-
