@@ -95,11 +95,24 @@ $ "
 # don't let virtualenv show prompts by itself
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# virtualenvwrapper
-if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
-    source $HOME/.local/bin/virtualenvwrapper.sh
-elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+# Lazy-load virtualenvwrapper. virtualenvwrapperis slowwwww, at least on OS X.
+# Lazy-loading is soooo much faster.
+# Before:
+#     $ time bash -l -c "exit"
+#
+#     real    0m0.164s
+#     user    0m0.104s
+#     sys     0m0.055s
+# After:
+#     $ time bash -l -c "exit"
+#
+#     real    0m0.046s
+#     user    0m0.021s
+#     sys     0m0.022s
+if [ -f $HOME/.local/bin/virtualenvwrapper_lazy.sh ]; then
+    source $HOME/.local/bin/virtualenvwrapper_lazy.sh
+elif [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 export FIGNORE=.un~:.swp~
