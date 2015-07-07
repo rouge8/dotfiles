@@ -36,3 +36,6 @@ Icon?
 
 # show .dockerignore
 !.dockerignore
+
+# empty directories
+!.gitkeep
