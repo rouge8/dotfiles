@@ -24,6 +24,7 @@
 		git diff --stat $b..pr/$1 && echo && \
 		git slog $b..pr/$1; }; f"
 	changelog = log --no-merges --pretty=format:"-\\ %s"
+	pullify = config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
 
 [core]
 	excludesfile = ~/.gitglobalignore
