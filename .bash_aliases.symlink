@@ -67,3 +67,6 @@ fi
 
 # emoji
 alias shrug='echo "¯\_(ツ)_/¯" | pbcopy'
+
+# strip formatting
+alias pbclean='pbpaste | pbcopy'
