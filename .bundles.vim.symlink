@@ -25,7 +25,6 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'sjl/splice.vim'
 NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'alfredodeza/pytest.vim'
 NeoBundle 'tpope/vim-rsi'
 
 " Appearance
