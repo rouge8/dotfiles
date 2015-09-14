@@ -19,8 +19,12 @@ au FileType javascript    setlocal sw=2 sts=2
 
 augroup markdown
   au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown
 augroup END
+
+" Highlight fenced code blocks
+" ref: https://github.com/tpope/vim-markdown/commit/b2697b0adfe5428b86c8470a5f9d8da667bb2785
+let g:markdown_fenced_languages = ["python"]
 
 augroup json
   au!
@@ -44,9 +48,6 @@ augroup END
 
 " JavaScript
 let javascript_enable_domhtmlcss=1
-
-" pandoc
-let g:pandoc_no_folding = 1
 
 syntax on
 
