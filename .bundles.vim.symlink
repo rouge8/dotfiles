@@ -51,6 +51,8 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'dbakker/vim-lint'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'cespare/vim-toml'
 
 " Color Schemes
 NeoBundle 'altercation/vim-colors-solarized'
