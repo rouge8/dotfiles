@@ -1,11 +1,6 @@
 " NeoBundle and bundles configuration
 source $HOME/.bundles.vim
 
-" Enable Go support in an inteligent way
-if !empty($GOROOT)
-    set rtp+=$GOROOT/misc/vim
-endif
-
 " File/Syntax settings
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.wiki set filetype=creole
@@ -217,10 +212,6 @@ xmap <leader>cc \\
 if exists('+colorcolumn')
   set colorcolumn=+1
 endif
-
-" formd Markdown shortcuts
-nmap <leader>fr :%! formd -r<CR>
-nmap <leader>fi :%! formd -i<CR>
 
 " Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
