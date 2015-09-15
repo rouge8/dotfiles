@@ -205,8 +205,8 @@ nmap <LocalLeader>s :set scrollbind<cr>
 nmap <leader>cis :ChangeInsideSurrounding<cr>
 
 " vim-commentary
-nmap <leader>cc \\\
-xmap <leader>cc \\
+nmap <leader>cc gcc
+xmap <leader>cc gc
 
 " highlight column after 'textwidth' (79 in Python, 99 in Rust, etc.)
 if exists('+colorcolumn')
