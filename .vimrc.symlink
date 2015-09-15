@@ -213,11 +213,9 @@ nmap <leader>cis :ChangeInsideSurrounding<cr>
 nmap <leader>cc \\\
 xmap <leader>cc \\
 
-" color column at 80 characters
+" highlight column after 'textwidth' (79 in Python, 99 in Rust, etc.)
 if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  set colorcolumn=+1
 endif
 
 " formd Markdown shortcuts
