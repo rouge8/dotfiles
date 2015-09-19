@@ -32,7 +32,7 @@ NeoBundle 'bling/vim-airline'
 " Language/Syntax
 NeoBundle 'tpope/vim-git'
 NeoBundle 'Glench/Vim-Jinja2-Syntax'
-NeoBundle 'nginx.vim'
+NeoBundle 'rouge8/nginx.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'mitsuhiko/vim-python-combined'
