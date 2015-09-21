@@ -5,7 +5,7 @@ source $HOME/.bundles.vim
 au FileType css     setlocal sw=2 sts=2
 au FileType html    setlocal sw=2 sts=2
 au FileType htmldjango  setlocal sw=2 sts=2
-au FileType python  setlocal formatoptions-=t textwidth=79
+au FileType python  setlocal formatoptions-=t
 au FileType yaml    setlocal sw=2 sts=2
 au FileType javascript    setlocal sw=2 sts=2
 
@@ -204,6 +204,12 @@ nmap <leader>cis :ChangeInsideSurrounding<cr>
 " vim-commentary
 nmap <leader>cc gcc
 xmap <leader>cc gc
+
+" default to 79 character lines (unless a particular filetype is configured
+" differently)
+if &textwidth == 0
+  set textwidth=79
+endif
 
 " highlight column after 'textwidth' (79 in Python, 99 in Rust, etc.)
 if exists('+colorcolumn')
