@@ -39,3 +39,6 @@ Icon?
 
 # empty directories
 !.gitkeep
+
+# bundle config
+!.bundle
