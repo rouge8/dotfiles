@@ -2,7 +2,7 @@
 
 # Path
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cabal/bin
+PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cabal/bin:/Library/TeX/texbin
 export EDITOR=vim
 
 # Macs luv homebrew
