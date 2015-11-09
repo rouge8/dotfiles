@@ -42,3 +42,6 @@ Icon?
 
 # bundle config
 !.bundle
+
+# travis ci
+!.travis.yml
