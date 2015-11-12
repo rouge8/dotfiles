@@ -11,12 +11,6 @@ if [[ `uname -s` == "Darwin" ]]; then
     PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
-# pip! virtualenv! virtualenvwrapper!
-if [[ `uname -s` != "Darwin" ]]; then
-    # Don't do this on Macs yet, my homebrew Python is probably all sorts of fucked.
-    source "${HOME}/.pip_bootstrap_profile.sh";
-fi
-
 # golang
 if [[ -d $HOME/local/go ]]; then
     export GOROOT=$HOME/local/go
