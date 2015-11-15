@@ -9,6 +9,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'kien/ctrlp.vim'
