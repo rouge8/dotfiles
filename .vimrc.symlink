@@ -137,7 +137,7 @@ imap <F1> <Esc>
 
 " make ctrlp ignore shit
 set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*,*/__static/*,*/__media/*,*.egg-info/*
-set wildignore+=*/node_modules/*,*/dist/*,*/build/*,*/components/*,*/htmlcov/*
+set wildignore+=*/node_modules/*,*/dist/*,*/build/*,*/htmlcov/*
 set wildignore+=*/venv/*,*/vendor/*
 set wildignore+=*/target/*
 " make fugitive work
