@@ -10,6 +10,7 @@
 	d = diff --word-diff
 	changelog = log --no-merges --pretty=format:"-\\ %s"
 	pullify = config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
+	diffu = diff @{u}
 
 [core]
 	excludesfile = ~/.gitglobalignore
