@@ -45,6 +45,7 @@ NeoBundle 'dbakker/vim-lint'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'sophacles/vim-bundle-mako'
 
 " Color Schemes
 NeoBundle 'altercation/vim-colors-solarized'
