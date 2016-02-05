@@ -140,6 +140,7 @@ set wildignore+=*.so,*.pyc,*.un~,*.swp~,*/_site/*,*/__static/*,*/__media/*,*.egg
 set wildignore+=*/node_modules/*,*/dist/*,*/build/*,*/htmlcov/*
 set wildignore+=*/venv/*,*/vendor/*
 set wildignore+=*/target/*
+set wildignore+=*/cassettes/*.json
 " make fugitive work
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " scan for dotfiles in dotfiles directories managed by
