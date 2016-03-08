@@ -53,20 +53,6 @@ mitsuhikos_lastcommandfailed() {
   fi
 }
 
-mitsuhikos_backgroundjobs() {
-  jobs|python -c 'if 1:
-    import sys
-    items = ["\033[36m%s\033[37m" % x.split()[2]
-             for x in sys.stdin.read().splitlines()]
-    if items:
-      if len(items) > 2:
-        string = "%s, and %s" % (", ".join(items[:-1]), items[-1])
-      else:
-        string = ", ".join(items)
-      print("\033[37m running %s" % string)
-  '
-}
-
 mitsuhikos_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
     if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
@@ -86,7 +72,6 @@ export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
 \e${MITSUHIKOS_GRAY_COLOR}in \e${MITSUHIKOS_GREEN_COLOR}\w\
 `mitsuhikos_lastcommandfailed`\
 \e${MITSUHIKOS_GRAY_COLOR}`mitsuhikos_vcprompt`\
-`mitsuhikos_backgroundjobs`\
 `mitsuhikos_virtualenv`\
 \e${MITSUHIKOS_DEFAULT_COLOR}'
 export PS1="${MITSUHIKOS_BASEPROMPT}
