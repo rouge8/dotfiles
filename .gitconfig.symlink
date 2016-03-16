@@ -11,6 +11,7 @@
 	changelog = log --no-merges --pretty=format:"-\\ %s"
 	pullify = config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
 	diffu = diff @{u}
+	resetu = "![[ -z $(git diffu) ]] && git reset --hard @{u}"
 
 [core]
 	excludesfile = ~/.gitglobalignore
