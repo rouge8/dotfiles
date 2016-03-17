@@ -13,6 +13,7 @@
 	diffu = diff @{u}
 	resetu = "![[ -z $(git diffu) ]] && git reset --hard @{u}"
 	clean-merged = !git branch --merged | grep -v master | grep -v \"\\*\" | xargs -n 1 git branch -d
+	rm-merged = clean-merged
 
 [core]
 	excludesfile = ~/.gitglobalignore
