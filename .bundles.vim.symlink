@@ -25,6 +25,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rsi'
+NeoBundle 'airblade/vim-gitgutter'
 
 " Appearance
 NeoBundle 'kien/rainbow_parentheses.vim'
