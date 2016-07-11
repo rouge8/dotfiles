@@ -139,5 +139,12 @@ docker-ports() {
     docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
 }
 
+# Don't install anything globally with pip
+export PIP_REQUIRE_VIRTUALENV=true
+# Use 'gpip' to upgrade pip/virtualenv/etc.
+gpip() {
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
