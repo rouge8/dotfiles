@@ -1,0 +1,2 @@
+# Files in this directory should be built by PEX or similar
+*.symlink
