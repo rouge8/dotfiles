@@ -1,7 +1,7 @@
 BIN_DIR = .local/bin
 PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.12/pex27
 
-PEXES = pex tox flake8 ipython http
+PEXES = pex tox flake8 ipython http sphobjinv
 
 .PHONY: all clean
 
@@ -34,3 +34,7 @@ $(BIN_DIR)/ipython.symlink:
 $(BIN_DIR)/http.symlink:
 	pex httpie \
 		-c http -o $@
+
+$(BIN_DIR)/sphobjinv.symlink:
+	pex sphobjinv \
+		-c sphobjinv -o $@
