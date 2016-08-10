@@ -14,6 +14,7 @@
 	resetu = "![[ -z $(git diffu) ]] && git reset --hard @{u}"
 	clean-merged = !git branch --merged | grep -v master | grep -v develop | grep -v \"\\*\" | xargs -n 1 git branch -d
 	rm-merged = clean-merged
+	goodrx-email = config user.email \"andy@goodrx.com\"
 
 [core]
 	excludesfile = ~/.gitglobalignore
