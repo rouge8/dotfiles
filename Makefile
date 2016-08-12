@@ -1,7 +1,7 @@
 BIN_DIR = .local/bin
 PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.14/pex27
 
-PEXES = pex tox flake8 ipython http sphobjinv coverage
+PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura
 
 .PHONY: all clean
 
@@ -42,3 +42,7 @@ $(BIN_DIR)/sphobjinv.symlink:
 $(BIN_DIR)/coverage.symlink:
 	pex coverage \
 		-c coverage -o $@
+
+$(BIN_DIR)/pycobertura.symlink:
+	pex pycobertura \
+		-c pycobertura -o $@
