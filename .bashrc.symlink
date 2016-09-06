@@ -139,6 +139,12 @@ docker-ports() {
     docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
 }
 
+docker_nuke() {
+    docker rm -f $(docker ps -a -q)
+    docker rmi -f $(docker images -q)
+}
+
+
 # Don't install anything globally with pip
 export PIP_REQUIRE_VIRTUALENV=true
 # Use 'gpip' to upgrade pip/virtualenv/etc.
