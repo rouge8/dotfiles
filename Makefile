@@ -1,7 +1,7 @@
 BIN_DIR = .local/bin
 PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.14/pex27
 
-PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura codemod
+PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort codemod
 
 .PHONY: all clean
 
@@ -46,6 +46,10 @@ $(BIN_DIR)/coverage.symlink:
 $(BIN_DIR)/pycobertura.symlink:
 	pex pycobertura \
 		-c pycobertura -o $@
+
+$(BIN_DIR)/isort.symlink:
+	pex isort setuptools \
+		-c isort -o $@
 
 $(BIN_DIR)/codemod.symlink:
 	pex codemod \
