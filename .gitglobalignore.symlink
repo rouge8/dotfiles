@@ -46,3 +46,6 @@ Icon?
 
 # travis ci
 !.travis.yml
+
+# editorconfig
+!.editorconfig
