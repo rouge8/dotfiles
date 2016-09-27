@@ -1,15 +1,13 @@
+# Linux
+.*
+*~
+*.sw[a-p]
+
 # python
 *.py[co]
 *~
 !.coveragerc
 *.egg-info
-
-# https://github.com/github/gitignore/
-
-# Linux
-.*
-*~
-*.sw[a-p]
 
 # KDE
 .directory
