@@ -2,7 +2,7 @@ BIN_DIR = .local/bin
 PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.14/pex27
 
 PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort \
-	codemod twine cookiecutter
+	codemod twine cookiecutter credstash
 
 .PHONY: all clean
 
@@ -63,3 +63,7 @@ $(BIN_DIR)/twine.symlink:
 $(BIN_DIR)/cookiecutter.symlink:
 	pex cookiecutter \
 		-c cookiecutter -o $@
+
+$(BIN_DIR)/credstash.symlink:
+	pex credstash \
+		-c credstash -o $@
