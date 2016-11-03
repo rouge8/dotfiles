@@ -25,7 +25,7 @@ $(BIN_DIR)/tox.symlink:
 		-c tox -o $@
 
 $(BIN_DIR)/flake8.symlink:
-	pex 'flake8>=3.0.4' flake8-plone-hasattr pep8-naming \
+	pex 'flake8>=3.0.4' flake8-plone-hasattr flake8-comprehensions \
 		-c flake8 -o $@
 
 $(BIN_DIR)/ipython.symlink:
