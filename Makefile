@@ -2,7 +2,7 @@ BIN_DIR = .local/bin
 PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.15/pex27
 
 PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort \
-	codemod twine cookiecutter credstash futurize
+	codemod twine cookiecutter credstash futurize yamllint
 
 .PHONY: all clean
 
@@ -71,3 +71,7 @@ $(BIN_DIR)/credstash.symlink:
 $(BIN_DIR)/futurize.symlink:
 	pex future \
 		-c futurize -o $@
+
+$(BIN_DIR)/yamllint.symlink:
+	pex yamllint \
+		-c yamllint -o $@
