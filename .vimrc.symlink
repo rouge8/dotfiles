@@ -25,7 +25,7 @@ augroup END
 
 augroup nginx
   au!
-  au BufNewFile,BufRead *.site setlocal filetype=nginx
+  au BufNewFile,BufRead *.site,*.nginx.conf setlocal filetype=nginx
 augroup END
 
 augroup Dockerfile
