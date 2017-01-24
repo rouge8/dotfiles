@@ -1,5 +1,5 @@
 BIN_DIR = .local/bin
-PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.1.15/pex27
+PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.2.1/pex27
 
 PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort \
 	codemod twine cookiecutter futurize yamllint
