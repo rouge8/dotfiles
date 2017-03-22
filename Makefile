@@ -1,8 +1,8 @@
 BIN_DIR = .local/bin
-PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.2.1/pex27
+PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.2.4/pex27
 
 PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort \
-	codemod twine cookiecutter futurize yamllint
+	codemod twine cookiecutter futurize yamllint check-manifest sops
 
 .PHONY: all clean
 
@@ -71,3 +71,11 @@ $(BIN_DIR)/futurize.symlink:
 $(BIN_DIR)/yamllint.symlink:
 	pex yamllint \
 		-c yamllint -o $@
+
+$(BIN_DIR)/check-manifest.symlink:
+	pex check-manifest \
+		-c check-manifest -o $@
+
+$(BIN_DIR)/sops.symlink:
+	pex sops \
+		-c sops -o $@
