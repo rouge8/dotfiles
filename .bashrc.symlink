@@ -15,9 +15,6 @@ fi
 if [[ -d $HOME/local/go ]]; then
     export GOROOT=$HOME/local/go
     export PATH=$PATH:$GOROOT/bin
-elif [[ -d /usr/local/opt/go ]]; then
-    # installed via homebrew
-    export GOROOT=/usr/local/opt/go
 fi
 
 export PATH
