@@ -1,0 +1,30 @@
+# http://ipython.readthedocs.io/en/latest/config/details.html#keyboard-shortcuts
+from IPython import get_ipython
+from prompt_toolkit.enums import DEFAULT_BUFFER
+from prompt_toolkit.filters import HasFocus, HasSelection, ViInsertMode
+from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
+from prompt_toolkit.keys import Keys
+
+ip = get_ipython()
+
+should_add_emacsy_bindings = (
+    HasFocus(DEFAULT_BUFFER)
+    & ~HasSelection()
+    & ViInsertMode()
+)
+
+
+# Register shortcuts if IPython is using prompt_toolkit
+if getattr(ip, 'pt_cli'):
+    registry = ip.pt_cli.application.key_bindings_registry
+
+    # Add bindings for the emacs shortcuts I use regularly even in vi-mode
+    registry.add_binding(
+        Keys.ControlA,
+        filter=should_add_emacsy_bindings
+    )(get_by_name('beginning-of-line'))
+
+    registry.add_binding(
+        Keys.ControlE,
+        filter=should_add_emacsy_bindings
+    )(get_by_name('end-of-line'))
