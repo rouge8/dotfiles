@@ -27,6 +27,7 @@ NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rsi'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'justinmk/vim-sneak'
 
 " Appearance
 NeoBundle 'kien/rainbow_parentheses.vim'
