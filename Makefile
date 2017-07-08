@@ -29,7 +29,7 @@ $(BIN_DIR)/flake8.symlink:
 		-c flake8 -o $@
 
 $(BIN_DIR)/ipython.symlink:
-	pex ipython \
+	pex 'ipython<6' \
 		-c ipython -o $@
 
 $(BIN_DIR)/http.symlink:
