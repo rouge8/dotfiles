@@ -2,7 +2,7 @@
 \pset null '¤'
 
 -- Show how long each query takes to execute
-\timing
+\timing on
 
 -- Use best available output format
 \x auto
