@@ -37,4 +37,8 @@ fi
 # no more accidental quitting chrome
 defaults write com.google.Chrome.plist 'NSUserKeyEquivalents = { "Quit Google Chrome" = "@~q"; };'
 
+# HOW IS THIS NOT THE DEFAULT
+# https://mobile.twitter.com/searls/status/891439037948588033
+defaults write -g AppleKeyboardUIMode -int 2
+
 echo "mac setup done."
