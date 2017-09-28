@@ -53,7 +53,7 @@ $(BIN_DIR)/isort.symlink:
 		-c isort -o $@
 
 $(BIN_DIR)/codemod.symlink:
-	pex codemod \
+	pex codemod>=1.0 \
 		-c codemod -o $@
 
 $(BIN_DIR)/twine.symlink:
