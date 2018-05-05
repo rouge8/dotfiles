@@ -1,85 +1,87 @@
 BIN_DIR = .local/bin
-PEX_RELEASE = https://github.com/pantsbuild/pex/releases/download/v1.2.8/pex27
 
-PEXES = pex tox flake8 ipython http sphobjinv coverage pycobertura isort \
+SHIVS = tox flake8 ipython ipython3 http sphobjinv coverage pycobertura isort \
 	codemod twine cookiecutter futurize yamllint check-manifest sops vex
 
 .PHONY: all clean
 
-all: $(PEXES)
+SHIV2 = shiv -p $(shell which python2.7)
+SHIV3 = shiv -p $(shell which python3.6)
+
+all: $(SHIVS)
 
 clean:
-	for pex in $(PEXES); do \
-		rm $(BIN_DIR)/$$pex.symlink; \
+	for shiv in $(SHIVS); do \
+		rm $(BIN_DIR)/$$shiv.symlink; \
 	done
 
-%: pex $(BIN_DIR)/%.symlink
+%: $(BIN_DIR)/%.symlink
 	dotfiles install
 
-$(BIN_DIR)/pex.symlink:
-	curl -f -L $(PEX_RELEASE) -o $@
-	chmod +x $@
-
 $(BIN_DIR)/tox.symlink:
-	pex tox \
+	$(SHIV3) tox \
 		-c tox -o $@
 
 $(BIN_DIR)/flake8.symlink:
-	pex 'flake8>=3.2.0' setuptools flake8-plone-hasattr flake8-comprehensions flake8-docstrings \
+	$(SHIV2) 'flake8>=3.2.0' flake8-plone-hasattr flake8-comprehensions flake8-docstrings flake8-commas \
 		-c flake8 -o $@
 
 $(BIN_DIR)/ipython.symlink:
-	pex 'ipython<6' \
+	$(SHIV2) ipython \
+		-c ipython -o $@
+
+$(BIN_DIR)/ipython3.symlink:
+	$(SHIV3) ipython \
 		-c ipython -o $@
 
 $(BIN_DIR)/http.symlink:
-	pex httpie \
+	$(SHIV3) httpie \
 		-c http -o $@
 
 $(BIN_DIR)/sphobjinv.symlink:
-	pex sphobjinv \
+	$(SHIV3) sphobjinv \
 		-c sphobjinv -o $@
 
 $(BIN_DIR)/coverage.symlink:
-	pex coverage \
+	$(SHIV3) coverage \
 		-c coverage -o $@
 
 $(BIN_DIR)/pycobertura.symlink:
-	pex pycobertura \
+	$(SHIV3) pycobertura \
 		-c pycobertura -o $@
 
 $(BIN_DIR)/isort.symlink:
-	pex isort setuptools \
+	$(SHIV3) isort \
 		-c isort -o $@
 
 $(BIN_DIR)/codemod.symlink:
-	pex codemod>=1.0 \
+	$(SHIV2) 'codemod>=1.0' \
 		-c codemod -o $@
 
 $(BIN_DIR)/twine.symlink:
-	pex twine \
+	$(SHIV3) twine \
 		-c twine -o $@
 
 $(BIN_DIR)/cookiecutter.symlink:
-	pex cookiecutter \
+	$(SHIV3) cookiecutter \
 		-c cookiecutter -o $@
 
 $(BIN_DIR)/futurize.symlink:
-	pex future \
+	$(SHIV2) future \
 		-c futurize -o $@
 
 $(BIN_DIR)/yamllint.symlink:
-	pex yamllint \
+	$(SHIV3) yamllint \
 		-c yamllint -o $@
 
 $(BIN_DIR)/check-manifest.symlink:
-	pex check-manifest \
+	$(SHIV3) check-manifest \
 		-c check-manifest -o $@
 
 $(BIN_DIR)/sops.symlink:
-	pex sops \
+	$(SHIV2) sops \
 		-c sops -o $@
 
 $(BIN_DIR)/vex.symlink:
-	pex vex \
+	$(SHIV2) vex \
 		-c vex -o $@
