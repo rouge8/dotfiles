@@ -26,7 +26,7 @@ $(BIN_DIR)/flake8.symlink:
 		-c flake8 -o $@
 
 $(BIN_DIR)/ipython.symlink:
-	$(SHIV) ipython \
+	$(SHIV) ipython requests attrs \
 		-c ipython -o $@
 
 $(BIN_DIR)/http.symlink:
