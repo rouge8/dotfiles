@@ -150,5 +150,15 @@ gpip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
+# AWS
+export AWS_VAULT_KEYCHAIN_NAME=login
+unset_aws() {
+    for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
+}
+function assume-aws {
+    unset_aws
+    eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
