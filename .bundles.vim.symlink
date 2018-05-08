@@ -50,6 +50,7 @@ NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'sophacles/vim-bundle-mako'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " Color Schemes
 NeoBundle 'altercation/vim-colors-solarized'
