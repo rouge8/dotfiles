@@ -149,6 +149,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 gpip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+gpip3() {
+    PIP_REQUIRE_VIRTUALENV="" pip3.6 "$@"
+}
 
 # AWS
 export AWS_VAULT_KEYCHAIN_NAME=login
