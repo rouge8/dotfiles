@@ -1,11 +1,12 @@
 BIN_DIR = .local/bin
 
 SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
-	codemod twine cookiecutter futurize yamllint check-manifest sops vex
+	codemod twine cookiecutter futurize yamllint check-manifest sops vex \
+	black caniusepython3 snakeviz
 
 .PHONY: all clean
 
-SHIV = shiv -p $(shell which python3.6)
+SHIV = shiv --python "/usr/local/bin/python3.6 -sE"
 
 all: $(SHIVS)
 
@@ -80,3 +81,15 @@ $(BIN_DIR)/sops.symlink:
 $(BIN_DIR)/vex.symlink:
 	$(SHIV) vex \
 		-c vex -o $@
+
+$(BIN_DIR)/black.symlink:
+	$(SHIV) black \
+		-c black -o $@
+
+$(BIN_DIR)/caniusepython3.symlink:
+	$(SHIV) caniusepython3 \
+		-c caniusepython3 -o $@
+
+$(BIN_DIR)/snakeviz.symlink:
+	$(SHIV) snakeviz \
+		-c snakeviz -o $@
