@@ -160,7 +160,7 @@ unset_aws() {
 }
 function assume-aws {
     unset_aws
-    eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
+    eval $( aws-vault exec --assume-role-ttl=1h $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
 }
 
 ### Added by the Heroku Toolbelt
