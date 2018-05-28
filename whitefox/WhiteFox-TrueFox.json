@@ -273,8 +273,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "PRINTSCREEN",
-                    "label": "PRSC"
+                    "key": "RCTRL",
+                    "label": "RCTRL"
                 }
             }
         },
