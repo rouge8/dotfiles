@@ -55,3 +55,9 @@
 	autocorrect = 1
 [rebase]
 	autostash = true
+[stash]
+	showPatch = true
+[log]
+	decorate = full
+; [diff "sopsdiffer"]
+; 	textconv = sops -d
