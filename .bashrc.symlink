@@ -9,7 +9,6 @@ export EDITOR=vim
 if [[ `uname -s` == "Darwin" ]]; then
     PATH=/usr/local/bin:/usr/local/sbin:$PATH
     PATH=/usr/local/opt/ruby/bin:$PATH
-    PATH="/usr/local/opt/python@2/bin:$PATH"
 fi
 
 # golang
@@ -150,7 +149,7 @@ gpip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 gpip3() {
-    PIP_REQUIRE_VIRTUALENV="" pip3.6 "$@"
+    PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
 # AWS
