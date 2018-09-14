@@ -6,7 +6,7 @@ SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
 
 .PHONY: all clean
 
-SHIV = shiv --python "/usr/local/bin/python3.6 -sE"
+SHIV = shiv --python "/usr/local/bin/python3.7 -sE"
 
 all: $(SHIVS)
 
