@@ -155,12 +155,14 @@ gpip3() {
 
 # AWS
 export AWS_VAULT_KEYCHAIN_NAME=login
+export AWS_SESSION_TTL=12h
+export AWS_ASSUME_ROLE_TTL=1h
 unset_aws() {
     for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
 }
 function assume-aws {
     unset_aws
-    eval $( aws-vault exec --assume-role-ttl=1h $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
+    eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
 }
 
 ### Added by the Heroku Toolbelt
