@@ -2,7 +2,7 @@ BIN_DIR = .local/bin
 
 SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
 	codemod twine cookiecutter futurize yamllint check-manifest sops vex \
-	black caniusepython3 snakeviz flit nox
+	black caniusepython3 snakeviz flit nox cfn-lint
 
 .PHONY: all clean
 
@@ -102,3 +102,7 @@ $(BIN_DIR)/flit.symlink:
 $(BIN_DIR)/nox.symlink:
 	$(SHIV) nox-automation \
 		-c nox -o $@
+
+$(BIN_DIR)/cfn-lint.symlink:
+	$(SHIV) cfn-lint \
+		-c cfn-lint -o $@
