@@ -2,7 +2,7 @@ BIN_DIR = .local/bin
 
 SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
 	codemod twine cookiecutter futurize yamllint check-manifest sops vex \
-	black caniusepython3 snakeviz flit nox cfn-lint
+	black caniusepython3 snakeviz flit nox cfn-lint python-modernize
 
 .PHONY: all clean
 
@@ -106,3 +106,7 @@ $(BIN_DIR)/nox.symlink:
 $(BIN_DIR)/cfn-lint.symlink:
 	$(SHIV) cfn-lint \
 		-c cfn-lint -o $@
+
+$(BIN_DIR)/python-modernize.symlink:
+	$(SHIV) modernize \
+		-c python-modernize -o $@
