@@ -55,7 +55,7 @@ $(BIN_DIR)/codemod.symlink:
 		-c codemod -o $@
 
 $(BIN_DIR)/twine.symlink:
-	$(SHIV) twine \
+	$(SHIV) twine 'readme_renderer[md]' \
 		-c twine -o $@
 
 $(BIN_DIR)/cookiecutter.symlink:
