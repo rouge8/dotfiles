@@ -162,6 +162,7 @@ unset_aws() {
 function assume-aws {
     unset_aws
     eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
+    aws --output text --query Arn sts get-caller-identity
 }
 
 ### Added by the Heroku Toolbelt
