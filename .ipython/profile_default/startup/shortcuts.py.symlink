@@ -1,4 +1,6 @@
 # http://ipython.readthedocs.io/en/latest/config/details.html#keyboard-shortcuts
+import sys
+
 from IPython import get_ipython
 from prompt_toolkit.enums import DEFAULT_BUFFER
 from prompt_toolkit.filters import HasFocus, HasSelection, ViInsertMode
@@ -15,9 +17,19 @@ should_add_emacsy_bindings = (
 
 
 # Register shortcuts if IPython is using prompt_toolkit
-if getattr(ip, 'pt_cli'):
-    registry = ip.pt_cli.application.key_bindings_registry
+registry = None
 
+if sys.version_info[0] == 2:
+    # IPython dropped support on Python 2 when it was using an older version of
+    # prompt-toolkit
+    # ref: https://github.com/ipython/ipython/pull/11426
+    if getattr(ip, 'pt_cli'):
+        registry = ip.pt_cli.application.key_bindings_registry
+else:
+    if getattr(ip, 'pt_app'):
+        registry = ip.pt_app.key_bindings
+
+if registry is not None:
     # Add bindings for the emacs shortcuts I use regularly even in vi-mode
     registry.add_binding(
         Keys.ControlA,
