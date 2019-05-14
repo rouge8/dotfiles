@@ -88,6 +88,10 @@ $(BIN_DIR)/black.symlink:
 	$(SHIV) black \
 		-c black -o $@
 
+$(BIN_DIR)/blacken-docs.symlink:
+	$(SHIV) blacken-docs \
+		-c blacken-docs -o $@
+
 $(BIN_DIR)/caniusepython3.symlink:
 	$(SHIV) caniusepython3 \
 		-c caniusepython3 -o $@
