@@ -1,8 +1,8 @@
 BIN_DIR = .local/bin
 
-SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
-	codemod twine cookiecutter futurize yamllint check-manifest sops vex \
-	black blacken-docs caniusepython3 snakeviz flit nox cfn-lint python-modernize \
+SHIVS = tox flake8 ipython http isort \
+	codemod twine cookiecutter yamllint check-manifest sops vex \
+	black blacken-docs flit nox \
 	bowler yesqa shiv
 
 .PHONY: all clean
@@ -43,18 +43,6 @@ $(BIN_DIR)/http.symlink:
 	$(SHIV) httpie \
 		-c http -o $@
 
-$(BIN_DIR)/sphobjinv.symlink:
-	$(SHIV) sphobjinv \
-		-c sphobjinv -o $@
-
-$(BIN_DIR)/coverage.symlink:
-	$(SHIV) coverage \
-		-c coverage -o $@
-
-$(BIN_DIR)/pycobertura.symlink:
-	$(SHIV) pycobertura \
-		-c pycobertura -o $@
-
 $(BIN_DIR)/isort.symlink:
 	$(SHIV) isort \
 		-c isort -o $@
@@ -70,10 +58,6 @@ $(BIN_DIR)/twine.symlink:
 $(BIN_DIR)/cookiecutter.symlink:
 	$(SHIV) cookiecutter \
 		-c cookiecutter -o $@
-
-$(BIN_DIR)/futurize.symlink:
-	$(SHIV) future \
-		-c futurize -o $@
 
 $(BIN_DIR)/yamllint.symlink:
 	$(SHIV) yamllint \
@@ -100,14 +84,6 @@ $(BIN_DIR)/blacken-docs.symlink:
 	$(SHIV) blacken-docs \
 		-c blacken-docs -o $@
 
-$(BIN_DIR)/caniusepython3.symlink:
-	$(SHIV) caniusepython3 \
-		-c caniusepython3 -o $@
-
-$(BIN_DIR)/snakeviz.symlink:
-	$(SHIV) snakeviz \
-		-c snakeviz -o $@
-
 $(BIN_DIR)/flit.symlink:
 	$(SHIV) flit \
 		-c flit -o $@
@@ -115,14 +91,6 @@ $(BIN_DIR)/flit.symlink:
 $(BIN_DIR)/nox.symlink:
 	$(SHIV) nox-automation \
 		-c nox -o $@
-
-$(BIN_DIR)/cfn-lint.symlink:
-	$(SHIV) cfn-lint \
-		-c cfn-lint -o $@
-
-$(BIN_DIR)/python-modernize.symlink:
-	$(SHIV) modernize \
-		-c python-modernize -o $@
 
 $(BIN_DIR)/bowler.symlink:
 	$(SHIV) bowler \
