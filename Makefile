@@ -83,8 +83,7 @@ $(BIN_DIR)/check-manifest.symlink:
 		-c check-manifest -o $@
 
 $(BIN_DIR)/sops.symlink:
-	# sops 1.17 + https://github.com/mozilla/sops/pull/372
-	$(SHIV) https://github.com/mozilla/sops/archive/21df5a6ba7b7a97be7a5f5658306625ba679f75a.zip \
+	$(SHIV) 'sops >= 1.18' \
 		-c sops -o $@
 
 $(BIN_DIR)/vex.symlink:
