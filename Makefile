@@ -1,9 +1,24 @@
 BIN_DIR = .local/bin
 
-SHIVS = tox flake8 ipython http isort \
-	codemod twine cookiecutter yamllint check-manifest sops vex \
-	black blacken-docs flit nox \
-	bowler yesqa shiv
+SHIVS = shiv \
+	tox \
+	ipython \
+	vex \
+	http \
+	flake8 \
+	isort \
+	codemod \
+	twine \
+	cookiecutter \
+	yamllint \
+	check-manifest \
+	sops \
+	black \
+	blacken-docs \
+	flit \
+	nox \
+	bowler \
+	yesqa
 
 .PHONY: all clean
 
