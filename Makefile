@@ -3,7 +3,7 @@ BIN_DIR = .local/bin
 SHIVS = tox flake8 ipython http sphobjinv coverage pycobertura isort \
 	codemod twine cookiecutter futurize yamllint check-manifest sops vex \
 	black blacken-docs caniusepython3 snakeviz flit nox cfn-lint python-modernize \
-	bowler
+	bowler yesqa
 
 .PHONY: all clean
 
@@ -119,3 +119,7 @@ $(BIN_DIR)/python-modernize.symlink:
 $(BIN_DIR)/bowler.symlink:
 	$(SHIV) bowler \
 		-c bowler -o $@
+
+$(BIN_DIR)/yesqa.symlink:
+	$(SHIV) yesqa \
+		-c yesqa -o $@
