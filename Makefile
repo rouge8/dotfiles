@@ -18,7 +18,8 @@ SHIVS = shiv \
 	flit \
 	nox \
 	bowler \
-	yesqa
+	yesqa \
+	pyupgrade
 
 .PHONY: all clean
 
@@ -113,3 +114,7 @@ $(BIN_DIR)/bowler.symlink:
 $(BIN_DIR)/yesqa.symlink:
 	$(SHIV) yesqa \
 		-c yesqa -o $@
+
+$(BIN_DIR)/pyupgrade.symlink:
+	$(SHIV) pyupgrade \
+		-c pyupgrade -o $@
