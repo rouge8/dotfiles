@@ -36,11 +36,10 @@ clean:
 	dotfiles install
 
 $(BIN_DIR)/shiv.symlink:
-	# Build shiv with pip 19.1.1 with https://github.com/pypa/pip/pull/6008
 	VENV_DIR=$$(mktemp -d) && \
 	python3 -m venv "$${VENV_DIR}" && \
 	"$${VENV_DIR}/bin/pip" install shiv && \
-	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" https://github.com/pypa/pip/archive/287aa4b7bf88c7ccc237a68165ce29511e3193fa.zip shiv -c shiv -o $@ ; \
+	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
 
 $(BIN_DIR)/tox.symlink:
