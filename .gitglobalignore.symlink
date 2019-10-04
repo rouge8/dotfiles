@@ -47,3 +47,9 @@ Icon?
 
 # editorconfig
 !.editorconfig
+
+# yamllint
+!.yamllint
+
+# pre-commit
+!.pre-commit-*.yaml
