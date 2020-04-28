@@ -14,7 +14,6 @@
 	resetu = "![[ -z $(git diffu) ]] && git reset --hard @{u}"
 	rm-merged = !git branch --merged | grep -v '^[* ]*master' | grep -v '^[* ]*develop' | grep -v \"\\*\" | xargs -n 1 git branch -d
 	git = !exec git
-	recent-branches = for-each-ref --sort=-committerdate refs/heads/ | head | sed "s/refs.heads.//g"
 
 [core]
 	excludesfile = ~/.gitglobalignore
