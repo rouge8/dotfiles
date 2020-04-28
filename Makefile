@@ -19,7 +19,8 @@ SHIVS = shiv \
 	nox \
 	bowler \
 	yesqa \
-	pyupgrade
+	pyupgrade \
+	structurediff
 
 .PHONY: all clean
 
@@ -117,3 +118,7 @@ $(BIN_DIR)/yesqa.symlink:
 $(BIN_DIR)/pyupgrade.symlink:
 	$(SHIV) pyupgrade \
 		-c pyupgrade -o $@
+
+$(BIN_DIR)/structurediff.symlink:
+	$(SHIV) structurediff \
+		-c structurediff -o $@
