@@ -1051,7 +1051,7 @@
   "defines": [
     {
       "name": "MinDebounceTime",
-      "value": "7"
+      "value": "9"
     }
   ],
   "header": {
