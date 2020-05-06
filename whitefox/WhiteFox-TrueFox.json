@@ -962,8 +962,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "RALT",
-          "label": "RALT"
+          "key": "RGUI",
+          "label": "RGUI"
         }
       },
       "triggers": null
