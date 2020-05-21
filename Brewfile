@@ -10,8 +10,6 @@ tap "jkawamoto/fgo"
 tap "remind101/formulae"
 tap "wolever/git-blast"
 cask "osxfuse"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # YAML Parser
 brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
@@ -44,8 +42,6 @@ brew "boost"
 brew "c-ares"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext", link: false
 # Perl compatible regular expressions library
 brew "pcre"
 # Core application library for C
@@ -58,6 +54,8 @@ brew "certbot"
 brew "libtool"
 # CloudFlare's PKI toolkit
 brew "cfssl"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Tool for automated testing of webapps across many browsers
 brew "chromedriver", restart_service: true
 # Enables you to reproduce the CircleCI environment locally
@@ -106,10 +104,10 @@ brew "fribidi"
 brew "gcc"
 # GNOME XML library
 brew "libxml2"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Postgres C API library
 brew "libpq"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
 # Library for JPEG-2000 image manipulation
@@ -144,12 +142,14 @@ brew "gpg-agent"
 brew "gpgme"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # GNU grep, egrep and fgrep
 brew "grep"
-# OpenType text shaping engine
-brew "harfbuzz"
 # HTTP load generator, ApacheBench (ab) replacement
 brew "hey"
 # Improved top (interactive process viewer)
@@ -216,8 +216,6 @@ brew "ossp-uuid"
 brew "packer"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Auto-hinter for TrueType fonts
 brew "ttfautohint"
 # PDF to HTML converter
@@ -310,6 +308,7 @@ cask "bricklink-studio"
 cask "cloak"
 cask "coconutbattery"
 cask "daisydisk"
+cask "divvy"
 cask "etcher"
 cask "flux"
 cask "gimp"
