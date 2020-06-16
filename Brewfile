@@ -14,10 +14,10 @@ cask "osxfuse"
 brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# ISO-C API and CLI for generating UUIDs
+brew "ossp-uuid"
 # Library for command-line editing
 brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Automate deployment, configuration, and upgrading
@@ -108,8 +108,6 @@ brew "libxml2"
 brew "libpq"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
-# Color management engine supporting ICC profiles
-brew "little-cms2"
 # Library for JPEG-2000 image manipulation
 brew "openjpeg"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -208,10 +206,6 @@ brew "node@6"
 brew "ragel"
 # Source code line counter
 brew "ohcount"
-# OpenBSD freely-licensed SSH connectivity tools
-brew "openssh"
-# ISO-C API and CLI for generating UUIDs
-brew "ossp-uuid"
 # Tool for creating identical machine images for multiple platforms
 brew "packer"
 # Swiss-army knife of markup format conversion
