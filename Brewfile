@@ -251,6 +251,8 @@ brew "the_silver_searcher"
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Provide version control info in shell prompts
+brew "vcprompt"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Internet file retriever
