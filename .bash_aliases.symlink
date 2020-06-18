@@ -30,12 +30,6 @@ alias webserver='python -m SimpleHTTPServer'
 alias git-today='git diff @{yesterday}..HEAD'
 alias find-broken-links='find . -type l -exec test ! -e {} \; -print'
 
-# vim
-alias vundle-install='vim -u ~/.bundles.vim +NeoBundleInstall +qall'
-alias vundle-update='vim -u ~/.bundles.vim +NeoBundleInstall! +qall'
-alias vundle-clean='vim -u ~/.bundles.vim +NeoBundleClean +qall'
-alias vundle-list='vim -u ~/.bundles.vim +NeoBundleList'
-
 # virtualbox
 alias ls-vms='VBoxManage list vms'
 
