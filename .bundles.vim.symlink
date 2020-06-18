@@ -1,67 +1,36 @@
-if has('vim_starting')
-   set nocompatible               " be iMproved
-   filetype off                   " required!
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+call plug#begin()
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'briandoll/change-inside-surroundings.vim'
-NeoBundle 'sjl/clam.vim'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'myusuf3/numbers.vim'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-rsi'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'justinmk/vim-sneak'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'briandoll/change-inside-surroundings.vim'
+Plug 'sjl/clam.vim'
+Plug 'tpope/vim-commentary'
+Plug 'myusuf3/numbers.vim'
+Plug 'sjl/gundo.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-rsi'
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'justinmk/vim-sneak'
 
 " Appearance
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'bling/vim-airline'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'bling/vim-airline'
 
 " Language/Syntax
-NeoBundle 'tpope/vim-git'
-NeoBundle 'Glench/Vim-Jinja2-Syntax'
-NeoBundle 'rouge8/nginx.vim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'mitsuhiko/vim-python-combined'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'raimon49/requirements.txt.vim'
-NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'dbakker/vim-lint'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'sophacles/vim-bundle-mako'
-NeoBundle 'wavded/vim-stylus'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'vim-scripts/groovy.vim'
-NeoBundle 'hashivim/vim-terraform'
+Plug 'raimon49/requirements.txt.vim'
+Plug 'vim-scripts/groovy.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Color Schemes
-NeoBundle 'altercation/vim-colors-solarized'
+Plug 'sainnhe/gruvbox-material'
 
 " Done
-call neobundle#end()
-
-filetype plugin indent on     " required!
-
-" Installation check.
-NeoBundleCheck
+call plug#end()

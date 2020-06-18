@@ -1,4 +1,4 @@
-" NeoBundle and bundles configuration
+" vim-plug configuration
 source $HOME/.bundles.vim
 
 " File/Syntax settings
@@ -133,9 +133,12 @@ set splitright
 set splitbelow
 
 " color
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
+if has('termcolors')
+  set termguicolors
+endif
 set background=dark
-colorscheme solarized
+let g:gruvbox_material_pallette = 'original'
+colorscheme gruvbox-material
 
 " vim-airline
 let g:airline_powerline_fonts=1

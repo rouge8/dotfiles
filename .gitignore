@@ -6,3 +6,4 @@
 .env
 .DS_Store
 .vim.symlink/bundle
+.vim.symlink/plugged
