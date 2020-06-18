@@ -44,8 +44,7 @@ $(BIN_DIR)/shiv.symlink:
 	rm -rf "$${VENV_DIR}"
 
 $(BIN_DIR)/tox.symlink:
-	$(SHIV) tox \
-		-c tox -o $@
+	brew install tox || $(SHIV) tox -c tox -o $@
 
 $(BIN_DIR)/flake8.symlink:
 	$(SHIV) 'flake8>=3.2.0' flake8-plone-hasattr flake8-comprehensions flake8-bugbear \
