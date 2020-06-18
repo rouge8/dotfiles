@@ -6,56 +6,55 @@ PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cabal/bin:/Library/TeX/texbin
 export EDITOR=vim
 
 # Macs luv homebrew
-if [[ `uname -s` == "Darwin" ]]; then
-    PATH=/usr/local/bin:/usr/local/sbin:$PATH
-    PATH=/usr/local/opt/ruby/bin:$PATH
+if [[ $(uname -s) == "Darwin" ]]; then
+  PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
 # golang
 if [[ -d $HOME/local/go ]]; then
-    export GOROOT=$HOME/local/go
-    export PATH=$PATH:$GOROOT/bin
+  export GOROOT=$HOME/local/go
+  export PATH=$PATH:$GOROOT/bin
 fi
 
 export PATH
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # pullify - add remote for pull reuqests
 function pullify() {
-    git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
+  git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
 }
 
 # realpath - get absolute path of file
 # Usage: realpath <file>
 realpath() {
-    python -c "import os; print os.path.realpath('$1')"
+  python -c "import os; print os.path.realpath('$1')"
 }
 
 ## functions from http://code.toofishes.net/cgit/dan/configfiles.git/tree/bashrc
 # sanitize - set file/directory owner and permissions to normal values (644/755)
 # Usage: sanitize <file>
 sanitize() {
-	chmod -R u=rwX,go=rX "$@"
-	chown -R ${USER}:${USER} "$@"
+  chmod -R u=rwX,go=rX "$@"
+  chown -R ${USER}:${USER} "$@"
 }
 
 # psfind - shortcut for grepping a process name
 # Usage: psfind <process name>
 psfind() {
-	ps -ef | egrep "PID|$@"
+  ps -ef | egrep "PID|$@"
 }
 
 # notes! from http://jasonwryan.com/post/1203000683/awk-notes
 n() {
-        $EDITOR ~/.notes/"$*".txt
+  $EDITOR ~/.notes/"$*".txt
 }
-nls() { tree -CR --noreport ~/.notes | awk '{ if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) print " "$3 }' ; }
-
+nls() { tree -CR --noreport ~/.notes | awk '{ if (NF==1) print $1; else if (NF==2) print $2; else if (NF==3) print " "$3 }'; }
 
 # bash vi editing mode
 # from http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/
@@ -75,49 +74,54 @@ shopt -s histappend
 shopt -s cmdhist
 export HISTTIMEFORMAT='%F %T '
 # use ** to search any depth
-if [[ `uname` != Darwin ]]; then
-    shopt -s globstar
+if [[ $(uname) != Darwin ]]; then
+  shopt -s globstar
 fi
 shopt -s histverify
 
-function pdp8run {
-    pal -r $1.pal
-    coremake $1.core < $1.rim
-    pdp8e $1.core
+function pdp8run() {
+  pal -r $1.pal
+  coremake $1.core <$1.rim
+  pdp8e $1.core
 }
 
-function gimmedatjson {
-    curl "$*" | python -m json.tool | pygmentize -l javascript
+function gimmedatjson() {
+  curl "$*" | python -m json.tool | pygmentize -l javascript
 }
-
 
 if [ -f ~/.autoenv/activate.sh ]; then
-    source ~/.autoenv/activate.sh
+  source ~/.autoenv/activate.sh
 fi
 
 # convert cprofile output to something useful
-function cprof2png {
-    gprof2dot -f pstats $1 | dot -Tpng -o $1.png
+function cprof2png() {
+  gprof2dot -f pstats $1 | dot -Tpng -o $1.png
 }
-function cprof2dot {
-    gprof2dot -f pstats $1 > $1.dot
+function cprof2dot() {
+  gprof2dot -f pstats $1 >$1.dot
 }
 
 # human readable du -sh
-function duf {
-du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
+function duf() {
+  du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do
+    if [ $size -lt 1024 ]; then
+      echo -e "${size}${unit}\t${fname}"
+      break
+    fi
+    size=$((size / 1024))
+  done; done
 
 }
 
 # Bash completions
 if [[ -d $HOME/.bash_completion.d ]]; then
-    for f in $HOME/.bash_completion.d/*; do
-        source $f
-    done
+  for f in $HOME/.bash_completion.d/*; do
+    source $f
+  done
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion
+  . /usr/local/etc/bash_completion
 fi
 
 # kitty auto-completion
@@ -136,28 +140,28 @@ interact +++ return"; }
 
 # List exposed ports on a Docker image/container
 docker-ports() {
-    docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
+  docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
 }
 
 docker_nuke() {
-    docker rm -f $(docker ps -a -q)
-    docker rmi -f $(docker images -q)
+  docker rm -f $(docker ps -a -q)
+  docker rmi -f $(docker images -q)
 }
 
 # vex
 eval "$(vex --shell-config bash)"
-function workon {
-    vex $1
+function workon() {
+  vex $1
 }
 
 # Don't install anything globally with pip
 export PIP_REQUIRE_VIRTUALENV=true
 # Use 'gpip' to upgrade pip/virtualenv/etc.
 gpip() {
-    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+  PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 gpip3() {
-    PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+  PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
 # AWS
@@ -165,23 +169,23 @@ export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_SESSION_TTL=12h
 export AWS_ASSUME_ROLE_TTL=1h
 unset_aws() {
-    for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
+  for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
 }
-function assume-aws {
-    unset_aws
-    eval $( aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /" )
-    AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
+function assume-aws() {
+  unset_aws
+  eval $(aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
+  AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
 }
 
 # vim-plug
-function vim-plug-install {
-    vim +"let g:plug_window='enew'" +PlugInstall +qall
+function vim-plug-install() {
+  vim +"let g:plug_window='enew'" +PlugInstall +qall
 }
-function vim-plug-update {
-    vim +"let g:plug_window='enew'" +PlugUpgrade +PlugUpdate +qall
+function vim-plug-update() {
+  vim +"let g:plug_window='enew'" +PlugUpgrade +PlugUpdate +qall
 }
-function vim-plug-clean {
-    vim +"let g:plug_window='enew'" +PlugClean +qall
+function vim-plug-clean() {
+  vim +"let g:plug_window='enew'" +PlugClean +qall
 }
 
 ### Added by the Heroku Toolbelt

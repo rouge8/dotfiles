@@ -6,17 +6,17 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # ls
-if [[ `uname -s` == 'Linux' ]]; then
-    alias ls='ls --color=auto -F'
-elif [[ `uname -s` == 'Darwin' ]]; then
-    alias ls='ls -G -F'
+if [[ $(uname -s) == 'Linux' ]]; then
+  alias ls='ls --color=auto -F'
+elif [[ $(uname -s) == 'Darwin' ]]; then
+  alias ls='ls -G -F'
 fi
 alias ll='ls -l'
 
 # hub
 # <https://github.com/defunkt/hub>
-if [ `type -P ruby` ]; then
-    alias git=hub
+if [ $(type -P ruby) ]; then
+  alias git=hub
 fi
 
 # learn2type
@@ -45,18 +45,18 @@ alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-dev='docker-machine start dev ; eval "$(docker-machine env dev)"'
 
 # Linux specific aliases
-if [[ `uname` != 'Darwin' ]]; then
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
+if [[ $(uname) != 'Darwin' ]]; then
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
 
-    if [ `type -P xdg-open` ]; then
-        alias open='xdg-open'
-    fi
+  if [ $(type -P xdg-open) ]; then
+    alias open='xdg-open'
+  fi
 fi
 
 # fucking DNS cache
-if [[ `uname -s` == 'Darwin' ]]; then
-    alias kill-dns-cache='sudo killall -HUP mDNSResponder'
+if [[ $(uname -s) == 'Darwin' ]]; then
+  alias kill-dns-cache='sudo killall -HUP mDNSResponder'
 fi
 
 # emoji
