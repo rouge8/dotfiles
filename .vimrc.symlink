@@ -137,8 +137,7 @@ if has('termcolors')
   set termguicolors
 endif
 set background=dark
-let g:gruvbox_material_pallette = 'original'
-colorscheme gruvbox-material
+colorscheme gruvbox
 
 " vim-airline
 let g:airline_powerline_fonts=1

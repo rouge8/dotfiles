@@ -30,7 +30,7 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Color Schemes
-Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 
 " Done
 call plug#end()
