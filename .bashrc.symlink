@@ -141,6 +141,11 @@ docker_nuke() {
     docker rmi -f $(docker images -q)
 }
 
+# vex
+eval "$(vex --shell-config bash)"
+function workon {
+    vex $1
+}
 
 # Don't install anything globally with pip
 export PIP_REQUIRE_VIRTUALENV=true
