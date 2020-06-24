@@ -13,6 +13,12 @@ elif [[ $(uname -s) == 'Darwin' ]]; then
 fi
 alias ll='ls -l'
 
+# kitty/ssh
+# https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
+if [[ $TERM == 'xterm-kitty' ]]; then
+  alias ssh='kitty +kitten ssh'
+fi
+
 # hub
 # <https://github.com/defunkt/hub>
 if [ $(type -P ruby) ]; then
