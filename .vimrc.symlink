@@ -144,8 +144,16 @@ endif
 set background=dark
 colorscheme gruvbox
 
+" gui
+if has("gui_macvim")
+  " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
+  " TODO: find a good patched font
+  set guifont=Menlo:h18
+endif
+
 " vim-airline
-let g:airline_powerline_fonts=1
+" TODO: find a good patched font
+" let g:airline_powerline_fonts=1
 set laststatus=2 " Always show the statusline
 
 " Highlight VCS conflict markers
@@ -275,10 +283,6 @@ nnoremap <F5> :GundoToggle<CR>
 " numbers.vim in vim 7.4+
 if v:version >= 704
   set number
-endif
-
-if has("gui_macvim")
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
 endif
 
 
