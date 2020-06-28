@@ -274,8 +274,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "RCTRL",
-          "label": "RCTRL"
+          "key": "PRINTSCREEN",
+          "label": "PRSC"
         }
       },
       "triggers": null
