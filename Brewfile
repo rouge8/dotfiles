@@ -270,7 +270,6 @@ brew "getsentry/tools/sentry-cli"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
 cask "anki"
-cask "atom"
 cask "aws-vault"
 cask "coconutbattery"
 cask "daisydisk"
