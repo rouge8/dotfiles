@@ -70,3 +70,6 @@ alias shrug='echo "¯\_(ツ)_/¯" | pbcopy'
 
 # strip formatting
 alias pbclean='pbpaste | pbcopy'
+
+# ugh apple
+alias unquarantine='xattr -d com.apple.quarantine'
