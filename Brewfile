@@ -237,6 +237,8 @@ brew "sbcl"
 brew "shfmt"
 # SMART hard drive monitoring
 brew "smartmontools"
+# Editor of encrypted files
+brew "sops", link: false
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
 # Add a public key to a remote machine's authorized_keys file
