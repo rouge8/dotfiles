@@ -156,6 +156,9 @@ function workon() {
 function lsvirtualenv() {
   \ls ~/.virtualenvs/
 }
+function mktmpenv() {
+  vex -rm $@ tmp-$(date +%s)
+}
 
 # Don't install anything globally with pip
 export PIP_REQUIRE_VIRTUALENV=true
