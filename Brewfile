@@ -193,6 +193,8 @@ brew "pandoc"
 brew "ttfautohint"
 # PDF to HTML converter
 brew "pdf2htmlex", link: false
+# PostgreSQL syntax beautifier
+brew "pgformatter"
 # Python dependency management tool
 brew "pipenv"
 # Cross-platform library for audio I/O
