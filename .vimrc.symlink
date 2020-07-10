@@ -90,8 +90,6 @@ if &term=~'rxvt'
   set ttymouse=urxvt
 endif
 
-" http://lucumr.pocoo.org/2010/7/29/sharing-vim-tricks/
-set autochdir
 set title
 
 " syntastic
