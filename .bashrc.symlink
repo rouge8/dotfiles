@@ -183,6 +183,10 @@ function assume-aws() {
   AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
 }
 
+function aws-get-console-output() {
+  aws ec2 get-console-output --instance-id $1 | jq -r '.Output'
+}
+
 # vim-plug
 function vim-plug-install() {
   vim +"let g:plug_window='enew'" +PlugInstall +qall
