@@ -2,9 +2,6 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 unset USERNAME
-if [ "$SSH_CONNECTION" != "" ]; then
-  export TERM=xterm
-fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -57,7 +54,6 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi

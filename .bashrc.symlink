@@ -70,12 +70,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
   PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
-# golang
-if [[ -d $HOME/local/go ]]; then
-  export GOROOT=$HOME/local/go
-  export PATH=$PATH:$GOROOT/bin
-fi
-
 export PATH
 
 # If not running interactively, don't do anything
@@ -138,20 +132,6 @@ if [[ $(uname) != Darwin ]]; then
 fi
 shopt -s histverify
 
-function pdp8run() {
-  pal -r $1.pal
-  coremake $1.core <$1.rim
-  pdp8e $1.core
-}
-
-function gimmedatjson() {
-  curl "$*" | python -m json.tool | pygmentize -l javascript
-}
-
-if [ -f ~/.autoenv/activate.sh ]; then
-  source ~/.autoenv/activate.sh
-fi
-
 # convert cprofile output to something useful
 function cprof2png() {
   gprof2dot -f pstats $1 | dot -Tpng -o $1.png
@@ -185,17 +165,6 @@ fi
 
 # kitty auto-completion
 source /dev/stdin <<<"$(kitty + complete setup bash)"
-
-# so much laziness.
-# from <https://github.com/mitsuhiko/dotfiles/blob/2ca53b0a27be7b5067db1444de50f0fa85901e94/bash/bashrc>
-from() { expect -c "spawn -noecho python
-expect \">>> \"
-send \"from $*\r\"
-interact +++ return"; }
-import() { expect -c "spawn -noecho python
-expect \">>> \"
-send \"import $*\r\"
-interact +++ return"; }
 
 # List exposed ports on a Docker image/container
 docker-ports() {
