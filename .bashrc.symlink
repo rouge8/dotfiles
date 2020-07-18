@@ -139,20 +139,6 @@ function duf() {
 
 }
 
-# Bash completions
-if [[ -d $HOME/.bash_completion.d ]]; then
-  for f in $HOME/.bash_completion.d/*; do
-    source $f
-  done
-fi
-
-if [ -f /usr/local/etc/bash_completion ]; then
-  . /usr/local/etc/bash_completion
-fi
-
-# kitty auto-completion
-source /dev/stdin <<<"$(kitty + complete setup bash)"
-
 # List exposed ports on a Docker image/container
 docker-ports() {
   docker inspect --format='{{range $port, $_ := .Config.ExposedPorts}}{{$port}}{{"\n"}}{{end}}' $1 | cut -d "/" -f 1 -s
@@ -164,7 +150,6 @@ docker_nuke() {
 }
 
 # vex
-eval "$(vex --shell-config bash)"
 function workon() {
   vex $1
 }

@@ -54,9 +54,19 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
+# Bash completion
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+fi
+
+# kitty auto-completion
+source /dev/stdin <<<"$(kitty + complete setup bash)"
+
+# Python
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+eval "$(vex --shell-config bash)"
 
 # Volta <https://volta.sh/>
 export VOLTA_HOME="$HOME/.volta"
