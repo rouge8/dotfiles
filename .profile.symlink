@@ -1,0 +1,14 @@
+export EDITOR=vim
+
+PATH=$PATH:$HOME/bin:$HOME/.local/bin::/Library/TeX/texbin
+if [[ $(uname -s) == "Darwin" ]]; then
+  PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  PATH=/usr/local/opt/ruby/bin:$PATH
+  PATH=$PATH:/usr/local/opt/python@3.7/bin
+fi
+export PATH
+
+# AWS
+export AWS_VAULT_KEYCHAIN_NAME=login
+export AWS_SESSION_TTL=12h
+export AWS_ASSUME_ROLE_TTL=1h

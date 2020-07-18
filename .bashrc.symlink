@@ -59,19 +59,6 @@ $ "
 # don't let virtualenv show prompts by itself
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# Path
-
-PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cabal/bin:/Library/TeX/texbin
-export EDITOR=vim
-
-# Macs luv homebrew
-if [[ $(uname -s) == "Darwin" ]]; then
-  PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  PATH=/usr/local/opt/ruby/bin:$PATH
-fi
-
-export PATH
-
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
@@ -199,9 +186,6 @@ gpip3() {
 }
 
 # AWS
-export AWS_VAULT_KEYCHAIN_NAME=login
-export AWS_SESSION_TTL=12h
-export AWS_ASSUME_ROLE_TTL=1h
 unset_aws() {
   for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
 }
@@ -225,6 +209,3 @@ function vim-plug-update() {
 function vim-plug-clean() {
   vim +"let g:plug_window='enew'" +PlugClean +qall
 }
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"

@@ -3,7 +3,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 unset USERNAME
 
-# Get the aliases and functions
+if [ -f ~/.profile ]; then
+  . ~/.profile
+fi
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
@@ -40,8 +42,6 @@ elif [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
 fi
 
 export FIGNORE=.un~:.swp~
-
-export PYTHONDONTWRITEBYTECODE=true
 
 export LESS_TERMCAP_us=$'\e[32m'
 export LESS_TERMCAP_ue=$'\e[0m'
