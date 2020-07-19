@@ -25,7 +25,7 @@ SHIVS = shiv \
 
 .PHONY: all clean
 
-SHIV = shiv --python "/usr/local/bin/python3.7 -sE"
+SHIV = shiv --python "/usr/local/bin/python3.8 -sE"
 
 all: $(SHIVS)
 
