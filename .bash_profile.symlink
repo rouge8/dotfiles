@@ -21,26 +21,6 @@ bind -m vi-insert "\C-a.":beginning-of-line
 bind -m vi-insert "\C-e.":end-of-line
 bind -m vi-insert "\C-w.":backward-kill-word
 
-# Lazy-load virtualenvwrapper. virtualenvwrapperis slowwwww, at least on OS X.
-# Lazy-loading is soooo much faster.
-# Before:
-#     $ time bash -l -c "exit"
-#
-#     real    0m0.164s
-#     user    0m0.104s
-#     sys     0m0.055s
-# After:
-#     $ time bash -l -c "exit"
-#
-#     real    0m0.046s
-#     user    0m0.021s
-#     sys     0m0.022s
-if [ -f $HOME/.local/bin/virtualenvwrapper_lazy.sh ]; then
-  source $HOME/.local/bin/virtualenvwrapper_lazy.sh
-elif [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
-  source /usr/local/bin/virtualenvwrapper_lazy.sh
-fi
-
 export FIGNORE=.un~:.swp~
 
 export LESS_TERMCAP_us=$'\e[32m'
