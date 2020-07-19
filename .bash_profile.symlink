@@ -45,6 +45,11 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+if [[ -d $HOME/.bash_completion.d ]]; then
+  for f in $HOME/.bash_completion.d/*; do
+    source $f
+  done
+fi
 
 # kitty auto-completion
 source /dev/stdin <<<"$(kitty + complete setup bash)"
@@ -53,7 +58,6 @@ source /dev/stdin <<<"$(kitty + complete setup bash)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-eval "$(vex --shell-config bash)"
 
 # Volta <https://volta.sh/>
 export VOLTA_HOME="$HOME/.volta"

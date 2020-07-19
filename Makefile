@@ -1,4 +1,5 @@
 BIN_DIR = .local/bin
+COMPLETIONS_DIR = ~/.bash_completion.d
 
 SHIVS = shiv \
 	tox \
@@ -89,6 +90,7 @@ $(BIN_DIR)/sops.symlink:
 $(BIN_DIR)/vex.symlink:
 	$(SHIV) vex \
 		-c vex -o $@
+	$@ --shell-config bash > $(COMPLETIONS_DIR)/vex
 
 $(BIN_DIR)/black.symlink:
 	$(SHIV) black \
