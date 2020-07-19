@@ -90,6 +90,7 @@ $(BIN_DIR)/sops.symlink:
 $(BIN_DIR)/vex.symlink:
 	$(SHIV) vex \
 		-c vex -o $@
+	mkdir -p $(COMPLETIONS_DIR)
 	$@ --shell-config bash > $(COMPLETIONS_DIR)/vex
 
 $(BIN_DIR)/black.symlink:
