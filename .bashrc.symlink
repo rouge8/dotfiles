@@ -1,4 +1,6 @@
-# .bashrc
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
 # My prompt!
 # stolen from <https://github.com/mitsuhiko/dotfiles/blob/master/bash/bashrc>
