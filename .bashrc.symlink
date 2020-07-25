@@ -15,6 +15,7 @@ if type brew &>/dev/null; then
   fi
 fi
 if [[ -d $HOME/.bash_completion.d ]]; then
+  shopt -s extglob
   for f in $HOME/.bash_completion.d/*; do
     source $f
   done
