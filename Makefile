@@ -1,7 +1,7 @@
 BIN_DIR = .local/bin
 COMPLETIONS_DIR = ~/.bash_completion.d
 
-SHIVS = shiv \
+SHIVS = shiv shiv-info \
 	tox \
 	ipython \
 	vex \
@@ -43,6 +43,9 @@ $(BIN_DIR)/shiv.symlink:
 	"$${VENV_DIR}/bin/pip" install shiv && \
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
+
+$(BIN_DIR)/shiv-info.symlink:
+	$(SHIV) shiv -c shiv-info -o $@
 
 $(BIN_DIR)/tox.symlink:
 	brew install tox || $(SHIV) tox -c tox -o $@
