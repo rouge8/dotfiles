@@ -27,7 +27,7 @@ SHIVS = shiv shiv-info \
 
 SHIV = shiv --python "/usr/local/bin/python3.8 -sE"
 
-all: $(SHIVS)
+all: $(SHIVS) Brewfile
 
 clean:
 	for shiv in $(SHIVS); do \
@@ -127,3 +127,6 @@ $(BIN_DIR)/pyupgrade.symlink:
 $(BIN_DIR)/structurediff.symlink:
 	$(SHIV) structurediff \
 		-c structurediff -o $@
+
+Brewfile: $(shell brew --prefix) /Applications
+	brew bundle dump --describe --force
