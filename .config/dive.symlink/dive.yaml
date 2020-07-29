@@ -1,0 +1,9 @@
+---
+
+keybinding:
+  # File view specific bindings
+  toggle-collapse-dir: space
+
+diff:
+  hide:
+    - unmodified

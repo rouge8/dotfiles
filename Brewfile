@@ -65,6 +65,8 @@ brew "libusb"
 brew "dfu-util"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Tool for exploring each layer in a docker image
+brew "dive"
 # Docker Credential Helper for Amazon ECR
 brew "docker-credential-helper-ecr"
 # Convert text between DOS, UNIX, and Mac formats
