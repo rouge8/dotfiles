@@ -29,6 +29,8 @@ brew "autoconf"
 brew "awscli"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
 # Collection of portable C++ source libraries
