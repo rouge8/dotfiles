@@ -27,6 +27,8 @@ brew "augeas"
 brew "autoconf"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Terminal bandwidth utilization tool
+brew "bandwhich"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -75,6 +77,8 @@ brew "docker-credential-helper-ecr"
 brew "dos2unix"
 # Generate documentation for several programming languages
 brew "doxygen"
+# More intuitive version of du in rust
+brew "dust"
 # Run arbitrary commands when files change
 brew "entr"
 # Library like getopt(3) with a number of enhancements
@@ -173,6 +177,10 @@ brew "maven"
 brew "md5deep"
 # Modern programming language in the Lisp/Scheme family
 brew "minimal-racket"
+# Safe, concurrent, practical language
+brew "rust"
+# High performance static file server
+brew "miniserve"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Open source relational database management system
@@ -233,8 +241,6 @@ brew "randomize-lines"
 brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Safe, concurrent, practical language
-brew "rust"
 # Command-line tool for the Amazon S3 service
 brew "s3cmd"
 # Steel Bank Common Lisp system
