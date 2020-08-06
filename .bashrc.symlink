@@ -188,6 +188,9 @@ function workon() {
 function lsvirtualenv() {
   \ls ~/.virtualenvs/
 }
+function rmvirtualenv() {
+  rm -rf ~/.virtualenvs/$1
+}
 function mktmpenv() {
   vex -rm $@ tmp-$(date +%s)
 }
