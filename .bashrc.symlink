@@ -185,6 +185,9 @@ docker_nuke() {
 function workon() {
   vex $1
 }
+function mkvirtualenv() {
+  vex -m $@
+}
 function lsvirtualenv() {
   \ls ~/.virtualenvs/
 }
