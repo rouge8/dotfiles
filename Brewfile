@@ -145,6 +145,8 @@ brew "htop"
 brew "hub"
 # Spell checker and morphological analyzer
 brew "hunspell"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
