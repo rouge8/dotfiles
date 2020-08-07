@@ -126,4 +126,4 @@ $(BIN_DIR)/structurediff.symlink:
 		-c structurediff -o $@
 
 Brewfile: $(shell brew --prefix) /Applications
-	brew bundle dump --describe --force
+	brew bundle dump --describe --force --no-restart
