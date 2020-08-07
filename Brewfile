@@ -216,7 +216,7 @@ brew "portaudio"
 # Object-relational database system
 brew "postgresql"
 # Object-relational database system
-brew "postgresql@9.6", restart_service: true
+brew "postgresql@9.6"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Progress: Coreutils Progress Viewer
