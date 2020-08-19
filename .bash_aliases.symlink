@@ -19,6 +19,9 @@ if [[ $TERM == 'xterm-kitty' ]]; then
   alias ssh='kitty +kitten ssh'
 fi
 
+# ripgrep
+alias rg='RIPGREP_CONFIG_PATH=~/.ripgreprc rg'
+
 # hub
 # <https://github.com/defunkt/hub>
 if [ $(type -P ruby) ]; then

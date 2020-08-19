@@ -1,0 +1,3 @@
+# vcl
+--type-add
+vcl:*.vcl
