@@ -7,3 +7,4 @@
 .DS_Store
 .vim.symlink/bundle
 .vim.symlink/plugged
+Brewfile.lock.json
