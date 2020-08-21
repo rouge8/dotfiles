@@ -22,11 +22,6 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
-# Python
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # Volta <https://volta.sh/>
 export VOLTA_HOME="$HOME/.volta"
 [ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"

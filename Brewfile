@@ -229,8 +229,6 @@ brew "protobuf"
 brew "pth"
 # Monitor data's progress through a pipe
 brew "pv"
-# Python version management
-brew "pyenv"
 # Highly performant implementation of Python 2 in Python
 brew "pypy"
 # Implementation of Python 3 in Python
