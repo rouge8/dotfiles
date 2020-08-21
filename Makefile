@@ -8,7 +8,6 @@ SHIVS = shiv \
 	http \
 	flake8 \
 	isort \
-	codemod \
 	twine \
 	cookiecutter \
 	yamllint \
@@ -62,10 +61,6 @@ $(BIN_DIR)/http.symlink:
 $(BIN_DIR)/isort.symlink:
 	$(SHIV) isort \
 		-c isort -o $@
-
-$(BIN_DIR)/codemod.symlink:
-	$(SHIV) 'codemod>=1.0' \
-		-c codemod -o $@
 
 $(BIN_DIR)/twine.symlink:
 	$(SHIV) twine 'readme_renderer[md]' \

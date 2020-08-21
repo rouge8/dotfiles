@@ -83,6 +83,8 @@ brew "dust"
 brew "entr"
 # Library like getopt(3) with a number of enhancements
 brew "popt"
+# Fast partial replacement for the codemod tool
+brew "fastmod"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
 # Implementation of the Unicode BiDi algorithm
