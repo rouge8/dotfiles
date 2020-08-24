@@ -269,8 +269,6 @@ brew "tox"
 brew "tree"
 # Provide version control info in shell prompts
 brew "vcprompt"
-# Vi 'workalike' with many additional features
-brew "vim"
 # Internet file retriever
 brew "wget"
 # JavaScript package manager
