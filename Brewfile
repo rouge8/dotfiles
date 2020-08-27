@@ -25,6 +25,8 @@ brew "atool"
 brew "augeas"
 # Automatic configure script builder
 brew "autoconf"
+# Authenticate with AWS using your Okta credentials
+brew "aws-okta"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool

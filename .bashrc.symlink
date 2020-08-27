@@ -213,8 +213,13 @@ unset_aws() {
   for i in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT; do unset $i; done
 }
 function assume-aws() {
+  if grep -q "[okta]" ~/.aws/config; then
+    local AWS_CMD=aws-okta
+  else
+    local AWS_CMD=aws-vault
+  fi
   unset_aws
-  eval $(aws-vault exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
+  eval $($AWS_CMD exec $@ -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
   AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
 }
 
