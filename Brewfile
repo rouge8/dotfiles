@@ -153,8 +153,6 @@ brew "hyperfine"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Kubernetes command-line interface
-brew "kubernetes-cli", link: false
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Pager program similar to more
