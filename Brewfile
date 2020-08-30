@@ -1,6 +1,5 @@
 tap "facebook/fb"
 tap "getsentry/tools"
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -108,6 +107,8 @@ brew "poppler"
 brew "gdal"
 # This library is for the GeoIP Legacy format (dat)
 brew "geoip"
+# GitHub command-line tool
+brew "gh"
 # Work on GitHub issues on the command-line
 brew "ghi"
 # Distributed revision control system
@@ -282,8 +283,6 @@ brew "yuicompressor"
 brew "facebook/fb/xar"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
-# GitHub CLI
-brew "github/gh/gh"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
 cask "anki"
