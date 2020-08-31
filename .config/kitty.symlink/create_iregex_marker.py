@@ -10,4 +10,4 @@ def handle_result(args, answer, target_window_id, boss):
         try:
             window.set_marker(spec)
         except Exception as err:
-            boss.show_error('Invalid marker specification', str(err))
+            boss.show_error("Invalid marker specification", str(err))
