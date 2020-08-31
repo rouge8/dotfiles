@@ -1,4 +1,5 @@
 tap "facebook/fb"
+tap "filosottile/gomod"
 tap "getsentry/tools"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -281,6 +282,8 @@ brew "youtube-dl"
 brew "yuicompressor"
 # The eXecutable Archive Format
 brew "facebook/fb/xar"
+# brew command to cleanly install binaries from Go modules
+brew "filosottile/gomod/brew-gomod"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
 # git-blast: show git branches sorted by last commit date Raw
