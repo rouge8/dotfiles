@@ -1,0 +1,51 @@
+---
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      # Filesystem
+      - id: check-case-conflict
+      - id: check-symlinks
+      # Whitespace
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      # Syntax
+      - id: check-merge-conflict
+      - id: check-executables-have-shebangs
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+  - repo: https://github.com/psf/black
+    rev: 19.10b0
+    hooks:
+      - id: black
+        language_version: python3.8
+  - repo: local
+    hooks:
+      - id: shfmt
+        name: shfmt
+        minimum_pre_commit_version: 2.6.0
+        language: golang
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.1.2]
+        entry: shfmt
+        args:
+          # simplify the code
+          - -s
+          # write result to file instead of stdout
+          - -w
+        types:
+          - shell
+      - id: shfmt-.bash*
+        name: shfmt-.bash*
+        minimum_pre_commit_version: 2.6.0
+        language: golang
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.1.2]
+        entry: shfmt
+        args:
+          # simplify the code
+          - -s
+          # write result to file instead of stdout
+          - -w
+        files: .bash*
