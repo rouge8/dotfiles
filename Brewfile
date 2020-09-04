@@ -224,7 +224,7 @@ brew "postgresql"
 brew "postgresql@9.6"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
-# Progress: Coreutils Progress Viewer
+# Coreutils progress viewer
 brew "progress"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
