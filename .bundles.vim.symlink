@@ -3,7 +3,6 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -19,6 +18,8 @@ Plug 'tpope/vim-rsi'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Appearance
 Plug 'kien/rainbow_parentheses.vim'

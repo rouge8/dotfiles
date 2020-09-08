@@ -246,3 +246,7 @@ function vim-plug-update() {
 function vim-plug-clean() {
   vim +"let g:plug_window='enew'" +PlugClean +qall
 }
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

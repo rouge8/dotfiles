@@ -167,28 +167,8 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 map <F1> <Esc>
 imap <F1> <Esc>
 
-" make ctrlp ignore shit
-set wildignore+=*.so,*.pyc,*.un~,*.swp~
-set wildignore+=*/cassettes/*.json
-
-" Use git to list files (including uncommitted but not ignored!) where possible
-let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f'],
-        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-        \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
-
-" make fugitive work
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-" scan for dotfiles in dotfiles directories managed by
-" <https://github.com/rouge8/dotfiles-base>
-if getcwd() =~ $HOME . '/\.dotfiles\.*'
-    let g:ctrlp_show_hidden = 1
-endif
-" death2caching
-let g:ctrlp_use_caching = 0
+" fzf
+nnoremap <C-p> :Files<Cr>
 
 "" MAKE .swp~ AND .un~ FILES LESS ANNOYING
 "" FROM <http://stackoverflow.com/a/9528322/609144>

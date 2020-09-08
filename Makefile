@@ -26,7 +26,7 @@ SHIVS = shiv \
 
 SHIV = shiv --python "/usr/local/bin/python3.8 -sE"
 
-all: $(SHIVS) Brewfile
+all: $(SHIVS) Brewfile ~/.fzf.bash
 
 clean:
 	for shiv in $(SHIVS); do \
@@ -122,3 +122,6 @@ $(BIN_DIR)/structurediff.symlink:
 
 Brewfile: $(shell brew --prefix) /Applications
 	brew bundle dump --describe --force --no-restart
+
+~/.fzf.bash:
+	$(shell brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc

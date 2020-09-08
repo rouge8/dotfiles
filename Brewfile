@@ -88,10 +88,14 @@ brew "entr"
 brew "popt"
 # Fast partial replacement for the codemod tool
 brew "fastmod"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU multiple precision arithmetic library
 brew "gmp"
 # GNU compiler collection
