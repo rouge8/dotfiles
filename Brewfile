@@ -56,8 +56,6 @@ brew "certbot"
 brew "libtool"
 # CloudFlare's PKI toolkit
 brew "cfssl"
-# Statistics utility to count lines of code
-brew "cloc"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
@@ -254,6 +252,8 @@ brew "ripgrep"
 brew "s3cmd"
 # Steel Bank Common Lisp system
 brew "sbcl"
+# Fast and accurate code counter with complexity and COCOMO estimates
+brew "scc"
 # Autoformat shell script source code
 brew "shfmt"
 # SMART hard drive monitoring
