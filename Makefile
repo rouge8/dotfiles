@@ -20,7 +20,8 @@ SHIVS = shiv \
 	bowler \
 	yesqa \
 	pyupgrade \
-	structurediff
+	structurediff \
+	identify-cli
 
 .PHONY: all clean
 
@@ -119,6 +120,10 @@ $(BIN_DIR)/pyupgrade.symlink:
 $(BIN_DIR)/structurediff.symlink:
 	$(SHIV) structurediff \
 		-c structurediff -o $@
+
+$(BIN_DIR)/identify-cli.symlink:
+	$(SHIV) identify \
+		-c identify-cli -o $@
 
 Brewfile: $(shell brew --prefix) /Applications
 	brew bundle dump --describe --force --no-restart
