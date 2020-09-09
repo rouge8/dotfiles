@@ -129,4 +129,5 @@ Brewfile: $(shell brew --prefix) /Applications
 	brew bundle dump --describe --force --no-restart
 
 ~/.fzf.bash:
+	fzf --version || brew install fzf
 	$(shell brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc
