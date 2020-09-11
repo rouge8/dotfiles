@@ -1,14 +1,17 @@
 export EDITOR=vim
 
-PATH=$PATH:$HOME/bin:$HOME/.local/bin::/Library/TeX/texbin
-if [[ $(uname -s) == "Darwin" ]]; then
+if command -v brew &> /dev/null; then
   PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  PATH=/usr/local/opt/ruby/bin:$PATH
-  PATH=$PATH:/usr/local/opt/python@3.7/bin
+  PATH=$PATH:$(brew --prefix)/opt/python@3.7/bin
 fi
 
 # Rust
-PATH="$HOME/.cargo/bin:$PATH"
+PATH=$HOME/.cargo/bin:$PATH
+# Python and others
+PATH=$HOME/.local/bin:$PATH
+
+# Mine
+PATH=$HOME/bin:$PATH
 
 export PATH
 
