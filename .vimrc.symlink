@@ -44,6 +44,9 @@ let javascript_enable_domhtmlcss=1
 " Terraform
 let g:terraform_fmt_on_save=1
 
+" Rust
+let g:rustfmt_autosave=1
+
 " Don't use backup files when editing crontab on OS X
 " ref: http://superuser.com/q/359580
 autocmd filetype crontab setlocal nobackup nowritebackup

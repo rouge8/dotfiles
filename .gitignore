@@ -8,4 +8,5 @@
 .DS_Store
 .vim.symlink/bundle
 .vim.symlink/plugged
+.vim.symlink/view
 Brewfile.lock.json

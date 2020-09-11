@@ -6,6 +6,10 @@ if [[ $(uname -s) == "Darwin" ]]; then
   PATH=/usr/local/opt/ruby/bin:$PATH
   PATH=$PATH:/usr/local/opt/python@3.7/bin
 fi
+
+# Rust
+PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH
 
 # AWS

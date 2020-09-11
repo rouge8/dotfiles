@@ -23,6 +23,9 @@ set -eu
 # Install 'em all
 brew bundle install
 
+# Rust
+rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Python shivs
 make
 

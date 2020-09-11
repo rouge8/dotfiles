@@ -187,7 +187,7 @@ brew "md5deep"
 # Modern programming language in the Lisp/Scheme family
 brew "minimal-racket"
 # Safe, concurrent, practical language
-brew "rust"
+brew "rust", link: false
 # High performance static file server
 brew "miniserve"
 # Simple tool to make locally trusted development certificates
