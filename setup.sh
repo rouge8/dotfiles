@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 set -o pipefail
 
 # Brew
@@ -24,7 +24,7 @@ set -eu
 brew bundle install
 
 # Rust
-rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
 
 # Python shivs
 make
