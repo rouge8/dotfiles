@@ -59,7 +59,7 @@ $(COMPLETIONS_DIR)/vex: $(BIN)/vex
 	mkdir -p $(dir $@)
 	$< --shell-config bash > $@
 
-Brewfile: $(shell brew --prefix) /Applications
+Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
 	brew bundle dump --describe --force --no-restart
 
 ~/.fzf.bash:
