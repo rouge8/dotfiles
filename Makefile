@@ -2,15 +2,11 @@ BIN_DIR = .local/bin
 COMPLETIONS_DIR = ~/.bash_completion.d
 
 SHIVS = shiv \
-	tox \
 	ipython \
 	vex \
-	http \
 	flake8 \
 	isort \
 	twine \
-	cookiecutter \
-	yamllint \
 	check-manifest \
 	sops \
 	black \
@@ -44,9 +40,6 @@ $(BIN_DIR)/shiv.symlink:
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
 
-$(BIN_DIR)/tox.symlink:
-	brew install tox || $(SHIV) tox -c tox -o $@
-
 $(BIN_DIR)/flake8.symlink:
 	$(SHIV) 'flake8>=3.2.0' flake8-plone-hasattr flake8-comprehensions flake8-bugbear \
 		-c flake8 -o $@
@@ -55,10 +48,6 @@ $(BIN_DIR)/ipython.symlink:
 	$(SHIV) ipython requests attrs \
 		-c ipython -o $@
 
-$(BIN_DIR)/http.symlink:
-	$(SHIV) httpie \
-		-c http -o $@
-
 $(BIN_DIR)/isort.symlink:
 	$(SHIV) isort \
 		-c isort -o $@
@@ -66,14 +55,6 @@ $(BIN_DIR)/isort.symlink:
 $(BIN_DIR)/twine.symlink:
 	$(SHIV) twine 'readme_renderer[md]' \
 		-c twine -o $@
-
-$(BIN_DIR)/cookiecutter.symlink:
-	$(SHIV) cookiecutter \
-		-c cookiecutter -o $@
-
-$(BIN_DIR)/yamllint.symlink:
-	$(SHIV) yamllint \
-		-c yamllint -o $@
 
 $(BIN_DIR)/check-manifest.symlink:
 	$(SHIV) check-manifest \

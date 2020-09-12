@@ -58,6 +58,8 @@ brew "libtool"
 brew "cfssl"
 # Cross-platform make
 brew "cmake"
+# Utility that creates projects from templates
+brew "cookiecutter"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
@@ -150,6 +152,8 @@ brew "grep"
 brew "hey"
 # Improved top (interactive process viewer)
 brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Add GitHub support to git on the command-line
 brew "hub"
 # Spell checker and morphological analyzer
@@ -278,6 +282,8 @@ brew "tree"
 brew "vcprompt"
 # Internet file retriever
 brew "wget"
+# Linter for YAML files
+brew "yamllint"
 # JavaScript package manager
 brew "yarn"
 # Download YouTube videos from the command-line
