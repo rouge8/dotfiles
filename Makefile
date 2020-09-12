@@ -14,10 +14,6 @@ SHIVS = shiv \
 	blacken-docs \
 	flit \
 	nox \
-	bowler \
-	yesqa \
-	pyupgrade \
-	structurediff \
 	identify-cli
 
 .PHONY: all clean $(SHIVS)
