@@ -41,7 +41,7 @@ $(BIN_DIR)/shiv.symlink:
 	rm -rf "$${VENV_DIR}"
 
 $(BIN_DIR)/flake8.symlink:
-	$(SHIV) 'flake8>=3.2.0' flake8-plone-hasattr flake8-comprehensions flake8-bugbear \
+	$(SHIV) 'flake8>=3.2.0' flake8-comprehensions flake8-bugbear \
 		-c flake8 -o $@
 
 $(BIN_DIR)/ipython.symlink:
