@@ -23,10 +23,8 @@ SHIVS = shiv \
 all: $(SHIVS) Brewfile ~/.fzf.bash $(COMPLETIONS_DIR)/vex
 
 clean:
-	for shiv in $(SHIVS); do \
-		rm $(BIN)/$$shiv; \
-		rm $(DOTFILES_BIN)/$$shiv.symlink; \
-	done
+	$(RM) $(addprefix $(BIN)/,$(SHIVS))
+	$(RM) $(addprefix $(DOTFILES_BIN)/,$(addsuffix .symlink,$(SHIVS)))
 
 $(SHIVS): % : $(BIN)/%
 
