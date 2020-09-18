@@ -1,3 +1,6 @@
 # vcl
 --type-add
 vcl:*.vcl
+
+# I could have sworn this was a default
+--smart-case
