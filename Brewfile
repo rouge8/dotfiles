@@ -184,8 +184,6 @@ brew "lua@5.1"
 brew "lzop"
 # Utility for directing compilation
 brew "make"
-# Java-based project management
-brew "maven"
 # Recursively compute digests on files/directories
 brew "md5deep"
 # Modern programming language in the Lisp/Scheme family
@@ -288,8 +286,6 @@ brew "yamllint"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# Yahoo! JavaScript and CSS compressor
-brew "yuicompressor"
 # The eXecutable Archive Format
 brew "facebook/fb/xar"
 # brew command to cleanly install binaries from Go modules
