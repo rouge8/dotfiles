@@ -265,15 +265,15 @@ brew "shfmt"
 # SMART hard drive monitoring
 brew "smartmontools"
 # Editor of encrypted files
-brew "sops", link: false
+brew "sops"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # User interface to the TELNET protocol
 brew "telnet"
-# Tool to build, change, and version infrastructure
-brew "terraform"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Generic Python virtualenv management and test command-line tool
