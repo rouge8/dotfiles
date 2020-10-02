@@ -140,6 +140,8 @@ brew "go"
 brew "gox"
 # Library access to GnuPG
 brew "gpgme"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
 # OpenType text shaping engine
