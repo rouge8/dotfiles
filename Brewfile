@@ -72,6 +72,8 @@ brew "libusb"
 brew "dfu-util"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Terminal visual disk space navigator
+brew "diskonaut"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Docker Credential Helper for Amazon ECR
