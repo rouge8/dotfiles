@@ -7,7 +7,6 @@ tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "wolever/git-blast"
-cask "osxfuse"
 # YAML Parser
 brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
@@ -290,8 +289,6 @@ brew "yamllint"
 brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# The eXecutable Archive Format
-brew "facebook/fb/xar"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
 # Sentry command-line client for some generic tasks
