@@ -2,7 +2,7 @@ export EDITOR=vim
 
 if command -v brew &> /dev/null; then
   PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  PATH=$PATH:$(brew --prefix)/opt/python@3.7/bin
+  PATH=$PATH:$(brew --prefix)/opt/python@3.9/bin:$(brew --prefix)/opt/python@3.7/bin
 fi
 
 # Rust

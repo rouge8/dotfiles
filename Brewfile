@@ -49,6 +49,8 @@ brew "pcre"
 brew "glib"
 # Real-time data compression library
 brew "lzo"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
 # Generic library support script
