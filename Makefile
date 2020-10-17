@@ -43,7 +43,7 @@ $(DOTFILES_BIN)/shiv.symlink:
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
 
-flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear
+flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear flake8-docstrings
 
 ipython: DEPS = ipython requests attrs
 
