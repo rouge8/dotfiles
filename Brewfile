@@ -14,7 +14,7 @@ brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
+brew "python@3.9"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Google App Engine
@@ -45,12 +45,12 @@ brew "c-ares"
 brew "fontconfig"
 # Perl compatible regular expressions library
 brew "pcre"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Core application library for C
 brew "glib"
 # Real-time data compression library
 brew "lzo"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
 # Generic library support script
@@ -193,8 +193,6 @@ brew "make"
 brew "md5deep"
 # Modern programming language in the Lisp/Scheme family
 brew "minimal-racket"
-# Safe, concurrent, practical language
-brew "rust", link: false
 # High performance static file server
 brew "miniserve"
 # Simple tool to make locally trusted development certificates
@@ -213,14 +211,12 @@ brew "ragel"
 brew "ohcount"
 # ISO-C API and CLI for generating UUIDs
 brew "ossp-uuid"
+# Process manager for Procfile-based applications and tmux
+brew "overmind"
 # Tool for creating identical machine images for multiple platforms
 brew "packer"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Auto-hinter for TrueType fonts
-brew "ttfautohint"
-# PDF to HTML converter
-brew "pdf2htmlex", link: false
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Python dependency management tool
