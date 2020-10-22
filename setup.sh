@@ -29,7 +29,4 @@ rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | 
 # Python shivs
 make
 
-# virtualenv
-PIP_REQUIRE_VIRTUALENV="" python3 -m pip install virtualenv
-
 # TODO: plist shenanigans for system settings? dock? application settings? divvy?

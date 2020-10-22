@@ -1,8 +1,10 @@
 DOTFILES_BIN = .local/bin
 BIN = ~/$(DOTFILES_BIN)
 COMPLETIONS_DIR = ~/.bash_completion.d
+PYTHON = $(shell brew --prefix)/bin/python3.8 -sE
 
 SHIVS = shiv \
+	virtualenv \
 	ipython \
 	vex \
 	flake8 \
@@ -32,7 +34,7 @@ $(BIN)/%: $(DOTFILES_BIN)/%.symlink
 	dotfiles install
 
 $(DOTFILES_BIN)/%.symlink: $(BIN)/shiv
-	shiv --python "/usr/local/bin/python3.8 -sE" $(or $(DEPS),$*) \
+	shiv --python "$(PYTHON)" $(or $(DEPS),$*) \
 		--console-script $(basename $(notdir $@)) \
 		--output-file $@
 
@@ -42,6 +44,11 @@ $(DOTFILES_BIN)/shiv.symlink:
 	"$${VENV_DIR}/bin/pip" install shiv && \
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
+
+$(DOTFILES_BIN)/virtualenv.symlink:
+	curl -o $@ -fsSL https://bootstrap.pypa.io/virtualenv.pyz
+	chmod +x $@
+	gsed -i "1i #!$(PYTHON)" $@
 
 flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear flake8-docstrings
 
