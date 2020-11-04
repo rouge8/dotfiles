@@ -7,6 +7,8 @@ tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "wolever/git-blast"
+# Run your GitHub Actions locally 🚀
+brew "act"
 # YAML Parser
 brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
