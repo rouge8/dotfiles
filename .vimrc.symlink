@@ -68,6 +68,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+" used by vim-gitgutter
+set updatetime=100
 
 " make searching not suck
 nnoremap / /\v
