@@ -123,6 +123,8 @@ brew "gh"
 brew "ghi"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Command-line option parsing utility
@@ -249,6 +251,8 @@ brew "python@3.7"
 brew "qcachegrind"
 # Reads and randomize lines from a file (or STDIN)
 brew "randomize-lines"
+# File browser
+brew "ranger"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Search tool like grep and The Silver Searcher
@@ -299,6 +303,7 @@ brew "getsentry/tools/sentry-cli"
 brew "wolever/git-blast/git-blast"
 cask "anki"
 cask "aws-vault"
+cask "camo-studio"
 cask "coconutbattery"
 cask "daisydisk"
 cask "divvy"

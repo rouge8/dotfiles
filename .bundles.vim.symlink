@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'rhysd/git-messenger.vim'
 
 " Appearance
 Plug 'kien/rainbow_parentheses.vim'
