@@ -105,16 +105,6 @@ brew "fzf"
 brew "gmp"
 # GNU compiler collection
 brew "gcc"
-# GNOME XML library
-brew "libxml2"
-# Postgres C API library
-brew "libpq"
-# Library for JPEG-2000 image manipulation
-brew "openjpeg"
-# PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler"
-# Geospatial Data Abstraction Library
-brew "gdal"
 # This library is for the GeoIP Legacy format (dat)
 brew "geoip"
 # GitHub command-line tool
@@ -169,6 +159,8 @@ brew "hub"
 brew "hunspell"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Library for JPEG-2000 image manipulation
+brew "openjpeg"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -183,8 +175,6 @@ brew "libmagic"
 brew "libmemcached"
 # Library for USB device access
 brew "libusb-compat"
-# XML security library
-brew "libxmlsec1"
 # Powerful, lightweight programming language
 brew "lua"
 # Powerful, lightweight programming language (v5.1.5)
