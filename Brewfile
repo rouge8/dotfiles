@@ -47,12 +47,12 @@ brew "c-ares"
 brew "fontconfig"
 # Perl compatible regular expressions library
 brew "pcre"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Core application library for C
 brew "glib"
 # Real-time data compression library
 brew "lzo"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
 # Generic library support script
@@ -259,6 +259,8 @@ brew "s3cmd"
 brew "sbcl"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
+# Easily detect and prevent bugs and anti-patterns in your codebase
+brew "semgrep"
 # Autoformat shell script source code
 brew "shfmt"
 # SMART hard drive monitoring
