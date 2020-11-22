@@ -232,13 +232,13 @@ function aws-get-that-ip() {
 
 # vim-plug
 function vim-plug-install() {
-  vim +"let g:plug_window='enew'" +PlugInstall +qall
+  vim +"let g:plug_window='enew'" +PlugInstall
 }
 function vim-plug-update() {
-  vim +"let g:plug_window='enew'" +PlugUpgrade +PlugUpdate +qall
+  vim +"let g:plug_window='enew'" +PlugUpgrade +PlugUpdate
 }
 function vim-plug-clean() {
-  vim +"let g:plug_window='enew'" +PlugClean +qall
+  vim +"let g:plug_window='enew'" +PlugClean
 }
 
 # fzf
