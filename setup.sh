@@ -26,7 +26,10 @@ brew bundle install
 # Rust
 rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
 
-# Python shivs
+# Python shivs and other things
 make
+
+# Make some directories
+mkdir -p ~/tmp ~/forks
 
 # TODO: plist shenanigans for system settings? dock? application settings? divvy?
