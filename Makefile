@@ -1,7 +1,7 @@
 DOTFILES_BIN = .local/bin
 BIN = ~/$(DOTFILES_BIN)
 COMPLETIONS_DIR = ~/.bash_completion.d
-PYTHON = $(shell brew --prefix python@3.8)/bin/python3.8 -sE
+PYTHON = $(shell brew --prefix python@3.9)/bin/python3.9 -sE
 
 SHIVS = shiv \
 	virtualenv \
@@ -40,7 +40,7 @@ $(DOTFILES_BIN)/%.symlink: $(BIN)/shiv
 
 $(DOTFILES_BIN)/shiv.symlink:
 	VENV_DIR=$$(mktemp -d) && \
-	python3.8 -m venv "$${VENV_DIR}" && \
+	$(PYTHON) -m venv "$${VENV_DIR}" && \
 	"$${VENV_DIR}/bin/pip" install shiv && \
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
