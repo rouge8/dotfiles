@@ -86,6 +86,8 @@ brew "make"
 brew "miniserve"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
+# Libraries for security-enabled client and server applications
+brew "nss"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
 # PostgreSQL syntax beautifier

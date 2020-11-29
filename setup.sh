@@ -32,4 +32,8 @@ make
 # Make some directories
 mkdir -p ~/tmp ~/forks
 
+# Locally trusted SSL certificates
+# https://github.com/FiloSottile/mkcert
+mkcert -install
+
 # TODO: plist shenanigans for system settings? dock? application settings? divvy?
