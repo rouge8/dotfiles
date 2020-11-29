@@ -114,6 +114,8 @@ brew "tox"
 brew "tree"
 # Provide version control info in shell prompts
 brew "vcprompt"
+# JavaScript toolchain manager for reproducible environments
+brew "volta"
 # Internet file retriever
 brew "wget"
 # Linter for YAML files
