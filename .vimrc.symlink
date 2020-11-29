@@ -1,3 +1,6 @@
+" change the mapleader from \ to ,
+let mapleader=","
+
 " vim-plug configuration
 source $HOME/.bundles.vim
 
@@ -86,9 +89,6 @@ noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 nnoremap j gj
 nnoremap k gk
 
-" change the mapleader from \ to ,
-let mapleader=","
-
 " Mouse settings
 set mouse=nv
 if &term=~'rxvt'
@@ -112,12 +112,6 @@ nnoremap <down> :lnext<cr>zvzz
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
-
-" Paste with system clipboard (requires compiling with +clipboard)
-" TODO: Won't work in tmux till you fix the userspace thing
-"       https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/blob/master/Usage.md
-vmap <leader>c y:call system("pbcopy", getreg("\""))<CR>
-nmap <leader>v :call setreg("\"",system("pbpaste"))<CR>p
 
 " Add dashes to the list of 'word characters' for CSS files:
 au Filetype css setlocal iskeyword+=-
