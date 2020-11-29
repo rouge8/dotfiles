@@ -2,7 +2,7 @@
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.3.0
     hooks:
       # Filesystem
       - id: check-case-conflict
@@ -28,7 +28,7 @@ repos:
         name: shfmt
         minimum_pre_commit_version: 2.6.0
         language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.1.2]
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.2.0]
         entry: shfmt
         args:
           # simplify the code
@@ -41,7 +41,7 @@ repos:
         name: shfmt-.bash*
         minimum_pre_commit_version: 2.6.0
         language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.1.2]
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.2.0]
         entry: shfmt
         args:
           # simplify the code
