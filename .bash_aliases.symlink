@@ -23,6 +23,9 @@ alias icat='kitty +kitten icat'
 # ripgrep
 alias rg='RIPGREP_CONFIG_PATH=~/.ripgreprc rg'
 
+# kitty + ripgrep
+alias kg='RIPGREP_CONFIG_PATH=~/.ripgreprc kitty +kitten hyperlinked_grep'
+
 # hub
 # <https://github.com/defunkt/hub>
 if [ $(type -P ruby) ]; then
