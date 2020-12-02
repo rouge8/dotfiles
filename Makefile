@@ -16,7 +16,8 @@ SHIVS = shiv \
 	blacken-docs \
 	flit \
 	nox \
-	identify-cli
+	identify-cli \
+	pyproject-build
 
 .PHONY: all clean $(SHIVS)
 
@@ -54,6 +55,8 @@ twine: DEPS = twine readme_renderer[md]
 nox: DEPS = nox-automation
 
 identify-cli: DEPS = identify
+
+pyproject-build: DEPS = build
 
 $(COMPLETIONS_DIR)/vex: $(BIN)/vex
 	mkdir -p $(dir $@)
