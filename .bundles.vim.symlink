@@ -21,7 +21,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/git-messenger.vim'
-Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Appearance
 Plug 'kien/rainbow_parentheses.vim'
