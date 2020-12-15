@@ -57,11 +57,21 @@ let g:rustfmt_autosave=1
 " Fish
 " Set up :make to use fish for syntax checking.
 autocmd FileType fish compiler fish
-au BufRead,BufNewFile *.fish.symlink set ft=fish
 
 " Don't use backup files when editing crontab on OS X
 " ref: http://superuser.com/q/359580
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+" Filetype detection for *.symlink files
+" If a file begins with '#!/', let vim autodetect the filetype. Otherwise
+" read 'linguist-language' from .gitattributes.
+augroup symlink
+  autocmd!
+  autocmd BufRead,BufNewFile *.symlink
+        \ if getline(1) !~ '#!/' |
+        \ let &ft=split(system('git check-attr linguist-language '.shellescape(expand('%:p'))))[-1] |
+        \ endif
+augroup END
 
 syntax on
 
