@@ -1,6 +1,10 @@
 " change the mapleader from \ to ,
 let mapleader=","
 
+if &shell =~# 'fish$'
+    set shell=bash
+endif
+
 " vim-plug configuration
 source $HOME/.bundles.vim
 
@@ -49,6 +53,10 @@ let g:terraform_fmt_on_save=1
 
 " Rust
 let g:rustfmt_autosave=1
+
+" Fish
+" Set up :make to use fish for syntax checking.
+autocmd FileType fish compiler fish
 
 " Don't use backup files when editing crontab on OS X
 " ref: http://superuser.com/q/359580

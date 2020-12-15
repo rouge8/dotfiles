@@ -31,6 +31,7 @@ Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'dag/vim-fish'
 
 " Color Schemes
 Plug 'morhetz/gruvbox'
