@@ -36,4 +36,7 @@ mkdir -p ~/tmp ~/forks
 # https://github.com/FiloSottile/mkcert
 mkcert -install
 
+# Install fish plugins
+fish -c 'fisher update'
+
 # TODO: plist shenanigans for system settings? dock? application settings? divvy?
