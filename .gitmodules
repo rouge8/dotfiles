@@ -1,3 +1,0 @@
-[submodule ".config/bat.symlink/gruvbox"]
-	path = .config/bat.symlink/themes/gruvbox
-	url = git@github.com:peaceant/gruvbox.git
