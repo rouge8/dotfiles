@@ -23,7 +23,7 @@ SHIVS = shiv \
 
 .PRECIOUS: $(DOTFILES_BIN)/%.symlink
 
-all: $(SHIVS) Brewfile ~/.fzf.bash $(COMPLETIONS_DIR)/vex
+all: $(SHIVS) Brewfile ~/.fzf.bash $(COMPLETIONS_DIR)/vex ~/.config/fish/completions/fundle.fish ~/.config/fish/functions/fzf_key_bindings.fish
 
 clean:
 	$(RM) $(addprefix $(BIN)/,$(SHIVS))
@@ -68,3 +68,9 @@ Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
 ~/.fzf.bash:
 	fzf --version || brew install fzf
 	$(shell brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc
+
+~/.config/fish/completions/fundle.fish:
+	curl -fsSL https://raw.githubusercontent.com/danhper/fundle/master/completions/fundle.fish > $@
+
+~/.config/fish/functions/fzf_key_bindings.fish:
+	ln -s $(shell brew --prefix fzf)/shell/key-bindings.fish $@
