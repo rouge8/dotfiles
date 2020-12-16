@@ -31,7 +31,12 @@ charset = utf-8
 indent_style = space
 indent_size = 3
 
-[{*.sh,.bash*,*.fish,bin/*}]
+[{*.fish,*fish.symlink}]
+indent_style = space
+# match fish_indent
+indent_size = 4
+
+[{*.sh,.bash*,bin/*}]
 indent_style = space
 indent_size = 2
 
