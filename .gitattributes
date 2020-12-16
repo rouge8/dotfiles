@@ -1,4 +1,5 @@
 *.fish.symlink linguist-language=fish
 *.bash*.symlink linguist-language=bash
+.profile.symlink linguist-language=sh
 *.vim*.symlink linguist-language=vim
 *.py.symlink linguist-language=python
