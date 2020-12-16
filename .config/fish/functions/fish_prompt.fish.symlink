@@ -11,7 +11,7 @@ set -g __fish_git_prompt_color_flags --bold green
 # set -g __fish_git_prompt_showcolorhints 1
 
 function fish_prompt
-    set -l last_pipestatus $pipestatus
+    set -l last_pipestatus $pipestatus[-1]
     set -l vcprompt (fish_git_prompt | string trim -c ' ()')
     echo
 
