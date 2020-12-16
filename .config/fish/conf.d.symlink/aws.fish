@@ -1,0 +1,3 @@
+set -x AWS_VAULT_KEYCHAIN_NAME login
+set -x AWS_SESSION_TTL 12h
+set -x AWS_ASSUME_ROLE_TTL 1h
