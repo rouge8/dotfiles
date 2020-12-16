@@ -49,3 +49,9 @@ repos:
           # write result to file instead of stdout
           - -w
         files: .bash*
+      - id: fish_indent
+        name: fish_indent
+        language: system
+        entry: fish_indent
+        args: [-w]
+        files: .+\.fish

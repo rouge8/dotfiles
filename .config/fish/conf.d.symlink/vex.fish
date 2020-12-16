@@ -1,19 +1,19 @@
 function workon
-  vex $argv
+    vex $argv
 end
 
 function mkvirtualenv
-  vex -m $argv
+    vex -m $argv
 end
 
 function lsvirtualenv
-  \ls ~/.virtualenvs/
+    \ls ~/.virtualenvs/
 end
 
 function rmvirtualenv
-  rm -rf ~/.virtualenvs/$argv
+    rm -rf ~/.virtualenvs/$argv
 end
 
 function mktmpenv
-  vex -rm $argv tmp-(date +%s)
+    vex -rm $argv tmp-(date +%s)
 end
