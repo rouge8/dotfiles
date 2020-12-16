@@ -1,0 +1,3 @@
+if test (uname -s) != 'Darwin'
+    alias pbpaste 'xsel --clipboard --output'
+end

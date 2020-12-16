@@ -1,0 +1,1 @@
+alias kill-dns-cache 'sudo killall -HUP mDNSResponder'
