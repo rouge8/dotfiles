@@ -57,6 +57,7 @@ let g:rustfmt_autosave=1
 " Fish
 " Set up :make to use fish for syntax checking.
 autocmd FileType fish compiler fish
+autocmd FileType fish setlocal sw=2 sts=2
 
 " Don't use backup files when editing crontab on OS X
 " ref: http://superuser.com/q/359580
