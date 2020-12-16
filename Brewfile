@@ -62,6 +62,8 @@ brew "go"
 brew "pcre"
 # GNU grep, egrep and fgrep
 brew "grep"
+# Command-line hex viewer
+brew "hexyl"
 # HTTP load generator, ApacheBench (ab) replacement
 brew "hey"
 # Improved top (interactive process viewer)
