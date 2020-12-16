@@ -17,4 +17,5 @@ end
 function fish_user_key_bindings
     bind '!' bind_bang
     fzf_key_bindings
+    bind 'ç' fzf-cd-widget
 end
