@@ -4,4 +4,6 @@ end
 
 alias icat 'kitty +kitten icat'
 
-alias kg 'kitty +kitten hyperlinked_grep'
+function kg --wraps rg
+    kitty +kitten hyperlinked_grep $argv
+end
