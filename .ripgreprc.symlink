@@ -2,5 +2,18 @@
 --type-add
 vcl:*.vcl
 
+# *.symlink files
+# TODO: Keep in sync with .gitattributes
+--type-add
+fish:*.fish.symlink
+--type-add
+sh:.profile.symlink
+--type-add
+sh:*.bash*.symlink
+--type-add
+vim:*.vim*.symlink
+--type-add
+py:*.py.symlink
+
 # I could have sworn this was a default
 --smart-case
