@@ -38,5 +38,8 @@ mkcert -install
 
 # Install fish plugins
 fish -c 'fisher update'
+FISH_BIN="$(brew --prefix)/bin/fish"
+echo "$FISH_BIN" | sudo tee -a /etc/shells
+chsh -s "$FISH_BIN"
 
 # TODO: plist shenanigans for system settings? dock? application settings? divvy?
