@@ -1,0 +1,1 @@
+abbr gti git
