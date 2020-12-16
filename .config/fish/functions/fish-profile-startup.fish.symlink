@@ -1,0 +1,5 @@
+function fish-profile-startup --description "profile fish's interactive startup, slowest commands at the bottom"
+    set -l profile (mktemp)
+    fish --profile $profile -i -c exit && sort -nk2 $profile
+    rm -f $profile
+end
