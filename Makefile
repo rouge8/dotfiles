@@ -1,6 +1,7 @@
 DOTFILES_BIN = .local/bin
 BIN = ~/$(DOTFILES_BIN)
-COMPLETIONS_DIR = ~/.bash_completion.d
+BASH_COMPLETIONS_DIR = ~/.bash_completion.d
+FISH_COMPLETIONS_DIR = ~/.config/fish/completions
 PYTHON = $(shell brew --prefix python@3.9)/bin/python3.9 -sE
 
 SHIVS = shiv \
@@ -23,7 +24,9 @@ SHIVS = shiv \
 
 .PRECIOUS: $(DOTFILES_BIN)/%.symlink
 
-all: $(SHIVS) Brewfile $(COMPLETIONS_DIR)/vex \
+all: $(SHIVS) \
+	Brewfile \
+	$(BASH_COMPLETIONS_DIR)/vex $(FISH_COMPLETIONS_DIR)/vex.fish \
 	~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish
 
 clean:
@@ -59,9 +62,15 @@ identify-cli: DEPS = identify
 
 pyproject-build: DEPS = build
 
-$(COMPLETIONS_DIR)/vex: $(BIN)/vex
+vex: DEPS = https://github.com/rouge8/vex/archive/fix-fish-completion-macos.zip --no-cache-dir
+
+$(BASH_COMPLETIONS_DIR)/vex: $(BIN)/vex
 	mkdir -p $(dir $@)
 	$< --shell-config bash > $@
+
+$(FISH_COMPLETIONS_DIR)/vex.fish: $(BIN)/vex
+	mkdir -p $(dir $@)
+	$< --shell-config fish > $@
 
 Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
 	brew bundle dump --describe --force --no-restart
