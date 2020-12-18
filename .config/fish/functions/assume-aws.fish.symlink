@@ -1,0 +1,17 @@
+function unset-aws
+    for aws_var in AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION AWS_REGION AWS_SECRET_ACCESS_KEY AWS_SECURITY_TOKEN AWS_SESSION_TOKEN AWS_VAULT
+        set -e $aws_var
+    end
+end
+
+function assume-aws --description 'assume an AWS role with aws-okta or aws-vault'
+    if test grep -q "[okta]" ~/.aws/config
+        set -l aws_cmd aws-okta
+    else
+        set -l aws_cmd aws-vault
+    end
+
+    unset-aws
+    eval ($aws_cmd exec $argv -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
+    AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
+end

@@ -1,0 +1,3 @@
+function aws-get-console-output --description 'get the console output of an EC2 instance'
+    aws ec2 get-console-output --instance-id $argv[1] | jq -r '.Output'
+end
