@@ -19,6 +19,8 @@ if status --is-login
     fish_add_path --append $HOME/bin
 end
 
+set -x EDITOR vim
+
 # coreutils aliases
 alias rm 'rm -i'
 alias cp 'cp -i'
