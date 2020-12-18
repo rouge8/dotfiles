@@ -1,0 +1,4 @@
+# https://apple.stackexchange.com/q/20547/399708#comment196206_134403
+function local-ip --description "get the IP address of the PrimaryInterface"
+    echo "show State:/Network/Interface/"(echo 'show State:/Network/Global/IPv4' | scutil | grep 'PrimaryInterface ' | sed 's/  PrimaryInterface : //')"/IPv4" | scutil | pcregrep -Mo1 " Addresses : <array> {\n    0 : ([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})"
+end
