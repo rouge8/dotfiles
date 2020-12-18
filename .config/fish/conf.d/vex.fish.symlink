@@ -1,21 +1,21 @@
 set -x WORKON_HOME $HOME/.virtualenvs
 
-function workon
+function workon --wraps vex
     vex $argv
 end
 
-function mkvirtualenv
+function mkvirtualenv --wraps 'vex -m'
     vex -m $argv
 end
 
 function lsvirtualenv
-    \ls ~/.virtualenvs/
+    command ls ~/.virtualenvs/
 end
 
-function rmvirtualenv
-    rm -rf ~/.virtualenvs/$argv
+function rmvirtualenv --wraps 'vex -r'
+    command rm -rf ~/.virtualenvs/$argv
 end
 
-function mktmpenv
+function mktmpenv --wraps 'vex -m'
     vex -rm $argv tmp-(date +%s)
 end
