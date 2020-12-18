@@ -24,6 +24,8 @@ brew "bandwhich"
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Cross-platform make
+brew "cmake"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # GNU File, Shell, and Text utilities
@@ -45,7 +47,7 @@ brew "fastmod"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
-brew "fish"
+brew "fish", args: ["HEAD"]
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool

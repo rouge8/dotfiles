@@ -14,10 +14,6 @@ function fish_prompt
     set -l last_pipestatus $pipestatus[-1]
     set -l vcprompt (fish_git_prompt | string trim -c ' ()')
 
-    # "clear to bottom of screen"
-    # Workaround for https://github.com/fish-shell/fish-shell/issues/5860
-    printf '\033[J'
-
     # Add blank line between command output and the prompt
     echo
 
