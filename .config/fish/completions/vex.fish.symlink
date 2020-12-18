@@ -16,7 +16,7 @@ function __vex_needs_virtualenv
     set args (__vex_positional_args)
     set opts (__vex_optional_args)
     for opt in $opts
-        if [ $opt = --path ]
+        if [ $opt = --path -o $opt = --make -o $opt = -m ]
             return 1
         end
     end
