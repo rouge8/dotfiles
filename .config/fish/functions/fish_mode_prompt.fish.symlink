@@ -1,0 +1,4 @@
+# Disable the default vim-mode prompt to the left of my prompt
+# https://fishshell.com/docs/current/cmds/fish_mode_prompt.html
+function fish_mode_prompt
+end
