@@ -1,0 +1,3 @@
+function pbclean --description 'strip formatting from the clipboard'
+    pbpaste | pbcopy
+end

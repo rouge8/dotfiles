@@ -1,0 +1,4 @@
+# https://sw.kovidgoyal.net/kitty/kittens/hyperlinked_grep.html
+function kg --wraps rg --description 'rg with shift-click to open a result in $EDITOR'
+    kitty +kitten hyperlinked_grep $argv
+end

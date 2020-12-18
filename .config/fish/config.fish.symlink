@@ -18,3 +18,27 @@ if status --is-login
     # scripts
     fish_add_path --append $HOME/bin
 end
+
+# coreutils aliases
+alias rm 'rm -i'
+alias cp 'cp -i'
+alias mv 'mv -i'
+
+alias ll 'ls -l'
+
+# rg
+set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
+
+# fzf
+set -x FZF_DEFAULT_COMMAND 'fd --type f'
+
+# git aliases/abbrs
+abbr -g gti git
+
+# AWS Vault
+set -x AWS_VAULT_KEYCHAIN_NAME login
+set -x AWS_SESSION_TTL 12h
+set -x AWS_ASSUME_ROLE_TTL 1h
+
+# emoji
+alias shrug 'echo -n "¯\_(ツ)_/¯" | pbcopy'

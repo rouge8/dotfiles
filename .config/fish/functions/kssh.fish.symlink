@@ -1,0 +1,4 @@
+# https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
+function kssh --wraps ssh --description 'ssh while copying kitty terminfo files'
+    kitty +kitten ssh $argv
+end
