@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "sachaos/todoist"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
 brew "act"
@@ -132,6 +133,8 @@ brew "yamllint"
 brew "youtube-dl"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
+# Todoist CLI client
+brew "sachaos/todoist/todoist"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
 cask "8bitdo-firmware-updater"
