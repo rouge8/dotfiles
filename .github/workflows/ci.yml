@@ -27,4 +27,5 @@ jobs:
           sudo make install
         working-directory: fish-shell
 
+      - uses: actions/setup-python@v2
       - uses: pre-commit/action@v2.0.0
