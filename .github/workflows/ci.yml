@@ -1,0 +1,30 @@
+---
+
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout the latest fish
+        uses: actions/checkout@v2
+        with:
+          repository: fish-shell/fish-shell
+          path: fish-shell
+
+      - name: Build fish
+        run: |
+          mkdir build; cd build
+          cmake ..
+          make
+          sudo make install
+        working-directory: fish-shell
+
+      - uses: pre-commit/action@v2.0.0
