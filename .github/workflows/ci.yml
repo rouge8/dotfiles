@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir build; cd build
           cmake ..
-          make
+          make -j$(nproc)
           sudo make install
         working-directory: fish-shell
 
