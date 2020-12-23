@@ -26,8 +26,6 @@ alias rm 'rm -i'
 alias cp 'cp -i'
 alias mv 'mv -i'
 
-alias ll 'ls -l'
-
 # rg
 set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
