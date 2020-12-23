@@ -1,5 +1,4 @@
-DOTFILES_BIN = .local/bin
-BIN = ~/$(DOTFILES_BIN)
+BIN = ~/.local/bin
 BASH_COMPLETIONS_DIR = ~/.bash_completion.d
 FISH_COMPLETIONS_DIR = ~/.config/fish/completions
 PYTHON = $(shell brew --prefix python@3.9)/bin/python3.9 -sE
@@ -22,8 +21,6 @@ SHIVS = shiv \
 
 .PHONY: all clean $(SHIVS)
 
-.PRECIOUS: $(DOTFILES_BIN)/%.symlink
-
 all: $(SHIVS) \
 	Brewfile \
 	$(BASH_COMPLETIONS_DIR)/vex \
@@ -32,19 +29,15 @@ all: $(SHIVS) \
 
 clean:
 	$(RM) $(addprefix $(BIN)/,$(SHIVS))
-	$(RM) $(addprefix $(DOTFILES_BIN)/,$(addsuffix .symlink,$(SHIVS)))
 
 $(SHIVS): % : $(BIN)/%
 
-$(BIN)/%: $(DOTFILES_BIN)/%.symlink
-	dotfiles install
-
-$(DOTFILES_BIN)/%.symlink: $(BIN)/shiv
+$(BIN)/%: $(BIN)/shiv
 	shiv --python "$(PYTHON)" $(or $(DEPS),$*) \
 		--console-script $(basename $(notdir $@)) \
 		--output-file $@
 
-$(DOTFILES_BIN)/shiv.symlink:
+$(BIN)/shiv:
 	VENV_DIR=$$(mktemp -d) && \
 	$(PYTHON) -m venv "$${VENV_DIR}" && \
 	"$${VENV_DIR}/bin/pip" install shiv && \
