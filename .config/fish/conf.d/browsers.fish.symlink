@@ -1,0 +1,12 @@
+# Open html/html files in browsers with autocompletion
+
+function __browser --argument-names app_name
+    open -a "$app_name.app" $argv[2..]
+end
+
+for arg in "chrome,Google\ Chrome" "firefox,Firefox" "safari,Safari"
+    echo $arg | read -l -d , func_name app_name
+
+    alias $func_name "__browser $app_name"
+    complete -f -c $func_name -a "(__fish_complete_suffix html htm)"
+end
