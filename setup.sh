@@ -38,7 +38,10 @@ mkcert -install
 
 # Set fish as the login shell
 FISH_BIN="$(brew --prefix)/bin/fish"
-echo "$FISH_BIN" | sudo tee -a /etc/shells
+if ! grep -xq "$FISH_BIN" /etc/shells; then
+  echo "Adding $FISH_BIN to /etc/shells..."
+  echo "$FISH_BIN" | sudo tee -a /etc/shells
+fi
 chsh -s "$FISH_BIN"
 
 # But configure Terminal.app to always use bash as a fallback
