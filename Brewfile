@@ -89,6 +89,8 @@ brew "libyaml"
 brew "magic-wormhole"
 # Utility for directing compilation
 brew "make"
+# Mac App Store command-line interface
+brew "mas"
 # High performance static file server
 brew "miniserve"
 # Simple tool to make locally trusted development certificates
@@ -168,3 +170,10 @@ cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
 cask "zoom"
+mas "Day One", id: 1055511498
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Tweetbot", id: 1384080005

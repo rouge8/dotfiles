@@ -63,7 +63,7 @@ $(BASH_COMPLETIONS_DIR)/vex: $(BIN)/vex
 	$< --shell-config bash > $@
 
 Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
-	brew bundle dump --describe --force --no-restart
+	brew bundle dump --mas --describe --force --no-restart
 
 ~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish:
 	$(shell brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc
