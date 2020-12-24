@@ -41,4 +41,46 @@ FISH_BIN="$(brew --prefix)/bin/fish"
 echo "$FISH_BIN" | sudo tee -a /etc/shells
 chsh -s "$FISH_BIN"
 
-# TODO: plist shenanigans for system settings? dock? application settings? divvy?
+# But configure Terminal.app to always use bash as a fallback
+defaults write com.apple.terminal Shell /bin/bash
+
+#######################
+# macOS configuration #
+#######################
+echo "macOS configuration..."
+
+# Scroll bars
+defaults write -g AppleShowScrollBars Always
+
+# Finder
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write -g AppleShowAllExtensions -bool true
+
+# Dock
+defaults write com.apple.dock tilesize -int 40
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -int 100
+
+# Keyboard
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+
+# No Natural scrollng
+defaults write -g com.apple.swipescrolldirection -bool false
+
+# Screensaver and lock screen
+defaults -currentHost write com.apple.screensaver idleTime -int 1200 # 20 minutes
+echo Configuring "Require password immediately after screensaver"...
+sysadminctl -screenLock immediate -password -
+
+# Restart Finder and Dock
+killall Dock
+killall Finder
+
+# TODO: Dock layout
+# TODO: Divvy
+# TODO: capslock -> ctrl on internal keyboard
+# TODO: keyboard input sources shortcuts
+# TODO: keyboard input sources
+# TODO: time machine menu bar
