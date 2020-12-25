@@ -1,0 +1,14 @@
+# vim: set ft=yaml:
+---
+
+extends: default
+
+rules:
+  indentation:
+    spaces: 2
+    indent-sequences: true
+
+  line-length: disable
+
+  truthy:
+    check-keys: false

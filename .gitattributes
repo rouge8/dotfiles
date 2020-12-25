@@ -5,3 +5,4 @@
 *.vim*.symlink linguist-language=vim
 *.py.symlink linguist-language=python
 *.yml.symlink linguist-language=yaml
+*.yaml.symlink linguist-language=yaml

@@ -14,6 +14,10 @@ sh:*.bash*.symlink
 vim:*.vim*.symlink
 --type-add
 py:*.py.symlink
+--type-add
+yaml:*.yml.symlink
+--type-add
+yaml:*.yaml.symlink
 
 # I could have sworn this was a default
 --smart-case
