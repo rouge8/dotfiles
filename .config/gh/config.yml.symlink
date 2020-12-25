@@ -22,3 +22,7 @@ aliases:
         }
       }
     ' | jq -r '.data.repositoryOwner.repositories.nodes[].nameWithOwner' | sort
+
+  # Unwatch a repo
+  unwatch: |
+    !gh api "/repos/$1/subscription" -X DELETE
