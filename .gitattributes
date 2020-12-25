@@ -4,3 +4,4 @@
 .profile.symlink linguist-language=sh
 *.vim*.symlink linguist-language=vim
 *.py.symlink linguist-language=python
+*.yml.symlink linguist-language=yaml
