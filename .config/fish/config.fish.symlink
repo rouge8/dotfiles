@@ -24,28 +24,6 @@ set -x EDITOR vim
 # rg
 set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
-# Prompt
-function _vi_mode_prompt
-    switch $fish_bind_mode
-        case default
-            set_color --bold red
-            printf '[N]'
-        case insert
-            set_color --bold green
-            printf '[I]'
-        case replace_one
-            set_color --bold green
-            printf '[R]'
-        case visual
-            set_color --bold brmagenta
-            printf '[V]'
-        case '*'
-            set_color --bold red
-            printf '[?]'
-    end
-    set_color normal
-end
-
 # Speed up 'fish -c' and '#!/usr/bin/env fish'
 #
 # Since they're non-interactive, they don't need any of this.

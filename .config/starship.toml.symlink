@@ -7,7 +7,7 @@ $python\
 $cmd_duration\
 $status\
 $line_break\
-${custom.vimode}$character"""
+$character"""
 
 [username]
 show_always = true
@@ -36,8 +36,12 @@ show_milliseconds = true
 format = "exited [$status]($style)"
 disabled = false
 
-[custom.vimode]
-command = "fish -c _vi_mode_prompt"
-format = "$output"
-when = '[ "$STARSHIP_SHELL" == "fish" ]'
-shell = ["bash", "--noprofile", "--norc"]
+[character]
+# Use the same symbol for success/error because starship doesn't support
+# distinguishing success/error in 'vicmd_symbol'.
+#
+# TODO: Revisit if https://github.com/starship/starship/pull/1679 or
+# https://github.com/starship/starship/issues/625 are resolved
+success_symbol = "[❯](bold)"
+error_symbol = "[❯](bold)"
+vicmd_symbol = '[\[N\]](bold red)[❯](bold)'
