@@ -42,3 +42,25 @@ set -x AWS_ASSUME_ROLE_TTL 1h
 
 # emoji
 alias shrug 'echo -n "¯\_(ツ)_/¯" | pbcopy'
+
+# Prompt
+function _vi_mode_prompt
+    switch $fish_bind_mode
+        case default
+            set_color --bold red
+            printf '[N]'
+        case insert
+            set_color --bold green
+            printf '[I]'
+        case replace_one
+            set_color --bold green
+            printf '[R]'
+        case visual
+            set_color --bold brmagenta
+            printf '[V]'
+        case '*'
+            set_color --bold red
+            printf '[?]'
+    end
+    set_color normal
+end
