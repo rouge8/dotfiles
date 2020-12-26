@@ -18,6 +18,8 @@ py:*.py.symlink
 yaml:*.yml.symlink
 --type-add
 yaml:*.yaml.symlink
+--type-add
+toml:*.toml.symlink
 
 # I could have sworn this was a default
 --smart-case

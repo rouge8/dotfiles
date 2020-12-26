@@ -1,0 +1,43 @@
+format = """
+$username at $hostname in $directory\
+$git_branch\
+$git_state\
+$git_status\
+$python\
+$cmd_duration\
+$status\
+$line_break\
+${custom.vimode}$character"""
+
+[username]
+show_always = true
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+
+[directory]
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+symbol = ""
+
+[git_status]
+# TODO: Figure out how to condense output to staged, modified, and untracked
+format = '([\[$all_status\]]($style) )'
+stashed = ""
+
+[cmd_duration]
+min_time = 1000
+show_milliseconds = true
+
+[status]
+format = "exited [$status]($style)"
+disabled = false
+
+[custom.vimode]
+command = "fish -c _vi_mode_prompt"
+format = "$output"
+when = '[ "$STARSHIP_SHELL" == "fish" ]'
+shell = ["bash", "--noprofile", "--norc"]

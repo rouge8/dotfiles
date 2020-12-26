@@ -6,3 +6,4 @@
 *.py.symlink linguist-language=python
 *.yml.symlink linguist-language=yaml
 *.yaml.symlink linguist-language=yaml
+*.toml.symlink linguist-language=toml

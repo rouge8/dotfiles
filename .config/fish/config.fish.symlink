@@ -64,3 +64,6 @@ function _vi_mode_prompt
     end
     set_color normal
 end
+
+# Use https://starship.rs/ for my prompt
+starship init --print-full-init fish | source
