@@ -21,27 +21,8 @@ end
 
 set -x EDITOR vim
 
-# coreutils aliases
-alias rm 'rm -i'
-alias cp 'cp -i'
-alias mv 'mv -i'
-
 # rg
 set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
-
-# fzf
-set -x FZF_DEFAULT_COMMAND 'fd --type f'
-
-# git aliases/abbrs
-abbr -g gti git
-
-# AWS Vault
-set -x AWS_VAULT_KEYCHAIN_NAME login
-set -x AWS_SESSION_TTL 12h
-set -x AWS_ASSUME_ROLE_TTL 1h
-
-# emoji
-alias shrug 'echo -n "¯\_(ツ)_/¯" | pbcopy'
 
 # Prompt
 function _vi_mode_prompt
@@ -65,5 +46,29 @@ function _vi_mode_prompt
     set_color normal
 end
 
-# Use https://starship.rs/ for my prompt
-starship init --print-full-init fish | source
+# Speed up 'fish -c' and '#!/usr/bin/env fish'
+#
+# Since they're non-interactive, they don't need any of this.
+if status is-interactive
+    # coreutils aliases
+    alias rm 'rm -i'
+    alias cp 'cp -i'
+    alias mv 'mv -i'
+
+    # fzf
+    set -x FZF_DEFAULT_COMMAND 'fd --type f'
+
+    # git aliases/abbrs
+    abbr -g gti git
+
+    # AWS Vault
+    set -x AWS_VAULT_KEYCHAIN_NAME login
+    set -x AWS_SESSION_TTL 12h
+    set -x AWS_ASSUME_ROLE_TTL 1h
+
+    # emoji
+    alias shrug 'echo -n "¯\_(ツ)_/¯" | pbcopy'
+
+    # Use https://starship.rs/ for my prompt
+    starship init --print-full-init fish | source
+end
