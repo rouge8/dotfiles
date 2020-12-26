@@ -172,6 +172,7 @@ cask "whatsapp"
 cask "zoom"
 mas "Day One", id: 1055511498
 mas "GarageBand", id: 682658836
+mas "Hue Menu Bar", id: 1500678169
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
