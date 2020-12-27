@@ -82,13 +82,16 @@ open -a Terminal.app misc/Gruvbox-dark.terminal
 defaults write com.apple.terminal 'Default Window Settings' -string Gruvbox-dark
 defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
 
+# Divvy
+open -a Divvy.app $(cat misc/divvy.txt)
+
 # Restart Finder and Dock
 killall Dock
 killall Finder
 
 # TODO: Dock layout
-# TODO: Divvy
 # TODO: capslock -> ctrl on internal keyboard
 # TODO: keyboard input sources shortcuts
 # TODO: keyboard input sources
 # TODO: time machine menu bar
+# TODO: things in dock that launch at startup
