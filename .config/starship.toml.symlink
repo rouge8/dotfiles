@@ -24,7 +24,9 @@ fish_style_pwd_dir_length = 1
 symbol = ""
 
 [git_status]
-# TODO: Figure out how to condense output to staged, modified, and untracked
+# TODO: Figure out how to condense output to staged, dirty, and untracked
+# https://github.com/starship/starship/issues/1192
+# https://github.com/starship/starship/discussions/1252#discussioncomment-18233
 format = '([\[$all_status\]]($style) )'
 stashed = ""
 
