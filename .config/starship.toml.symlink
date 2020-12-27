@@ -28,6 +28,9 @@ symbol = ""
 format = '([\[$all_status\]]($style) )'
 stashed = ""
 
+[python]
+scan_for_pyfiles = false
+
 [cmd_duration]
 min_time = 1000
 show_milliseconds = true
