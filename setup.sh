@@ -85,12 +85,41 @@ defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
 # Divvy
 open -a Divvy.app $(cat misc/divvy.txt)
 
+# Remap Caps Lock to Left Control on the internal keyboard
+osascript << EOF
+tell application "System Preferences"
+	activate
+	delay 1
+end tell
+
+tell application "System Events"
+	tell process "System Preferences"
+		click menu item "Keyboard" of menu "View" of menu bar 1
+		delay 1
+		tell window "Keyboard"
+			click button "Modifier Keys…" of tab group 1
+			delay 1
+			tell sheet 1
+				click pop up button "Select keyboard:"
+				click menu item "Apple Internal Keyboard / Trackpad" of menu 1 of pop up button "Select keyboard:"
+				click pop up button "Caps Lock (⇪) Key:"
+				click menu item "⌃ Control" of menu 1 of pop up button "Caps Lock (⇪) Key:"
+				click button "OK"
+			end tell
+		end tell
+	end tell
+end tell
+
+tell application "System Preferences"
+	quit
+end tell
+EOF
+
 # Restart Finder and Dock
 killall Dock
 killall Finder
 
 # TODO: Dock layout
-# TODO: capslock -> ctrl on internal keyboard
 # TODO: keyboard input sources shortcuts
 # TODO: keyboard input sources
 # TODO: time machine menu bar
