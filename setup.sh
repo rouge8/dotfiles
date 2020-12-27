@@ -77,6 +77,11 @@ defaults -currentHost write com.apple.screensaver idleTime -int 1200 # 20 minute
 echo Configuring "Require password immediately after screensaver"...
 sysadminctl -screenLock immediate -password -
 
+# Terminal.app
+open -a Terminal.app misc/Gruvbox-dark.terminal
+defaults write com.apple.terminal 'Default Window Settings' -string Gruvbox-dark
+defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
+
 # Restart Finder and Dock
 killall Dock
 killall Finder
