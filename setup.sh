@@ -15,11 +15,6 @@ which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Ho
 
 cd ~/.dotfiles.public
 
-# Reload
-set +eu
-. ~/.bash_profile
-set -eu
-
 # Install 'em all
 brew bundle install
 
