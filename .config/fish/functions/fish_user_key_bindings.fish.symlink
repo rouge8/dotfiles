@@ -14,12 +14,41 @@ function bind_bang --description 'bash-like !!'
     end
 end
 
+function bind_tab --description "'**' autocompletes paths with fd/fzf"
+    set -l tokens (commandline --tokenize)
+    # support either '**' or a path like '<optional prefix>/**'
+    if string match -r '^(?<dir>.*/)?\*\*$' "$tokens[-1]"
+        if contains -- "$tokens[-2]" cd rmdir pushd
+            set fdargs --type d
+        else
+            set fdargs ""
+        end
+
+        # eval is used to do shell expansion on paths
+        set dir (eval "printf '%s' $dir")
+
+        # copy/pasted from 'functions fzf-cd-widget'
+        test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
+        set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
+
+        fd --hidden --follow $fdargs . $dir | eval (__fzfcmd) +m | read -l result
+
+        if [ -n "$result" ]
+            # quote the path to handle spaces/etc
+            commandline --current-token -- '"'$result'"'
+        end
+    else
+        commandline --function complete
+    end
+end
+
 function fish_user_key_bindings
     fzf_key_bindings
 
     for mode in default insert
         bind -M $mode '!' bind_bang
         bind -M $mode ç fzf-cd-widget
+        bind -M $mode \t 'bind_tab; commandline -f repaint'
     end
 end
 
