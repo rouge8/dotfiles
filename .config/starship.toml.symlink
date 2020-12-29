@@ -2,7 +2,7 @@ format = """
 $username at $hostname in $directory\
 $git_branch\
 $git_state\
-$git_status\
+${custom.git_status}\
 $python\
 $cmd_duration\
 $status\
@@ -30,6 +30,12 @@ symbol = ""
 # https://github.com/starship/starship/discussions/1252#discussioncomment-18233
 format = '([\[$all_status\]]($style) )'
 stashed = ""
+
+[custom.git_status]
+command = "vcprompt -f %m%u"
+when = "true"
+style = "bold red"
+format = "[\\[$output\\]]($style) "
 
 [python]
 scan_for_pyfiles = false
