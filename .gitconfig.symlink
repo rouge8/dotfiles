@@ -19,6 +19,15 @@
 	excludesfile = ~/.gitglobalignore
 	autocrlf = input
 	editor = vim
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = gruvbox
+	keep-plus-minus-markers = true
+	diff-so-fancy = true
 
 [color]
 	status = auto
