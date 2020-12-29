@@ -7,6 +7,7 @@ $python\
 $cmd_duration\
 $status\
 $line_break\
+${custom.bash}\
 $character"""
 
 [username]
@@ -40,6 +41,12 @@ show_milliseconds = true
 [status]
 format = "exited [$status]($style)"
 disabled = false
+
+[custom.bash]
+command = "echo ☢"
+style = "bold green"
+when = '[ "$STARSHIP_SHELL" == "bash" ]'
+shell = ["bash", "--noprofile", "--norc"]
 
 [character]
 # Use the same symbol for success/error because starship doesn't support
