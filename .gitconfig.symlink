@@ -28,6 +28,7 @@
 	syntax-theme = gruvbox
 	keep-plus-minus-markers = true
 	diff-so-fancy = true
+	hyperlinks = true
 
 [color]
 	status = auto

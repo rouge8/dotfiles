@@ -39,6 +39,9 @@ if status is-interactive
     # git aliases/abbrs
     abbr -g gti git
 
+    # delta
+    set -x DELTA_PAGER 'less -rX'
+
     # AWS Vault
     set -x AWS_VAULT_KEYCHAIN_NAME login
     set -x AWS_SESSION_TTL 12h
