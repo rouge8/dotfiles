@@ -110,6 +110,10 @@ tell application "System Preferences"
 end tell
 EOF
 
+# Add /usr/local/bin to $PATH even for GUI apps
+echo 'Updating $PATH...'
+sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
 # Restart Finder and Dock
 killall Dock
 killall Finder

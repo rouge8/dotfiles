@@ -57,12 +57,12 @@ brew "gh"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Perl compatible regular expressions library
+brew "pcre"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Perl compatible regular expressions library
-brew "pcre"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Command-line hex viewer
@@ -77,6 +77,8 @@ brew "httpie"
 brew "hub"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Pager program similar to more
