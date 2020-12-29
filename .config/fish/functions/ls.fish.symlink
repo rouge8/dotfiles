@@ -1,0 +1,3 @@
+function ls --wraps ls --description 'ls with colors and hyperlinks'
+    command gls --color=auto --hyperlink=auto $argv
+end
