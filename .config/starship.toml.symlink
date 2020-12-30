@@ -25,7 +25,7 @@ fish_style_pwd_dir_length = 1
 symbol = ""
 
 [custom.git_status]
-command = "vcprompt -f %m%u"
+command = "~/bin/git-status-prompt"
 when = "true"
 style = "bold red"
 format = "[\\[$output\\]]($style) "

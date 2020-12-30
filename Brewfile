@@ -127,8 +127,6 @@ brew "starship"
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Provide version control info in shell prompts
-brew "vcprompt"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # Internet file retriever
