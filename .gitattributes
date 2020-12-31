@@ -7,3 +7,4 @@
 *.yml.symlink linguist-language=yaml
 *.yaml.symlink linguist-language=yaml
 *.toml.symlink linguist-language=toml
+.gitconfig*.symlink linguist-language=gitconfig

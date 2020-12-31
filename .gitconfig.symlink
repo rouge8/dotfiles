@@ -29,6 +29,7 @@
 	keep-plus-minus-markers = true
 	diff-so-fancy = true
 	hyperlinks = true
+	hyperlinks-file-link-format = "file://{path}#{line}"
 
 [color]
 	status = auto
