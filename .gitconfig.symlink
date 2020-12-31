@@ -26,8 +26,9 @@
 
 [delta]
 	syntax-theme = gruvbox
+	file-style = blue omit
+	hunk-header-style = file line-number syntax
 	keep-plus-minus-markers = true
-	diff-so-fancy = true
 	hyperlinks = true
 	hyperlinks-file-link-format = "file://{path}#{line}"
 
