@@ -97,6 +97,8 @@ brew "mas"
 brew "miniserve"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Libraries for security-enabled client and server applications
 brew "nss"
 # Process manager for Procfile-based applications and tmux
