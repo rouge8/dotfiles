@@ -42,7 +42,7 @@ format = "exited [$status]($style)"
 disabled = false
 
 [custom.bash]
-command = "echo ☢"
+command = "echo -n 🐚"
 style = "bold green"
 when = '[ "$STARSHIP_SHELL" == "bash" ]'
 shell = ["bash", "--noprofile", "--norc"]
