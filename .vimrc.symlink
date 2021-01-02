@@ -109,7 +109,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Mouse settings
-set mouse=nv
+set mouse=a
 
 set title
 
