@@ -110,9 +110,6 @@ nnoremap k gk
 
 " Mouse settings
 set mouse=nv
-if &term=~'rxvt'
-  set ttymouse=urxvt
-endif
 
 set title
 
