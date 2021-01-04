@@ -137,6 +137,8 @@ brew "wget"
 brew "yamllint"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
+# In terminal graphical metrics for your *nix system
+brew "zenith"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
 # Todoist CLI client
