@@ -110,6 +110,9 @@ tell application "System Preferences"
 end tell
 EOF
 
+# TODO: Remove once
+# https://github.com/kovidgoyal/kitty/commit/a7e9030c12a6c623e480e9f65055fe8956a9ea3a
+# is released
 # Add /usr/local/bin to $PATH even for GUI apps
 echo 'Updating $PATH...'
 sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
@@ -123,3 +126,4 @@ killall Finder
 # TODO: keyboard input sources
 # TODO: time machine menu bar
 # TODO: things in dock that launch at startup
+# TODO: hue app
