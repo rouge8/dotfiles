@@ -21,6 +21,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'tpope/vim-abolish'
 
 " Appearance
 Plug 'kien/rainbow_parentheses.vim'
