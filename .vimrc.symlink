@@ -93,6 +93,9 @@ set laststatus=2
 " used by vim-gitgutter
 set updatetime=100
 
+" git-messenger
+let g:git_messenger_include_diff = "current"
+
 " make searching not suck
 nnoremap / /\v
 xnoremap / /\v
