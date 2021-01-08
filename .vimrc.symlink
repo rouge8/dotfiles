@@ -69,7 +69,7 @@ augroup symlink
   autocmd!
   autocmd BufRead,BufNewFile *.symlink
         \ if getline(1) !~ '#!/' |
-        \ let &ft=split(system('git check-attr linguist-language '.shellescape(expand('%:p'))))[-1] |
+        \ let &ft=split(system('cd '.shellescape(expand('%:p:h')).' && git check-attr linguist-language '.shellescape(expand('%:p'))))[-1] |
         \ endif
 augroup END
 
