@@ -19,7 +19,7 @@ if status --is-login
     fish_add_path --append $HOME/bin
 end
 
-set -x EDITOR vim
+set -x EDITOR nvim
 
 # rg
 set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
@@ -52,4 +52,7 @@ if status is-interactive
 
     # Use https://starship.rs/ for my prompt
     starship init --print-full-init fish | source
+
+    # nvim
+    abbr -g vim nvim
 end

@@ -18,7 +18,7 @@
 [core]
 	excludesfile = ~/.gitglobalignore
 	autocrlf = input
-	editor = vim
+	editor = nvim
 	pager = delta
 
 [interactive]
@@ -48,10 +48,6 @@
 [merge]
 	tool = splice
 	conflictstyle = diff3
-
-[mergetool "splice"]
-	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-	trustExitCode = true
 
 [github]
 	user = rouge8

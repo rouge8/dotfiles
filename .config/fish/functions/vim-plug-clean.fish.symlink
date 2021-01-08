@@ -1,3 +1,3 @@
 function vim-plug-clean
-    vim +"let g:plug_window='enew'" +PlugClean
+    nvim +"let g:plug_window='enew'" +PlugClean
 end
