@@ -75,9 +75,6 @@ defaults -currentHost write com.apple.screensaver idleTime -int 1200 # 20 minute
 echo Configuring "Require password immediately after screensaver"...
 sysadminctl -screenLock immediate -password -
 
-# Clock format
-defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
-
 # Terminal.app
 open -a Terminal.app misc/Gruvbox-dark.terminal
 defaults write com.apple.terminal 'Default Window Settings' -string Gruvbox-dark
@@ -126,6 +123,11 @@ sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # Restart Finder and Dock
 killall Dock
 killall Finder
+
+# Menu bar
+open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu
+defaults write com.apple.TextInputMenu visible -bool true
+defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
 
 # TODO: Dock layout
 # TODO: keyboard input sources shortcuts
