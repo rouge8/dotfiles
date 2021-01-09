@@ -53,6 +53,7 @@ defaults write -g AppleShowScrollBars Always
 # Finder
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write -g AppleShowAllExtensions -bool true
+chflags nohidden ~/Library
 
 # Dock
 defaults write com.apple.dock tilesize -int 40
@@ -63,6 +64,8 @@ defaults write com.apple.dock largesize -int 100
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
+# Enable Tab in all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # No Natural scrollng
 defaults write -g com.apple.swipescrolldirection -bool false
@@ -71,6 +74,9 @@ defaults write -g com.apple.swipescrolldirection -bool false
 defaults -currentHost write com.apple.screensaver idleTime -int 1200 # 20 minutes
 echo Configuring "Require password immediately after screensaver"...
 sysadminctl -screenLock immediate -password -
+
+# Clock format
+defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
 
 # Terminal.app
 open -a Terminal.app misc/Gruvbox-dark.terminal
@@ -125,5 +131,5 @@ killall Finder
 # TODO: keyboard input sources shortcuts
 # TODO: keyboard input sources
 # TODO: time machine menu bar
-# TODO: things in dock that launch at startup
+# TODO: things in menu bar that launch at startup
 # TODO: hue app
