@@ -15,7 +15,7 @@ function bind_bang --description 'bash-like !!'
 end
 
 function bind_tab --description "'**' autocompletes paths with fd/fzf"
-    set -l tokens (commandline --tokenize)
+    set -l tokens (commandline --tokenize --current-process)
     # support either '**' or a path like '<optional prefix>/**'
     if string match -r '^(?<dir>.*/)?\*\*$' -- $tokens[-1]
         if contains -- "$tokens[-2]" cd rmdir pushd
