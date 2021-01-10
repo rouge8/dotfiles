@@ -118,18 +118,9 @@ set mouse=a
 set autochdir
 set title
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=1
-
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_yaml_checkers = ['yamllint']
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
-" create the loc list so you can jump between errors with arrow keys
-let g:syntastic_always_populate_loc_list = 1
-" nav between syntastic results
-nnoremap <up> :lprev<cr>zvzz
-nnoremap <down> :lnext<cr>zvzz
+" Nav between ALE results
+nnoremap <up> :ALEPreviousWrap<cr>zvzz
+nnoremap <down> :ALENextWrap<cr>zvzz
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
