@@ -34,8 +34,7 @@ function bind_tab --description "'**' autocompletes paths with fd/fzf"
         fd --hidden --follow $fdargs . $dir | eval (__fzfcmd) +m | read -l result
 
         if [ -n "$result" ]
-            # quote the path to handle spaces/etc
-            commandline --current-token -- '"'$result'"'
+            commandline --current-token -- (string escape $result)
         end
     else
         commandline --function complete
