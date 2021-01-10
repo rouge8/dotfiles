@@ -114,8 +114,6 @@ nnoremap k gk
 " Mouse settings
 set mouse=a
 
-" http://lucumr.pocoo.org/2010/7/29/sharing-vim-tricks/
-set autochdir
 set title
 
 " Nav between ALE results
