@@ -34,7 +34,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Color Schemes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Done
 call plug#end()
