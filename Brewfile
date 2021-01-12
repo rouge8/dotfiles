@@ -107,8 +107,6 @@ brew "pgformatter"
 brew "pre-commit"
 # Implementation of Python 3 in Python
 brew "pypy3"
-# File browser
-brew "ranger"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Fast and accurate code counter with complexity and COCOMO estimates
