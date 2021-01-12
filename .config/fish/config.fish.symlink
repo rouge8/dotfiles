@@ -55,4 +55,7 @@ if status is-interactive
 
     # nvim
     abbr -g vim nvim
+
+    # https://github.com/bvaisvil/zenith
+    abbr -g htop zenith
 end
