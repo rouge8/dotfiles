@@ -9,8 +9,6 @@ tap "sachaos/todoist"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
 brew "act"
-# Archival front-end
-brew "atool"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
@@ -154,8 +152,6 @@ cask "dropbox"
 cask "firefox"
 cask "flux"
 cask "google-chrome"
-cask "google-cloud-sdk"
-cask "iterm2"
 cask "itsycal"
 cask "kiibohd-configurator"
 cask "kitty"
