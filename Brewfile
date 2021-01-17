@@ -5,6 +5,9 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
 tap "sachaos/todoist"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
@@ -135,6 +138,8 @@ brew "youtube-dl"
 brew "zenith"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
+# Quantum Mechanical Keyboard (QMK) Firmware
+brew "qmk/qmk/qmk"
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
 # git-blast: show git branches sorted by last commit date Raw
@@ -162,6 +167,7 @@ cask "macvim"
 cask "muzzle"
 cask "notion"
 cask "pixel-picker"
+cask "qmk-toolbox"
 cask "recordit"
 cask "rocket"
 cask "signal"
