@@ -182,8 +182,7 @@ nnoremap <C-p> :GitFiles<Cr>
 "" MAKE .swp~ AND .un~ FILES LESS ANNOYING
 "" FROM <http://stackoverflow.com/a/9528322/609144>
 " Save your backups to a less annoying place than the current directory.
-" If you have .vim-backup in the current directory, it'll use that.
-" Otherwise it saves it to ~/.vim-backup or . if all else fails.
+" It saves it to ~/.vim-backup or . if all else fails.
 if isdirectory($HOME . '/.vim-backup') == 0
   silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
 endif
@@ -191,7 +190,6 @@ set backupdir-=.
 set backupdir+=.
 set backupdir-=~/
 set backupdir^=~/.vim-backup/
-set backupdir^=./.vim-backup/
 set backup
 
 " Save your swp files to a less annoying place than the current directory.
