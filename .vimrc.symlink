@@ -1,5 +1,5 @@
 " change the mapleader from \ to ,
-let mapleader=","
+let mapleader=','
 
 if &shell =~# 'fish$'
     set shell=bash
@@ -83,12 +83,12 @@ set visualbell
 set updatetime=100
 
 " VIM-only config
-if !has("nvim")
+if !has('nvim')
   set ttyfast
 endif
 
 " git-messenger
-let g:git_messenger_include_diff = "current"
+let g:git_messenger_include_diff = 'current'
 
 " make searching not suck
 nnoremap / /\v
@@ -143,7 +143,7 @@ set background=dark
 colorscheme gruvbox
 
 " gui
-if has("gui_macvim")
+if has('gui_macvim')
   " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
   " TODO: find a good patched font
   set guifont=Menlo:h18
@@ -291,7 +291,7 @@ except OSError:
 endpython
 endfunction
 
-if has("python")
+if has('python')
     augroup eevee_swapfile
         autocmd!
         autocmd SwapExists * call s:SwapDecide()
