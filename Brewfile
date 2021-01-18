@@ -126,6 +126,8 @@ brew "starship"
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Vim script Language Lint
+brew "vint"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # Internet file retriever

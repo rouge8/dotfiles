@@ -2,20 +2,13 @@
 let mapleader=','
 
 if &shell =~# 'fish$'
-    set shell=bash
+  set shell=bash
 endif
 
 " vim-plug configuration
 source $HOME/.bundles.vim
 
 " File/Syntax settings
-au FileType css     setlocal sw=2 sts=2
-au FileType html    setlocal sw=2 sts=2
-au FileType htmldjango  setlocal sw=2 sts=2
-au FileType python  setlocal formatoptions-=t
-au FileType yaml    setlocal sw=2 sts=2
-au FileType javascript    setlocal sw=2 sts=2
-
 augroup markdown
   au!
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown
@@ -45,6 +38,12 @@ augroup vagrant
   au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
 augroup END
 
+" Enable soft-wrapping for text files
+augroup softwrap
+  au!
+  au FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+augroup END
+
 " JavaScript
 let javascript_enable_domhtmlcss=1
 
@@ -56,14 +55,17 @@ let g:rustfmt_autosave=1
 
 " Fish
 " Set up :make to use fish for syntax checking.
-autocmd FileType fish compiler fish
+augroup fish
+  au!
+  au FileType fish compiler fish
+augroup END
 
 " Filetype detection for *.symlink files
 " If a file begins with '#!/', let vim autodetect the filetype. Otherwise
 " read 'linguist-language' from .gitattributes.
 augroup symlink
-  autocmd!
-  autocmd BufRead,BufNewFile *.symlink
+  au!
+  au BufRead,BufNewFile *.symlink
         \ if getline(1) !~ '#!/' |
         \ let &ft=split(system('cd '.shellescape(expand('%:p:h')).' && git check-attr linguist-language '.shellescape(expand('%:p'))))[-1] |
         \ endif
@@ -117,14 +119,11 @@ nnoremap <down> :ALENextWrap<cr>zvzz
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
 
-" Add dashes to the list of 'word characters' for CSS files:
-au Filetype css setlocal iskeyword+=-
-
-" Enable soft-wrapping for text files
-autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
 " Resize splits when the window is resized
-au VimResized * exe "normal! \<c-w>="
+augroup resize_splits
+  au!
+  au VimResized * exe "normal! \<c-w>="
+augroup END
 
 " Splits open in reasonable places
 set splitright
@@ -164,7 +163,10 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 nmap <Leader>g :Gstatus<CR>gg<c-n>
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+augroup remove_trailing_whitespace
+  au!
+  au BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+augroup END
 
 " DEATH TO F1
 map <F1> <Esc>
@@ -234,12 +236,18 @@ endfunction
 " Set the color column whenever we enter a buffer. This let us do things like
 " ':e newfile.rs' and get 'colorcolumn=100' and ':e newfile.py' and get
 " 'colorcolumn=80' all in the same session!
-au BufEnter * call ColorColumn()
+augroup colorcolumn
+  au!
+  au BufEnter * call ColorColumn()
+augroup END
 
 " Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
+augroup rainbow_parentheses
+  au!
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+augroup END
 
 " Treat underscore as word delimiter
 set iskeyword-=_
@@ -292,10 +300,10 @@ endpython
 endfunction
 
 if has('python')
-    augroup eevee_swapfile
-        autocmd!
-        autocmd SwapExists * call s:SwapDecide()
-    augroup END
+  augroup eevee_swapfile
+    au!
+    au SwapExists * call s:SwapDecide()
+  augroup END
 endif
 
 

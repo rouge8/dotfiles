@@ -38,6 +38,13 @@ repos:
             |\.yaml\.symlink
             |^.config/yamllint/config.symlink$
           )
+  - repo: https://github.com/Vimjas/vint
+    rev: v0.4a4
+    hooks:
+      - id: vint
+        types:
+          - text
+        files: .vimrc.symlink
   - repo: local
     hooks:
       - id: shfmt
