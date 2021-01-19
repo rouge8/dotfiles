@@ -40,7 +40,8 @@ if status is-interactive
     abbr -g gti git
 
     # delta
-    set -x DELTA_PAGER 'less -rX'
+    # requires less >= v570
+    set -x DELTA_PAGER 'less -R'
 
     # AWS Vault
     set -x AWS_VAULT_KEYCHAIN_NAME login

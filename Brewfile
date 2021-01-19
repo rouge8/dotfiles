@@ -81,7 +81,7 @@ brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Pager program similar to more
-brew "less"
+brew "less", args: ["HEAD"]
 # C string library for manipulating Unicode strings
 brew "libunistring"
 # YAML Parser
