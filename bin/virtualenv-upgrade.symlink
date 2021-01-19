@@ -1,0 +1,4 @@
+#!/bin/bash
+# Upgrade embedded wheels for pip, setuptools, wheel, etc.
+
+PIP_REQUIRE_VIRTUALENV="" virtualenv --upgrade-embed-wheels
