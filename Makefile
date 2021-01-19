@@ -23,7 +23,7 @@ SHIVS = shiv \
 
 all: $(SHIVS) \
 	Brewfile \
-	$(BASH_COMPLETIONS_DIR)/vex \
+	$(BASH_COMPLETIONS_DIR)/vex $(FISH_COMPLETIONS_DIR)/vex.fish \
 	~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish \
 	$(FISH_COMPLETIONS_DIR)/volta.fish
 
@@ -61,6 +61,10 @@ vex: DEPS = https://github.com/rouge8/vex/archive/fix-fish-completion-macos.zip 
 $(BASH_COMPLETIONS_DIR)/vex: $(BIN)/vex
 	mkdir -p $(dir $@)
 	$< --shell-config bash > $@
+
+$(FISH_COMPLETIONS_DIR)/vex.fish: $(BIN)/vex
+	mkdir -p $(dir $@)
+	$< --shell-config fish > $@
 
 Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
 	brew bundle dump --mas --describe --force --no-restart
