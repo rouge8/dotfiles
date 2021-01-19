@@ -41,7 +41,7 @@ if status is-interactive
 
     # delta
     # requires less >= v570
-    set -x DELTA_PAGER 'less -R'
+    set -x DELTA_PAGER 'less -R --mouse'
 
     # AWS Vault
     set -x AWS_VAULT_KEYCHAIN_NAME login
