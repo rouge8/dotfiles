@@ -46,7 +46,8 @@ $(BIN)/shiv:
 
 flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear flake8-docstrings
 
-ipython: DEPS = ipython requests attrs
+ipython: DEPS = ipython requests attrs 'jedi < 0.18.0'
+	# https://github.com/ipython/ipython/issues/12740
 
 twine: DEPS = twine readme_renderer[md]
 
