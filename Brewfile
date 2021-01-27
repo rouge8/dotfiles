@@ -153,36 +153,62 @@ brew "sachaos/todoist/todoist"
 brew "wolever/git-blast/git-blast"
 cask "8bitdo-firmware-updater"
 cask "8bitdo-ultimate-software"
+# Memory training application
 cask "anki"
+# Multi-cloud backup application
 cask "arq"
 cask "aws-vault"
+# Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Disk space visualizer
 cask "daisydisk"
+# Application window manager focusing on simplicity
 cask "divvy"
+# App to build and share containerized applications and microservices
 cask "docker"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
+# Web browser
 cask "firefox"
+# Screen color temperature controller
 cask "flux"
+# Web browser
 cask "google-chrome"
+# Menu bar calendar
 cask "itsycal"
 cask "kiibohd-configurator"
+# GPU-based terminal emulator
 cask "kitty"
+# Password manager
 cask "lastpass"
+# Software for Logitech devices
 cask "logitech-options"
+# Full TeX Live distribution with GUI applications
 cask "mactex"
+# Text editor
 cask "macvim"
+# Silence embarrassing notifications while screensharing
 cask "muzzle"
+# App to write, plan, collaborate, and get organized
 cask "notion"
 cask "pixel-picker"
 cask "qmk-toolbox"
+# Screencasting software
 cask "recordit"
+# Emoji picker optimized for blind people
 cask "rocket"
+# Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
 cask "slack"
 cask "via"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Desktop client for WhatsApp
 cask "whatsapp"
+# Video communication and virtual meeting platform
 cask "zoom"
 mas "Day One", id: 1055511498
 mas "GarageBand", id: 682658836
