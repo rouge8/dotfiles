@@ -1,3 +1,4 @@
+tap "eth-p/software"
 tap "facebook/fb"
 tap "filosottile/gomod"
 tap "homebrew/bundle"
@@ -106,6 +107,8 @@ brew "overmind"
 brew "pgformatter"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
 # Implementation of Python 3 in Python
 brew "pypy3"
 # Search tool like grep and The Silver Searcher
@@ -138,6 +141,8 @@ brew "yamllint"
 brew "youtube-dl"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
+# Bash scripts that integrate bat with various command-line tools
+brew "eth-p/software/bat-extras"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
 # Quantum Mechanical Keyboard (QMK) Firmware
