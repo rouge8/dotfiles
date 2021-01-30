@@ -28,7 +28,14 @@ symbol = ""
 command = "~/bin/git-status-prompt"
 when = "true"
 style = "bold red"
-format = "[\\[$output\\]]($style) "
+# An explanation of the format string:
+# - $output is wrapped in '\[\]' to display the brackets
+# - '\[$output\] ' is wrapped in '()' to only display it when $output is
+#   non-empty (and avoid extra whitespace before later prompt entries like
+#   $status or $cmd_duration)
+# - '(\[$output\] )' is wrapped in '[]' so that $style applies, because $style
+#   only applies to '[]' and not '()'
+format = '[(\[$output\] )]($style)'
 
 [python]
 scan_for_pyfiles = false
