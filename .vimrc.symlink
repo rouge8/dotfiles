@@ -116,6 +116,9 @@ set title
 nnoremap <up> :ALEPreviousWrap<cr>zvzz
 nnoremap <down> :ALENextWrap<cr>zvzz
 
+" Autocomplete
+let g:ale_completion_enabled = 1
+
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
 
