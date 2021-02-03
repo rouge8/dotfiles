@@ -112,12 +112,14 @@ set mouse=a
 
 set title
 
-" Nav between ALE results
+" Nav between ALE linter results
 nnoremap <up> :ALEPreviousWrap<cr>zvzz
 nnoremap <down> :ALENextWrap<cr>zvzz
 
-" Autocomplete
+" Autocomplete with ALE
 let g:ale_completion_enabled = 1
+" Right arrow accepts completions
+inoremap <expr> <Right> pumvisible() ? "\<C-y>" : "\<Right>"
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
