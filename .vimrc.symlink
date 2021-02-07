@@ -8,44 +8,15 @@ endif
 " vim-plug configuration
 source $HOME/.bundles.vim
 
-" File/Syntax settings
-augroup markdown
-  au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown
-augroup END
-
 " Highlight fenced code blocks
 " ref: https://github.com/tpope/vim-markdown/commit/b2697b0adfe5428b86c8470a5f9d8da667bb2785
 let g:markdown_fenced_languages = ['python', 'rust']
-
-augroup json
-  au!
-  au BufNewFile,BufRead *.json setlocal filetype=json
-augroup END
-
-augroup nginx
-  au!
-  au BufNewFile,BufRead *.site,*.nginx.conf setlocal filetype=nginx
-augroup END
-
-augroup Dockerfile
-  au!
-  au BufNewFile,BufRead Dockerfile.* setlocal filetype=Dockerfile
-augroup END
-
-augroup vagrant
-  au!
-  au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
-augroup END
 
 " Enable soft-wrapping for text files
 augroup softwrap
   au!
   au FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 augroup END
-
-" JavaScript
-let javascript_enable_domhtmlcss=1
 
 " Terraform
 let g:terraform_fmt_on_save=1
