@@ -162,6 +162,8 @@ cask "aws-vault"
 cask "coconutbattery"
 # Disk space visualizer
 cask "daisydisk"
+# Voice and text chat software
+cask "discord"
 # Application window manager focusing on simplicity
 cask "divvy"
 # App to build and share containerized applications and microservices
