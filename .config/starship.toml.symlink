@@ -38,6 +38,7 @@ style = "bold red"
 format = '[(\[$output\] )]($style)'
 
 [python]
+python_binary = "python3"
 scan_for_pyfiles = false
 
 [cmd_duration]
