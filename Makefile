@@ -11,7 +11,6 @@ SHIVS = shiv \
 	isort \
 	twine \
 	check-manifest \
-	sops \
 	black \
 	blacken-docs \
 	flit \
