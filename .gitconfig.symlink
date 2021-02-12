@@ -71,3 +71,8 @@
 ; 	textconv = sops -d
 [pull]
 	ff = only
+
+[protocol "http"]
+	allow = never
+[protocol "git"]
+	allow = never
