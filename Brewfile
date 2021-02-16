@@ -39,8 +39,6 @@ brew "ctop"
 brew "diskonaut"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# Docker Credential Helper for Amazon ECR
-brew "docker-credential-helper-ecr"
 # More intuitive version of du in rust
 brew "dust"
 # Run arbitrary commands when files change
