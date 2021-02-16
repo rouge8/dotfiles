@@ -122,7 +122,7 @@ brew "sops"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # Cross-shell prompt for astronauts
-brew "starship"
+brew "starship", args: ["HEAD"]
 # Generic Python virtualenv management and test command-line tool
 brew "tox"
 # Display directories as trees (with optional color/HTML output)

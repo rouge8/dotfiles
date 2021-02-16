@@ -39,7 +39,9 @@ format = '[(\[$output\] )]($style)'
 
 [python]
 python_binary = "python3"
-scan_for_pyfiles = false
+# Only show the Python version when a virtualenv is active
+detect_extensions = []
+detect_files = []
 
 [cmd_duration]
 min_time = 1000
