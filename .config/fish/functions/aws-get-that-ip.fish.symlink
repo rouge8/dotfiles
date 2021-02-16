@@ -1,6 +1,6 @@
 function aws-get-that-ip --description 'get the IP address of an EC2 instance'
     AWS_PAGER="" aws ec2 describe-instances \
         --filter Name=network-interface.addresses.private-ip-address,Values=$argv[1] \
-            --query 'Reservations[*].Instances[*].{Instance:InstanceId,Name:Tags[?Key==`Name`]|[0].Value}' \
-            --output text
+        --query 'Reservations[*].Instances[*].{Instance:InstanceId,Name:Tags[?Key==`Name`]|[0].Value}' \
+        --output text
 end
