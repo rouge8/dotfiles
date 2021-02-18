@@ -76,3 +76,16 @@
 	allow = never
 [protocol "git"]
 	allow = never
+
+# https://twitter.com/glyph/status/1359955841810530304
+[fetch]
+	fsckObjects = true
+[transfer]
+	fsckObjects = true
+[receive]
+	fsckObjects = true
+
+# https://twitter.com/glyph/status/1360321244176863232?s=20
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+	badTimezone = ignore
