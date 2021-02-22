@@ -86,3 +86,6 @@
 [fetch "fsck"]
 	zeroPaddedFilemode = ignore
 	badTimezone = ignore
+
+[init]
+	defaultBranch = main
