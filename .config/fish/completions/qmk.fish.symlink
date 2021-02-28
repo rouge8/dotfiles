@@ -1,6 +1,6 @@
 set -l commands config clone setup c2json chibios-confmigrate clean compile config doctor flash generate-rgb-breathe-table info json2c lint list-keyboards list-keymaps new-keymap
 
-set -l keyboard_commands c2json compile flash list-keymaps new-keymap
+set -l keyboard_commands c2json compile flash list-keymaps new-keymap lint
 set -l keymap_commands c2json compile flash
 set -l file_commands c2json json2c
 
