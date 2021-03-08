@@ -23,7 +23,7 @@ repos:
       - id: black
         language_version: python3.9
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.25.0
+    rev: v1.26.0
     hooks:
       - id: yamllint
         args:
@@ -64,7 +64,7 @@ repos:
         name: shfmt-.bash*
         minimum_pre_commit_version: 2.6.0
         language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.2.0]
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.2.4]
         entry: shfmt
         args:
           # simplify the code
