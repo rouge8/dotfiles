@@ -4,16 +4,12 @@ FISH_COMPLETIONS_DIR = ~/.config/fish/completions
 PYTHON = $(shell brew --prefix python@3.9)/bin/python3.9 -sE
 
 SHIVS = shiv \
-	virtualenv \
 	ipython \
 	vex \
 	flake8 \
-	isort \
 	twine \
 	check-manifest \
-	black \
 	blacken-docs \
-	flit \
 	nox \
 	identify-cli \
 	pyproject-build

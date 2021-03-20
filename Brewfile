@@ -27,6 +27,8 @@ brew "bandwhich"
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Python code formatter
+brew "black"
 # Cross-platform make
 brew "cmake"
 # Utility that creates projects from templates
@@ -49,6 +51,8 @@ brew "fastmod"
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Simplified packaging of Python modules
+brew "flit"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -77,6 +81,8 @@ brew "hub"
 brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Sort Python imports automatically
+brew "isort"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Pager program similar to more
@@ -129,6 +135,8 @@ brew "tox"
 brew "tree"
 # Vim script Language Lint
 brew "vint"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # Internet file retriever
