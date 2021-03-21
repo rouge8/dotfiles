@@ -64,8 +64,3 @@ if status is-interactive
     # https://github.com/bvaisvil/zenith
     abbr -g htop zenith
 end
-
-# Host specific settings
-if test -e ~/.localrc.fish
-    source ~/.localrc.fish
-end
