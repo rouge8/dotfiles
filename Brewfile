@@ -163,6 +163,7 @@ cask "8bitdo-ultimate-software"
 cask "anki"
 # Multi-cloud backup application
 cask "arq"
+# Securely stores and accesses AWS credentials in a development environment
 cask "aws-vault"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
