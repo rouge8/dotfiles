@@ -147,8 +147,10 @@ brew "yamllint"
 brew "youtube-dl"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
-# Bash scripts that integrate bat with various command-line tools
-brew "eth-p/software/bat-extras"
+# Read system manual pages using bat as the manual page formatter
+brew "eth-p/software/bat-extras-batman"
+# Pretty-print source code and highlight it with bat
+brew "eth-p/software/bat-extras-prettybat"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
 # Quantum Mechanical Keyboard (QMK) Firmware
