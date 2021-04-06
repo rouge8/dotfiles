@@ -20,8 +20,10 @@ function bind_tab --description "'**' autocompletes paths with fd/fzf"
     if string match --quiet -r '^(?<dir>.*/)?\*\*$' -- $tokens[-1]
         if contains -- "$tokens[-2]" cd rmdir pushd
             set fdargs --type d
+            set fzfargs --no-multi
         else
             set fdargs ""
+            set fzfargs --multi
         end
 
         # eval is used to do shell expansion on paths
@@ -31,10 +33,10 @@ function bind_tab --description "'**' autocompletes paths with fd/fzf"
         test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
         set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
-        fd --hidden --follow $fdargs . $dir | eval (__fzfcmd) +m | read -l result
+        set -l result (fd --hidden --follow $fdargs . $dir | eval (__fzfcmd) $fzfargs)
 
         if [ -n "$result" ]
-            commandline --current-token -- (string escape $result)
+            commandline --current-token -- (string join ' ' (string escape $result))
         end
     else
         commandline --function complete
