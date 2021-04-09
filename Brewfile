@@ -23,22 +23,14 @@ brew "python@3.9"
 brew "awscli"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
-# Programmable completion for Bash 3.2
-brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Python code formatter
 brew "black"
-# Cross-platform make
-brew "cmake"
-# Utility that creates projects from templates
-brew "cookiecutter"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
 brew "ctop"
-# Terminal visual disk space navigator
-brew "diskonaut"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # More intuitive version of du in rust
@@ -67,8 +59,6 @@ brew "pcre"
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# GNU grep, egrep and fgrep
-brew "grep"
 # Command-line hex viewer
 brew "hexyl"
 # HTTP load generator, ApacheBench (ab) replacement
@@ -123,8 +113,6 @@ brew "scc"
 brew "semgrep"
 # Autoformat shell script source code
 brew "shfmt"
-# Editor of encrypted files
-brew "sops"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # Cross-shell prompt for astronauts
@@ -187,13 +175,10 @@ cask "flux"
 cask "google-chrome"
 # Menu bar calendar
 cask "itsycal"
-cask "kiibohd-configurator"
 # GPU-based terminal emulator
 cask "kitty"
 # Password manager
 cask "lastpass"
-# Software for Logitech devices
-cask "logitech-options"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # Text editor
