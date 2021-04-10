@@ -16,4 +16,4 @@ complete -c qmk -s h -l help
 complete -n "not __fish_seen_subcommand_from $commands" -c qmk -a "$commands"
 complete --no-files -n "__fish_seen_subcommand_from $keyboard_commands" -c qmk -a "(qmk list-keyboards)" -l keyboard --require-parameter
 complete --no-files -n "__fish_seen_subcommand_from $keymap_commands" -n "__fish_contains_opt keyboard" -c qmk -a "(__qmk_current_keyboard_options)" -l keymap --require-parameter
-complete --force-files -n "__fish_seen_subcommand_from $file_commands" -c qmk -a "(__fish_complete_path)"
+complete --force-files -n "__fish_seen_subcommand_from $file_commands" -c qmk
