@@ -1,8 +1,10 @@
-complete -c wormhole --no-files
+complete -e -c wormhole
+complete --no-files -c wormhole
+
 complete -c wormhole -l help
+complete -c wormhole -l version -n __fish_no_arguments
 
-complete -n __fish_use_subcommand -c wormhole -xa receive -d "Receive a text message, file, or directory (from 'wormhole send')"
+complete -c wormhole -n __fish_use_subcommand -a receive -d "Receive a text message, file, or directory (from 'wormhole send')"
 
-complete -n __fish_use_subcommand -c wormhole -xa send -d "Send a text message, file, or directory"
-
-complete --force-files -n "__fish_seen_subcommand_from send" -c wormhole -a "(__fish_complete_path)"
+complete -c wormhole -n __fish_use_subcommand -a send -d "Send a text message, file, or directory"
+complete -c wormhole -n "__fish_seen_subcommand_from send" -r --force-files
