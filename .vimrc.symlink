@@ -83,6 +83,9 @@ set mouse=a
 
 set title
 
+" List all ALE linter errors
+command! Errors lwindow
+
 " Nav between ALE linter results
 nnoremap <up> :ALEPreviousWrap<cr>zvzz
 nnoremap <down> :ALENextWrap<cr>zvzz
