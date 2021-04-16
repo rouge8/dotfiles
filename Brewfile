@@ -27,6 +27,8 @@ brew "bandwhich"
 brew "bat"
 # Python code formatter
 brew "black"
+# Cross-platform make
+brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
@@ -113,6 +115,8 @@ brew "scc"
 brew "semgrep"
 # Autoformat shell script source code
 brew "shfmt"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # Cross-shell prompt for astronauts
