@@ -8,3 +8,4 @@
 *.yaml.symlink linguist-language=yaml
 *.toml.symlink linguist-language=toml
 .gitconfig*.symlink linguist-language=gitconfig
+.config/flake8.symlink linguist-language=dosini

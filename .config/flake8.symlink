@@ -1,0 +1,52 @@
+[flake8]
+max-line-length = 88
+select =
+    E,
+    F,
+    W,
+    # https://github.com/PyCQA/flake8-bugbear
+    B,
+    # Opinionated warnings with the exception of line-length
+    B90,
+    # http://www.pydocstyle.org/en/latest/error_codes.html
+    # Docstring whitespace issues
+    D2,
+    # Multi-line docstring summary should start at the second line, i.e. not
+    # the same line as the triple quotes
+    D213,
+    # Docstring quotes issues
+    D3,
+    # First word of the docstring should not be "This"
+    D404,
+    # https://github.com/adamchainz/flake8-comprehensions
+    C
+ignore =
+    # Preferred style is line breaks before binary operators
+    # ref: https://github.com/PyCQA/pycodestyle/issues/498
+    W503,
+    # E203 "whitespace before ':'" is not PEP 8 compliant and is not followed
+    # by Black
+    # ref: https://github.com/ambv/black#slices
+    E203,
+    # flake8-bugbear's B903 advises using `collections.namedtuple` for
+    # data-only classes. Unfortunately, it doesn't take into account
+    # subclassing where the parent class may have methods.
+    # Also, use attrs.
+    B903,
+    # Our docstring style allows for a multi-line summary, e.g.:
+    #
+    # """
+    # Prevent database use without the appropriate fixture/marker, used
+    # automatically.
+    #
+    # Additional content goes here.
+    # """
+    D205,
+    # Inverse of D213
+    D212,
+    # Black ignores D202 "No blank lines allowed after function docstring" and
+    # inserts an empty line after the docstring if the next line defines an
+    # inner function (e.g. when writing decorators). Black will remove the
+    # empty lines in all other cases.
+    # ref: https://github.com/ambv/black#empty-lines
+    D202
