@@ -1,0 +1,7 @@
+[settings]
+atomic = True
+profile = black
+
+# Longest line-length allowed for a single import. Try to keep this in sync
+# with max-line-length in the flake8 config
+line_length = 88

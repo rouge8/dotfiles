@@ -9,3 +9,4 @@
 *.toml.symlink linguist-language=toml
 .gitconfig*.symlink linguist-language=gitconfig
 .config/flake8.symlink linguist-language=dosini
+.isort.cfg.symlink linguist-language=dosini
