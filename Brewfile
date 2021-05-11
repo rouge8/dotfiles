@@ -107,6 +107,8 @@ brew "prettier"
 brew "pypy3"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Easily detect and prevent bugs and anti-patterns in your codebase

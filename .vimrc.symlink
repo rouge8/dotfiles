@@ -83,6 +83,9 @@ set mouse=a
 
 set title
 
+" ALE linters
+let g:ale_linters = {'rust': ['analyzer']}
+
 " List all ALE linter errors
 command! Errors lwindow
 
