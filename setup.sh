@@ -20,7 +20,7 @@ brew bundle install
 
 # Rust
 rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
-rustup component add rls rust-analysis rust-src
+rustup component add rust-src rustfmt clippy
 
 # Python shivs and other things
 make -j$(nproc)
