@@ -157,8 +157,11 @@ if has('gui_macvim')
 endif
 
 " vim-airline
-" TODO: find a good patched font
-" let g:airline_powerline_fonts=1
+if $TERM ==# 'xterm-kitty'
+  " kitty is smart and will find the Nerd Font symbols from
+  " 'font-fira-code-nerd-font'
+  let g:airline_powerline_fonts=1
+endif
 set laststatus=2 " Always show the statusline
 
 " Highlight VCS conflict markers
