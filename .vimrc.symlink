@@ -87,7 +87,8 @@ set title
 let g:ale_linters = {'rust': ['analyzer']}
 
 " Use 'K' to show LSP hover info
-set keywordprg=:call\ ale#hover#ShowAtCursor()
+command! -nargs=* ShowALEHoverVargs :call ale#hover#ShowAtCursor()
+set keywordprg=:ShowALEHoverVargs
 
 " List all ALE linter errors
 command! Errors lwindow
