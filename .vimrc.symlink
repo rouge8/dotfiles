@@ -210,8 +210,10 @@ set undofile
 " clam.vim
 nnoremap ! :Clam<space>
 
-" Unfuck my screen
-noremap U :syntax sync fromstart<cr>:redraw!<cr>
+" Unfuck everything by redrawing the screen and stopping all LSPs
+"
+" TODO: Restart the LSPs: https://github.com/dense-analysis/ale/issues/2201
+noremap U :syntax sync fromstart<cr>:redraw!<cr>:ALEStopAllLSPs<cr>
 
 " Scrollbinding
 set scrollopt+=hor
