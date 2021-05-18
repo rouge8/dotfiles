@@ -139,8 +139,6 @@ set splitbelow
 
 " color
 if $TERM ==# 'xterm-kitty'
-  " https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
-  let &t_ut=''
   let g:gruvbox_italic=1
 endif
 
@@ -152,7 +150,6 @@ colorscheme gruvbox
 
 " gui
 if has('gui_macvim')
-  " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
   " TODO: find a good patched font
   set guifont=Menlo:h18
 endif
