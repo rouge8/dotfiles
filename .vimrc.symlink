@@ -83,8 +83,11 @@ set mouse=a
 
 set title
 
-" ALE linters
+" ALE
 let g:ale_linters = {'rust': ['analyzer']}
+
+" Use 'K' to show LSP hover info
+set keywordprg=:call\ ale#hover#ShowAtCursor()
 
 " List all ALE linter errors
 command! Errors lwindow
