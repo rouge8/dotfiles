@@ -138,9 +138,10 @@ set splitright
 set splitbelow
 
 " color
-if &term ==# 'xterm-kitty'
+if $TERM ==# 'xterm-kitty'
   " https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
   let &t_ut=''
+  let g:gruvbox_italic=1
 endif
 
 if has('termcolors')
