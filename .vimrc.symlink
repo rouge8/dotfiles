@@ -182,7 +182,9 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 " fzf
-nnoremap <C-p> :GFiles<Cr>
+command! -bang -nargs=? -complete=dir GitFiles
+      \ call fzf#vim#files(FugitiveWorkTree(), fzf#vim#with_preview(), <bang>0)
+nnoremap <C-p> :GitFiles<Cr>
 
 "" MAKE .swp~ AND .un~ FILES LESS ANNOYING
 "" FROM <http://stackoverflow.com/a/9528322/609144>
