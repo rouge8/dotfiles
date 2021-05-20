@@ -1,0 +1,3 @@
+function inflate --description "Read and decompress a zlib-compressed file"
+    ruby -r zlib -e "puts Zlib::Inflate.inflate(STDIN.read)"
+end
