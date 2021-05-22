@@ -27,6 +27,7 @@ make -j$(nproc)
 
 # Make some directories
 mkdir -p ~/tmp ~/forks
+ln -s ~/Dropbox/Projects/ ~/projects
 
 # Locally trusted SSL certificates
 # https://github.com/FiloSottile/mkcert
