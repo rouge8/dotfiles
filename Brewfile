@@ -150,6 +150,8 @@ brew "qmk/qmk/qmk"
 brew "sachaos/todoist/todoist"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 cask "8bitdo-firmware-updater"
 cask "8bitdo-ultimate-software"
 # Memory training application
@@ -181,8 +183,6 @@ cask "google-chrome"
 cask "itsycal"
 # GPU-based terminal emulator
 cask "kitty"
-# Password manager
-cask "lastpass"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # Text editor
@@ -192,6 +192,7 @@ cask "muzzle"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 cask "pixel-picker"
+# Toolbox companion for QMK Firmware
 cask "qmk-toolbox"
 # Screencasting software
 cask "recordit"
