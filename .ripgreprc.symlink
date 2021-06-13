@@ -1,7 +1,3 @@
-# vcl
---type-add
-vcl:*.vcl
-
 # *.symlink files
 # TODO: Keep in sync with .gitattributes
 --type-add
