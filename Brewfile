@@ -10,6 +10,7 @@ tap "homebrew/services"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
+tap "rouge8/rouge8"
 tap "sachaos/todoist"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
@@ -146,6 +147,8 @@ brew "eth-p/software/bat-extras-prettybat"
 brew "filosottile/gomod/brew-gomod"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
+# A cargo subcommand for displaying when Rust dependencies are out of date
+brew "rouge8/rouge8/cargo-outdated"
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
 # git-blast: show git branches sorted by last commit date Raw
