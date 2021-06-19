@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
-Plug 'rouge8/ale', { 'branch': 'completeopt-remove-noselect' }
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
