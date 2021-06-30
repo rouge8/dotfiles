@@ -56,7 +56,7 @@ if status is-interactive
     alias shrug 'echo -n "¯\_(ツ)_/¯" | pbcopy'
 
     # Use https://starship.rs/ for my prompt
-    starship init fish | source
+    starship init fish --print-full-init | source
 
     # nvim
     abbr -g vim nvim
