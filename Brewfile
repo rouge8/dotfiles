@@ -107,20 +107,24 @@ brew "pre-commit"
 brew "prettier"
 # Implementation of Python 3 in Python
 brew "pypy3"
+# Launch your Python interpreter the lazy/smart way
+brew "python-launcher"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
+# Intuitive find & replace CLI
+brew "sd"
 # Easily detect and prevent bugs and anti-patterns in your codebase
 brew "semgrep"
 # Autoformat shell script source code
 brew "shfmt"
-# Tool to create intelligent and beautiful documentation
-brew "sphinx-doc"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Record terminal sessions as SVG animations
+brew "termtosvg"
 # Generic Python virtualenv management and test command-line tool
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
@@ -156,6 +160,7 @@ brew "wolever/git-blast/git-blast"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 cask "8bitdo-firmware-updater"
+# Control every piece of your controller
 cask "8bitdo-ultimate-software"
 # Memory training application
 cask "anki"
