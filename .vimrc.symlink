@@ -103,6 +103,9 @@ command! Errors lwindow
 nnoremap <up> :ALEPreviousWrap<cr>zvzz
 nnoremap <down> :ALENextWrap<cr>zvzz
 
+" Go to definition with ALE
+nnoremap <leader>j :ALEGoToDefinition -split<cr>
+
 " Autocomplete with ALE
 let g:ale_completion_enabled = 1
 " Right arrow accepts completions
