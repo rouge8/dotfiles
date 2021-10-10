@@ -45,8 +45,6 @@ ipython: DEPS = 'ipython >= 7.20.0' requests attrs rich
 
 twine: DEPS = twine readme_renderer[md]
 
-nox: DEPS = nox-automation
-
 identify-cli: DEPS = identify
 
 pyproject-build: DEPS = build

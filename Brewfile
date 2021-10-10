@@ -99,6 +99,8 @@ brew "miniserve"
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Flexible test automation for Python
+brew "nox"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
 # PostgreSQL syntax beautifier
