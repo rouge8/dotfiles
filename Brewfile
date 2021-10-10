@@ -27,6 +27,8 @@ brew "awscli"
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Python code formatter
 brew "black"
 # Cross-platform make

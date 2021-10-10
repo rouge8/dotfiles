@@ -1,7 +1,7 @@
 BIN = ~/.local/bin
 BASH_COMPLETIONS_DIR = ~/.bash_completion.d
 FISH_COMPLETIONS_DIR = ~/.config/fish/completions
-PYTHON = $(shell brew --prefix python@3.9)/bin/python3.9 -sE
+PYTHON = $(shell brew --prefix python@3.10)/bin/python3.10 -sE
 
 SHIVS = shiv \
 	ipython \
