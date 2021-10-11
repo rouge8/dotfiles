@@ -28,10 +28,11 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'bling/vim-airline'
 
 " Language/Syntax
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'blankname/vim-fish'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'

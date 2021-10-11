@@ -42,8 +42,6 @@ augroup symlink
         \ endif
 augroup END
 
-syntax on
-
 set modeline
 set modelines=0
 
@@ -82,6 +80,19 @@ nnoremap k gk
 set mouse=a
 
 set title
+
+" Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 
 " ALE
 let g:ale_linters = {'rust': ['analyzer']}
