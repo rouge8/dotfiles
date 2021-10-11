@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-sleuth'
 
 " Appearance
 Plug 'p00f/nvim-ts-rainbow'
