@@ -91,6 +91,11 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
     additional_vim_regex_highlighting = false,
   },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  },
 }
 EOF
 
@@ -269,14 +274,6 @@ endfunction
 augroup colorcolumn
   au!
   au BufEnter * call ColorColumn()
-augroup END
-
-" Rainbow Parentheses
-augroup rainbow_parentheses
-  au!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
 augroup END
 
 " Treat underscore as word delimiter

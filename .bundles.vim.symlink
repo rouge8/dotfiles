@@ -24,7 +24,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-scriptease'
 
 " Appearance
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'bling/vim-airline'
 
 " Language/Syntax
