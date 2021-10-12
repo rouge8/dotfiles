@@ -13,19 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Checkout the latest fish
-        uses: actions/checkout@v2
-        with:
-          repository: fish-shell/fish-shell
-          path: fish-shell
-
-      - name: Build fish
+      - name: Install the latest fish
         run: |
-          mkdir build; cd build
-          cmake ..
-          make -j$(nproc)
-          sudo make install
-        working-directory: fish-shell
+          sudo add-apt-repository ppa:fish-shell/release-3
+          sudo apt-get update
+          sudo apt-get install -y fish
 
       - uses: actions/setup-python@v2
       - name: Setup Go
