@@ -31,6 +31,8 @@ brew "bat"
 brew "python@3.10"
 # Python code formatter
 brew "black"
+# Cargo subcommand for displaying when Rust dependencies are out of date
+brew "cargo-outdated"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
@@ -155,8 +157,6 @@ brew "eth-p/software/bat-extras-prettybat"
 brew "filosottile/gomod/brew-gomod"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
-# A cargo subcommand for displaying when Rust dependencies are out of date
-brew "rouge8/rouge8/cargo-outdated"
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
 # git-blast: show git branches sorted by last commit date Raw
