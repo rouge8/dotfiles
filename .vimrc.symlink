@@ -99,54 +99,53 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" ALE
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_rust_analyzer_config = {
-      \ 'cargo': { 'loadOutDirsFromCheck': v:true },
-      \ 'procMacro': { 'enable': v:true },
-      \ 'checkOnSave': { 'command': 'clippy', 'enable': v:true }
-      \ }
+" LSP
+lua <<EOF
+local nvim_lsp = require('lspconfig')
 
-" Use 'K' to show LSP hover info in a preview window (close with <c-w><c-z>)
-command! -nargs=* ShowALEHoverVargs :call ale#hover#ShowAtCursor()
-set keywordprg=:ShowALEHoverVargs
-let g:ale_hover_to_preview = 1
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-" List all ALE linter errors
-command! Errors lwindow
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
 
-" Nav between ALE linter results
-nnoremap <up> :ALEPreviousWrap<cr>zvzz
-nnoremap <down> :ALENextWrap<cr>zvzz
+  --- Nav between diagnostic results
+  buf_set_keymap('n', '<up>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  --- Use 'K' to show LSP hover info
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  --- Go to definition in a split
+  --- TODO: Use `vim.lsp.buf_request_sync()` like in
+  --- https://www.reddit.com/r/neovim/comments/lxfe0e/neovim_lsp_implement_definition_sync_and_type/gpmxp0r/
+  buf_set_keymap('n', '<leader>j', '<cmd>split<cr><cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
-" Go to definition with ALE
-nnoremap <leader>j :ALEGoToDefinition -split<cr>
 
-" Autocomplete with ALE
-let g:ale_completion_enabled = 1
-" Right arrow accepts completions
-inoremap <expr> <Right> pumvisible() ? "\<C-y>" : "\<Right>"
-" Tab accepts completions
-inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+end
 
-" Remap ALE's completion menu to automatically select (but not insert) the
-" first result
-"
-" Based on https://github.com/tpope/vim-commentary/issues/84#issuecomment-285878827
-function! RemapAleCompletion()
-  " Load ALE's completion functions and the <Plug>(ale_show_completion_menu)
-  " mapping so that we can unmap it
-  call ale#completion#GetCompletions('ale-manual')
+nvim_lsp.rust_analyzer.setup({
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        loadOutDirsFromCheck = true,
+      },
+      procMacro = {
+        enable = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+        enable = true,
+      },
+    }
+  }
+})
+EOF
 
-  " Remap <C-x><C-o> to not deselect the first completion result
-  iunmap <Plug>(ale_show_completion_menu)
-  inoremap <silent> <Plug>(ale_show_completion_menu) <C-x><C-o>
-endfunction
-
-augroup remap_ale_completion
-  autocmd!
-  autocmd VimEnter * call RemapAleCompletion()
-augroup END
+" List all LSP diagnostic errors
+command! Errors lua vim.lsp.diagnostic.set_loclist()
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
@@ -240,10 +239,8 @@ set undofile
 " clam.vim
 nnoremap ! :Clam<space>
 
-" Unfuck everything by redrawing the screen and stopping all LSPs
-"
-" TODO: Restart the LSPs: https://github.com/dense-analysis/ale/issues/2201
-noremap U :syntax sync fromstart<cr>:redraw!<cr>:ALEStopAllLSPs<cr>
+" Unfuck everything by redrawing the screen and restarting all LSPs
+noremap U :syntax sync fromstart<cr>:redraw!<cr>:LspRestart<cr>
 
 " Scrollbinding
 set scrollopt+=hor
