@@ -325,8 +325,8 @@ augroup END
 " Treat underscore as word delimiter
 set iskeyword-=_
 
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
+" Undotree
+nnoremap <F5> :UndotreeToggle<CR>
 
 " numbers.vim in vim 7.4+
 if v:version >= 704
