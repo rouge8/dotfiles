@@ -99,6 +99,35 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" Autocomplete
+set completeopt=menu,menuone,noinsert
+
+lua <<EOF
+local cmp = require('cmp')
+
+cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' },
+  },
+  mapping = {
+    ['<C-x><C-o>'] = cmp.mapping.complete(), --- Manually trigger completion
+    ['<Right>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ['<Tab>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+  },
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+})
+EOF
+
 " LSP
 lua <<EOF
 local nvim_lsp = require('lspconfig')
@@ -121,11 +150,12 @@ local on_attach = function(client, bufnr)
   --- TODO: Use `vim.lsp.buf_request_sync()` like in
   --- https://www.reddit.com/r/neovim/comments/lxfe0e/neovim_lsp_implement_definition_sync_and_type/gpmxp0r/
   buf_set_keymap('n', '<leader>j', '<cmd>split<cr><cmd>lua vim.lsp.buf.definition()<CR>', opts)
-
-
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 nvim_lsp.rust_analyzer.setup({
+  capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     ["rust-analyzer"] = {
