@@ -154,6 +154,7 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+--- Rust
 nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -171,6 +172,17 @@ nvim_lsp.rust_analyzer.setup({
       },
     }
   }
+})
+
+--- null-ls
+null_ls = require('null-ls')
+null_ls.config({
+  sources = {
+    null_ls.builtins.diagnostics.flake8,
+  }
+})
+nvim_lsp['null-ls'].setup({
+  on_attach = on_attach,
 })
 
 --- Disable inline buffer error messages
