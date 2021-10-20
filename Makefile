@@ -10,7 +10,6 @@ SHIVS = shiv \
 	twine \
 	check-manifest \
 	blacken-docs \
-	nox \
 	identify-cli \
 	pyproject-build
 
