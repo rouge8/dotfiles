@@ -120,7 +120,7 @@ EOF
 # is released
 # Add /usr/local/bin to $PATH even for GUI apps
 echo 'Updating $PATH...'
-sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:$(brew --prefix)/bin
 
 # Restart Finder and Dock
 killall Dock
