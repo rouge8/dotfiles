@@ -199,6 +199,7 @@ cask "macvim"
 cask "muzzle"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Menu bar application to pick colours from your screen
 cask "pixel-picker"
 # Toolbox companion for QMK Firmware
 cask "qmk-toolbox"
