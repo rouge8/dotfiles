@@ -49,7 +49,7 @@ Icon?
 !.editorconfig
 
 # yamllint
-!.yamllint
+!.yamllint.*
 
 # pre-commit
 !.pre-commit-*.yaml
