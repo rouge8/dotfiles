@@ -178,6 +178,8 @@ cask "daisydisk"
 cask "discord"
 # Application window manager focusing on simplicity
 cask "divvy"
+# App to build and share containerized applications and microservices
+cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Web browser
