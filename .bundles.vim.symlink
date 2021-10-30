@@ -42,6 +42,7 @@ Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'blankname/vim-fish'
+Plug 'marshallward/vim-restructuredtext'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
