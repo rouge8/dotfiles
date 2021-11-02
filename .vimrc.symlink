@@ -178,6 +178,7 @@ nvim_lsp.rust_analyzer.setup({
 --- null-ls
 null_ls = require('null-ls')
 null_ls.config({
+  diagnostics_format = "[#{c}] #{m} (#{s})",
   sources = {
     null_ls.builtins.diagnostics.flake8,
     null_ls.builtins.diagnostics.yamllint,
