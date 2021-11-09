@@ -12,6 +12,7 @@ tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "rouge8/rouge8"
 tap "sachaos/todoist"
+tap "superfly/tap"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
 brew "act"
@@ -157,6 +158,7 @@ brew "filosottile/gomod/brew-gomod"
 brew "qmk/qmk/qmk"
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
+brew "superfly/tap/flyctl"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
 # Password manager that keeps all passwords secure behind one password
