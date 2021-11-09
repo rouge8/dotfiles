@@ -178,8 +178,6 @@ cask "coconutbattery"
 cask "daisydisk"
 # Voice and text chat software
 cask "discord"
-# Application window manager focusing on simplicity
-cask "divvy"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Client for the Dropbox cloud storage service
@@ -199,6 +197,8 @@ cask "kitty"
 cask "mactex"
 # Text editor
 cask "macvim"
+# Utility to move and zoom windows—on one display
+cask "moom"
 # Silence embarrassing notifications while screensharing
 cask "muzzle"
 # App to write, plan, collaborate, and get organized

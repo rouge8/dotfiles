@@ -82,8 +82,8 @@ open -a Terminal.app misc/Gruvbox-dark.terminal
 defaults write com.apple.terminal 'Default Window Settings' -string Gruvbox-dark
 defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
 
-# Divvy
-open -a Divvy.app $(cat misc/divvy.txt)
+# Moom
+defaults import com.manytricks.Moom misc/Moom.plist
 
 # Remap Caps Lock to Left Control on the internal keyboard
 osascript << EOF
