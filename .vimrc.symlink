@@ -175,6 +175,18 @@ nvim_lsp.rust_analyzer.setup({
   }
 })
 
+--- Python
+nvim_lsp.pyright.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    python = {
+      --- pyright only accepts absolute paths
+      venvPath = vim.api.nvim_call_function("fnamemodify", {"~", ":p"}) .. ".virtualenvs",
+    }
+  }
+})
+
 --- null-ls
 null_ls = require('null-ls')
 null_ls.config({

@@ -112,6 +112,8 @@ brew "pre-commit"
 brew "prettier"
 # Implementation of Python 3 in Python
 brew "pypy3"
+# Static type checker for Python
+brew "pyright"
 # Launch your Python interpreter the lazy/smart way
 brew "python-launcher"
 # Search tool like grep and The Silver Searcher
