@@ -151,6 +151,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   --- Go-to definition
   buf_set_keymap('n', '<leader>j', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  --- References
+  buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
