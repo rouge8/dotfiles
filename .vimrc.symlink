@@ -153,6 +153,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>j', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   --- References
   buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  --- Formatting
+  buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("v", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -196,6 +199,8 @@ null_ls.config({
   sources = {
     null_ls.builtins.diagnostics.flake8,
     null_ls.builtins.diagnostics.yamllint,
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.isort,
   }
 })
 nvim_lsp['null-ls'].setup({
