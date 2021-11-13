@@ -76,6 +76,10 @@ noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 nnoremap j gj
 nnoremap k gk
 
+" navigate the quickfix list
+nnoremap <left>  :cprev<cr>zvzz
+nnoremap <right> :cnext<cr>zvzz
+
 " Mouse settings
 set mouse=a
 
