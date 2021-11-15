@@ -74,6 +74,8 @@ brew "hey"
 brew "httpie"
 # Add GitHub support to git on the command-line
 brew "hub"
+# Configurable static site generator
+brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
