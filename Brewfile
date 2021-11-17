@@ -28,6 +28,8 @@ brew "readline"
 brew "python@3.10"
 # Python code formatter
 brew "black"
+# Utility for managing cargo dependencies from the command-line
+brew "cargo-edit"
 # Cargo subcommand for displaying when Rust dependencies are out of date
 brew "cargo-outdated"
 # Cross-platform make
