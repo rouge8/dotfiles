@@ -162,6 +162,8 @@ brew "eth-p/software/bat-extras-prettybat"
 brew "filosottile/gomod/brew-gomod"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
+# Show where time is wasted during the context upload of `docker build`
+brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
 brew "superfly/tap/flyctl"
