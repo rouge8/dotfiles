@@ -38,7 +38,7 @@ $(BIN)/shiv:
 	PIP_NO_CACHE_DIR=1 "$${VENV_DIR}/bin/shiv" "pip >= 19.2" shiv -c shiv -o $@ ; \
 	rm -rf "$${VENV_DIR}"
 
-flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear flake8-docstrings
+flake8: DEPS = flake8 flake8-comprehensions flake8-bugbear
 
 ipython: DEPS = 'ipython >= 7.20.0' requests attrs rich
 
