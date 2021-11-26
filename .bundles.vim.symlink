@@ -45,7 +45,7 @@ Plug 'blankname/vim-fish'
 Plug 'marshallward/vim-restructuredtext'
 
 " Color Schemes
-Plug 'gruvbox-community/gruvbox'
+Plug 'rouge8/gruvbox', {'branch': 'highlight-tskeywordoperator'}
 
 " Done
 call plug#end()
