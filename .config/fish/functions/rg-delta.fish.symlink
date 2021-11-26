@@ -1,3 +1,0 @@
-function rg-delta --wraps rg --description 'rg with syntax highlighting from delta'
-    rg --json $argv | delta
-end
