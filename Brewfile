@@ -1,5 +1,4 @@
 tap "eth-p/software"
-tap "facebook/fb"
 tap "filosottile/gomod"
 tap "homebrew/bundle"
 tap "homebrew/cask"
