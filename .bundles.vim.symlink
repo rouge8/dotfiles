@@ -36,7 +36,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'bling/vim-airline'
 
 " Language/Syntax
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
