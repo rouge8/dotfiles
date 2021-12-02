@@ -144,8 +144,8 @@ local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }
 
   --- Nav between diagnostic results
-  buf_set_keymap('n', '<up>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<up>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<down>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   --- Use 'K' to show LSP hover info
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   --- Go-to definition
@@ -243,7 +243,7 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 EOF
 
 " List all LSP diagnostic errors
-command! Errors lua vim.lsp.diagnostic.set_loclist()
+command! Errors lua vim.diagnostic.setloclist()
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
