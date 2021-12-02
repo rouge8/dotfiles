@@ -18,8 +18,7 @@ SHIVS = shiv \
 all: $(SHIVS) \
 	Brewfile \
 	$(BASH_COMPLETIONS_DIR)/vex \
-	~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish \
-	$(FISH_COMPLETIONS_DIR)/flyctl.fish
+	~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish
 
 clean:
 	$(RM) $(addprefix $(BIN)/,$(SHIVS))
@@ -57,6 +56,3 @@ Brewfile: $(shell brew --prefix)/Cellar/* $(shell brew --prefix)/Caskroom/*
 
 ~/.fzf.bash ~/.config/fish/functions/fzf_key_bindings.fish:
 	$(shell brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc
-
-$(FISH_COMPLETIONS_DIR)/flyctl.fish:
-	flyctl completion fish > $@
