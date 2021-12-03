@@ -109,6 +109,8 @@ brew "nox"
 brew "overmind"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
+# Python package management tool
+brew "poetry"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML

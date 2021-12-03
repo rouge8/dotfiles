@@ -44,6 +44,9 @@ chsh -s "$FISH_BIN"
 # But configure Terminal.app to always use bash as a fallback
 defaults write com.apple.terminal Shell /bin/bash
 
+# Poetry
+poetry config virtualenvs.path "$HOME/.virtualenvs"
+
 #######################
 # macOS configuration #
 #######################
