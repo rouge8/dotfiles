@@ -12,6 +12,7 @@
 .directory
 
 # OS X
+.DS_Store
 .DS_Store?
 Icon?
 
