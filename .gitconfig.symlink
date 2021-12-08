@@ -20,12 +20,7 @@
 	excludesfile = ~/.gitglobalignore
 	autocrlf = input
 	editor = nvim
-
-[pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
+	pager = delta
 
 [interactive]
 	diffFilter = delta --color-only
