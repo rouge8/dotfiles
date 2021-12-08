@@ -107,6 +107,10 @@ set completeopt=menu,menuone,noinsert
 lua <<EOF
 local cmp = require('cmp')
 
+local feedkey = function(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
@@ -117,10 +121,18 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ['<Tab>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        })
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      else
+        fallback()
+      end
+    end,
   },
   snippet = {
     expand = function(args)
