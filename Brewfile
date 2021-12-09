@@ -174,6 +174,7 @@ brew "superfly/tap/flyctl"
 brew "wolever/git-blast/git-blast"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Firmware updater for 8BitDo devices
 cask "8bitdo-firmware-updater"
 # Control every piece of your controller
 cask "8bitdo-ultimate-software"
