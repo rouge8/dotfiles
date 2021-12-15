@@ -39,6 +39,8 @@ brew "coreutils"
 brew "ctop"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# Django/Jinja template indenter
+brew "djhtml"
 # More intuitive version of du in rust
 brew "dust"
 # Run arbitrary commands when files change
