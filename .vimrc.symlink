@@ -210,7 +210,7 @@ nvim_lsp.pyright.setup({
 
 --- null-ls
 null_ls = require('null-ls')
-null_ls.config({
+null_ls.setup({
   diagnostics_format = "[#{c}] #{m} (#{s})",
   sources = {
     null_ls.builtins.diagnostics.flake8,
@@ -220,9 +220,7 @@ null_ls.config({
     null_ls.builtins.formatting.djhtml,
     null_ls.builtins.formatting.fish_indent,
     null_ls.builtins.formatting.isort,
-  }
-})
-nvim_lsp['null-ls'].setup({
+  },
   on_attach = on_attach,
 })
 
