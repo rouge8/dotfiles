@@ -85,6 +85,11 @@ set mouse=a
 
 set title
 
+" Indent Blankline
+lua <<EOF
+require'indent_blankline'.setup {}
+EOF
+
 " Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
