@@ -105,6 +105,7 @@ require'nvim-treesitter.configs'.setup {
     disable = {
       "rust",
       "python",
+      "yaml",
     },
   },
   matchup = {
