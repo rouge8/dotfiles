@@ -320,6 +320,8 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " git status
 nmap <Leader>g :Git<CR>gg)
+" git add -p
+nmap <Leader>ga :Git add -p<CR>
 
 " Remove any trailing whitespace that is in the file
 augroup remove_trailing_whitespace
