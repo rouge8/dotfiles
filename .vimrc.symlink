@@ -319,7 +319,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " git status
-nmap <Leader>g :Git<CR>gg<c-n>
+nmap <Leader>g :Git<CR>gg)
 
 " Remove any trailing whitespace that is in the file
 augroup remove_trailing_whitespace
