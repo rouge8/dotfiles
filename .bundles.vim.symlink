@@ -39,6 +39,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Language/Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
