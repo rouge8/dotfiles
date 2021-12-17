@@ -45,6 +45,8 @@ augroup END
 set modeline
 set modelines=0
 
+set number
+
 set scrolloff=3
 set showcmd
 set hidden
@@ -52,11 +54,6 @@ set wildmode=list:longest
 set visualbell
 " used by vim-gitgutter
 set updatetime=100
-
-" VIM-only config
-if !has('nvim')
-  set ttyfast
-endif
 
 " git-messenger
 let g:git_messenger_include_diff = 'current'
@@ -408,11 +405,6 @@ set iskeyword-=_
 
 " Undotree
 nnoremap <F5> :UndotreeToggle<CR>
-
-" numbers.vim in vim 7.4+
-if v:version >= 704
-  set number
-endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
