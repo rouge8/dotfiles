@@ -128,6 +128,7 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'calc' },
+    { name = 'nvim_lua' },
   },
   mapping = {
     ['<C-x><C-o>'] = cmp.mapping.complete(), --- Manually trigger completion
