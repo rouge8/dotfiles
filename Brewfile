@@ -139,6 +139,8 @@ brew "semgrep"
 brew "shfmt"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Opinionated Lua code formatter
+brew "stylua"
 # Record terminal sessions as SVG animations
 brew "termtosvg"
 # Generic Python virtualenv management and test command-line tool
