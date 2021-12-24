@@ -139,7 +139,7 @@ nvim_lsp.pyright.setup({
 })
 
 -- null-ls
-null_ls = require("null-ls")
+local null_ls = require("null-ls")
 null_ls.setup({
     diagnostics_format = "[#{c}] #{m} (#{s})",
     sources = {
