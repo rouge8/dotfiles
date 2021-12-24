@@ -84,3 +84,9 @@ repos:
         language: pygrep
         entry: abbr \w
         files: .+\.fish
+      - id: stylua
+        name: StyLua
+        language: rust
+        additional_dependencies: ["cli:stylua:0.11.2"]
+        entry: stylua
+        types: [lua]
