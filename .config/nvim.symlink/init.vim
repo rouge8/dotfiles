@@ -6,7 +6,7 @@ if &shell =~# 'fish$'
 endif
 
 " vim-plug configuration
-source $HOME/.bundles.vim
+exec 'source ' . stdpath('config') . '/plugins.vim'
 
 " Highlight fenced code blocks
 " ref: https://github.com/tpope/vim-markdown/commit/b2697b0adfe5428b86c8470a5f9d8da667bb2785
