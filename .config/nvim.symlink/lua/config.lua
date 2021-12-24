@@ -138,6 +138,35 @@ nvim_lsp.pyright.setup({
     },
 })
 
+-- Lua
+local LUA_PATH = vim.split(package.path, ";")
+table.insert(LUA_PATH, "lua/?.lua")
+table.insert(LUA_PATH, "lua/?/init.lua")
+
+nvim_lsp.sumneko_lua.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+                path = LUA_PATH,
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { "vim" },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
+})
+
 -- null-ls
 local null_ls = require("null-ls")
 null_ls.setup({

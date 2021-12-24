@@ -93,6 +93,8 @@ brew "less"
 brew "libunistring"
 # YAML Parser
 brew "libyaml"
+# Language Server for the Lua language
+brew "lua-language-server"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Utility for directing compilation
