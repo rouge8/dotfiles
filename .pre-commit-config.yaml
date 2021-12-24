@@ -42,9 +42,6 @@ repos:
     rev: v0.4a4
     hooks:
       - id: vint
-        types:
-          - text
-        files: .vimrc.symlink
   - repo: local
     hooks:
       - id: shfmt
