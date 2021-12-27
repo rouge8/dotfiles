@@ -26,6 +26,7 @@
 	diffFilter = delta --color-only
 
 [delta]
+	features = navigate
 	syntax-theme = gruvbox-dark
 	file-style = blue omit
 	hunk-header-style = file line-number syntax
