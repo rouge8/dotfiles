@@ -42,6 +42,10 @@ repos:
     rev: v0.4a4
     hooks:
       - id: vint
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.11.3
+    hooks:
+      - id: stylua
   - repo: local
     hooks:
       - id: shfmt
@@ -84,9 +88,3 @@ repos:
         language: pygrep
         entry: abbr \w
         files: .+\.fish
-      - id: stylua
-        name: StyLua
-        language: rust
-        additional_dependencies: ["cli:stylua:0.11.2"]
-        entry: stylua
-        types: [lua]
