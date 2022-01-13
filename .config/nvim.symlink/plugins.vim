@@ -47,6 +47,7 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'blankname/vim-fish'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'fladson/vim-kitty'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
