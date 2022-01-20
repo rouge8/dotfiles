@@ -4,6 +4,7 @@ set -o pipefail
 
 # Brew
 which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Dotfiles
 [[ -d ~/.dotfiles.base ]] \
@@ -20,6 +21,7 @@ brew bundle install
 
 # Rust
 rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
+rustup toolchain install stable
 rustup component add rust-src rustfmt clippy
 
 # Python shivs and other things
@@ -27,7 +29,9 @@ make -j$(nproc)
 
 # Make some directories
 mkdir -p ~/tmp ~/forks
-ln -s ~/Dropbox/Projects/ ~/projects
+if [[ ! -d ~/projects ]]; then
+  ln -s ~/Dropbox/Projects/ ~/projects
+fi
 
 # Locally trusted SSL certificates
 # https://github.com/FiloSottile/mkcert
@@ -88,6 +92,29 @@ defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
 # Moom
 defaults import com.manytricks.Moom misc/Moom.plist
 
+# TODO: Remove once
+# https://github.com/kovidgoyal/kitty/commit/a7e9030c12a6c623e480e9f65055fe8956a9ea3a
+# is released
+# Add /usr/local/bin to $PATH even for GUI apps
+echo 'Updating $PATH...'
+sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:$(brew --prefix)/bin
+
+# Restart Finder and Dock
+killall Dock
+killall Finder
+
+# Menu bar
+open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu
+defaults write com.apple.TextInputMenu visible -bool true
+defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
+
+# TODO: Dock layout
+# TODO: keyboard input sources shortcuts
+# TODO: keyboard input sources
+# TODO: time machine menu bar
+# TODO: things in menu bar that launch at startup
+# TODO: hue app
+
 # Remap Caps Lock to Left Control on the internal keyboard
 osascript << EOF
 tell application "System Preferences"
@@ -117,26 +144,3 @@ tell application "System Preferences"
 	quit
 end tell
 EOF
-
-# TODO: Remove once
-# https://github.com/kovidgoyal/kitty/commit/a7e9030c12a6c623e480e9f65055fe8956a9ea3a
-# is released
-# Add /usr/local/bin to $PATH even for GUI apps
-echo 'Updating $PATH...'
-sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:$(brew --prefix)/bin
-
-# Restart Finder and Dock
-killall Dock
-killall Finder
-
-# Menu bar
-open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu
-defaults write com.apple.TextInputMenu visible -bool true
-defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
-
-# TODO: Dock layout
-# TODO: keyboard input sources shortcuts
-# TODO: keyboard input sources
-# TODO: time machine menu bar
-# TODO: things in menu bar that launch at startup
-# TODO: hue app
