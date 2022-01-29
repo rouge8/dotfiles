@@ -35,8 +35,6 @@ brew "black"
 brew "cargo-edit"
 # Cargo subcommand for displaying when Rust dependencies are out of date
 brew "cargo-outdated"
-# Cross-platform make
-brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
@@ -67,8 +65,6 @@ brew "git"
 brew "git-delta"
 # Perl compatible regular expressions library
 brew "pcre"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -95,8 +91,6 @@ brew "jq"
 brew "less"
 # C string library for manipulating Unicode strings
 brew "libunistring"
-# YAML Parser
-brew "libyaml"
 # Language Server for the Lua language
 brew "lua-language-server"
 # Securely transfers data between computers
@@ -125,8 +119,6 @@ brew "poetry"
 brew "pre-commit"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
-# Implementation of Python 3 in Python
-brew "pypy3"
 # Static type checker for Python
 brew "pyright"
 # Launch your Python interpreter the lazy/smart way
