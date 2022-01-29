@@ -48,6 +48,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'blankname/vim-fish'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'fladson/vim-kitty'
+Plug 'hashivim/vim-terraform'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'

@@ -15,14 +15,18 @@ tap "superfly/tap"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
 brew "act"
-# Terminal bandwidth utilization tool
-brew "bandwhich"
-# Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Terminal bandwidth utilization tool
+brew "bandwhich"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Python code formatter
@@ -145,6 +149,8 @@ brew "starship"
 brew "stylua"
 # Record terminal sessions as SVG animations
 brew "termtosvg"
+# Tool to build, change, and version infrastructure
+brew "terraform"
 # Generic Python virtualenv management and test command-line tool
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
