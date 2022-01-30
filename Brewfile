@@ -13,6 +13,7 @@ tap "rouge8/rouge8"
 tap "sachaos/todoist"
 tap "superfly/tap"
 tap "wolever/git-blast"
+tap "yt-dlp/taps"
 # Run your GitHub Actions locally 🚀
 brew "act"
 # Cryptography and SSL/TLS Toolkit
@@ -157,8 +158,6 @@ brew "volta"
 brew "wget"
 # Linter for YAML files
 brew "yamllint"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
 # Read system manual pages using bat as the manual page formatter
@@ -176,6 +175,8 @@ brew "sachaos/todoist/todoist"
 brew "superfly/tap/flyctl"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
+# A youtube-dl fork with additional features and fixes
+brew "yt-dlp/taps/yt-dlp"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Firmware updater for 8BitDo devices
