@@ -11,7 +11,8 @@ SHIVS = shiv \
 	check-manifest \
 	blacken-docs \
 	identify-cli \
-	pyproject-build
+	pyproject-build \
+	black
 
 .PHONY: all clean $(SHIVS)
 
