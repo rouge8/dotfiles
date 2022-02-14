@@ -12,6 +12,7 @@ tap "qmk/qmk"
 tap "rouge8/rouge8"
 tap "sachaos/todoist"
 tap "superfly/tap"
+tap "textualize/rich"
 tap "wolever/git-blast"
 tap "yt-dlp/taps"
 # Run your GitHub Actions locally 🚀
@@ -171,6 +172,8 @@ brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 # Todoist CLI client
 brew "sachaos/todoist/todoist"
 brew "superfly/tap/flyctl"
+# A command line toolbox for beautiful terminal output (syntax highlighting, markdown, CSV tables and more)
+brew "textualize/rich/rich"
 # git-blast: show git branches sorted by last commit date Raw
 brew "wolever/git-blast/git-blast"
 # A youtube-dl fork with additional features and fixes
