@@ -56,7 +56,7 @@ repos:
         name: shfmt
         minimum_pre_commit_version: 2.6.0
         language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.4.0]
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.4.3]
         entry: shfmt
         args:
           # simplify the code
@@ -69,7 +69,7 @@ repos:
         name: shfmt-.bash*
         minimum_pre_commit_version: 2.6.0
         language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.4.0]
+        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.4.3]
         entry: shfmt
         args:
           # simplify the code
