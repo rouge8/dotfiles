@@ -34,6 +34,12 @@ augroup fish
   au FileType fish compiler fish
 augroup END
 
+" Brewfile
+augroup Brewfile
+  au!
+  au BufNewFile,BufRead Brewfile setlocal filetype=ruby
+augroup END
+
 " Filetype detection for *.symlink files
 " If a file begins with '#!/', let vim autodetect the filetype. Otherwise
 " read 'linguist-language' from .gitattributes.
