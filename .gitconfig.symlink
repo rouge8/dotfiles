@@ -2,6 +2,9 @@
 	name = Andy Freeland
 	email = andy@andyfreeland.net
 
+[includeIf "gitdir:~/src/"]
+	path = .gitconfig-pilot
+
 [alias]
 	unstage = reset HEAD --
 	wut = diff -C --staged --word-diff
