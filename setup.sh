@@ -114,3 +114,4 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
 # TODO: hue app
 
 echo "TODO: Open System Preferences > Keyboard > Modifier Keys to remap capslock to control"
+echo "If this is a personal computer, run 'brew bundle install --file Brewfile.home' and re-run '~/.dotfiles.public/setup.sh' to complete installation."
