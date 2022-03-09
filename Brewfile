@@ -7,7 +7,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "rouge8/rouge8"
-tap "sachaos/todoist"
 tap "textualize/rich"
 tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
@@ -138,8 +137,6 @@ brew "eth-p/software/bat-extras-prettybat"
 brew "filosottile/gomod/brew-gomod"
 # Show where time is wasted during the context upload of `docker build`
 brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
-# Todoist CLI client
-brew "sachaos/todoist/todoist"
 # A command line toolbox for beautiful terminal output (syntax highlighting, markdown, CSV tables and more)
 brew "textualize/rich/rich"
 # git-blast: show git branches sorted by last commit date Raw
