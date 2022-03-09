@@ -33,10 +33,6 @@ if [[ ! -d ~/projects ]]; then
   ln -s ~/Dropbox/Projects/ ~/projects
 fi
 
-# Locally trusted SSL certificates
-# https://github.com/FiloSottile/mkcert
-mkcert -install
-
 # Set fish as the login shell
 FISH_BIN="$(brew --prefix)/bin/fish"
 if ! grep -xq "$FISH_BIN" /etc/shells; then

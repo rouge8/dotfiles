@@ -82,8 +82,6 @@ brew "libunistring"
 brew "lua-language-server"
 # Utility for directing compilation
 brew "make"
-# Simple tool to make locally trusted development certificates
-brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # PostgreSQL syntax beautifier
