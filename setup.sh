@@ -113,32 +113,4 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
 # TODO: things in menu bar that launch at startup
 # TODO: hue app
 
-# Remap Caps Lock to Left Control on the internal keyboard
-osascript << EOF
-tell application "System Preferences"
-	activate
-	delay 1
-end tell
-
-tell application "System Events"
-	tell process "System Preferences"
-		click menu item "Keyboard" of menu "View" of menu bar 1
-		delay 1
-		tell window "Keyboard"
-			click button "Modifier Keys…" of tab group 1
-			delay 1
-			tell sheet 1
-				click pop up button "Select keyboard:"
-				click menu item "Apple Internal Keyboard / Trackpad" of menu 1 of pop up button "Select keyboard:"
-				click pop up button "Caps Lock (⇪) Key:"
-				click menu item "⌃ Control" of menu 1 of pop up button "Caps Lock (⇪) Key:"
-				click button "OK"
-			end tell
-		end tell
-	end tell
-end tell
-
-tell application "System Preferences"
-	quit
-end tell
-EOF
+echo "TODO: Open System Preferences > Keyboard > Modifier Keys to remap capslock to control"
