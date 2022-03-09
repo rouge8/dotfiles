@@ -10,3 +10,4 @@
 .vim.symlink/plugged
 .vim.symlink/view
 Brewfile.lock.json
+Brewfile.*.lock.json

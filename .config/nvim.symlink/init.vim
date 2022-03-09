@@ -37,7 +37,7 @@ augroup END
 " Brewfile
 augroup Brewfile
   au!
-  au BufNewFile,BufRead Brewfile setlocal filetype=ruby
+  au BufNewFile,BufRead Brewfile,Brewfile.* setlocal filetype=ruby
 augroup END
 
 " Filetype detection for *.symlink files

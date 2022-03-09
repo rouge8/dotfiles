@@ -1,0 +1,73 @@
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
+tap "superfly/tap"
+tap "yt-dlp/taps"
+# Utility for managing cargo dependencies from the command-line
+brew "cargo-edit"
+# Cargo subcommand for displaying when Rust dependencies are out of date
+brew "cargo-outdated"
+# Django/Jinja template indenter
+brew "djhtml"
+# Configurable static site generator
+brew "hugo"
+# Securely transfers data between computers
+brew "magic-wormhole"
+# Mac App Store command-line interface
+brew "mas"
+# High performance static file server
+brew "miniserve"
+# Flexible test automation for Python
+brew "nox"
+# Process manager for Procfile-based applications and tmux
+brew "overmind"
+# Quantum Mechanical Keyboard (QMK) Firmware
+brew "qmk/qmk/qmk"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+brew "superfly/tap/flyctl"
+# JavaScript toolchain manager for reproducible environments
+brew "volta"
+# A youtube-dl fork with additional features and fixes
+brew "yt-dlp/taps/yt-dlp"
+# Firmware updater for 8BitDo devices
+cask "8bitdo-firmware-updater"
+# Control every piece of your controller
+cask "8bitdo-ultimate-software"
+# Memory training application
+cask "anki"
+# Multi-cloud backup application
+cask "arq"
+# Tool to show live information about the batteries in various devices
+cask "coconutbattery"
+# Disk space visualizer
+cask "daisydisk"
+# Voice and text chat software
+cask "discord"
+# Full TeX Live distribution with GUI applications
+cask "mactex"
+# App to write, plan, collaborate, and get organized
+cask "notion"
+# Menu bar application to pick colours from your screen
+cask "pixel-picker"
+# Toolbox companion for QMK Firmware
+cask "qmk-toolbox"
+# Screencasting software
+cask "recordit"
+# Instant messaging application focusing on security
+cask "signal"
+# Team communication and collaboration software
+cask "slack"
+cask "via"
+# Multimedia player
+cask "vlc"
+# Desktop client for WhatsApp
+cask "whatsapp"
+mas "Day One", id: 1055511498
+mas "GarageBand", id: 682658836
+mas "Hue Menu Bar", id: 1500678169
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Tweetbot", id: 1384080005
