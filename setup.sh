@@ -29,7 +29,7 @@ make -j$(nproc)
 
 # Make some directories
 mkdir -p ~/tmp ~/forks
-if [[ ! -d ~/projects ]]; then
+if [[ -d ~/Dropbox/Projects && ! -d ~/projects ]]; then
   ln -s ~/Dropbox/Projects/ ~/projects
 fi
 
