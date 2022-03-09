@@ -49,6 +49,9 @@ defaults write com.apple.terminal Shell /bin/bash
 # Poetry
 poetry config virtualenvs.path "$HOME/.virtualenvs"
 
+# Vim
+fish -c vim-plug-install
+
 #######################
 # macOS configuration #
 #######################
