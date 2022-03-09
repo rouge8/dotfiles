@@ -27,11 +27,12 @@ clean:
 $(SHIVS): % : $(BIN)/%
 
 $(BIN)/%: $(BIN)/shiv
-	shiv --python "$(PYTHON)" $(or $(DEPS),$*) \
+	$(BIN)/shiv --python "$(PYTHON)" $(or $(DEPS),$*) \
 		--console-script $(basename $(notdir $@)) \
 		--output-file $@
 
 $(BIN)/shiv:
+	mkdir $(BIN)
 	VENV_DIR=$$(mktemp -d) && \
 	$(PYTHON) -m venv "$${VENV_DIR}" && \
 	"$${VENV_DIR}/bin/pip" install shiv && \
