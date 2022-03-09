@@ -12,7 +12,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   && ~/.dotfiles.base/bin/dotfiles.symlink install
 [[ -d ~/.dotfiles.public ]] \
   || git clone git@github.com:rouge8/dotfiles ~/.dotfiles.public \
-  && dotfiles install
+  && ~/bin/dotfiles install
 
 cd ~/.dotfiles.public
 
