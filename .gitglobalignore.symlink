@@ -56,3 +56,6 @@ Icon?
 
 # GitHub
 !.github
+
+# null-ls
+.null-ls-root
