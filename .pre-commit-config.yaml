@@ -47,7 +47,7 @@ repos:
     hooks:
       - id: vint
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.12.4
+    rev: v0.12.5
     hooks:
       - id: stylua
   - repo: local
