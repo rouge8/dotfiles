@@ -8,7 +8,6 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "rouge8/rouge8"
 tap "textualize/rich"
-tap "wolever/git-blast"
 # Run your GitHub Actions locally 🚀
 brew "act"
 # Cryptography and SSL/TLS Toolkit
@@ -139,8 +138,6 @@ brew "filosottile/gomod/brew-gomod"
 brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 # A command line toolbox for beautiful terminal output (syntax highlighting, markdown, CSV tables and more)
 brew "textualize/rich/rich"
-# git-blast: show git branches sorted by last commit date Raw
-brew "wolever/git-blast/git-blast"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Securely stores and accesses AWS credentials in a development environment
