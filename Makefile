@@ -33,7 +33,7 @@ $(BIN)/%: $(BIN)/shiv
 		--output-file $@
 
 $(BIN)/shiv:
-	mkdir $(BIN)
+	mkdir -p $(BIN)
 	VENV_DIR=$$(mktemp -d) && \
 	$(PYTHON) -m venv "$${VENV_DIR}" && \
 	"$${VENV_DIR}/bin/pip" install shiv && \
