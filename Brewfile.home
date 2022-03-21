@@ -56,8 +56,6 @@ cask "qmk-toolbox"
 cask "recordit"
 # Instant messaging application focusing on security
 cask "signal"
-# Team communication and collaboration software
-cask "slack"
 cask "via"
 # Multimedia player
 cask "vlc"

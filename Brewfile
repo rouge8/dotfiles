@@ -157,6 +157,8 @@ cask "google-chrome"
 cask "itsycal"
 # GPU-based terminal emulator
 cask "kitty"
+# Full TeX Live distribution with GUI applications
+cask "mactex"
 # Text editor
 cask "macvim"
 # Utility to move and zoom windows—on one display
@@ -165,6 +167,8 @@ cask "moom"
 cask "muzzle"
 # Emoji picker optimized for blind people
 cask "rocket"
+# Team communication and collaboration software
+cask "slack"
 # Open-source code editor
 cask "visual-studio-code"
 # Video communication and virtual meeting platform
