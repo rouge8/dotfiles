@@ -157,8 +157,6 @@ cask "google-chrome"
 cask "itsycal"
 # GPU-based terminal emulator
 cask "kitty"
-# Full TeX Live distribution with GUI applications
-cask "mactex"
 # Text editor
 cask "macvim"
 # Utility to move and zoom windows—on one display
