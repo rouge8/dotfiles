@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
         "bash",
         "comment",
         "css",
+        "dockerfile",
         "fish",
         "go",
         "gomod",
