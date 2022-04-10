@@ -3,7 +3,31 @@ require("indent_blankline").setup({})
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
-    ensure_installed = "maintained",
+    ensure_installed = {
+        "bash",
+        "comment",
+        "css",
+        "fish",
+        "go",
+        "gomod",
+        "hcl",
+        "html",
+        "http",
+        "javascript",
+        "json",
+        "latex",
+        "lua",
+        "make",
+        "python",
+        "regex",
+        "rst",
+        "ruby",
+        "rust",
+        "toml",
+        "typescript",
+        "vim",
+        "yaml",
+    },
     ignore_install = {},
     highlight = {
         enable = true,
