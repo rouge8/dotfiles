@@ -70,3 +70,7 @@ if status is-interactive
     # https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
     abbr -g man batman
 end
+
+if test -f $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
+    source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
+end
