@@ -70,7 +70,7 @@ cmp.setup({
         { name = "calc" },
         { name = "nvim_lua" },
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ["<C-x><C-o>"] = cmp.mapping.complete(), -- Manually trigger completion
         ["<Right>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
@@ -88,7 +88,7 @@ cmp.setup({
                 fallback()
             end
         end,
-    },
+    }),
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
