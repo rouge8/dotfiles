@@ -4,7 +4,7 @@ if status --is-login
     end
     set -gx HOMEBREW_PREFIX (brew --prefix)
 
-    for py_version in 3.10 3.9 3.8 3.7
+    for py_version in 3.10 3.9 3.8
         fish_add_path -g --append $HOMEBREW_PREFIX/opt/python@$py_version/bin
     end
 
