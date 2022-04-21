@@ -5,13 +5,7 @@ function unset-aws
 end
 
 function assume-aws --description 'assume an AWS role with aws-okta or aws-vault'
-    if test grep -q "[okta]" ~/.aws/config
-        set -l aws_cmd aws-okta
-    else
-        set -l aws_cmd aws-vault
-    end
-
     unset-aws
-    eval ($aws_cmd exec $argv -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
+    eval (aws-vault exec $argv -- env | grep -E "^AWS_" | sed -e "s/^/export\ /")
     AWS_PAGER="" aws --output text --query Arn sts get-caller-identity
 end
