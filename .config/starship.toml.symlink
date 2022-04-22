@@ -4,6 +4,7 @@ $git_branch\
 $git_state\
 ${custom.git_status}\
 $python\
+$aws\
 $cmd_duration\
 $status\
 $line_break\
@@ -42,6 +43,9 @@ python_binary = "python3"
 # Only show the Python version when a virtualenv is active
 detect_extensions = []
 detect_files = []
+
+[aws]
+format = "on [$symbol$profile]($style) "
 
 [cmd_duration]
 min_time = 1000
