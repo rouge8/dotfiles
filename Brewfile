@@ -16,8 +16,6 @@ brew "openssl@1.1"
 brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -140,8 +138,6 @@ brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 brew "textualize/rich/rich"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Securely stores and accesses AWS credentials in a development environment
-cask "aws-vault"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Client for the Dropbox cloud storage service
