@@ -23,6 +23,5 @@ PATH=$HOME/bin:$PATH
 export PATH
 
 # AWS
-export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_SESSION_TTL=12h
 export AWS_ASSUME_ROLE_TTL=1h
