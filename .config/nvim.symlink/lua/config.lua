@@ -161,10 +161,6 @@ nvim_lsp.pyright.setup({
 })
 
 -- Lua
-local LUA_PATH = vim.split(package.path, ";")
-table.insert(LUA_PATH, "lua/?.lua")
-table.insert(LUA_PATH, "lua/?/init.lua")
-
 nvim_lsp.sumneko_lua.setup({
     capabilities = capabilities,
     on_attach = on_attach,
@@ -172,7 +168,6 @@ nvim_lsp.sumneko_lua.setup({
         Lua = {
             runtime = {
                 version = "LuaJIT",
-                path = LUA_PATH,
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
