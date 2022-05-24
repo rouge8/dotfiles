@@ -46,6 +46,7 @@ detect_files = []
 
 [aws]
 format = "on [$symbol$profile]($style) "
+force_display = true
 
 [cmd_duration]
 min_time = 1000
