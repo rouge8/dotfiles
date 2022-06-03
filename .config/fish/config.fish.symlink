@@ -2,7 +2,6 @@ if status --is-login
     if test -f /opt/homebrew/bin/brew
         eval (/opt/homebrew/bin/brew shellenv)
     end
-    set -gx HOMEBREW_PREFIX (brew --prefix)
 
     for py_version in 3.10 3.9
         fish_add_path -g --append $HOMEBREW_PREFIX/opt/python@$py_version/bin
