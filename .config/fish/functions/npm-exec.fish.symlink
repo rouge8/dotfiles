@@ -1,6 +1,0 @@
-function npm-exec --description 'run a command with (npm bin) at the start of $PATH'
-    begin
-        set -lx PATH (npm bin) $PATH
-        $argv
-    end
-end
