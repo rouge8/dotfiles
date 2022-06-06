@@ -112,6 +112,8 @@ brew "stylua"
 brew "termtosvg"
 # Tool to build, change, and version infrastructure
 brew "terraform"
+# Terraform Language Server
+brew "terraform-ls"
 # Generic Python virtualenv management and test command-line tool
 brew "tox"
 # Display directories as trees (with optional color/HTML output)

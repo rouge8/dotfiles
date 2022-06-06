@@ -184,6 +184,9 @@ nvim_lsp.sumneko_lua.setup({
     },
 })
 
+-- Terraform
+nvim_lsp.terraformls.setup({})
+
 -- null-ls
 local null_ls = require("null-ls")
 null_ls.setup({
