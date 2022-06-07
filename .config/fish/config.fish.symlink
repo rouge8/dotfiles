@@ -65,8 +65,7 @@ if status is-interactive
     # https://github.com/bvaisvil/zenith
     abbr -g htop zenith
 
-    # https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
-    abbr -g man batman
+    set -x MANPAGER 'nvim +Man!'
 end
 
 if test -f $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
