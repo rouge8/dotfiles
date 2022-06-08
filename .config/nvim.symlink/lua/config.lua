@@ -245,15 +245,17 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition("split")
 vim.cmd([[ command! Errors lua vim.diagnostic.setloclist() ]])
 
 -- lualine
+local statusline_sections = {
+    lualine_a = { "mode" },
+    lualine_b = { { "FugitiveHead", icon = "" }, "diff", "diagnostics" },
+    lualine_c = { "filename" },
+    lualine_x = { "encoding", { "fileformat", icons_enabled = false }, "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
+}
 require("lualine").setup({
-    sections = {
-        lualine_a = { "mode" },
-        lualine_b = { { "FugitiveHead", icon = "" }, "diff", "diagnostics" },
-        lualine_c = { "filename" },
-        lualine_x = { "encoding", { "fileformat", icons_enabled = false }, "filetype" },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
-    },
+    sections = statusline_sections,
+    inactive_sections = statusline_sections,
     extensions = {
         "fugitive",
         "fzf",
