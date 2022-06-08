@@ -52,6 +52,8 @@ brew "git-delta"
 brew "pcre"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU implementation of time utility
+brew "gnu-time"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Command-line hex viewer
