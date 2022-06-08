@@ -243,3 +243,31 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition("split")
 
 -- List all LSP diagnostic errors
 vim.cmd([[ command! Errors lua vim.diagnostic.setloclist() ]])
+
+-- lualine
+require("lualine").setup({
+    sections = {
+        lualine_a = { "mode" },
+        lualine_b = { { "FugitiveHead", icon = "" }, "diff", "diagnostics" },
+        lualine_c = { "filename" },
+        lualine_x = { "encoding", { "fileformat", icons_enabled = false }, "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+    },
+    extensions = {
+        "fugitive",
+        "fzf",
+        "quickfix",
+        -- vim-plug
+        {
+            sections = {
+                lualine_a = {
+                    function()
+                        return "Plugins"
+                    end,
+                },
+            },
+            filetypes = { "vim-plug" },
+        },
+    },
+})

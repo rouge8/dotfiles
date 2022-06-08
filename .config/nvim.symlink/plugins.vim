@@ -36,7 +36,7 @@ Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-nvim-lua'
 
 " Appearance
-Plug 'bling/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Language/Syntax

@@ -121,15 +121,6 @@ if has('gui_macvim')
   set guifont=Menlo:h18
 endif
 
-" vim-airline
-if $TERM ==# 'xterm-kitty'
-  " kitty is smart and will find the Nerd Font symbols from
-  " 'font-fira-code-nerd-font'
-  let g:airline_powerline_fonts=1
-endif
-
-let g:airline_highlighting_cache=1
-
 set laststatus=2 " Always show the statusline
 
 " Highlight VCS conflict markers
