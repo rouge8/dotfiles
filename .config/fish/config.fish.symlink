@@ -66,6 +66,12 @@ if status is-interactive
     abbr -g htop zenith
 
     set -x MANPAGER 'nvim +Man!'
+
+    # vim-like cursors
+    set -g fish_cursor_default block blink
+    set -g fish_cursor_insert line blink
+    set -g fish_cursor_replace_one underscore blink
+    set -g fish_cursor_visual block blink
 end
 
 if test -f $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish

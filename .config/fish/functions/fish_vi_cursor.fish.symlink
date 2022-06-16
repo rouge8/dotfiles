@@ -1,3 +1,0 @@
-# Workaround https://github.com/fish-shell/fish-shell/issues/3481#issuecomment-255610735
-function fish_vi_cursor
-end
