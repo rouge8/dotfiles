@@ -245,9 +245,21 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition("split")
 vim.cmd([[ command! Errors lua vim.diagnostic.setloclist() ]])
 
 -- lualine
+local function vim_gitgutter_diff_source()
+    local added, modified, removed = unpack(vim.fn.GitGutterGetHunkSummary())
+    return {
+        added = added,
+        modified = modified,
+        removed = removed,
+    }
+end
 local statusline_sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "FugitiveHead", icon = "" }, "diff", "diagnostics" },
+    lualine_b = {
+        { "FugitiveHead", icon = "" },
+        { "diff", source = vim_gitgutter_diff_source },
+        "diagnostics",
+    },
     lualine_c = { "filename" },
     lualine_x = { "encoding", { "fileformat", icons_enabled = false }, "filetype" },
     lualine_y = { "progress" },
