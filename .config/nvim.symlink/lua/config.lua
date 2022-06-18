@@ -265,7 +265,7 @@ require("lualine").setup({
             sections = {
                 lualine_a = {
                     function()
-                        return "Plugins"
+                        return "PLUGINS"
                     end,
                 },
             },
