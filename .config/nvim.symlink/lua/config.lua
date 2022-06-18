@@ -271,5 +271,16 @@ require("lualine").setup({
             },
             filetypes = { "vim-plug" },
         },
+        -- vim-startuptime
+        {
+            sections = {
+                lualine_a = {
+                    function()
+                        return "STARTUP TIME"
+                    end,
+                },
+            },
+            filetypes = { "startuptime" },
+        },
     },
 })
