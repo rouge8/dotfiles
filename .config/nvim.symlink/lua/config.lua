@@ -294,5 +294,19 @@ require("lualine").setup({
             },
             filetypes = { "startuptime" },
         },
+        -- man pages
+        {
+            sections = {
+                lualine_a = {
+                    function()
+                        return "MAN"
+                    end,
+                },
+                lualine_c = { "filename" },
+                lualine_y = { "progress" },
+                lualine_z = { "location" },
+            },
+            filetypes = { "man" },
+        },
     },
 })
