@@ -9,6 +9,7 @@ $cmd_duration\
 $status\
 $line_break\
 ${custom.bash}\
+$jobs\
 $character"""
 
 [username]
