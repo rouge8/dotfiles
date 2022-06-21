@@ -70,3 +70,6 @@ shell = ["bash", "--noprofile", "--norc"]
 success_symbol = "[❯](bold)"
 error_symbol = "[❯](bold)"
 vicmd_symbol = '[\[N\]](bold red)[❯](bold)'
+vimcmd_replace_symbol = '[\[R\]](bold green)[❯](bold)'
+vimcmd_replace_one_symbol = '[\[r\]](bold green)[❯](bold)'
+vimcmd_visual_symbol = '[\[V\]](bold purple)[❯](bold)'
