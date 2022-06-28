@@ -120,6 +120,8 @@ brew "terraform-ls"
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Text manipulation and cutting tool
+brew "tuc"
 # Vim script Language Lint
 brew "vint"
 # Tool for creating isolated virtual python environments
