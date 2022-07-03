@@ -71,8 +71,6 @@
 	showPatch = true
 [log]
 	decorate = full
-; [diff "sopsdiffer"]
-; 	textconv = sops -d
 [pull]
 	ff = only
 
