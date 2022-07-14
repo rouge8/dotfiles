@@ -1,7 +1,0 @@
-function cargo-symlink-target --description "move './target' to ~/tmp/rust-builds/ and symlink back to cwd"
-    set -l project (basename $PWD)
-
-    mkdir -p ~/tmp/rust-builds/$project
-    mv target ~/tmp/rust-builds/$project/
-    ln -s ~/tmp/rust-builds/$project/target .
-end

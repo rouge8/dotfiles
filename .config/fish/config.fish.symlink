@@ -26,6 +26,9 @@ set -x EDITOR nvim
 # rg
 set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
+# Rust
+set -x CARGO_TARGET_DIR $HOME/tmp/rust-builds
+
 # Fewer `\`s to escape in regexes
 # https://github.com/fish-shell/fish-shell/issues/7835#issuecomment-803035397
 set -U fish_features regex-easyesc
