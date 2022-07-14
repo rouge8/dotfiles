@@ -104,25 +104,21 @@ local nvim_lsp = require("lspconfig")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-
     -- Mappings.
-    local opts = { noremap = true, silent = true }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
     -- Nav between diagnostic results
-    buf_set_keymap("n", "<up>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-    buf_set_keymap("n", "<down>", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+    vim.keymap.set("n", "<up>", vim.diagnostic.goto_prev, bufopts)
+    vim.keymap.set("n", "<down>", vim.diagnostic.goto_next, bufopts)
     -- Use 'K' to show LSP hover info
-    buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     -- Go-to definition
-    buf_set_keymap("n", "<leader>j", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    vim.keymap.set("n", "<leader>j", vim.lsp.buf.definition, bufopts)
     -- References
-    buf_set_keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, bufopts)
     -- Formatting
-    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    buf_set_keymap("v", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set("v", "<leader>f", vim.lsp.buf.range_formatting, bufopts)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(
