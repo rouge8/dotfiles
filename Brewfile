@@ -58,8 +58,6 @@ brew "gnu-time"
 brew "go"
 # Command-line hex viewer
 brew "hexyl"
-# HTTP load generator, ApacheBench (ab) replacement
-brew "hey"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Add GitHub support to git on the command-line
@@ -82,6 +80,8 @@ brew "lua-language-server"
 brew "make"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP load generator, inspired by rakyll/hey with tui animation
+brew "oha"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Audits Python environments and dependency trees for known vulnerabilities
