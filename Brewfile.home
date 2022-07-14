@@ -17,8 +17,6 @@ brew "magic-wormhole"
 brew "mas"
 # High performance static file server
 brew "miniserve"
-# Flexible test automation for Python
-brew "nox"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
 # Quantum Mechanical Keyboard (QMK) Firmware
