@@ -30,6 +30,12 @@ augroup rust
   au BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
 augroup END
 
+" Lua
+augroup lua
+  au!
+  au BufWritePre *.lua lua vim.lsp.buf.formatting_sync()
+augroup END
+
 " Fish
 " Set up :make to use fish for syntax checking.
 augroup fish
