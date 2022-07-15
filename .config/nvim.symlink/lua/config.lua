@@ -141,6 +141,9 @@ nvim_lsp.rust_analyzer.setup({
                 command = "clippy",
                 enable = true,
             },
+            rustfmt = {
+                extraArgs = { "+nightly" },
+            },
         },
     },
 })
