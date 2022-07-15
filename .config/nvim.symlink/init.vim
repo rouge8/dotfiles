@@ -25,7 +25,10 @@ augroup END
 let g:terraform_fmt_on_save=1
 
 " Rust
-let g:rustfmt_autosave=1
+augroup rust
+  au!
+  au BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
+augroup END
 
 " Fish
 " Set up :make to use fish for syntax checking.
