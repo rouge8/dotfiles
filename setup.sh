@@ -23,7 +23,7 @@ brew bundle install
 if [[ -f "$(brew --prefix)/bin/rust-analyzer" ]]; then
   rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
   rustup toolchain install stable nightly
-  rustup component add rust-src rustfmt clippy
+  rustup component add rust-src rustfmt clippy llvm-tools-preview
 fi
 
 # Python shivs and other things

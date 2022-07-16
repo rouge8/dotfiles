@@ -2,6 +2,7 @@ tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "superfly/tap"
+tap "taiki-e/tap"
 tap "yt-dlp/taps"
 # Utility for managing cargo dependencies from the command-line
 brew "cargo-edit"
@@ -24,6 +25,8 @@ brew "qmk/qmk/qmk"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
 brew "superfly/tap/flyctl"
+# Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
+brew "taiki-e/tap/cargo-llvm-cov"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # A youtube-dl fork with additional features and fixes
