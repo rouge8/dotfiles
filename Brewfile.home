@@ -6,6 +6,8 @@ tap "taiki-e/tap"
 tap "yt-dlp/taps"
 # Utility for managing cargo dependencies from the command-line
 brew "cargo-edit"
+# Next-generation test runner for Rust
+brew "cargo-nextest"
 # Cargo subcommand for displaying when Rust dependencies are out of date
 brew "cargo-outdated"
 # Django/Jinja template indenter
