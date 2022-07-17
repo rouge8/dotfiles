@@ -28,7 +28,7 @@
 [interactive]
 	diffFilter = delta --color-only
 
-[add.interactive]
+[add "interactive"]
 	useBuiltin = false
 
 [delta]
