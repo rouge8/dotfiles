@@ -10,6 +10,8 @@ brew "cargo-edit"
 brew "cargo-nextest"
 # Cargo subcommand for displaying when Rust dependencies are out of date
 brew "cargo-outdated"
+# Find unused dependencies in Cargo.toml
+brew "cargo-udeps"
 # Django/Jinja template indenter
 brew "djhtml"
 # Configurable static site generator
