@@ -27,13 +27,13 @@ let g:terraform_fmt_on_save=1
 " Rust
 augroup rust
   au!
-  au BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
+  au FileType rust au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Lua
 augroup lua
   au!
-  au BufWritePre *.lua lua vim.lsp.buf.formatting_sync()
+  au FileType lua au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Fish
