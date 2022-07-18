@@ -41,6 +41,7 @@ augroup END
 augroup fish
   au!
   au FileType fish compiler fish
+  au BufWritePre *.fish,*.fish.symlink lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Brewfile
