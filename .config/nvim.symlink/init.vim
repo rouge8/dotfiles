@@ -41,7 +41,7 @@ augroup fish
   au!
   " Set up :make to use fish for syntax checking.
   au FileType fish compiler fish
-  au BufWritePre *.fish,*.fish.symlink lua vim.lsp.buf.formatting_sync()
+  au FileType fish au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Brewfile
