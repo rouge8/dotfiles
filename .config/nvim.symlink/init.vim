@@ -11,10 +11,6 @@ exec 'source ' . stdpath('config') . '/plugins.vim'
 " Lua configuration
 lua require('config')
 
-" Highlight fenced code blocks
-" ref: https://github.com/tpope/vim-markdown/commit/b2697b0adfe5428b86c8470a5f9d8da667bb2785
-let g:markdown_fenced_languages = ['python', 'rust', 'dockerfile']
-
 " Enable soft-wrapping for text files
 augroup softwrap
   au!
