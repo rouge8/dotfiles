@@ -50,6 +50,12 @@ augroup Brewfile
   au BufNewFile,BufRead Brewfile,Brewfile.* setlocal filetype=ruby
 augroup END
 
+" Pilot
+augroup pilot
+  au!
+  au BufWritePre ~/src/pilot/**/*.py lua vim.lsp.buf.formatting_sync()
+augroup END
+
 " Filetype detection for *.symlink files
 " If a file begins with '#!/', let vim autodetect the filetype. Otherwise
 " read 'linguist-language' from .gitattributes.
