@@ -37,9 +37,9 @@ augroup lua
 augroup END
 
 " Fish
-" Set up :make to use fish for syntax checking.
 augroup fish
   au!
+  " Set up :make to use fish for syntax checking.
   au FileType fish compiler fish
   au BufWritePre *.fish,*.fish.symlink lua vim.lsp.buf.formatting_sync()
 augroup END
