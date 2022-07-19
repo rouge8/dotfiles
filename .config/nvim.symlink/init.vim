@@ -20,16 +20,35 @@ augroup END
 " Terraform
 let g:terraform_fmt_on_save=1
 
+function! MaybeLSPFormat()
+  if exists('b:no_autoformat')
+    return
+  endif
+  lua vim.lsp.buf.formatting_sync()
+endfunction
+
+" ~/forks
+augroup forks
+  au!
+  au BufNewFile,BufRead ~/forks/**/* let b:no_autoformat=1
+augroup END
+
+" Python
+augroup python
+  au!
+  au FileType python au BufWritePre <buffer> call MaybeLSPFormat()
+augroup END
+
 " Rust
 augroup rust
   au!
-  au FileType rust au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+  au FileType rust au BufWritePre <buffer> call MaybeLSPFormat()
 augroup END
 
 " Lua
 augroup lua
   au!
-  au FileType lua au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+  au FileType lua au BufWritePre <buffer> call MaybeLSPFormat()
 augroup END
 
 " Fish
@@ -37,19 +56,13 @@ augroup fish
   au!
   " Set up :make to use fish for syntax checking.
   au FileType fish compiler fish
-  au FileType fish au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+  au FileType fish au BufWritePre <buffer> call MaybeLSPFormat()
 augroup END
 
 " Brewfile
 augroup Brewfile
   au!
   au BufNewFile,BufRead Brewfile,Brewfile.* setlocal filetype=ruby
-augroup END
-
-" Pilot
-augroup pilot
-  au!
-  au BufWritePre ~/src/pilot/**/*.py lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Filetype detection for *.symlink files
