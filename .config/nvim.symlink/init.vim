@@ -42,7 +42,7 @@ augroup END
 " Rust
 augroup rust
   au!
-  au FileType rust au BufWritePre <buffer> call MaybeLSPFormat()
+  au FileType rust au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Lua
