@@ -207,7 +207,7 @@ set undofile
 nnoremap ! :Clam<space>
 
 " Unfuck everything by redrawing the screen and restarting all LSPs
-noremap U :syntax sync fromstart<cr>:redraw!<cr>:LspRestart<cr>
+noremap U :syntax sync fromstart<cr>:redraw!<cr>:LspRestart<cr>:lua vim.treesitter.get_parser(0):parse()<cr>
 
 " Scrollbinding
 set scrollopt+=hor
