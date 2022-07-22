@@ -302,3 +302,25 @@ require("lualine").setup({
         },
     },
 })
+
+-- Neotest
+local neotest = require("neotest")
+neotest.setup({
+    adapters = {
+        require("neotest-python")({}),
+    },
+    output = {
+        enabled = true,
+        open_on_run = true,
+    },
+})
+
+local bufopts = { noremap = true, silent = true }
+-- Run the nearest test
+vim.keymap.set("n", "<leader>t", neotest.run.run, bufopts)
+-- Run all tests in the file
+vim.keymap.set("n", "<leader>T", function()
+    neotest.run.run(vim.fn.expand("%"))
+end, bufopts)
+-- View the test output
+vim.keymap.set("n", "<leader>to", neotest.output.open, bufopts)

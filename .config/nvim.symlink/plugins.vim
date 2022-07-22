@@ -50,6 +50,11 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'fladson/vim-kitty'
 Plug 'hashivim/vim-terraform'
 
+" Testing
+Plug 'antoinemadec/FixCursorHold.nvim' " Used by Neotest
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-python'
+
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
 
