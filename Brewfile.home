@@ -14,8 +14,6 @@ brew "cargo-outdated"
 brew "cargo-udeps"
 # Django/Jinja template indenter
 brew "djhtml"
-# Configurable static site generator
-brew "hugo"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -35,6 +33,8 @@ brew "taiki-e/tap/cargo-llvm-cov"
 brew "volta"
 # A youtube-dl fork with additional features and fixes
 brew "yt-dlp/taps/yt-dlp"
+# Fast static site generator in a single binary with everything built-in
+brew "zola"
 # Firmware updater for 8BitDo devices
 cask "8bitdo-firmware-updater"
 # Control every piece of your controller
