@@ -309,10 +309,6 @@ neotest.setup({
     adapters = {
         require("neotest-python")({}),
     },
-    output = {
-        enabled = true,
-        open_on_run = true,
-    },
 })
 
 local bufopts = { noremap = true, silent = true }
