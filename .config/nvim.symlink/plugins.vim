@@ -40,7 +40,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Language/Syntax
-Plug 'rouge8/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'markdown-toml-metadata'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'raimon49/requirements.txt.vim'
 Plug 'vim-scripts/groovy.vim'
