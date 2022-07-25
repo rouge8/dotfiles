@@ -307,7 +307,9 @@ require("lualine").setup({
 local neotest = require("neotest")
 neotest.setup({
     adapters = {
-        require("neotest-python")({}),
+        require("neotest-python")({
+            args = { "-v" },
+        }),
         require("neotest-rust")({}),
     },
 })
