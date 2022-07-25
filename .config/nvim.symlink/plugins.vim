@@ -54,6 +54,11 @@ Plug 'hashivim/vim-terraform'
 Plug 'antoinemadec/FixCursorHold.nvim' " Used by Neotest
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
+if isdirectory($HOME . '/projects/neotest-rust')
+  Plug '~/projects/neotest-rust'
+else
+  Plug 'rouge8/neotest-rust'
+endif
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
