@@ -59,6 +59,7 @@ if isdirectory($HOME . '/projects/neotest-rust')
 else
   Plug 'rouge8/neotest-rust'
 endif
+Plug 'nvim-neotest/neotest-plenary'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'

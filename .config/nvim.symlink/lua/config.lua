@@ -311,6 +311,7 @@ neotest.setup({
             args = { "-v" },
         }),
         require("neotest-rust")({}),
+        require("neotest-plenary")({}),
     },
 })
 
