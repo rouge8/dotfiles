@@ -324,3 +324,5 @@ vim.keymap.set("n", "<leader>T", function()
 end, bufopts)
 -- View the test output
 vim.keymap.set("n", "<leader>to", neotest.output.open, bufopts)
+-- View the test summary
+vim.keymap.set("n", "<leader>ts", neotest.summary.open, bufopts)
