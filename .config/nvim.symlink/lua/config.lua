@@ -306,6 +306,7 @@ require("lualine").setup({
 -- Neotest
 local neotest = require("neotest")
 neotest.setup({
+    discovery = { enabled = false },
     adapters = {
         require("neotest-python")({
             args = { "-v" },
