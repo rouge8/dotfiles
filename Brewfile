@@ -152,6 +152,8 @@ cask "dropbox"
 cask "firefox"
 # Screen color temperature controller
 cask "flux"
+# Icon font for Visual Studio Code
+cask "font-codicon"
 cask "font-fira-code-nerd-font"
 # Web browser
 cask "google-chrome"
