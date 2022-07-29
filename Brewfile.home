@@ -1,7 +1,6 @@
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
-tap "superfly/tap"
 tap "taiki-e/tap"
 tap "yt-dlp/taps"
 # Utility for managing cargo dependencies from the command-line
@@ -14,6 +13,8 @@ brew "cargo-outdated"
 brew "cargo-udeps"
 # Django/Jinja template indenter
 brew "djhtml"
+# Command-line tools for fly.io services
+brew "flyctl"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -26,7 +27,6 @@ brew "overmind"
 brew "qmk/qmk/qmk"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
-brew "superfly/tap/flyctl"
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov"
 # JavaScript toolchain manager for reproducible environments
