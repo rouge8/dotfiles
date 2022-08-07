@@ -18,6 +18,7 @@
 	rm-merged = !git branch --merged | grep -v '^[* ]*master' | grep -v '^[* ]*develop' | grep -v '^[* ]*trunk' | grep -v \"\\*\" | xargs -n 1 git branch -d
 	git = !exec git
 	stash-no-index = stash --keep-index
+	touch = "!f() { touch \"$1\"; git add -N \"$1\"; }; f"
 
 [core]
 	excludesfile = ~/.gitglobalignore
