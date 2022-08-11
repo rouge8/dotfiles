@@ -46,6 +46,10 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# High-velocity, monorepo-scale workflow for Git
+brew "git-branchless"
+# Command-line tool to delete merged Git branches
+brew "git-delete-merged-branches"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Perl compatible regular expressions library
