@@ -19,6 +19,7 @@
 	git = !exec git
 	stash-no-index = stash --keep-index
 	touch = "!f() { touch \"$1\"; git add -N \"$1\"; }; f"
+	slb = branchless smartlog 'branches()'
 
 [core]
 	excludesfile = ~/.gitglobalignore
