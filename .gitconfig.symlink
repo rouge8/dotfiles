@@ -20,6 +20,7 @@
 	stash-no-index = stash --keep-index
 	touch = "!f() { touch \"$1\"; git add -N \"$1\"; }; f"
 	slb = branchless smartlog 'branches()'
+	hide-branchless = "!f() { git query --raw 'draft()' | while read commit; do if [ -z $(git branch --contains $commit) ]; then git hide $commit; fi; done; }; f"
 
 [core]
 	excludesfile = ~/.gitglobalignore
