@@ -3,10 +3,6 @@ if status --is-login
         eval (/opt/homebrew/bin/brew shellenv)
     end
 
-    for py_version in 3.10 3.9
-        fish_add_path -g --append $HOMEBREW_PREFIX/opt/python@$py_version/bin
-    end
-
     # Volta <https://volta.sh>
     set -x VOLTA_HOME $HOME/.volta
     fish_add_path -g --prepend $VOLTA_HOME/bin
