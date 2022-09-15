@@ -1,9 +1,8 @@
-def main(args):
+def main(args: list[str]) -> str:
     return input("iregex to search for: ")
 
 
 def handle_result(args, answer, target_window_id, boss):
-    boss.create_marker
     window = boss.window_id_map.get(target_window_id)
     spec = ["iregex", "1", answer]
     if window is not None and spec:
