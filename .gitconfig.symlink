@@ -31,9 +31,6 @@
 [interactive]
 	diffFilter = delta --color-only
 
-[add "interactive"]
-	useBuiltin = false
-
 [delta]
 	features = navigate
 	syntax-theme = gruvbox-dark
