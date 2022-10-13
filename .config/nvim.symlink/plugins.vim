@@ -51,7 +51,6 @@ Plug 'fladson/vim-kitty'
 Plug 'hashivim/vim-terraform'
 
 " Testing
-Plug 'antoinemadec/FixCursorHold.nvim' " Used by Neotest
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
 if isdirectory($HOME . '/projects/neotest-rust')
