@@ -121,9 +121,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("v", "<leader>f", vim.lsp.buf.range_formatting, bufopts)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Rust
 nvim_lsp.rust_analyzer.setup({
