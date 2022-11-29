@@ -59,6 +59,8 @@ cask "pixel-picker"
 cask "qmk-toolbox"
 # Screencasting software
 cask "recordit"
+# Screenshot measurement and annotation tool
+cask "shottr"
 # Instant messaging application focusing on security
 cask "signal"
 cask "via"
