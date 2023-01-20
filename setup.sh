@@ -30,8 +30,6 @@ fi
 pipx install ipython
 pipx inject ipython requests attrs rich
 
-pipx install vex
-
 pipx install flake8
 pipx inject flake8 flake8-comprehensions flake8-bugbear
 
@@ -43,6 +41,10 @@ pipx install black
 pipx install blacken-docs
 
 pipx install build
+
+# VirtualFish
+pipx install virtualfish
+vf install compat_aliases
 
 # Various things
 make -j$(nproc)
