@@ -90,6 +90,8 @@ brew "oha"
 brew "pgformatter"
 # Audits Python environments and dependency trees for known vulnerabilities
 brew "pip-audit"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Python package management tool
 brew "poetry"
 # Framework for managing multi-language pre-commit hooks

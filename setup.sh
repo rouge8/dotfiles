@@ -26,7 +26,25 @@ if [[ -f "$(brew --prefix)/bin/rust-analyzer" ]]; then
   rustup component add rust-src rustfmt clippy llvm-tools-preview
 fi
 
-# Python shivs and other things
+# Python tools
+pipx install ipython
+pipx inject ipython requests attrs rich
+
+pipx install vex
+
+pipx install flake8
+pipx inject flake8 flake8-comprehensions flake8-bugbear
+
+pipx install twine
+pipx inject twine readme_renderer[md]
+
+pipx install black
+
+pipx install blacken-docs
+
+pipx install build
+
+# Various things
 make -j$(nproc)
 
 # Make some directories
