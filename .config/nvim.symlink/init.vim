@@ -240,6 +240,9 @@ augroup colorcolumn
   au BufEnter * call ColorColumn()
 augroup END
 
+" Spelling
+set spell
+
 " Treat underscore as word delimiter
 set iskeyword-=_
 
