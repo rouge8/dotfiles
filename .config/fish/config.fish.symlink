@@ -42,7 +42,7 @@ if status is-interactive
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
 
     # git aliases/abbrs
-    abbr -g gti git
+    abbr -a gti git
 
     # delta
     # requires less >= v570
@@ -59,13 +59,13 @@ if status is-interactive
     starship init fish --print-full-init | source
 
     # nvim
-    abbr -g vim nvim
+    abbr -a vim nvim
 
     # https://github.com/bvaisvil/zenith
-    abbr -g htop zenith
+    abbr -a htop zenith
 
     # mypy
-    abbr -g mypy mypy --show-error-codes
+    abbr -a mypy mypy --show-error-codes
 
     set -x MANPAGER 'nvim +Man!'
 

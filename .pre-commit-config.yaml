@@ -83,12 +83,3 @@ repos:
         entry: fish_indent
         args: [-w]
         files: .+\.fish
-      - id: fish-global-abbr
-        # The default, 'abbr -U', adds to fish's universal variables which
-        # means editing the abbreviation in a `.fish` file later doesn't do
-        # anything. Confusing!
-        # https://fishshell.com/docs/current/cmds/abbr.html#internals
-        name: Always use 'abbr -g' in fish startup files
-        language: pygrep
-        entry: abbr \w
-        files: .+\.fish
