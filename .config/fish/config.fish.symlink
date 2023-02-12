@@ -80,6 +80,11 @@ if status is-interactive
         echo $history[1]
     end
     abbr -a !! --position anywhere --function last_history_item
+    function last_history_token
+        echo $history[1] | read -l --tokenize --list token
+        echo $token[-1]
+    end
+    abbr -a '!$' --position anywhere --function last_history_token
 end
 
 if test -f $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish

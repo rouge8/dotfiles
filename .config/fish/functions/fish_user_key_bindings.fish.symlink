@@ -1,19 +1,3 @@
-# bash-like !$
-# ref: https://github.com/oh-my-fish/plugin-bang-bang
-function bind_dollar --description 'bash-like !$'
-    switch (commandline --current-token)[-1]
-        case '!'
-            # Without the `--`, the functionality can break when completing
-            # flags used in the history (since, in certain edge cases
-            # `commandline` will assume that *it* should try to interpret
-            # the flag)
-            commandline --current-token ""
-            commandline --function history-token-search-backward
-        case '*'
-            commandline --insert '$'
-    end
-end
-
 function bind_tab --description "'**' autocompletes paths with fd/fzf"
     set -l tokens (commandline --tokenize --current-process)
     # support either '**' or a path like '<optional prefix>/**'
@@ -50,8 +34,6 @@ function fish_user_key_bindings
         bind -M $mode ç fzf-cd-widget
         bind -M $mode \t 'bind_tab; commandline -f repaint'
     end
-
-    bind -M insert '$' bind_dollar
 end
 
 # https://fishshell.com/docs/current/#command-line-editor
