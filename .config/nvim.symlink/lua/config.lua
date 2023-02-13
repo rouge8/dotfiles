@@ -160,7 +160,7 @@ nvim_lsp.pyright.setup({
 })
 
 -- Lua
-nvim_lsp.sumneko_lua.setup({
+nvim_lsp.lua_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
