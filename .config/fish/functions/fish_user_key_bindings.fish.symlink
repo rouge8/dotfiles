@@ -33,6 +33,8 @@ function fish_user_key_bindings
     for mode in default insert
         bind -M $mode ç fzf-cd-widget
         bind -M $mode \t 'bind_tab; commandline -f repaint'
+        # Use Fish's built-in history pager
+        bind -M $mode --erase \cr
     end
 end
 
