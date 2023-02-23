@@ -171,8 +171,6 @@ cask "kitty"
 cask "macvim"
 # Utility to move and zoom windows—on one display
 cask "moom"
-# Silence embarrassing notifications while screensharing
-cask "muzzle"
 # Emoji picker optimized for blind people
 cask "rocket"
 # Team communication and collaboration software
