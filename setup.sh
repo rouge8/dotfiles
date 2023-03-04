@@ -30,9 +30,6 @@ fi
 pipx install ipython
 pipx inject ipython requests attrs rich
 
-pipx install flake8
-pipx inject flake8 flake8-comprehensions flake8-bugbear
-
 pipx install twine
 pipx inject twine readme_renderer[md]
 

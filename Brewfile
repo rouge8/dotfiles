@@ -70,14 +70,10 @@ brew "hub"
 brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Sort Python imports automatically
-brew "isort"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Pager program similar to more
 brew "less"
-# C string library for manipulating Unicode strings
-brew "libunistring"
 # Language Server for the Lua language
 brew "lua-language-server"
 # Utility for directing compilation
@@ -104,6 +100,8 @@ brew "pyright"
 brew "python-launcher"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Intuitive find & replace CLI
