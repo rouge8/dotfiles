@@ -15,6 +15,8 @@ brew "cargo-udeps"
 brew "djhtml"
 # Command-line tools for fly.io services
 brew "flyctl"
+# Modern, extensible Python project management
+brew "hatch"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -43,6 +45,8 @@ cask "8bitdo-ultimate-software"
 cask "anki"
 # Multi-cloud backup application
 cask "arq"
+# Hard disk backup and cloning utility
+cask "carbon-copy-cloner"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Disk space visualizer

@@ -10,24 +10,26 @@ tap "rouge8/rouge8"
 tap "textualize/rich"
 # Run your GitHub Actions locally 🚀
 brew "act"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# New way to see and navigate directory trees
+brew "broot"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
+# Perl compatible regular expressions library
+brew "pcre"
+# Library for command-line editing
+brew "readline"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
 brew "ctop"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # More intuitive version of du in rust
 brew "dust"
 # Run arbitrary commands when files change
@@ -52,14 +54,18 @@ brew "git-branchless"
 brew "git-delete-merged-branches"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Perl compatible regular expressions library
-brew "pcre"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # GNU implementation of time utility
 brew "gnu-time"
+# C string library for manipulating Unicode strings
+brew "libunistring"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
 # Command-line hex viewer
 brew "hexyl"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -128,8 +134,6 @@ brew "tree"
 brew "tuc"
 # Vim script Language Lint
 brew "vint"
-# Tool for creating isolated virtual python environments
-brew "virtualenv"
 # Internet file retriever
 brew "wget"
 # Linter for YAML files
