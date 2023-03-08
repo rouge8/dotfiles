@@ -195,7 +195,9 @@ local null_ls = require("null-ls")
 null_ls.setup({
     diagnostics_format = "[#{c}] #{m} (#{s})",
     sources = {
-        null_ls.builtins.diagnostics.ruff,
+        null_ls.builtins.diagnostics.ruff.with({
+            extra_args = { "--unfixable", "F841" },
+        }),
         null_ls.builtins.diagnostics.vint,
         null_ls.builtins.diagnostics.yamllint,
         null_ls.builtins.formatting.black,
