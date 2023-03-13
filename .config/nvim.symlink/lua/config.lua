@@ -204,7 +204,7 @@ null_ls.setup({
         }),
         null_ls.builtins.formatting.fish_indent,
         null_ls.builtins.formatting.ruff.with({
-            extra_args = { "--unfixable", "F841" },
+            extra_args = { "--unfixable", "F401,F841" },
         }),
         null_ls.builtins.formatting.stylua,
     },
