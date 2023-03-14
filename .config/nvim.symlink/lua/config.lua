@@ -147,8 +147,11 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 -- Python
+local pyright_capabilities = vim.deepcopy(capabilities)
+pyright_capabilities.textDocument["publishDiagnostics"] =
+    { tagSupport = { valueSet = { 2 } } }
 nvim_lsp.pyright.setup({
-    capabilities = capabilities,
+    capabilities = pyright_capabilities,
     on_attach = on_attach,
     settings = {
         python = {
