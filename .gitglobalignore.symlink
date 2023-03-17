@@ -62,3 +62,6 @@ Icon?
 
 # Circle CI
 !.circleci
+
+# Lua
+.luarc.json
