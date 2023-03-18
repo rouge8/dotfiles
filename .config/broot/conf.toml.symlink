@@ -1,3 +1,5 @@
+modal = true
+
 [[imports]]
 file = "verbs.hjson"
 
@@ -18,6 +20,10 @@ shortcut = "gap"
 external = "git add -p {file}"
 leave_broot = false
 apply_to = "any"
+
+[[verbs]]
+execution = ":mode_input"
+key = "i"
 
 [special-paths]
 "/Users/*/.dotfiles.*" = "no-hide"
