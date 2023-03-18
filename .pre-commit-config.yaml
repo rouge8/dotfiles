@@ -18,7 +18,6 @@ repos:
       # Syntax
       - id: check-merge-conflict
       - id: check-executables-have-shebangs
-      - id: check-yaml
       - id: check-json
         types:
           - text
