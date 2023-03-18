@@ -7,6 +7,7 @@
 *.yml.symlink linguist-language=yaml
 *.yaml.symlink linguist-language=yaml
 *.toml.symlink linguist-language=toml
+*.hjson.symlink linguist-language=hjson
 .gitconfig*.symlink linguist-language=gitconfig
 .config/flake8.symlink linguist-language=dosini
 .isort.cfg.symlink linguist-language=dosini

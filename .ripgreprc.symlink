@@ -16,6 +16,8 @@ yaml:*.yml.symlink
 yaml:*.yaml.symlink
 --type-add
 toml:*.toml.symlink
+--type-add
+hjson:*.hjson.symlink
 
 # I could have sworn this was a default
 --smart-case

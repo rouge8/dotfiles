@@ -1,0 +1,23 @@
+[[imports]]
+file = "verbs.hjson"
+
+[[imports]]
+luma = "dark"
+file = "dark-gruvbox.hjson"
+
+[[verbs]]
+invocation = "edit"
+key = "enter"
+external = "$EDITOR +{line} {file}"
+leave_broot = false
+apply_to = "file"
+
+[[verbs]]
+invocation = "git_add_p"
+shortcut = "gap"
+external = "git add -p {file}"
+leave_broot = false
+apply_to = "any"
+
+[special-paths]
+"/Users/*/.dotfiles.*" = "no-hide"

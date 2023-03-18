@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
         "go",
         "gomod",
         "hcl",
+        "hjson",
         "html",
         "http",
         "javascript",
