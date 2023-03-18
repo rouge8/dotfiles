@@ -22,6 +22,13 @@ leave_broot = false
 apply_to = "any"
 
 [[verbs]]
+invocation = "git_add_N"
+shortcut = "gan"
+external = "git add -N {file}"
+leave_broot = false
+apply_to = "any"
+
+[[verbs]]
 execution = ":mode_input"
 key = "i"
 
