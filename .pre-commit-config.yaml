@@ -20,7 +20,21 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-yaml
       - id: check-json
+        types:
+          - text
+        files: >
+          (?x)(
+            \.json
+            |\.json\.symlink
+          )
       - id: check-toml
+        types:
+          - text
+        files: >
+          (?x)(
+            \.toml
+            |\.toml\.symlink
+          )
   - repo: https://github.com/psf/black
     rev: 23.1.0
     hooks:
