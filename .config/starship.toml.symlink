@@ -8,7 +8,7 @@ $aws\
 $cmd_duration\
 $status\
 $line_break\
-${custom.bash}\
+${shell}\
 $jobs\
 $character"""
 
@@ -57,8 +57,17 @@ show_milliseconds = true
 format = "exited [$status]($style)"
 disabled = false
 
+[shell]
+fish_indicator = ""
+bash_indicator = "🐚 "
+zsh_indicator = "💤 "
+unknown_indicator = "⁇ "
+format = '[$indicator]($style)'
+style = "none"
+disabled = false
+
 [custom.bash]
-command = "echo -n 🐚"
+command = "echo -n "
 when = '[ "$STARSHIP_SHELL" == "bash" ]'
 shell = ["bash", "--noprofile", "--norc"]
 
