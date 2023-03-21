@@ -4,6 +4,7 @@ $git_branch\
 $git_state\
 ${custom.git_status}\
 $python\
+$rust\
 $aws\
 $cmd_duration\
 $status\
