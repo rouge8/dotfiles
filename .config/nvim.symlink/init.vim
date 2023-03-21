@@ -160,6 +160,7 @@ nmap <Leader>g :Git<CR>gg)
 nmap <Leader>ga :Git add -p<CR>
 " git commit
 nmap <Leader>gc :Git commit<CR>
+nmap <Leader>gca :Git commit --amend<CR>
 
 " Remove any trailing whitespace that is in the file
 augroup remove_trailing_whitespace
