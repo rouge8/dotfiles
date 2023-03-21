@@ -63,13 +63,8 @@ bash_indicator = "🐚 "
 zsh_indicator = "💤 "
 unknown_indicator = "⁇ "
 format = '[$indicator]($style)'
-style = "none"
+style = "white bold"
 disabled = false
-
-[custom.bash]
-command = "echo -n "
-when = '[ "$STARSHIP_SHELL" == "bash" ]'
-shell = ["bash", "--noprofile", "--norc"]
 
 [character]
 # Use the same symbol for success/error because starship doesn't support
