@@ -30,8 +30,6 @@ brew "qmk/qmk/qmk"
 brew "rust-analyzer"
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov"
-# JavaScript toolchain manager for reproducible environments
-brew "volta"
 # Fork of youtube-dl with additional features and fixes
 brew "yt-dlp"
 # Fast static site generator in a single binary with everything built-in

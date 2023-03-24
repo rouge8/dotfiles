@@ -3,10 +3,6 @@ if status --is-login
         eval (/opt/homebrew/bin/brew shellenv)
     end
 
-    # Volta <https://volta.sh>
-    set -x VOLTA_HOME $HOME/.volta
-    fish_add_path -g --prepend $VOLTA_HOME/bin
-
     # Cargo
     fish_add_path -g --prepend $HOME/.cargo/bin
 
