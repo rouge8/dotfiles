@@ -1,4 +1,3 @@
-tap "eth-p/software"
 tap "filosottile/gomod"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -14,6 +13,8 @@ brew "act"
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Bash scripts that integrate bat with various command-line tools
+brew "bat-extras"
 # New way to see and navigate directory trees
 brew "broot"
 # Cryptography and SSL/TLS Toolkit
@@ -140,10 +141,6 @@ brew "wget"
 brew "yamllint"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
-# Read system manual pages using bat as the manual page formatter
-brew "eth-p/software/bat-extras-batman"
-# Pretty-print source code and highlight it with bat
-brew "eth-p/software/bat-extras-prettybat"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
 # Show where time is wasted during the context upload of `docker build`
