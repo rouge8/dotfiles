@@ -33,4 +33,4 @@ execution = ":mode_input"
 key = "i"
 
 [special-paths]
-"/Users/*/.dotfiles.*" = "no-hide"
+"~/.dotfiles.*" = "no-hide"
