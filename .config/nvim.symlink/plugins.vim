@@ -27,6 +27,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-sleuth'
 Plug 'dstein64/vim-startuptime'
+Plug 'unblevable/quick-scope'
 
 " Autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'
