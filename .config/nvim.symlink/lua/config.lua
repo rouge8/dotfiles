@@ -30,6 +30,7 @@ require("nvim-treesitter.configs").setup({
         "toml",
         "typescript",
         "vim",
+        "vimdoc",
         "yaml",
     },
     ignore_install = {},
