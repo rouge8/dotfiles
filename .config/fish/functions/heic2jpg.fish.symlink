@@ -1,0 +1,7 @@
+function heic2jpg
+    for f in $argv
+        set -l jpg (path change-extension jpg $f)
+        magick convert $f $jpg
+        touch -r $f $jpg
+    end
+end
