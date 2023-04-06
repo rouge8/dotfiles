@@ -43,7 +43,6 @@ require("nvim-treesitter.configs").setup({
         enable = true,
         disable = {
             "rust",
-            "python",
             "yaml",
         },
     },
