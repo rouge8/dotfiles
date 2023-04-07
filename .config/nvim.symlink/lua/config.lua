@@ -118,8 +118,12 @@ local on_attach = function(client, bufnr)
     -- References
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, bufopts)
     -- Formatting
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, bufopts)
-    vim.keymap.set("v", "<leader>f", vim.lsp.buf.range_formatting, bufopts)
+    vim.keymap.set("n", "<leader>f", function()
+        vim.lsp.buf.format({ async = false })
+    end, bufopts)
+    vim.keymap.set("v", "<leader>f", function()
+        vim.lsp.buf.format({ async = false })
+    end, bufopts)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
