@@ -3,7 +3,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "rouge8/rouge8"
 tap "textualize/rich"
@@ -25,6 +24,14 @@ brew "pcre"
 brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Utility for managing cargo dependencies from the command-line
+brew "cargo-edit"
+# Next-generation test runner for Rust
+brew "cargo-nextest"
+# Cargo subcommand for displaying when Rust dependencies are out of date
+brew "cargo-outdated"
+# Find unused dependencies in Cargo.toml
+brew "cargo-udeps"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
@@ -109,6 +116,8 @@ brew "python-launcher"
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Intuitive find & replace CLI
@@ -121,8 +130,6 @@ brew "shfmt"
 brew "starship"
 # Opinionated Lua code formatter
 brew "stylua"
-# Record terminal sessions as SVG animations
-brew "termtosvg"
 # Tool to build, change, and version infrastructure
 brew "terraform"
 # Terraform Language Server
@@ -159,6 +166,7 @@ cask "firefox"
 cask "flux"
 # Icon font for Visual Studio Code
 cask "font-codicon"
+# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Web browser
 cask "google-chrome"

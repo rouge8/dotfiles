@@ -2,14 +2,6 @@ tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "taiki-e/tap"
-# Utility for managing cargo dependencies from the command-line
-brew "cargo-edit"
-# Next-generation test runner for Rust
-brew "cargo-nextest"
-# Cargo subcommand for displaying when Rust dependencies are out of date
-brew "cargo-outdated"
-# Find unused dependencies in Cargo.toml
-brew "cargo-udeps"
 # Django/Jinja template indenter
 brew "djhtml"
 # Command-line tools for fly.io services
@@ -26,8 +18,6 @@ brew "miniserve"
 brew "overmind"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
-# Experimental Rust compiler front-end for IDEs
-brew "rust-analyzer"
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov"
 # Fork of youtube-dl with additional features and fixes
@@ -38,6 +28,8 @@ brew "zola"
 cask "8bitdo-firmware-updater"
 # Control every piece of your controller
 cask "8bitdo-ultimate-software"
+# Image editor focused on simplicity
+cask "acorn"
 # Memory training application
 cask "anki"
 # Multi-cloud backup application
@@ -54,8 +46,6 @@ cask "discord"
 cask "mactex"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Menu bar application to pick colours from your screen
-cask "pixel-picker"
 # Toolbox companion for QMK Firmware
 cask "qmk-toolbox"
 # Screencasting software
