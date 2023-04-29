@@ -321,7 +321,10 @@ neotest.setup({
         require("neotest-python")({
             args = { "-v" },
         }),
-        require("neotest-rust")({}),
+        require("neotest-rust")({
+            args = { "--no-capture" },
+            dap_adapter = "lldb",
+        }),
         require("neotest-plenary")({}),
     },
 })
@@ -337,3 +340,24 @@ end, bufopts)
 vim.keymap.set("n", "<leader>to", neotest.output.open, bufopts)
 -- View the test summary
 vim.keymap.set("n", "<leader>ts", neotest.summary.open, bufopts)
+
+-- DAP
+local dap = require("dap")
+dap.adapters.lldb = {
+    type = "executable",
+    command = "/opt/homebrew/opt/llvm/bin/lldb-vscode",
+    name = "lldb",
+}
+dap.configurations.rust = {
+    {
+        name = "Launch",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+    },
+}

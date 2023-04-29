@@ -59,6 +59,7 @@ else
   Plug 'rouge8/neotest-rust'
 endif
 Plug 'nvim-neotest/neotest-plenary'
+Plug 'mfussenegger/nvim-dap'
 
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
