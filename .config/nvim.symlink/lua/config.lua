@@ -119,7 +119,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, bufopts)
     -- Formatting
     vim.keymap.set("n", "<leader>f", function()
-        vim.lsp.buf.format({ async = false })
+        vim.lsp.buf.format({ async = false, timeout_ms = 5000 })
     end, bufopts)
     vim.keymap.set("v", "<leader>f", function()
         vim.lsp.buf.format({ async = false })
