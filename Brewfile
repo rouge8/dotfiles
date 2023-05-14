@@ -142,6 +142,8 @@ brew "tree"
 brew "tuc"
 # Vim script Language Lint
 brew "vint"
+# Python virtual environment manager for the fish shell
+brew "virtualfish"
 # Internet file retriever
 brew "wget"
 # Linter for YAML files

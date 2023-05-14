@@ -19,6 +19,9 @@ cd ~/.dotfiles.public
 # Install 'em all
 brew bundle install
 
+# VirtualFish
+vf install compat_aliases
+
 # Rust
 if [[ -f "$(brew --prefix)/bin/rust-analyzer" ]]; then
   rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
@@ -38,10 +41,6 @@ pipx install black
 pipx install blacken-docs
 
 pipx install build
-
-# VirtualFish
-pipx install virtualfish
-vf install compat_aliases
 
 # Various things
 make -j$(nproc)
