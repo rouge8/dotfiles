@@ -72,6 +72,7 @@ fish -c vim-plug-install
 mkdir -p ~/.docker/cli-plugins
 echo '{"credsStore": "osxkeychain"}' > ~/.docker/config.json
 ln -sfn $(brew --prefix docker-buildx)/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+brew services start docuum
 
 #######################
 # macOS configuration #

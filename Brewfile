@@ -46,6 +46,8 @@ brew "docker"
 brew "docker-buildx"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
+# Perform least recently used (LRU) eviction of Docker images
+brew "docuum"
 # More intuitive version of du in rust
 brew "dust"
 # Run arbitrary commands when files change
