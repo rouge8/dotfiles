@@ -68,6 +68,11 @@ poetry config virtualenvs.path "$HOME/.virtualenvs"
 # Vim
 fish -c vim-plug-install
 
+# Docker
+mkdir -p ~/.docker/cli-plugins
+echo '{"credsStore": "osxkeychain"}' > ~/.docker/config.json
+ln -sfn $(brew --prefix docker-buildx)/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+
 #######################
 # macOS configuration #
 #######################
