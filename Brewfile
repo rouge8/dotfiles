@@ -34,10 +34,18 @@ brew "cargo-outdated"
 brew "cargo-udeps"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Top-like interface for container metrics
 brew "ctop"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # More intuitive version of du in rust
 brew "dust"
 # Run arbitrary commands when files change
@@ -156,8 +164,6 @@ brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 brew "textualize/rich/rich"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# App to build and share containerized applications and microservices
-cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Web browser
