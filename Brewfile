@@ -124,8 +124,6 @@ brew "python-launcher"
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
-# Experimental Rust compiler front-end for IDEs
-brew "rust-analyzer"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Intuitive find & replace CLI
