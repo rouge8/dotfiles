@@ -36,6 +36,8 @@ cask "acorn"
 cask "anki"
 # Multi-cloud backup application
 cask "arq"
+# Build, render, and create LEGO instructions
+cask "bricklink-studio"
 # Hard disk backup and cloning utility
 cask "carbon-copy-cloner"
 # Tool to show live information about the batteries in various devices
