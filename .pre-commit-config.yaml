@@ -60,7 +60,7 @@ repos:
     hooks:
       - id: vint
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.17.1
+    rev: v0.18.0
     hooks:
       - id: stylua-github
   - repo: local
