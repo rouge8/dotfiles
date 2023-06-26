@@ -215,6 +215,7 @@ null_ls.setup({
             extra_args = { "--unfixable", "F401,F841" },
         }),
         null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.gofmt,
     },
     on_attach = on_attach,
 })

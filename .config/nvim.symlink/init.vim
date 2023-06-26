@@ -51,6 +51,12 @@ augroup lua
   au FileType lua au BufWritePre <buffer> call MaybeLSPFormat()
 augroup END
 
+" Go
+augroup go
+  au!
+  au FileType go au BufWritePre <buffer> call MaybeLSPFormat()
+augroup END
+
 " Fish
 augroup fish
   au!
