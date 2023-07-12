@@ -50,6 +50,8 @@ brew "docker-credential-helper"
 brew "docuum"
 # More intuitive version of du in rust
 brew "dust"
+# General purpose Language Server
+brew "efm-langserver"
 # Run arbitrary commands when files change
 brew "entr"
 # Fast partial replacement for the codemod tool

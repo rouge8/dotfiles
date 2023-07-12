@@ -200,25 +200,9 @@ nvim_lsp.lua_ls.setup({
 -- Terraform
 nvim_lsp.terraformls.setup({})
 
--- null-ls
-local null_ls = require("null-ls")
-null_ls.setup({
-    diagnostics_format = "[#{c}] #{m} (#{s})",
-    sources = {
-        null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.diagnostics.vint,
-        null_ls.builtins.diagnostics.yamllint,
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.djhtml.with({
-            extra_args = { "--tabwidth", "2" },
-        }),
-        null_ls.builtins.formatting.fish_indent,
-        null_ls.builtins.formatting.ruff.with({
-            extra_args = { "--unfixable", "F401,F841" },
-        }),
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.gofmt,
-    },
+-- EFM
+nvim_lsp.efm.setup({
+    filetypes = { "python", "vim", "yaml", "htmldjango", "fish", "lua", "go" },
     on_attach = on_attach,
 })
 

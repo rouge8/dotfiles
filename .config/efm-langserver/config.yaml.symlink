@@ -1,0 +1,59 @@
+---
+
+version: 2
+
+tools:
+  fish-indent: &fish-indent
+    format-command: fish_indent
+    format-stdin: true
+
+  gofmt: &gofmt
+    format-command: gofmt
+    format-stdin: true
+
+  djhtml: &djhtml
+    format-command: djhtml --tabwidth 2 -
+    format-stdin: true
+
+  stylua: &stylua
+    format-command: stylua --search-parent-directories --stdin-filepath ${INPUT} -
+    format-stdin: true
+
+  black: &black
+    format-command: black -
+    format-stdin: true
+
+  ruff: &ruff
+    lint-command: "ruff -n ${INPUT}"
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %m"
+    format-command: ruff --fix -n --stdin-filename ${INPUT} - --unfixable F401,F841
+    format-stdin: true
+
+  vint: &vint
+    lint-command: vint -
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %m"
+
+  yamllint: &yamllint
+    lint-command: yamllint -f parsable -
+    lint-stdin: true
+
+languages:
+  fish:
+    - <<: *fish-indent
+  go:
+    - <<: *gofmt
+  htmldjango:
+    - <<: *djhtml
+  lua:
+    - <<: *stylua
+  python:
+    - <<: *black
+    - <<: *ruff
+  vim:
+    - <<: *vint
+  yaml:
+    - <<: *yamllint
