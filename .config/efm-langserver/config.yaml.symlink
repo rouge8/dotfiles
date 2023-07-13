@@ -28,7 +28,7 @@ tools:
     lint-stdin: true
     lint-formats:
       - "%f:%l:%c: %m"
-    format-command: ruff --fix -n --stdin-filename ${INPUT} - --unfixable F401,F841
+    format-command: ruff --exit-zero --fix -n --stdin-filename ${INPUT} - --unfixable F401,F841
     format-stdin: true
 
   vint: &vint
