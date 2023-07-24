@@ -28,6 +28,7 @@ tools:
     lint-stdin: true
     lint-formats:
       - "%f:%l:%c: %m"
+    lint-ignore-exit-code: true
     format-command: ruff --exit-zero --fix -n --stdin-filename ${INPUT} - --unfixable F401,F841
     format-stdin: true
 
@@ -40,6 +41,7 @@ tools:
   yamllint: &yamllint
     lint-command: yamllint -f parsable -
     lint-stdin: true
+    lint-ignore-exit-code: true
 
 languages:
   fish:
