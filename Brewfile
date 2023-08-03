@@ -180,6 +180,8 @@ cask "font-fira-code-nerd-font"
 cask "google-chrome"
 # Menu bar calendar
 cask "itsycal"
+# Tool to prevent the system from going into sleep mode
+cask "keepingyouawake"
 # GPU-based terminal emulator
 cask "kitty"
 # Text editor
