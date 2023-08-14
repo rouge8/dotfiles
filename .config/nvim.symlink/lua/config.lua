@@ -165,6 +165,9 @@ nvim_lsp.pyright.setup({
             -- pyright only accepts absolute paths
             venvPath = vim.api.nvim_call_function("fnamemodify", { "~", ":p" })
                 .. ".virtualenvs",
+            analysis = {
+                useLibraryCodeForTypes = false,
+            },
         },
     },
 })
