@@ -81,8 +81,8 @@ if status is-interactive
         echo $token[-1]
     end
     abbr -a '!$' --position anywhere --function last_history_token
-end
 
-if test -f $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
-    source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
+    if command -q rtx
+        rtx activate fish | source
+    end
 end
