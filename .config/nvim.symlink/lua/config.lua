@@ -1,5 +1,5 @@
 -- Ident Blankline
-require("indent_blankline").setup({})
+require("ibl").setup()
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
