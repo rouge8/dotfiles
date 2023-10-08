@@ -28,7 +28,7 @@ rustup toolchain install stable nightly
 rustup component add rust-src rustfmt clippy llvm-tools-preview rust-analyzer
 
 # Python tools
-pipx install ipython
+pipx install --python python3.12 ipython
 pipx inject ipython requests attrs rich
 
 pipx install twine
