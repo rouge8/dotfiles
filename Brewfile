@@ -5,9 +5,10 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "rouge8/rouge8"
-tap "textualize/rich"
-# Run your GitHub Actions locally 🚀
+# Run your GitHub Actions locally
 brew "act"
+# Library for command-line editing
+brew "readline"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -16,14 +17,6 @@ brew "bat"
 brew "bat-extras"
 # New way to see and navigate directory trees
 brew "broot"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Perl compatible regular expressions library
-brew "pcre"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Utility for managing cargo dependencies from the command-line
 brew "cargo-edit"
 # Next-generation test runner for Rust
@@ -32,10 +25,16 @@ brew "cargo-nextest"
 brew "cargo-outdated"
 # Find unused dependencies in Cargo.toml
 brew "cargo-udeps"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
+# C string library for manipulating Unicode strings
+brew "libunistring"
+# Perl compatible regular expressions library
+brew "pcre"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Top-like interface for container metrics
 brew "ctop"
 # Tool for exploring each layer in a docker image
@@ -76,12 +75,8 @@ brew "git-delta"
 brew "gnu-sed"
 # GNU implementation of time utility
 brew "gnu-time"
-# C string library for manipulating Unicode strings
-brew "libunistring"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Tool for creating isolated virtual python environments
 brew "virtualenv"
 # Command-line hex viewer
@@ -122,6 +117,10 @@ brew "prettier"
 brew "pyright"
 # Launch your Python interpreter the lazy/smart way
 brew "python-launcher"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Command-line toolbox for fancy output in the terminal
+brew "rich-cli"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
@@ -162,8 +161,6 @@ brew "zenith"
 brew "filosottile/gomod/brew-gomod"
 # Show where time is wasted during the context upload of `docker build`
 brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
-# A command line toolbox for beautiful terminal output (syntax highlighting, markdown, CSV tables and more)
-brew "textualize/rich/rich"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Client for the Dropbox cloud storage service
