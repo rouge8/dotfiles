@@ -29,7 +29,7 @@ rustup component add rust-src rustfmt clippy llvm-tools-preview rust-analyzer
 
 # Python tools
 pipx install --python python3.12 ipython
-pipx inject ipython requests attrs rich
+pipx inject ipython httpx attrs rich
 
 pipx install twine
 pipx inject twine readme_renderer[md]
