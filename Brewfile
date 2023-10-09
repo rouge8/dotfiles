@@ -81,8 +81,6 @@ brew "go"
 brew "virtualenv"
 # Command-line hex viewer
 brew "hexyl"
-# User-friendly cURL replacement (command-line HTTP client)
-brew "httpie"
 # Add GitHub support to git on the command-line
 brew "hub"
 # Command-line benchmarking tool
@@ -153,6 +151,8 @@ brew "vint"
 brew "virtualfish"
 # Internet file retriever
 brew "wget"
+# Friendly and fast tool for sending HTTP requests
+brew "xh"
 # Linter for YAML files
 brew "yamllint"
 # In terminal graphical metrics for your *nix system
