@@ -18,6 +18,8 @@ brew "mas"
 brew "miniserve"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
