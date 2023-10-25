@@ -123,6 +123,8 @@ brew "rich-cli"
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
+# Language Server Protocol implementation for Ruff
+brew "ruff-lsp"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Intuitive find & replace CLI

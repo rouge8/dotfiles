@@ -100,6 +100,16 @@ cmp.setup({
 })
 
 -- LSP
+lsp_fix_all_and_format = function()
+    vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+            only = { "source.fixAll.ruff" },
+        },
+    })
+    vim.lsp.buf.format({ async = false, timeout_ms = 5000 })
+end
+
 local nvim_lsp = require("lspconfig")
 
 -- Use an on_attach function to only map the following keys
@@ -119,10 +129,10 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, bufopts)
     -- Formatting
     vim.keymap.set("n", "<leader>f", function()
-        vim.lsp.buf.format({ async = false, timeout_ms = 5000 })
+        lsp_fix_all_and_format()
     end, bufopts)
     vim.keymap.set("v", "<leader>f", function()
-        vim.lsp.buf.format({ async = false })
+        lsp_fix_all_and_format()
     end, bufopts)
     -- Code actions
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, bufopts)
@@ -168,6 +178,15 @@ nvim_lsp.pyright.setup({
             analysis = {
                 useLibraryCodeForTypes = false,
             },
+        },
+    },
+})
+nvim_lsp.ruff_lsp.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        lint = {
+            args = { "--unfixable", "F401,F841" },
         },
     },
 })

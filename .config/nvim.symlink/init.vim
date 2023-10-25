@@ -24,7 +24,7 @@ function! MaybeLSPFormat()
   if exists('b:no_autoformat')
     return
   endif
-  lua vim.lsp.buf.format()
+  lua lsp_fix_all_and_format()
 endfunction
 
 " ~/forks
