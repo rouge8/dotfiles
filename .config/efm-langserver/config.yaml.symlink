@@ -32,6 +32,10 @@ tools:
     format-command: ruff --exit-zero --fix -n --stdin-filename ${INPUT} - --unfixable F401,F841
     format-stdin: true
 
+  ruff-format: &ruff-format
+    format-command: ruff format --stdin-filename ${INPUT} -
+    format-stdin: true
+
   vint: &vint
     lint-command: vint -
     lint-stdin: true
@@ -53,8 +57,8 @@ languages:
   lua:
     - <<: *stylua
   python:
-    - <<: *black
     - <<: *ruff
+    - <<: *ruff-format
   vim:
     - <<: *vint
   yaml:
