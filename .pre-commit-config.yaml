@@ -62,33 +62,16 @@ repos:
     rev: v0.18.2
     hooks:
       - id: stylua-github
-  - repo: local
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.7.0-1
     hooks:
       - id: shfmt
-        name: shfmt
-        minimum_pre_commit_version: 2.6.0
-        language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.5.0]
-        entry: shfmt
-        args:
-          # simplify the code
-          - -s
-          # write result to file instead of stdout
-          - -w
-        types:
-          - shell
-      - id: shfmt-.bash*
-        name: shfmt-.bash*
-        minimum_pre_commit_version: 2.6.0
-        language: golang
-        additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.5.0]
-        entry: shfmt
-        args:
-          # simplify the code
-          - -s
-          # write result to file instead of stdout
-          - -w
+      - id: shfmt
+        name: shfmt (.bash* files)
+        types: [text]
         files: .bash*
+  - repo: local
+    hooks:
       - id: fish_indent
         name: fish_indent
         language: system
