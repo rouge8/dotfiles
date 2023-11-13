@@ -35,11 +35,11 @@ repos:
             |\.toml\.symlink
           )
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.4
+    rev: v0.1.5
     hooks:
       - id: ruff-format
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.32.0
+    rev: v1.33.0
     hooks:
       - id: yamllint
         args:
@@ -59,11 +59,11 @@ repos:
     hooks:
       - id: vint
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.18.2
+    rev: v0.19.0
     hooks:
       - id: stylua-github
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.7.0-1
+    rev: v3.7.0-2
     hooks:
       - id: shfmt
       - id: shfmt
