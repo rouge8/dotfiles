@@ -49,10 +49,8 @@ require("nvim-treesitter.configs").setup({
     matchup = {
         enable = true,
     },
-    context_commentstring = {
-        enable = true,
-    },
 })
+require("ts_context_commentstring")
 
 -- Autocomplete
 vim.opt.completeopt = "menu,menuone,noinsert"
