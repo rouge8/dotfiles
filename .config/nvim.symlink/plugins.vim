@@ -50,6 +50,7 @@ Plug 'fladson/vim-kitty'
 Plug 'hashivim/vim-terraform'
 
 " Testing
+Plug 'nvim-neotest/nvim-nio'
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
 if isdirectory($HOME . '/projects/neotest-rust')
