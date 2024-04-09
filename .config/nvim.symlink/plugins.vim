@@ -47,7 +47,6 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'blankname/vim-fish'
 Plug 'fladson/vim-kitty'
-Plug 'hashivim/vim-terraform'
 
 " Testing
 Plug 'nvim-neotest/nvim-nio'

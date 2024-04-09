@@ -17,9 +17,6 @@ augroup softwrap
   au FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 augroup END
 
-" Terraform
-let g:terraform_fmt_on_save=1
-
 function! MaybeLSPFormat()
   if exists('b:no_autoformat')
     return
@@ -63,6 +60,12 @@ augroup fish
   " Set up :make to use fish for syntax checking.
   au FileType fish compiler fish
   au FileType fish au BufWritePre <buffer> call MaybeLSPFormat()
+augroup END
+
+" Terraform
+augroup terraform
+  au!
+  au FileType terraform au BufWritePre <buffer> call MaybeLSPFormat()
 augroup END
 
 " Brewfile
