@@ -205,7 +205,16 @@ nvim_lsp.terraformls.setup({})
 -- EFM
 nvim_lsp.efm.setup({
     init_options = { documentFormatting = true },
-    filetypes = { "python", "vim", "yaml", "htmldjango", "fish", "lua", "go" },
+    filetypes = {
+        "python",
+        "vim",
+        "yaml",
+        "htmldjango",
+        "fish",
+        "lua",
+        "go",
+        "terraform",
+    },
     on_attach = on_attach,
 })
 

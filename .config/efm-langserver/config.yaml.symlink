@@ -47,6 +47,10 @@ tools:
     lint-stdin: true
     lint-ignore-exit-code: true
 
+  terraform-fmt: &terraform-fmt
+    format-command: terraform fmt -
+    format-stdin: true
+
 languages:
   fish:
     - <<: *fish-indent
@@ -59,6 +63,8 @@ languages:
   python:
     - <<: *ruff
     - <<: *ruff-format
+  terraform:
+    - <<: *terraform-fmt
   vim:
     - <<: *vint
   yaml:
