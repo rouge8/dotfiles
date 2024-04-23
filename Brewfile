@@ -155,6 +155,8 @@ brew "wget"
 brew "xh"
 # Linter for YAML files
 brew "yamllint"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
 # brew command to cleanly install binaries from Go modules
@@ -167,7 +169,7 @@ cask "1password"
 cask "dropbox"
 # Web browser
 cask "firefox"
-# Screen color temperature controller
+# Screen colour temperature controller
 cask "flux"
 # Icon font for Visual Studio Code
 cask "font-codicon"
