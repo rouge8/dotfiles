@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
+tap "jdx/tap"
 tap "rouge8/rouge8"
 # Run your GitHub Actions locally
 brew "act"
@@ -95,6 +96,8 @@ brew "less"
 brew "lua-language-server"
 # Utility for directing compilation
 brew "make"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP load generator, inspired by rakyll/hey with tui animation
@@ -161,6 +164,8 @@ brew "yq"
 brew "zenith"
 # brew command to cleanly install binaries from Go modules
 brew "filosottile/gomod/brew-gomod"
+# Tool for CLIs
+brew "jdx/tap/usage"
 # Show where time is wasted during the context upload of `docker build`
 brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
 # Password manager that keeps all passwords secure behind one password
