@@ -1,7 +1,6 @@
 tap "filosottile/gomod"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "jdx/tap"
