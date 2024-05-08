@@ -34,10 +34,6 @@ pipx inject ipython httpx attrs rich
 pipx install twine
 pipx inject twine readme_renderer[md]
 
-pipx install black
-
-pipx install blacken-docs
-
 pipx install build
 
 # Various things
