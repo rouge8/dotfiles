@@ -226,7 +226,7 @@ nmap <LocalLeader>s :set scrollbind<cr>
 " Change-inside-surroundings.vim
 nmap <leader>cis :ChangeInsideSurrounding<cr>
 
-" vim-commentary
+" Commenting
 nmap <leader>cc gcc
 xmap <leader>cc gc
 
