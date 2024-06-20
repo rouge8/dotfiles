@@ -74,6 +74,12 @@ augroup Brewfile
   au BufNewFile,BufRead Brewfile,Brewfile.* setlocal filetype=ruby
 augroup END
 
+" hujson
+augroup hujson
+  au!
+  au BufNewFile,BufRead *.hujson setlocal filetype=jsonc
+augroup END
+
 " Filetype detection for *.symlink files
 " If a file begins with '#!/', let vim autodetect the filetype. Otherwise
 " read 'linguist-language' from .gitattributes.
