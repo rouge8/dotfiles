@@ -5,8 +5,16 @@ tap "qmk/qmk"
 brew "cargo-llvm-cov"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Django/Jinja template indenter
 brew "djhtml"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Command-line tools for fly.io services
 brew "flyctl"
 # Modern, extensible Python project management
