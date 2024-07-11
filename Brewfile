@@ -129,8 +129,6 @@ brew "shfmt"
 brew "starship"
 # Opinionated Lua code formatter
 brew "stylua"
-# Tool to build, change, and version infrastructure
-brew "terraform"
 # Terraform Language Server
 brew "terraform-ls"
 # Generic Python virtualenv management and test command-line tool
