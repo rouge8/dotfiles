@@ -1,6 +1,14 @@
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
+# Utility for managing cargo dependencies from the command-line
+brew "cargo-edit"
+# Next-generation test runner for Rust
+brew "cargo-nextest"
+# Cargo subcommand for displaying when Rust dependencies are out of date
+brew "cargo-outdated"
+# Find unused dependencies in Cargo.toml
+brew "cargo-udeps"
 # Cargo subcommand to easily use LLVM source-based code coverage
 brew "cargo-llvm-cov"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS

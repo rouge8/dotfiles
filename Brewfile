@@ -7,8 +7,6 @@ tap "jdx/tap"
 tap "rouge8/rouge8"
 # Run your GitHub Actions locally
 brew "act"
-# Library for command-line editing
-brew "readline"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -17,20 +15,6 @@ brew "bat"
 brew "bat-extras"
 # New way to see and navigate directory trees
 brew "broot"
-# Utility for managing cargo dependencies from the command-line
-brew "cargo-edit"
-# Next-generation test runner for Rust
-brew "cargo-nextest"
-# Cargo subcommand for displaying when Rust dependencies are out of date
-brew "cargo-outdated"
-# Find unused dependencies in Cargo.toml
-brew "cargo-udeps"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# C string library for manipulating Unicode strings
-brew "libunistring"
-# Perl compatible regular expressions library
-brew "pcre"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Top-like interface for container metrics
@@ -73,8 +57,6 @@ brew "go"
 brew "virtualenv"
 # Command-line hex viewer
 brew "hexyl"
-# Add GitHub support to git on the command-line
-brew "hub"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
@@ -95,8 +77,6 @@ brew "neovim"
 brew "oha"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
-# Audits Python environments and dependency trees for known vulnerabilities
-brew "pip-audit"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Python package management tool
