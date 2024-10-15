@@ -35,6 +35,7 @@ require("nvim-treesitter.configs").setup({
         "vimdoc",
         "yaml",
     },
+    auto_install = true,
     ignore_install = {},
     highlight = {
         enable = true,
