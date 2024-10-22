@@ -45,9 +45,6 @@ if status is-interactive
     # https://github.com/bvaisvil/zenith
     abbr -a htop zenith
 
-    # mypy
-    abbr -a mypy mypy --show-error-codes
-
     set -x MANPAGER 'nvim +Man!'
 
     # vim-like cursors
