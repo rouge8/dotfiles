@@ -1,6 +1,5 @@
 tap "osx-cross/arm"
 tap "osx-cross/avr"
-tap "qmk/qmk"
 # Utility for managing cargo dependencies from the command-line
 brew "cargo-edit"
 # Next-generation test runner for Rust
@@ -37,8 +36,6 @@ brew "miniserve"
 brew "overmind"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Quantum Mechanical Keyboard (QMK) Firmware
-brew "qmk/qmk/qmk"
 # Fork of youtube-dl with additional features and fixes
 brew "yt-dlp"
 # Fast static site generator in a single binary with everything built-in
@@ -67,8 +64,6 @@ cask "discord"
 cask "mactex"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Toolbox companion for QMK Firmware
-cask "qmk-toolbox"
 # Screencasting software
 cask "recordit"
 # Instant messaging application focusing on security
