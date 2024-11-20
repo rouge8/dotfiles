@@ -12,8 +12,6 @@ brew "cargo-udeps"
 brew "cargo-llvm-cov"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
-# Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
 # Django/Jinja template indenter
 brew "djhtml"
 # Pack, ship and run any application as a lightweight container
@@ -64,6 +62,8 @@ cask "discord"
 cask "mactex"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Screencasting software
 cask "recordit"
 # Instant messaging application focusing on security
