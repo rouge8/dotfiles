@@ -100,6 +100,12 @@ cmp.setup({
     },
 })
 
+-- Mason
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "ts_ls", "volar" },
+})
+
 -- LSP
 local nvim_lsp = require("lspconfig")
 
@@ -210,6 +216,32 @@ nvim_lsp.efm.setup({
     filetypes = { "python", "vim", "yaml", "htmldjango", "fish", "lua", "go" },
     on_attach = on_attach,
 })
+
+-- TypeScript / Vue
+local mason_registry = require("mason-registry")
+local vue_language_server_path = mason_registry
+    .get_package("vue-language-server")
+    :get_install_path() .. "/node_modules/@vue/language-server"
+
+nvim_lsp.ts_ls.setup({
+    init_options = {
+        plugins = {
+            {
+                name = "@vue/typescript-plugin",
+                location = vue_language_server_path,
+                languages = { "vue" },
+            },
+        },
+    },
+    filetypes = {
+        "typescript",
+        "javascript",
+        "javascriptreact",
+        "typescriptreact",
+        "vue",
+    },
+})
+nvim_lsp.volar.setup({})
 
 -- Go-to definition in a split window
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#go-to-definition-in-a-split-window
