@@ -103,7 +103,7 @@ cmp.setup({
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "ts_ls", "volar" },
+    ensure_installed = { "ts_ls", "volar", "tailwindcss" },
 })
 
 -- LSP
@@ -242,6 +242,9 @@ nvim_lsp.ts_ls.setup({
     },
 })
 nvim_lsp.volar.setup({})
+
+-- Tailwind CSS
+nvim_lsp.tailwindcss.setup({})
 
 -- Go-to definition in a split window
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#go-to-definition-in-a-split-window
