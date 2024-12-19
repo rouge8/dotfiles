@@ -116,6 +116,8 @@ brew "tox"
 brew "tree"
 # Text manipulation and cutting tool
 brew "tuc"
+# Source code spell checker
+brew "typos-cli"
 # Vim script Language Lint
 brew "vint"
 # Python virtual environment manager for the fish shell

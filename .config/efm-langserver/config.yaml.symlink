@@ -47,6 +47,10 @@ tools:
     lint-stdin: true
     lint-ignore-exit-code: true
 
+  typos: &typos
+    lint-command: typos --format brief -- ${INPUT}
+    lint-stdin: false
+
 languages:
   fish:
     - <<: *fish-indent
@@ -63,3 +67,5 @@ languages:
     - <<: *vint
   yaml:
     - <<: *yamllint
+  =:
+    - <<: *typos
