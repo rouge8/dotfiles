@@ -208,7 +208,10 @@ nvim_lsp.lua_ls.setup({
 })
 
 -- Terraform
-nvim_lsp.terraformls.setup({})
+nvim_lsp.terraformls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
 -- EFM
 nvim_lsp.efm.setup({
@@ -224,6 +227,8 @@ local vue_language_server_path = mason_registry
     :get_install_path() .. "/node_modules/@vue/language-server"
 
 nvim_lsp.ts_ls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
     init_options = {
         plugins = {
             {
@@ -241,10 +246,16 @@ nvim_lsp.ts_ls.setup({
         "vue",
     },
 })
-nvim_lsp.volar.setup({})
+nvim_lsp.volar.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
 -- Tailwind CSS
-nvim_lsp.tailwindcss.setup({})
+nvim_lsp.tailwindcss.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
 -- Go-to definition in a split window
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#go-to-definition-in-a-split-window
