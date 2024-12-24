@@ -1,7 +1,6 @@
 tap "filosottile/gomod"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "rouge8/rouge8"
 # Run your GitHub Actions locally
