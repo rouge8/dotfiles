@@ -179,6 +179,9 @@ nmap <Leader>gn :Git add -N %<CR>
 nmap <Leader>gc :Git commit<CR>
 nmap <Leader>gca :Git commit --amend<CR>
 
+" pre-commit
+nmap <Leader>pc :!pre-commit run --files %<CR>
+
 " Remove any trailing whitespace that is in the file
 augroup remove_trailing_whitespace
   au!
