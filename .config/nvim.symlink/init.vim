@@ -173,6 +173,8 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 nmap <Leader>g :Git<CR>gg)
 " git add -p
 nmap <Leader>ga :Git add -p<CR>
+" git add -N
+nmap <Leader>gn :Git add -N %<CR>
 " git commit
 nmap <Leader>gc :Git commit<CR>
 nmap <Leader>gca :Git commit --amend<CR>
