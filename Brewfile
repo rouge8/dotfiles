@@ -117,6 +117,8 @@ brew "tree"
 brew "tuc"
 # Source code spell checker
 brew "typos-cli"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Vim script Language Lint
 brew "vint"
 # Python virtual environment manager for the fish shell

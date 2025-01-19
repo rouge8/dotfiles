@@ -27,14 +27,8 @@ rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | 
 rustup toolchain install stable nightly
 rustup component add rust-src rustfmt clippy llvm-tools-preview rust-analyzer
 
-# Python tools
-pipx install --python python3.12 ipython
-pipx inject ipython httpx attrs rich
-
-pipx install twine
-pipx inject twine readme_renderer[md]
-
-pipx install build
+# Mise
+mise install --yes
 
 # Various things
 make -j$(nproc)
