@@ -71,6 +71,8 @@ brew "make"
 brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Platform built on V8 to build network applications
+brew "node"
 # HTTP load generator, inspired by rakyll/hey with tui animation
 brew "oha"
 # PostgreSQL syntax beautifier
@@ -107,6 +109,8 @@ brew "shfmt"
 brew "starship"
 # Opinionated Lua code formatter
 brew "stylua"
+# LSP for TailwindCSS
+brew "tailwindcss-language-server"
 # Terraform Language Server
 brew "terraform-ls"
 # Generic Python virtualenv management and test command-line tool
@@ -115,6 +119,8 @@ brew "tox"
 brew "tree"
 # Text manipulation and cutting tool
 brew "tuc"
+# Language Server Protocol implementation for TypeScript wrapping tsserver
+brew "typescript-language-server"
 # Source code spell checker
 brew "typos-cli"
 # Extremely fast Python package installer and resolver, written in Rust

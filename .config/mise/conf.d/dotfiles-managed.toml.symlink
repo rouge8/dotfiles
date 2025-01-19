@@ -3,3 +3,4 @@ experimental = true
 
 [tools]
 "pipx:ipython" = { version = "latest", uvx_args = "--with httpx --with attrs" }
+"npm:@vue/language-server" = "latest"

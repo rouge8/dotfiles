@@ -100,12 +100,6 @@ cmp.setup({
     },
 })
 
--- Mason
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = { "ts_ls", "volar", "tailwindcss" },
-})
-
 -- LSP
 local nvim_lsp = require("lspconfig")
 
@@ -221,10 +215,12 @@ nvim_lsp.efm.setup({
 })
 
 -- TypeScript / Vue
-local mason_registry = require("mason-registry")
-local vue_language_server_path = mason_registry
-    .get_package("vue-language-server")
-    :get_install_path() .. "/node_modules/@vue/language-server"
+local mise_where_vue_language_server_path = vim.system(
+    { "mise", "where", "npm:@vue/language-server" },
+    { text = true }
+):wait()
+local vue_language_server_path = vim.trim(mise_where_vue_language_server_path.stdout)
+    .. "/lib/node_modules/@vue/language-server"
 
 nvim_lsp.ts_ls.setup({
     capabilities = capabilities,
