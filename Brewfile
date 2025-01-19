@@ -77,8 +77,6 @@ brew "node"
 brew "oha"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # Python package management tool
 brew "poetry"
 # Framework for managing multi-language pre-commit hooks
