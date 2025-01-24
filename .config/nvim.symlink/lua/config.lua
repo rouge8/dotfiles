@@ -222,6 +222,13 @@ local mise_where_vue_language_server_path = vim.system(
 local vue_language_server_path = vim.trim(mise_where_vue_language_server_path.stdout)
     .. "/lib/node_modules/@vue/language-server"
 
+local mise_where_typescript_path = vim.system(
+    { "mise", "where", "npm:typescript" },
+    { text = true }
+):wait()
+local typescript_path = vim.trim(mise_where_typescript_path.stdout)
+    .. "/lib/node_modules/typescript"
+
 nvim_lsp.ts_ls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
@@ -245,6 +252,11 @@ nvim_lsp.ts_ls.setup({
 nvim_lsp.volar.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    init_options = {
+        typescript = {
+            tsdk = typescript_path .. "/lib",
+        },
+    },
 })
 
 -- Tailwind CSS
