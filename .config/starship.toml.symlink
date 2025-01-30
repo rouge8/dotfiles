@@ -27,19 +27,6 @@ fish_style_pwd_dir_length = 1
 [git_branch]
 symbol = ""
 
-[custom.git_status]
-command = "~/bin/git-status-prompt"
-when = "true"
-style = "bold red"
-# An explanation of the format string:
-# - $output is wrapped in '\[\]' to display the brackets
-# - '\[$output\] ' is wrapped in '()' to only display it when $output is
-#   non-empty (and avoid extra whitespace before later prompt entries like
-#   $status or $cmd_duration)
-# - '(\[$output\] )' is wrapped in '[]' so that $style applies, because $style
-#   only applies to '[]' and not '()'
-format = '[(\[$output\] )]($style)'
-
 [python]
 python_binary = "python3"
 # Only show the Python version when a virtualenv is active
