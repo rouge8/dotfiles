@@ -2,7 +2,7 @@ format = """
 $username at $hostname in $directory\
 $git_branch\
 $git_state\
-${custom.git_status}\
+$git_status\
 $python\
 $rust\
 $aws\
