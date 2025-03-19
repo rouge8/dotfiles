@@ -1,4 +1,4 @@
--- Ident Blankline
+-- Indent Blankline
 require("ibl").setup()
 
 -- Treesitter
