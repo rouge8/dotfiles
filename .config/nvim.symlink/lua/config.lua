@@ -1,6 +1,9 @@
 -- Indent Blankline
 require("ibl").setup()
 
+-- ripgrep
+vim.opt.grepprg = "rg --vimgrep"
+
 -- Treesitter
 require("nvim-treesitter.configs").setup({
     ensure_installed = {
