@@ -117,8 +117,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<down>", vim.diagnostic.goto_next, bufopts)
     -- Use 'K' to show LSP hover info
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-    -- Go-to definition
-    vim.keymap.set("n", "<leader>j", vim.lsp.buf.definition, bufopts)
+    -- Go-to definition in a split
+    vim.keymap.set("n", "<leader>j", ":split | lua vim.lsp.buf.definition()<CR>", bufopts)
     -- References
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, bufopts)
     -- Formatting
@@ -267,43 +267,6 @@ nvim_lsp.tailwindcss.setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
-
--- Go-to definition in a split window
--- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#go-to-definition-in-a-split-window
-local function goto_definition(split_cmd)
-    local util = vim.lsp.util
-    local log = require("vim.lsp.log")
-    local api = vim.api
-
-    local handler = function(_, result, ctx)
-        local client = vim.lsp.get_client_by_id(ctx.client_id)
-
-        if result == nil or vim.tbl_isempty(result) then
-            local _ = log.info() and log.info(ctx.method, "No location found")
-            return nil
-        end
-
-        if split_cmd then
-            vim.cmd(split_cmd)
-        end
-
-        if vim.tbl_islist(result) then
-            util.jump_to_location(result[1], client.offset_encoding)
-
-            if #result > 1 then
-                util.set_qflist(util.locations_to_items(result, client.offset_encoding))
-                api.nvim_command("copen")
-                api.nvim_command("wincmd p")
-            end
-        else
-            util.jump_to_location(result, client.offset_encoding)
-        end
-    end
-
-    return handler
-end
-
-vim.lsp.handlers["textDocument/definition"] = goto_definition("split")
 
 -- List all LSP diagnostic errors
 vim.cmd([[ command! Errors lua vim.diagnostic.setloclist() ]])
