@@ -62,6 +62,8 @@ cask "discord"
 cask "mactex"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Screencasting software
