@@ -2,7 +2,7 @@
 require("ibl").setup()
 
 -- ripgrep
-vim.opt.grepprg = "rg --vimgrep"
+vim.o.grepprg = "rg --vimgrep"
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
@@ -59,7 +59,7 @@ require("nvim-treesitter.configs").setup({
 require("ts_context_commentstring")
 
 -- Autocomplete
-vim.opt.completeopt = "menu,menuone,noinsert"
+vim.o.completeopt = "menu,menuone,noinsert"
 
 local cmp = require("cmp")
 
@@ -325,7 +325,7 @@ require("lualine").setup({
     },
 })
 -- Don't show a redundant mode below lualine
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- Neotest
 local neotest = require("neotest")
