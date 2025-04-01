@@ -113,8 +113,12 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
     -- Nav between diagnostic results
-    vim.keymap.set("n", "<up>", vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set("n", "<down>", vim.diagnostic.goto_next, bufopts)
+    vim.keymap.set("n", "<up>", function()
+        vim.diagnostic.jump({ count = -1 })
+    end, bufopts)
+    vim.keymap.set("n", "<down>", function()
+        vim.diagnostic.jump({ count = 1 })
+    end, bufopts)
     -- Use 'K' to show LSP hover info
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     -- Go-to definition in a split
@@ -267,6 +271,9 @@ nvim_lsp.tailwindcss.setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
+
+-- Show diagnostics in a floating window
+vim.diagnostic.config({ jump = { float = true } })
 
 -- List all LSP diagnostic errors
 vim.cmd([[ command! Errors lua vim.diagnostic.setloclist() ]])
