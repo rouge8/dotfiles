@@ -22,8 +22,6 @@ brew "docker-buildx"
 brew "docker-credential-helper"
 # Command-line tools for fly.io services
 brew "flyctl"
-# Modern, extensible Python project management
-brew "hatch"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -38,6 +36,8 @@ brew "rsync"
 brew "yt-dlp"
 # Fast static site generator in a single binary with everything built-in
 brew "zola"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # Firmware updater for 8BitDo devices
 cask "8bitdo-firmware-updater"
 # Control every piece of your controller

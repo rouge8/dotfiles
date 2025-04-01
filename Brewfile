@@ -1,8 +1,6 @@
-tap "filosottile/gomod"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/services"
-tap "rouge8/rouge8"
 # Run your GitHub Actions locally
 brew "act"
 # Terminal bandwidth utilization tool
@@ -51,8 +49,6 @@ brew "gnu-sed"
 brew "gnu-time"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Tool for creating isolated virtual python environments
-brew "virtualenv"
 # Command-line hex viewer
 brew "hexyl"
 # Command-line benchmarking tool
@@ -77,20 +73,12 @@ brew "node"
 brew "oha"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
-# Python package management tool
-brew "poetry"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Static type checker for Python
 brew "pyright"
-# Launch your Python interpreter the lazy/smart way
-brew "python-launcher"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# Command-line toolbox for fancy output in the terminal
-brew "rich-cli"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
@@ -123,8 +111,6 @@ brew "typescript-language-server"
 brew "typos-cli"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Vim script Language Lint
-brew "vint"
 # Python virtual environment manager for the fish shell
 brew "virtualfish"
 # Internet file retriever
@@ -137,16 +123,6 @@ brew "yamllint"
 brew "yq"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
-# brew command to cleanly install binaries from Go modules
-brew "filosottile/gomod/brew-gomod"
-# Tool for CLIs
-brew "usage"
-# Show where time is wasted during the context upload of `docker build`
-brew "rouge8/rouge8/docker-show-context", args: ["HEAD"]
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
 # Web browser
 cask "firefox"
 # Screen colour temperature controller
@@ -169,11 +145,7 @@ cask "macvim"
 cask "moom"
 # Calculator and converter application
 cask "numi"
-# Emoji picker optimized for blind people
+# Emoji picker optimised for blind people
 cask "rocket"
-# Team communication and collaboration software
-cask "slack"
 # Open-source code editor
 cask "visual-studio-code"
-# Video communication and virtual meeting platform
-cask "zoom"
