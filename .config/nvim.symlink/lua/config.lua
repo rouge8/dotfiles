@@ -324,6 +324,8 @@ require("lualine").setup({
         },
     },
 })
+-- Don't show a redundant mode below lualine
+vim.opt.showmode = false
 
 -- Neotest
 local neotest = require("neotest")
