@@ -5,3 +5,4 @@ experimental = true
 "pipx:ipython" = { version = "latest", uvx_args = "--with httpx --with attrs" }
 "npm:@vue/language-server" = "latest"
 "npm:typescript" = "latest"
+"npm:vscode-langservers-extracted" = "latest"

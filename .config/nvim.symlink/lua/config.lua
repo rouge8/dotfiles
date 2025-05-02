@@ -266,6 +266,12 @@ nvim_lsp.volar.setup({
     },
 })
 
+vim.lsp.config("eslint", {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+vim.lsp.enable("eslint")
+
 -- Tailwind CSS
 nvim_lsp.tailwindcss.setup({
     capabilities = capabilities,
