@@ -104,7 +104,6 @@ cmp.setup({
 })
 
 -- LSP
-local nvim_lsp = require("lspconfig")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -137,11 +136,10 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+vim.lsp.config("*", { capabilities = capabilities, on_attach = on_attach })
 
 -- Rust
-nvim_lsp.rust_analyzer.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+vim.lsp.config("rust_analyzer", {
     settings = {
         ["rust-analyzer"] = {
             cargo = {
@@ -160,14 +158,14 @@ nvim_lsp.rust_analyzer.setup({
         },
     },
 })
+vim.lsp.enable("rust_analyzer")
 
 -- Python
 local pyright_capabilities = vim.deepcopy(capabilities)
 pyright_capabilities.textDocument["publishDiagnostics"] =
     { tagSupport = { valueSet = { 2 } } }
-nvim_lsp.pyright.setup({
+vim.lsp.config("pyright", {
     capabilities = pyright_capabilities,
-    on_attach = on_attach,
     settings = {
         python = {
             -- pyright only accepts absolute paths
@@ -179,10 +177,10 @@ nvim_lsp.pyright.setup({
         },
     },
 })
+vim.lsp.enable("pyright")
 
 -- Lua
-nvim_lsp.lua_ls.setup({
-    capabilities = capabilities,
+vim.lsp.config("lua_ls", {
     on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
@@ -207,19 +205,18 @@ nvim_lsp.lua_ls.setup({
         },
     },
 })
+vim.lsp.enable("lua_ls")
 
 -- Terraform
-nvim_lsp.terraformls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+vim.lsp.enable("terraformls")
 
 -- EFM
-nvim_lsp.efm.setup({
+vim.lsp.config("efm", {
     init_options = { documentFormatting = true },
     filetypes = vim.fn.getcompletion("", "filetype"),
     on_attach = on_attach,
 })
+vim.lsp.enable("efm")
 
 -- TypeScript / Vue
 local mise_where_vue_language_server_path = vim.system(
@@ -236,9 +233,7 @@ local mise_where_typescript_path = vim.system(
 local typescript_path = vim.trim(mise_where_typescript_path.stdout)
     .. "/lib/node_modules/typescript"
 
-nvim_lsp.ts_ls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+vim.lsp.config("ts_ls", {
     init_options = {
         plugins = {
             {
@@ -256,27 +251,17 @@ nvim_lsp.ts_ls.setup({
         "vue",
     },
 })
-nvim_lsp.volar.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+vim.lsp.config("volar", {
     init_options = {
         typescript = {
             tsdk = typescript_path .. "/lib",
         },
     },
 })
-
-vim.lsp.config("eslint", {
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-vim.lsp.enable("eslint")
+vim.lsp.enable({ "ts_ls", "volar", "eslint" })
 
 -- Tailwind CSS
-nvim_lsp.tailwindcss.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+vim.lsp.enable("tailwindcss")
 
 -- Show diagnostics in a floating window
 vim.diagnostic.config({ jump = { float = true } })
