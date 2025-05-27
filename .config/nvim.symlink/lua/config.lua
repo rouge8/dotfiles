@@ -251,14 +251,14 @@ vim.lsp.config("ts_ls", {
         "vue",
     },
 })
-vim.lsp.config("volar", {
+vim.lsp.config("vue_ls", {
     init_options = {
         typescript = {
             tsdk = typescript_path .. "/lib",
         },
     },
 })
-vim.lsp.enable({ "ts_ls", "volar", "eslint" })
+vim.lsp.enable({ "ts_ls", "vue_ls", "eslint" })
 
 -- Tailwind CSS
 vim.lsp.enable("tailwindcss")
