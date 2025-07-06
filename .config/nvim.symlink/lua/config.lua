@@ -5,57 +5,47 @@ require("ibl").setup()
 vim.o.grepprg = "rg --vimgrep"
 
 -- Treesitter
-require("nvim-treesitter.configs").setup({
-    ensure_installed = {
-        "bash",
-        "comment",
-        "css",
-        "dockerfile",
-        "fish",
-        "go",
-        "gomod",
-        "hcl",
-        "hjson",
-        "html",
-        "http",
-        "javascript",
-        "json",
-        "jsonc",
-        "latex",
-        "lua",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "regex",
-        "rst",
-        "ruby",
-        "rust",
-        "terraform",
-        "toml",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-    },
-    auto_install = true,
-    ignore_install = {},
-    highlight = {
-        enable = true,
-        disable = {},
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true,
-        disable = {
-            "rust",
-            "yaml",
-        },
-    },
-    matchup = {
-        enable = true,
-    },
+require("nvim-treesitter").install({
+    "bash",
+    "comment",
+    "css",
+    "dockerfile",
+    "fish",
+    "go",
+    "gomod",
+    "hcl",
+    "hjson",
+    "html",
+    "http",
+    "javascript",
+    "json",
+    "jsonc",
+    "latex",
+    "lua",
+    "make",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "regex",
+    "rst",
+    "ruby",
+    "rust",
+    "terraform",
+    "toml",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "vue",
+    "yaml",
 })
+vim.api.nvim_create_autocmd("FileType", {
+    -- TODO: Other languages
+    pattern = { "python" },
+    callback = function()
+        vim.treesitter.start()
+    end,
+})
+-- TODO: This doesn't work for vue 🙃
 require("ts_context_commentstring")
 
 -- Autocomplete
