@@ -1,0 +1,8 @@
+theme = "gruvbox-material"
+
+[editor]
+line-number = "relative"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "hint"
