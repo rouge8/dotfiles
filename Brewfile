@@ -49,6 +49,8 @@ brew "gnu-sed"
 brew "gnu-time"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Post-modern modal text editor
+brew "helix"
 # Command-line hex viewer
 brew "hexyl"
 # Command-line benchmarking tool
