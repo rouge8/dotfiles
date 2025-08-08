@@ -25,7 +25,7 @@
 [core]
 	excludesfile = ~/.gitglobalignore
 	autocrlf = input
-	editor = nvim
+	editor = hx
 	pager = delta
 
 [interactive]
