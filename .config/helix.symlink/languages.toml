@@ -1,0 +1,9 @@
+[language-server.pylsp.config.pylsp.plugins]
+ruff = { enabled = true, formatEnabled = true, extendIgnore = [ "F401", "F841"] }
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [
+  "pylsp",
+]
