@@ -109,6 +109,8 @@ brew "tuc"
 brew "typescript-language-server"
 # Source code spell checker
 brew "typos-cli"
+# Language Server for typos-cli
+brew "typos-lsp"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Python virtual environment manager for the fish shell

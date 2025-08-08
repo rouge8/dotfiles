@@ -4,9 +4,13 @@ formatEnabled = true
 format = [ "I" ]
 extendIgnore = [ "F401", "F841" ]
 
+[language-server.typos]
+command = "typos-lsp"
+
 [[language]]
 name = "python"
 auto-format = true
 language-servers = [
   "pylsp",
+  "typos",
 ]
