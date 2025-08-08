@@ -6,3 +6,7 @@ line-number = "relative"
 [editor.inline-diagnostics]
 cursor-line = "hint"
 other-lines = "hint"
+
+[keys.normal]
+"^" = "goto_line_start"
+"$" = "goto_line_end"
