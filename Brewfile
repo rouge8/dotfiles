@@ -141,8 +141,6 @@ cask "itsycal"
 cask "keepingyouawake"
 # GPU-based terminal emulator
 cask "kitty"
-# Text editor
-cask "macvim"
 # Utility to move and zoom windows—on one display
 cask "moom"
 # Calculator and converter application
