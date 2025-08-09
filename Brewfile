@@ -1,6 +1,4 @@
-tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/services"
 # Run your GitHub Actions locally
 brew "act"
 # Terminal bandwidth utilization tool
