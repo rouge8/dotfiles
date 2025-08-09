@@ -24,4 +24,4 @@ hjson:*.hjson.symlink
 
 # Hyperlinks!
 --hyperlink-format
-default
+kitty
