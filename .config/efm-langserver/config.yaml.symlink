@@ -67,5 +67,3 @@ languages:
     - <<: *vint
   yaml:
     - <<: *yamllint
-  =:
-    - <<: *typos

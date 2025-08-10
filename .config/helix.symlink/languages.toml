@@ -1,16 +1,17 @@
-[language-server.pylsp.config.pylsp.plugins.ruff]
-enabled = true
-formatEnabled = true
-format = [ "I" ]
-extendIgnore = [ "F401", "F841" ]
-
 [language-server.typos]
 command = "typos-lsp"
+
+[language-server.efm]
+command = "efm-langserver"
+
+[language-server.pylsp.config.pylsp.plugins.rope_autoimport]
+enabled = true
 
 [[language]]
 name = "python"
 auto-format = true
 language-servers = [
-  "pylsp",
+  { name = "pylsp", except-features = [ "format" ] },
+  { name = "efm", only-features = [ "diagnostics", "format" ] },
   "typos",
 ]
