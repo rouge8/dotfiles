@@ -2,6 +2,7 @@ theme = "gruvbox"
 
 [editor]
 line-number = "relative"
+rulers = [80]
 
 [editor.soft-wrap]
 enable = true
@@ -40,3 +41,6 @@ right = [
 "^" = "goto_line_start"
 "$" = "goto_line_end"
 "g" = { "d" = ["hsplit", "jump_view_down", "goto_definition"] }
+
+[keys.normal.","]
+"r" = ":reflow"
