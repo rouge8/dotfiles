@@ -11,6 +11,9 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.indent-guides]
+render = true
+
 [editor.inline-diagnostics]
 cursor-line = "hint"
 other-lines = "hint"
