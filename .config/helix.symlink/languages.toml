@@ -23,3 +23,28 @@ language-servers = [
   "terraform-ls",
   "typos",
 ]
+
+[[language]]
+name = "vue"
+auto-format = false
+language-servers = [
+  "vuels",
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+
+[[language]]
+name = "typescript"
+auto-format = false
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+
+[[language]]
+name = "javascript"
+auto-format = false
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
