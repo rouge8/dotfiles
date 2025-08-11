@@ -18,8 +18,8 @@ args = [ "--stdio" ]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "pylsp", except-features = [ "format", "hover" ] },
-  { name = "pyright", only-features = [ "hover" ] },
+  { name = "pylsp", only-features = [ "completion", "diagnostics" ] },
+  { name = "pyright", except-features = [ "diagnostics", "format" ] },
   { name = "efm", only-features = [ "diagnostics", "format" ] },
   "typos",
 ]
