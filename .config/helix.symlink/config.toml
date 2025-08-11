@@ -7,6 +7,24 @@ line-number = "relative"
 cursor-line = "hint"
 other-lines = "hint"
 
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "diagnostics",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+]
+right = [
+  "file-type",
+  "selections",
+  "register",
+  "position-percentage",
+  "position",
+]
+
 [keys.normal]
 "^" = "goto_line_start"
 "$" = "goto_line_end"
