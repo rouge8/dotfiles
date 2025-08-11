@@ -15,3 +15,11 @@ language-servers = [
   { name = "efm", only-features = [ "diagnostics", "format" ] },
   "typos",
 ]
+
+[[language]]
+name = "hcl"
+auto-format = true
+language-servers = [
+  "terraform-ls",
+  "typos",
+]
