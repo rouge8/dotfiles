@@ -65,3 +65,6 @@ Icon?
 
 # Lua
 .luarc.json
+
+# pylsp / rope
+.ropeproject
