@@ -54,6 +54,7 @@ repos:
             |\.yaml\.symlink
             |^.config/yamllint/config.symlink$
           )
+        exclude: ^.config/gh/config.yml.symlink$
   - repo: https://github.com/Vimjas/vint
     rev: v0.4a3
     hooks:
