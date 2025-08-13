@@ -42,7 +42,10 @@ right = [
 [keys.normal]
 "^" = "goto_line_start"
 "$" = "goto_line_end"
-"g" = { "d" = ["hsplit", "jump_view_down", "goto_definition"] }
+
+[keys.normal.g]
+"d" = ["hsplit", "jump_view_down", "goto_definition"]
+"y" = ["hsplit", "jump_view_down", "goto_type_definition"]
 
 [keys.normal.","]
 "r" = ":reflow"
