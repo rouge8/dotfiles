@@ -3,7 +3,8 @@ experimental = true
 
 [tools]
 "pipx:ipython" = { version = "latest", uvx_args = "--with httpx --with attrs" }
-"npm:@vue/language-server" = "latest"
+# https://github.com/vuejs/language-tools/discussions/5455
+"npm:@vue/language-server" = "3.0"
 "npm:typescript" = "latest"
 # https://github.com/helix-editor/helix/discussions/10412#discussioncomment-10285256
 "npm:vscode-langservers-extracted" = "4.8.0"
