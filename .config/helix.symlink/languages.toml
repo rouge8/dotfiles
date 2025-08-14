@@ -14,6 +14,8 @@ enabled = true
 command = "pyright-langserver"
 args = [ "--stdio" ]
 
+[language-server.vuels.config]
+
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
 location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
