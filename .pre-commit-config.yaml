@@ -79,3 +79,18 @@ repos:
         entry: fish_indent
         args: [-w]
         files: .+\.fish
+  - repo: https://github.com/tombi-toml/tombi-pre-commit
+    rev: v0.5.5
+    hooks:
+      - id: tombi-format
+        files: >
+          (?x)(
+            \.toml
+            |\.toml\.symlink
+          )
+      - id: tombi-lint
+        files: >
+          (?x)(
+            \.toml
+            |\.toml\.symlink
+          )

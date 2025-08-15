@@ -12,26 +12,26 @@ enabled = true
 
 [language-server.pyright]
 command = "pyright-langserver"
-args = [ "--stdio" ]
+args = ["--stdio"]
 
 [language-server.vuels.config]
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
 location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
-languages = [ "vue" ]
+languages = ["vue"]
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
 location = "/Users/andyfreeland/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
-languages = [ "vue" ]
+languages = ["vue"]
 
 [[language]]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "pyright", except-features = [ "format" ] },
-  { name = "efm", only-features = [ "diagnostics", "format" ] },
+  { name = "pyright", except-features = ["format"] },
+  { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
 ]
 
@@ -48,7 +48,7 @@ name = "vue"
 auto-format = false
 language-servers = [
   "vuels",
-  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "typescript-language-server", except-features = ["format"] },
   "vscode-eslint-language-server",
 ]
 
@@ -56,7 +56,7 @@ language-servers = [
 name = "typescript"
 auto-format = false
 language-servers = [
-  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "typescript-language-server", except-features = ["format"] },
   "vscode-eslint-language-server",
 ]
 
@@ -64,6 +64,6 @@ language-servers = [
 name = "javascript"
 auto-format = false
 language-servers = [
-  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "typescript-language-server", except-features = ["format"] },
   "vscode-eslint-language-server",
 ]
