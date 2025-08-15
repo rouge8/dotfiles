@@ -45,6 +45,7 @@ right = [
 
 [keys.normal.g]
 d = ["hsplit", "jump_view_down", "goto_definition"]
+D = ["hsplit", "jump_view_down", "goto_declaration"]
 y = ["hsplit", "jump_view_down", "goto_type_definition"]
 
 [keys.normal.","]
