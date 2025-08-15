@@ -30,7 +30,23 @@ languages = ["vue"]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "pyright", except-features = ["format"] },
+  { name = "pyright", except-features = [
+    "format",
+    "goto-definition",
+    "goto-declaration",
+    "goto-type-definition",
+    "goto-reference",
+    "document-symbols",
+    "workspace-symbols",
+  ] },
+  { name = "ty", only-features = [
+    "goto-definition",
+    "goto-declaration",
+    "goto-type-definition",
+    "goto-reference",
+    "document-symbols",
+    "workspace-symbols",
+  ] },
   { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
 ]
