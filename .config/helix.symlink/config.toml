@@ -54,3 +54,4 @@ r = ":reflow"
 [keys.normal.space]
 # Print the current line's git blame information to the statusline.
 B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+W = ":sh gh browse %{buffer_name}:%{cursor_line}"
