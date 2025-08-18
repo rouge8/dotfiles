@@ -35,7 +35,7 @@ repos:
             |\.toml\.symlink
           )
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.8
+    rev: v0.12.9
     hooks:
       - id: ruff-format
   - repo: https://github.com/adrienverge/yamllint
@@ -80,7 +80,7 @@ repos:
         args: [-w]
         files: .+\.fish
   - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: v0.5.5
+    rev: v0.5.10
     hooks:
       - id: tombi-format
         files: >
