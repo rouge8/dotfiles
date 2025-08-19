@@ -63,7 +63,7 @@ language-servers = [
 name = "vue"
 auto-format = false
 language-servers = [
-  "vuels",
+  { name = "vuels", except-features = ["format"] },
   { name = "typescript-language-server", except-features = ["format"] },
   "vscode-eslint-language-server",
 ]
