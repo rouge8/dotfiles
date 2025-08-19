@@ -47,17 +47,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'blankname/vim-fish'
 Plug 'fladson/vim-kitty'
 
-" Testing
-Plug 'nvim-neotest/nvim-nio'
-Plug 'nvim-neotest/neotest'
-Plug 'nvim-neotest/neotest-python'
-if isdirectory($HOME . '/projects/neotest-rust')
-  Plug '~/projects/neotest-rust'
-else
-  Plug 'rouge8/neotest-rust'
-endif
-Plug 'nvim-neotest/neotest-plenary'
-
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
 
