@@ -83,12 +83,16 @@ repos:
     rev: v0.5.5
     hooks:
       - id: tombi-format
+        args:
+          - --offline
         files: >
           (?x)(
             \.toml
             |\.toml\.symlink
           )
       - id: tombi-lint
+        args:
+          - --offline
         files: >
           (?x)(
             \.toml
