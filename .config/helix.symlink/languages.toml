@@ -83,3 +83,7 @@ language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
   "vscode-eslint-language-server",
 ]
+
+[[language]]
+name = "json"
+auto-format = false
