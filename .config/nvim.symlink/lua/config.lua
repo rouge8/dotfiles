@@ -324,28 +324,3 @@ require("lualine").setup({
 })
 -- Don't show a redundant mode below lualine
 vim.o.showmode = false
-
--- Neotest
-local neotest = require("neotest")
-neotest.setup({
-    discovery = { enabled = false },
-    adapters = {
-        require("neotest-python")({
-            args = { "-v" },
-        }),
-        require("neotest-rust")({}),
-        require("neotest-plenary")({}),
-    },
-})
-
-local bufopts = { noremap = true, silent = true }
--- Run the nearest test
-vim.keymap.set("n", "<leader>t", neotest.run.run, bufopts)
--- Run all tests in the file
-vim.keymap.set("n", "<leader>T", function()
-    neotest.run.run(vim.fn.expand("%"))
-end, bufopts)
--- View the test output
-vim.keymap.set("n", "<leader>to", neotest.output.open, bufopts)
--- View the test summary
-vim.keymap.set("n", "<leader>ts", neotest.summary.open, bufopts)
