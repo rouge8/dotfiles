@@ -45,7 +45,7 @@ if status is-interactive
     # https://github.com/bvaisvil/zenith
     abbr -a htop zenith
 
-    set -x MANPAGER 'nvim +Man!'
+    batman --export-env | source
 
     # vim-like cursors
     set -g fish_cursor_default block blink
