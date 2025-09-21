@@ -50,12 +50,6 @@ chsh -s "$FISH_BIN"
 # But configure Terminal.app to always use bash as a fallback
 defaults write com.apple.terminal Shell /bin/bash
 
-# Poetry
-poetry config virtualenvs.path "$HOME/.virtualenvs"
-
-# Vim
-fish -c vim-plug-install
-
 # Docker
 echo '{"credsStore": "osxkeychain", "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]}' > ~/.docker/config.json
 brew services start docuum
@@ -100,13 +94,6 @@ defaults write com.apple.terminal 'Startup Window Settings' -string Gruvbox-dark
 
 # Moom
 defaults import com.manytricks.Moom misc/Moom.plist
-
-# TODO: Remove once
-# https://github.com/kovidgoyal/kitty/commit/a7e9030c12a6c623e480e9f65055fe8956a9ea3a
-# is released
-# Add /usr/local/bin to $PATH even for GUI apps
-echo 'Updating $PATH...'
-sudo launchctl config user path /usr/bin:/bin:/usr/sbin:/sbin:$(brew --prefix)/bin
 
 # Restart Finder and Dock
 killall Dock
