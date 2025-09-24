@@ -8,6 +8,10 @@ command = "efm-langserver"
 command = "pyright-langserver"
 args = ["--stdio"]
 
+[language-server.zuban]
+command = "zuban"
+args = ["server"]
+
 [language-server.vuels.config]
 
 [[language-server.typescript-language-server.config.plugins]]
@@ -28,7 +32,9 @@ args = ["serve"]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "ty", except-features = ["format"] },
+  { name = "zuban", except-features = [
+    "format",
+  ] },
   { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
 ]
