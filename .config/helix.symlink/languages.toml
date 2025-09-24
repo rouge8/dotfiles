@@ -14,6 +14,10 @@ enabled = true
 command = "pyright-langserver"
 args = ["--stdio"]
 
+[language-server.zuban]
+command = "zuban"
+args = ["server"]
+
 [language-server.vuels.config]
 
 [[language-server.typescript-language-server.config.plugins]]
@@ -30,19 +34,8 @@ languages = ["vue"]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "pyright", only-features = [
-    "signature-help",
-    "hover",
-    "completion",
-    "diagnostics",
-  ] },
-  { name = "ty", only-features = [
-    "goto-definition",
-    "goto-declaration",
-    "goto-type-definition",
-    "goto-reference",
-    "document-symbols",
-    "workspace-symbols",
+  { name = "zuban", except-features = [
+    "format",
   ] },
   { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
