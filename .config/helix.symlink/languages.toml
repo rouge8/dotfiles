@@ -4,12 +4,6 @@ command = "typos-lsp"
 [language-server.efm]
 command = "efm-langserver"
 
-[language-server.pylsp]
-timeout = 60
-
-[language-server.pylsp.config.pylsp.plugins.rope_autoimport]
-enabled = true
-
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]

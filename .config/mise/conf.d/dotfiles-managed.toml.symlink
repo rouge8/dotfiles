@@ -8,5 +8,4 @@ experimental = true
 "npm:typescript" = "latest"
 # https://github.com/helix-editor/helix/discussions/10412#discussioncomment-10285256
 "npm:vscode-langservers-extracted" = "4.8.0"
-"pipx:python-lsp-server" = { version = "latest", uvx_args = "--with rope --with pylsp-mypy"}
 "pipx:ty" = "latest"
