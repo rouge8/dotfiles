@@ -1,2 +1,0 @@
-#!/bin/sh
-SHIV_ENTRY_POINT=shiv.info:main exec shiv $@

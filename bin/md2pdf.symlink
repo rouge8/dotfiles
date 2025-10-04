@@ -1,9 +1,0 @@
-#!/bin/bash
-# uses pandoc to convert markdown file to pdf
-#
-# usage: md2pdf markdown-file.md
-# output: markdown-file.pdf
-
-file_name=${1%.*}
-
-pandoc -f markdown -s "$1" -o "$file_name".pdf
