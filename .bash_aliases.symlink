@@ -23,9 +23,6 @@ alias icat='kitty +kitten icat'
 # ripgrep
 alias rg='RIPGREP_CONFIG_PATH=~/.ripgreprc rg'
 
-# kitty + ripgrep
-alias kg='RIPGREP_CONFIG_PATH=~/.ripgreprc kitty +kitten hyperlinked_grep'
-
 # learn2type
 alias gti='git'
 
