@@ -34,10 +34,7 @@ mise install --yes
 make -j$(nproc)
 
 # Make some directories
-mkdir -p ~/tmp ~/forks
-if [[ -d ~/Dropbox/Projects && ! -d ~/projects ]]; then
-  ln -s ~/Dropbox/Projects/ ~/projects
-fi
+mkdir -p ~/tmp ~/forks ~/src
 
 # Set fish as the login shell
 FISH_BIN="$(brew --prefix)/bin/fish"
