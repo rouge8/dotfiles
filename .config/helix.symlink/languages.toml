@@ -78,3 +78,28 @@ language-servers = [
 [[language]]
 name = "json"
 auto-format = false
+
+[[language]]
+name = "toml"
+language-servers = [
+  "tombi",
+  "typos",
+]
+
+[[language]]
+name = "git-commit"
+language-servers = [
+  "typos",
+]
+
+[[language]]
+name = "markdown"
+language-servers = [
+  "typos",
+]
+
+[[language]]
+name = "rst"
+language-servers = [
+  "typos",
+]
