@@ -1,0 +1,6 @@
+function extract-cover-art --description "Extract cover art from an audio file"
+    set -l input $argv[1]
+    set -l output $argv[2]
+
+    ffmpeg -i $input -an -c:v copy $output
+end
