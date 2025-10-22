@@ -55,14 +55,6 @@ repos:
             |^.config/yamllint/config.symlink$
           )
         exclude: ^.config/gh/config.yml.symlink$
-  - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-2
-    hooks:
-      - id: shfmt
-      - id: shfmt
-        name: shfmt (.bash* files)
-        types: [text]
-        files: .bash*
   - repo: local
     hooks:
       - id: fish_indent

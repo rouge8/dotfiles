@@ -44,8 +44,8 @@ if ! grep -xq "$FISH_BIN" /etc/shells; then
 fi
 chsh -s "$FISH_BIN"
 
-# But configure Terminal.app to always use bash as a fallback
-defaults write com.apple.terminal Shell /bin/bash
+# But configure Terminal.app to always use zsh as a fallback
+defaults write com.apple.terminal Shell /bin/zsh
 
 # Docker
 echo '{"credsStore": "osxkeychain", "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]}' > ~/.docker/config.json
