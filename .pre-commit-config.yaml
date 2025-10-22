@@ -55,14 +55,6 @@ repos:
             |^.config/yamllint/config.symlink$
           )
         exclude: ^.config/gh/config.yml.symlink$
-  - repo: https://github.com/Vimjas/vint
-    rev: v0.4a3
-    hooks:
-      - id: vint
-  - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v2.3.0
-    hooks:
-      - id: stylua-github
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.12.0-2
     hooks:

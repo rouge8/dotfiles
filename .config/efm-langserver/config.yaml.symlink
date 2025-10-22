@@ -36,12 +36,6 @@ tools:
     format-command: ruff format --stdin-filename ${INPUT} -
     format-stdin: true
 
-  vint: &vint
-    lint-command: vint -
-    lint-stdin: true
-    lint-formats:
-      - "%f:%l:%c: %m"
-
   yamllint: &yamllint
     lint-command: yamllint -f parsable -
     lint-stdin: true
@@ -63,7 +57,5 @@ languages:
   python:
     - <<: *ruff
     - <<: *ruff-format
-  vim:
-    - <<: *vint
   yaml:
     - <<: *yamllint

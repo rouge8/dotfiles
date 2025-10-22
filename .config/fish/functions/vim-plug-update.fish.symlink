@@ -1,3 +1,0 @@
-function vim-plug-update
-    nvim +"let g:plug_window='enew'" +PlugUpgrade +PlugUpdate
-end

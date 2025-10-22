@@ -1,3 +1,0 @@
-function vim-plug-install
-    nvim +"let g:plug_window='enew'" +PlugInstall
-end
