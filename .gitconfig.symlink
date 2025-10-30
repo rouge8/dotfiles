@@ -2,7 +2,7 @@
 	name = Andy Freeland
 	email = andy@andyfreeland.net
 
-[includeIf "gitdir:~/src/"]
+[includeIf "hasconfig:remote.*.url:git@github.com:Zapgram/**"]
 	path = .gitconfig-pilot
 
 [alias]
