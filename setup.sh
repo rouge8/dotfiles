@@ -36,6 +36,9 @@ make -j$(nproc)
 # Make some directories
 mkdir -p ~/tmp ~/forks ~/src
 
+# Make iCloud easier to access
+ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/ ~/iCloud
+
 # Set fish as the login shell
 FISH_BIN="$(brew --prefix)/bin/fish"
 if ! grep -xq "$FISH_BIN" /etc/shells; then
