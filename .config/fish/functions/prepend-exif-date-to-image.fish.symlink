@@ -1,0 +1,9 @@
+function prepend-exif-date-to-image --description "Prepend the Exif date to an image filename"
+    for f in $argv
+        set -l exif_date (exiftool -p '$dateTimeOriginal' $f)
+        if test -n "$exif_date"
+            echo "Renaming $f"
+            mv $f "$(string replace --all ':' '-' "$exif_date") $f"
+        end
+    end
+end
