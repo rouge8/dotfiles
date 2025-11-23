@@ -40,8 +40,6 @@ brew "overmind"
 brew "rsync"
 # Fork of youtube-dl with additional features and fixes
 brew "yt-dlp"
-# Fast static site generator in a single binary with everything built-in
-brew "zola"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Firmware updater for 8BitDo devices
