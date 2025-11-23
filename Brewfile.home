@@ -20,6 +20,8 @@ brew "docker"
 brew "docker-buildx"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Command-line tools for fly.io services
 brew "flyctl"
 # Securely transfers data between computers
@@ -28,6 +30,10 @@ brew "magic-wormhole"
 brew "mas"
 # High performance static file server
 brew "miniserve"
+# Check MP3 files for errors
+brew "mpck"
+# Painless compression and decompression for your terminal
+brew "ouch"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
 # Utility that provides fast incremental file transfer
@@ -58,6 +64,8 @@ cask "coconutbattery"
 cask "daisydisk"
 # Voice and text chat software
 cask "discord"
+# Chromium-based web browser
+cask "helium-browser"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # App to write, plan, collaborate, and get organized
@@ -70,17 +78,25 @@ cask "orbstack"
 cask "recordit"
 # Instant messaging application focusing on security
 cask "signal"
+# Video game digital distribution service
+cask "steam"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Keyboard configurator
 cask "via"
 # Multimedia player
 cask "vlc"
 # Desktop client for WhatsApp
 cask "whatsapp"
+mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498
 mas "GarageBand", id: 682658836
 mas "Hue Menu Bar", id: 1500678169
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Photomator", id: 1444636541
 mas "Streaks", id: 963034692
 mas "Tailscale", id: 1475387142

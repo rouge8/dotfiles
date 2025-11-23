@@ -23,7 +23,7 @@ brew "dust"
 brew "efm-langserver"
 # Run arbitrary commands when files change
 brew "entr"
-# Fast partial replacement for the codemod tool
+# Fast, partial replacement for codemod (find/replace tool for programmers)
 brew "fastmod"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
@@ -99,6 +99,8 @@ brew "stylua"
 brew "tailwindcss-language-server"
 # Terraform Language Server
 brew "terraform-ls"
+# Program that allows you to count code, quickly
+brew "tokei"
 # Generic Python virtualenv management and test command-line tool
 brew "tox"
 # Display directories as trees (with optional color/HTML output)
@@ -128,10 +130,8 @@ brew "zenith"
 # Web browser
 cask "firefox"
 # Screen colour temperature controller
-cask "flux"
-# Icon font for Visual Studio Code
+cask "flux-app"
 cask "font-codicon"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Web browser
 cask "google-chrome"
