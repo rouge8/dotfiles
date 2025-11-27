@@ -87,8 +87,6 @@ brew "ruff"
 brew "scc"
 # Intuitive find & replace CLI
 brew "sd"
-# Easily detect and prevent bugs and anti-patterns in your codebase
-brew "semgrep"
 # Autoformat shell script source code
 brew "shfmt"
 # Cross-shell prompt for astronauts
