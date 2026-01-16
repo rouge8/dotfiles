@@ -73,8 +73,8 @@ brew "node"
 brew "oha"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
+# Pre-commit re-implemented in Rust
+brew "prek"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Static type checker for Python
