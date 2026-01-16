@@ -4,6 +4,8 @@ ci:
   skip:
     - fish_indent
 
+minimum_prek_version: 0.2.24
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -63,7 +65,9 @@ repos:
     hooks:
       - id: fish_indent
         name: fish_indent
-        language: system
+        language: rust
+        additional_dependencies:
+          - cli:https://github.com/fish-shell/fish-shell:4.3.3
         entry: fish_indent
         args: [-w]
         files: .+\.fish
