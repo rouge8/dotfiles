@@ -71,3 +71,6 @@ Icon?
 
 # pylsp / rope
 .ropeproject
+
+# Read the Docs
+!.readthedocs.*
