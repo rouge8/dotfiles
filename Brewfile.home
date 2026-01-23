@@ -64,6 +64,8 @@ cask "daisydisk"
 cask "discord"
 # Chromium-based web browser
 cask "helium-browser"
+# Controller for Insta360 webcams
+cask "insta360-link-controller"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # App to write, plan, collaborate, and get organized
