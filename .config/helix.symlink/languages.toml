@@ -20,6 +20,10 @@ name = "@vue/typescript-plugin"
 location = "/Users/andyfreeland/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
 languages = ["vue"]
 
+[language-server.tofu-ls]
+command = "tofu-ls"
+args = ["serve"]
+
 [[language]]
 name = "python"
 auto-format = true
@@ -46,7 +50,7 @@ language-servers = [
 name = "hcl"
 auto-format = true
 language-servers = [
-  "terraform-ls",
+  "tofu-ls",
   "typos",
 ]
 

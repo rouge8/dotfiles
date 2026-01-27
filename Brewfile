@@ -95,8 +95,8 @@ brew "starship"
 brew "stylua"
 # LSP for TailwindCSS
 brew "tailwindcss-language-server"
-# Terraform Language Server
-brew "terraform-ls"
+# OpenTofu Language Server
+brew "tofu-ls"
 # Program that allows you to count code, quickly
 brew "tokei"
 # Generic Python virtualenv management and test command-line tool
