@@ -105,6 +105,8 @@ brew "tox"
 brew "tree"
 # Text manipulation and cutting tool
 brew "tuc"
+# Extremely fast Python type checker, written in Rust
+brew "ty"
 # Language Server Protocol implementation for TypeScript wrapping tsserver
 brew "typescript-language-server"
 # Source code spell checker
