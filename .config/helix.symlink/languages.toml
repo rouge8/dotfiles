@@ -28,20 +28,7 @@ args = ["serve"]
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "pyright", only-features = [
-    "signature-help",
-    "hover",
-    "completion",
-    "diagnostics",
-  ] },
-  { name = "ty", only-features = [
-    "goto-definition",
-    "goto-declaration",
-    "goto-type-definition",
-    "goto-reference",
-    "document-symbols",
-    "workspace-symbols",
-  ] },
+  { name = "ty", except-features = ["format"] },
   { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
 ]
