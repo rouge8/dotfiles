@@ -42,6 +42,7 @@ right = [
 [keys.normal]
 "^" = "goto_line_start"
 "$" = "goto_line_end"
+X = ["extend_line_up", "extend_to_line_bounds"]
 
 [keys.normal.g]
 d = ["hsplit", "jump_view_down", "goto_definition"]
