@@ -94,3 +94,7 @@ name = "rst"
 language-servers = [
   "typos",
 ]
+
+[[language]]
+name = "scss"
+auto-format = false
