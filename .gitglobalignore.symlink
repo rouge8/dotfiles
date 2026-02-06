@@ -74,3 +74,7 @@ Icon?
 
 # Read the Docs
 !.readthedocs.*
+
+# Stylelint
+!.stylelint.config.[jt]s
+!.stylelintrc.[jt]s
