@@ -78,3 +78,6 @@ Icon?
 # Stylelint
 !.stylelint.config.[jt]s
 !.stylelintrc.[jt]s
+
+# CI scripts
+!.ci
