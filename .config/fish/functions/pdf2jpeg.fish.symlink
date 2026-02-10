@@ -1,0 +1,5 @@
+function pdf2jpeg --description "Convert PDFs to JPEGs"
+    for f in $argv
+        magick $f (path change-extension jpg $f)
+    end
+end
