@@ -114,3 +114,10 @@ language-servers = [
   "typos",
 ]
 auto-format = false
+
+[[language]]
+name = "latex"
+language-servers = [
+  "texlab",
+  "typos",
+]
