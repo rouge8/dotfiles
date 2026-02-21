@@ -98,3 +98,19 @@ language-servers = [
 [[language]]
 name = "scss"
 auto-format = false
+
+[[language]]
+name = "html"
+language-servers = [
+  "vscode-html-language-server",
+  "typos",
+]
+auto-format = false
+
+[[language]]
+name = "css"
+language-servers = [
+  "vscode-css-language-server",
+  "typos",
+]
+auto-format = false
