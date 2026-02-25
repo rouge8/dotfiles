@@ -60,6 +60,9 @@ function fish_user_key_bindings
         bind -M $mode \t 'bind_tab; commandline -f repaint'
         # Use Fish's built-in history pager
         bind -M $mode --erase \cr
+        # Start and end of line
+        bind -M $mode '^' beginning-of-line
+        bind -M $mode '$' end-of-line
     end
 end
 
