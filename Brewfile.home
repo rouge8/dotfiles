@@ -62,6 +62,8 @@ cask "coconutbattery"
 cask "daisydisk"
 # Voice and text chat software
 cask "discord"
+# Geo location editor for images
+cask "geotag"
 # Chromium-based web browser
 cask "helium-browser"
 # Controller for Insta360 webcams
