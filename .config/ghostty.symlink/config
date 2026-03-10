@@ -1,3 +1,5 @@
 font-size = 16
 
+theme = Gruvbox Dark
+
 shell-integration-features = true
