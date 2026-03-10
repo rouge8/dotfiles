@@ -131,6 +131,8 @@ cask "firefox"
 cask "flux-app"
 cask "font-codicon"
 cask "font-fira-code-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Menu bar calendar
