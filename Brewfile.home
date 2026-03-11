@@ -22,8 +22,6 @@ brew "docker-buildx"
 brew "docker-credential-helper"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
-# Command-line tools for fly.io services
-brew "flyctl"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -100,5 +98,4 @@ mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Photomator", id: 1444636541
-mas "Streaks", id: 963034692
 mas "Tailscale", id: 1475387142
