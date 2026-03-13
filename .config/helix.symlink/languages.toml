@@ -47,7 +47,7 @@ auto-format = false
 language-servers = [
   { name = "vuels", except-features = ["format"] },
   { name = "typescript-language-server", except-features = ["format"] },
-  "vscode-eslint-language-server",
+  # "vscode-eslint-language-server",
 ]
 
 [[language]]
@@ -55,7 +55,7 @@ name = "typescript"
 auto-format = false
 language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
-  "vscode-eslint-language-server",
+  # "vscode-eslint-language-server",
 ]
 
 [[language]]
@@ -63,7 +63,7 @@ name = "javascript"
 auto-format = false
 language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
-  "vscode-eslint-language-server",
+  # "vscode-eslint-language-server",
 ]
 
 [[language]]
