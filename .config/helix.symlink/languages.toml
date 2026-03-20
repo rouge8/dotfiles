@@ -4,10 +4,6 @@ command = "typos-lsp"
 [language-server.efm]
 command = "efm-langserver"
 
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
-
 [language-server.zuban]
 command = "zuban"
 args = ["server"]
