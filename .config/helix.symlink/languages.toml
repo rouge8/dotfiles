@@ -8,8 +8,6 @@ command = "efm-langserver"
 command = "zuban"
 args = ["server"]
 
-[language-server.vuels.config]
-
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
 location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
@@ -55,7 +53,6 @@ language-servers = [
 name = "vue"
 auto-format = false
 language-servers = [
-  # { name = "vuels", except-features = ["format"] },
   { name = "typescript-language-server", except-features = ["format"] },
   # "vscode-eslint-language-server",
   "typos",
