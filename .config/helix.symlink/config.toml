@@ -52,6 +52,8 @@ y = ["hsplit", "jump_view_down", "goto_type_definition"]
 [keys.normal."+"]
 r = ":reflow"
 u = ":pipe sort -u"
+# Run prek on the current file and reload
+p = [":echo %sh{prek run --files %{buffer_name}}", ":reload"]
 
 [keys.normal.space]
 # Print the current line's git blame information to the statusline.
