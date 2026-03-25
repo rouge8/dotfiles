@@ -45,6 +45,18 @@ tools:
     lint-command: typos --format brief -- ${INPUT}
     lint-stdin: false
 
+  eslint: &eslint
+    lint-command: npx --no eslint -- --stdin --stdin-filename ${INPUT}
+    lint-stdin: true
+    lint-ignore-exit-code: true
+    format-command: npx --no eslint -- --fix-dry-run --stdin --stdin-filename ${INPUT}
+    format-stdin: true
+    root-markers:
+      - eslint.config.ts
+      - eslint.config.js
+      - eslint.config.mts
+      - eslint.config.mjs
+
 languages:
   fish:
     - <<: *fish-indent
@@ -59,3 +71,9 @@ languages:
     - <<: *ruff-format
   yaml:
     - <<: *yamllint
+  typescript:
+    - <<: *eslint
+  javascript:
+    - <<: *eslint
+  vue:
+    - <<: *eslint

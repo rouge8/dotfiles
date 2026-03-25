@@ -53,27 +53,27 @@ language-servers = [
 
 [[language]]
 name = "vue"
-auto-format = false
+auto-format = true
 language-servers = [
   # { name = "vuels", except-features = ["format"] },
   { name = "typescript-language-server", except-features = ["format"] },
-  # "vscode-eslint-language-server",
+  { name = "efm", only-features = ["diagnostics", "format"] },
 ]
 
 [[language]]
 name = "typescript"
-auto-format = false
+auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
-  # "vscode-eslint-language-server",
+  { name = "efm", only-features = ["diagnostics", "format"] },
 ]
 
 [[language]]
 name = "javascript"
-auto-format = false
+auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
-  # "vscode-eslint-language-server",
+  { name = "efm", only-features = ["diagnostics", "format"] },
 ]
 
 [[language]]
