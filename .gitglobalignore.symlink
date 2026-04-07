@@ -84,3 +84,6 @@ Icon?
 
 # Configuration
 !.config
+
+# Squawk
+!.squawk.toml
