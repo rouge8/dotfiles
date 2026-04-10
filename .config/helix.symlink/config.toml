@@ -39,6 +39,9 @@ right = [
   "position",
 ]
 
+[editor.file-picker]
+hidden = false
+
 [keys.normal]
 "^" = "goto_line_start"
 "$" = "goto_line_end"
