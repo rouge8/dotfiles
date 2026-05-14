@@ -54,7 +54,7 @@ y = ["hsplit", "jump_view_down", "goto_type_definition"]
 
 [keys.normal."+"]
 r = ":reflow"
-u = ":pipe sort -u"
+u = ":pipe python3 -c 'import sys; print(\"\".join(sorted(set(sys.stdin.readlines()))))'"
 # Run prek on the current file and reload
 p = [":echo %sh{prek run --files %{buffer_name}}", ":reload"]
 
