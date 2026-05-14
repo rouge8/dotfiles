@@ -1,4 +1,6 @@
-target-version = "py311"
+target-version = "py314"
+
+[lint]
 select = [
   "E",
   "F",
@@ -34,10 +36,10 @@ ignore = [
   "ISC003",
 ]
 
-[isort]
+[lint.isort]
 force-single-line = true
 force-sort-within-sections = true
 order-by-type = false
 
-[flake8-implicit-str-concat]
+[lint.flake8-implicit-str-concat]
 allow-multiline = false
