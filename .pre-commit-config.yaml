@@ -67,7 +67,7 @@ repos:
         name: fish_indent
         language: rust
         additional_dependencies:
-          - cli:https://github.com/fish-shell/fish-shell:4.5.0:fish
+          - cli:https://github.com/fish-shell/fish-shell:4.8.0:fish
         entry: fish_indent
         args: [-w]
         files: .+\.fish
