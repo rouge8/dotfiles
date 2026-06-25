@@ -1,6 +1,8 @@
 tap "homebrew/cask"
 # Run your GitHub Actions locally
 brew "act"
+# Code searching, linting, rewriting
+brew "ast-grep"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Clone of cat(1) with syntax highlighting and Git integration
