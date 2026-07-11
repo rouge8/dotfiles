@@ -26,6 +26,9 @@ args = ["serve"]
 command = "ast-grep"
 args = ["lsp"]
 
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
 [[language]]
 name = "python"
 auto-format = true
