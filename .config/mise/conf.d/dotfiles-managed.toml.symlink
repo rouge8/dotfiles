@@ -3,6 +3,7 @@ experimental = true
 
 [tools]
 "pipx:ipython" = { version = "latest", uvx_args = "--with httpx --with attrs" }
+"pipx:pyrefly" = "1.2.0.dev2"
 # https://github.com/vuejs/language-tools/discussions/5455
 "npm:@vue/language-server" = "3.0"
 # https://github.com/helix-editor/helix/discussions/10412#discussioncomment-10285256

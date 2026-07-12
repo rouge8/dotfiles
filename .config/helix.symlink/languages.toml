@@ -26,6 +26,10 @@ args = ["serve"]
 command = "ast-grep"
 args = ["lsp"]
 
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
@@ -33,16 +37,8 @@ command = "clippy"
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "ty", except-features = [
+  { name = "pyrefly", except-features = [
     "format",
-    "goto-definition",
-    "goto-declaration",
-    "goto-type-definition"
-  ] },
-  { name = "zuban", only-features = [
-    "goto-definition",
-    "goto-declaration",
-    "goto-type-definition",
   ] },
   { name = "efm", only-features = ["diagnostics", "format"] },
   "typos",
