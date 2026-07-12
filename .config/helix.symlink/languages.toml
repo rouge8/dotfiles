@@ -4,10 +4,6 @@ command = "typos-lsp"
 [language-server.efm]
 command = "efm-langserver"
 
-[language-server.zuban]
-command = "zuban"
-args = ["server"]
-
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
 location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"

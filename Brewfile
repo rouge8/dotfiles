@@ -127,8 +127,6 @@ brew "yamllint"
 brew "yq"
 # In terminal graphical metrics for your *nix system
 brew "zenith"
-# Python language server and type checker, written in Rust
-brew "zuban"
 # Web browser
 cask "firefox"
 # Screen colour temperature controller
