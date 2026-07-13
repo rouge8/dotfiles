@@ -83,6 +83,10 @@ name = "json"
 auto-format = false
 
 [[language]]
+name = "jsonc"
+auto-format = false
+
+[[language]]
 name = "toml"
 language-servers = [
   "tombi",
