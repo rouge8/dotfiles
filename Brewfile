@@ -79,6 +79,8 @@ brew "pgformatter"
 brew "prek"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Fast type checker and IDE for Python
+brew "pyrefly"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
