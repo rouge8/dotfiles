@@ -9,11 +9,8 @@
 	unstage = reset HEAD --
 	blast = branch --sort -committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:default) %(color:magenta)%(committerdate:relative)%(color:default) %(color:cyan)%(subject)%(color:default)'
 	wut = diff -C --staged --word-diff
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	s = status -sb
 	d = diff --word-diff
-	changelog = log --no-merges --pretty=format:"-\\ %s"
-	pullify = config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
 	diffu = diff @{u}
 	resetu = "![[ -z $(git diffu) ]] && git reset --hard @{u}"
 	rm-merged = delete-merged-branches --effort 3 --yes
