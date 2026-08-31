@@ -1,6 +1,5 @@
 BIN = ~/.local/bin
 FISH_COMPLETIONS_DIR = ~/.config/fish/completions
-PYTHON = $(shell brew --prefix python@3.10)/bin/python3.10 -sE
 
 .PHONY: all clean
 
