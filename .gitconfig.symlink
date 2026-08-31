@@ -7,6 +7,7 @@
 
 [alias]
 	unstage = reset HEAD --
+	blast = branch --sort -committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:default) %(color:magenta)%(committerdate:relative)%(color:default) %(color:cyan)%(subject)%(color:default)'
 	wut = diff -C --staged --word-diff
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	s = status -sb
