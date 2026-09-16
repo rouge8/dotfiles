@@ -25,7 +25,7 @@ vf install compat_aliases
 # Rust
 rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- --no-modify-path
 rustup toolchain install stable nightly
-rustup component add rust-src rustfmt clippy llvm-tools-preview rust-analyzer
+rustup component add rust-src rustfmt clippy llvm-tools rust-analyzer
 
 # Mise
 mise install --yes
