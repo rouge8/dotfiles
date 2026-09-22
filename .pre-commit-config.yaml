@@ -72,7 +72,7 @@ repos:
         args: [-w]
         files: .+\.fish
   - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: v1.5.0
+    rev: v1.5.5
     hooks:
       - id: tombi-format
         args:
