@@ -8,5 +8,16 @@
   "rangeStrategy": "pin",
   "pre-commit": {
     "enabled": true
+  },
+  "mise": {
+    "managerFilePatterns": [
+      "**/{,.}mise{,.*}.toml",
+      "**/{,.}mise/config{,.*}.toml",
+      "**/.config/mise{,.*}.toml",
+      "**/.config/mise/{mise,config}{,.*}.toml",
+      "**/.config/mise/conf.d/*.toml",
+      "**/.config/mise/conf.d/*.toml.symlink"
+    ],
+    "pinDigests": false
   }
 }
