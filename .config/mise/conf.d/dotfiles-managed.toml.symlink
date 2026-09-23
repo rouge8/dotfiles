@@ -2,7 +2,7 @@
 experimental = true
 
 [tools]
-"pypi:ipython" = { version = "latest", with = ["httpx", "attrs"] }
+"pypi:ipython" = { version = "latest", with = ["httpx2", "attrs"] }
 # https://github.com/vuejs/language-tools/discussions/5455
 "npm:@vue/language-server" = "3.0.11"
 # https://github.com/helix-editor/helix/discussions/10412#discussioncomment-10285256
