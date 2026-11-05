@@ -4,6 +4,13 @@ experimental = true
 [tools]
 "pypi:ipython" = { version = "latest", with = ["httpx2", "attrs"] }
 # https://github.com/vuejs/language-tools/discussions/5455
-"npm:@vue/language-server" = { version = "3.0.11", allow_exotic_deps = ["@emmetio/css-parser"], trust_policy_excludes = ["@vue/language-server@3.0.11", "@vue/language-core@3.0.11", "@vue/language-service@3.0.11", "@vue/typescript-plugin@3.0.11"] }
+"npm:@vue/language-server" = { version = "3.0.11", allow_exotic_deps = [
+  "@emmetio/css-parser",
+], trust_policy_excludes = [
+  "@vue/language-server@3.0.11",
+  "@vue/language-core@3.0.11",
+  "@vue/language-service@3.0.11",
+  "@vue/typescript-plugin@3.0.11",
+] }
 # https://github.com/helix-editor/helix/discussions/10412#discussioncomment-10285256
 "npm:vscode-langservers-extracted" = "4.8.0"

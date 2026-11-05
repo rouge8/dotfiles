@@ -6,12 +6,12 @@ command = "efm-langserver"
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
-location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
+location = "/Users/andy/.local/share/mise/installs/npm-vue-language-server/latest/node_modules/.mise/@vue+language-server@3.0.11_typescript@7.0.2/node_modules/@vue/language-server"
 languages = ["vue"]
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
-location = "/Users/andyfreeland/.local/share/mise/installs/npm-vue-language-server/latest/lib/node_modules/@vue/language-server"
+location = "/Users/andyfreeland/.local/share/mise/installs/npm-vue-language-server/latest/node_modules/.mise/@vue+language-server@3.0.11_typescript@7.0.2/node_modules/@vue/language-server"
 languages = ["vue"]
 
 [language-server.tofu-ls]
