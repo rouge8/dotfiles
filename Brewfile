@@ -131,8 +131,6 @@ brew "yq"
 brew "zenith"
 # Web browser
 cask "firefox"
-# Screen colour temperature controller
-cask "flux-app"
 cask "font-codicon"
 cask "font-fira-code-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
