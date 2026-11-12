@@ -141,8 +141,6 @@ cask "google-chrome"
 cask "itsycal"
 # Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
-# GPU-based terminal emulator
-cask "kitty"
 # Utility to move and zoom windows—on one display
 cask "moom"
 # Calculator and converter application
