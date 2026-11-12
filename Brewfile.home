@@ -74,6 +74,8 @@ cask "obs"
 cask "orbstack"
 # Screencasting software
 cask "recordit"
+# Menu bar app that provides more control over Night Shift
+cask "shifty"
 # Instant messaging application focusing on security
 cask "signal"
 # Video game digital distribution service
