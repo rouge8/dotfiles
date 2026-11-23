@@ -37,7 +37,7 @@ repos:
             |\.toml\.symlink
           )
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.7
+    rev: v0.17.6
     hooks:
       - id: ruff-format
   - repo: https://github.com/adrienverge/yamllint
@@ -58,7 +58,7 @@ repos:
           )
         exclude: ^.config/gh/config.yml.symlink$
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.13.1-1
+    rev: v3.14.1-1
     hooks:
       - id: shfmt
   - repo: local
@@ -78,7 +78,7 @@ repos:
         entry: gh actions-lock --verify
         pass_filenames: false
   - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: v1.5.5
+    rev: v1.11.3
     hooks:
       - id: tombi-format
         args:
