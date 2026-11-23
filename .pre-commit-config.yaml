@@ -71,6 +71,12 @@ repos:
         entry: fish_indent
         args: [-w]
         files: .+\.fish
+      - id: gh-actions-lock-verify
+        name: Verify GitHub Actions lockfile
+        language: system
+        files: '^\.github/workflows/.*'
+        entry: gh actions-lock --verify
+        pass_filenames: false
   - repo: https://github.com/tombi-toml/tombi-pre-commit
     rev: v1.5.5
     hooks:
