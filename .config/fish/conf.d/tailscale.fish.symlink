@@ -1,0 +1,3 @@
+function tailscale-get-tailnet-dns-suffix --description "Get the current Tailnet DNS suffix"
+    tailscale status --json | jq -r '.CurrentTailnet.MagicDNSSuffix'
+end
